@@ -26,7 +26,7 @@ namespace Binance.Common.Tests
             Console.WriteLine("2 End 2222222");
         }
 
-// test
+// test 3
         #region TestConnectivity
         public static async void TestConnectivity_Response()
         {
