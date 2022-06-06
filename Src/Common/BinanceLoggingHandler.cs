@@ -15,6 +15,14 @@ namespace Binance.Common
         public BinanceLoggingHandler(ILogger logger)
         : base(new HttpClientHandler())
         {
+            // (base.InnerHandler as HttpClientHandler).ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+            // (base.InnerHandler as HttpClientHandler).SslProtocols = System.Security.Authentication.SslProtocols.Ssl3;
+            // var handler = new HttpClientHandler();
+            // (base.InnerHandler as HttpClientHandler).ClientCertificateOptions = ClientCertificateOption.Manual;
+            // ServicePointManager.ServerCertificateValidationCallback =  delegate (object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) 
+            // {
+            //     return true;
+            // };
             this.logger = logger;
         }
 

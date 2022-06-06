@@ -116,13 +116,16 @@ namespace Binance.Common
                     request.Headers.Add("X-MBX-APIKEY", this.apiKey);
                 }
 
+                Console.WriteLine($"httpClient.SendAsync:\n{request}\nrequest");
                 HttpResponseMessage response = await this.httpClient.SendAsync(request);
 
                 if (response.IsSuccessStatusCode)
                 {
                     using (HttpContent responseContent = response.Content)
                     {
+
                         string jsonString = await responseContent.ReadAsStringAsync();
+                        Console.WriteLine($"HttpResponseMessage:\n{response}\nresponse");
 
                         if (typeof(T) == typeof(string))
                         {

@@ -12,6 +12,7 @@
 
   <PropertyGroup>
       <GenerateDocumentationFile>true</GenerateDocumentationFile>
+      <StartupObject>Binance.Common.Tests.MyTest</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -33,7 +34,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Examples\CSharp\CSharp.csproj" />
+    <ProjectReference Include="..\..\Src\Common\Common.csproj" />
     <ProjectReference Include="..\..\Src\Spot\Spot.csproj" />
+    <ProjectReference Include="..\Common.Tests\Common.Tests.csproj" />
   </ItemGroup>
 
 </Project>
