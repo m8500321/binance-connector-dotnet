@@ -185,7 +185,7 @@ namespace Binance.Common.Tests
 
         // 转化成可读内容
         // [1644546000000,"42886.02000000","42902.96000000","42817.93000000","42897.75000000","141.19340000",1644546299999,"6049947.10973040",3257,"66.40442000","2845337.65305600","0"]
-        // 开始时间，开盘价，收盘价，最低价，最高价，成交额，成交笔数，主动成交额
+        // 开始时间，开盘价，收盘价，最低价，最高价，平均价格，成交额
         public void Data2Readable()
         {
             // List<MyKlines> klines = new List<MyKlines>();
@@ -201,7 +201,8 @@ namespace Binance.Common.Tests
                 var obj = new MyKlines(sr.ReadLine());
                 // klines.Add(new MyKlines(sr.ReadLine()));
                 var readTm = timeStampStartTime.AddMilliseconds(obj.openTime).ToString("yy-M-d HH:mm:ss");
-                var line = $"{readTm}, {obj.openTime}, {obj.openPrice:F3}, {obj.closePrice:F3}, {obj.minPrice:F3}, {obj.maxPrice:F3}, {obj.volumePrice:F3}, {obj.volumeCount}, {obj.activeVolumePrice:F3}";
+                var avePrice = obj.volumePrice / obj.volume;
+                var line = $"{readTm}, {obj.openTime}, {obj.openPrice:F3}, {obj.closePrice:F3}, {obj.minPrice:F3}, {obj.maxPrice:F3}, {avePrice:F3}, {obj.volumePrice:F3}";
                 sw.WriteLine(line);
             }
             // }
