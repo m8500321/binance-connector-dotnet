@@ -46,6 +46,7 @@ namespace Binance.Common.Tests
     public class MyTest
     {
         static ILogger logger;
+        public static string dataDir = "E:/projects/binance-connector-dotnet/datas/";
         /// </summary>
         private static DateTime timeStampStartTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         public static long TimeToMS(DateTime dateTime)
@@ -67,7 +68,7 @@ namespace Binance.Common.Tests
         string apiSecret = "QnU7QZwESqUnsuwYrs8KESVBXo4W8zgERMukgUhj9DR8phoY43WQZ0TjZgbbYbs9";
         public static async Task Main(string[] args)
         {
-            var mytest = new MyTest();
+            var thisobj = new MyTest();
             // string apiKey = "Sud7YtqxuBnwKDJZ7zgnGlZuOxssZ5QzrtvhkL7CfHMfP0fWglYzMScttIDsJ42v";
             // string apiSecret = "QnU7QZwESqUnsuwYrs8KESVBXo4W8zgERMukgUhj9DR8phoY43WQZ0TjZgbbYbs9";
             Console.WriteLine("1 Started 1111111");
@@ -80,24 +81,25 @@ namespace Binance.Common.Tests
             });
             logger = loggerFactory.CreateLogger<MyTest>();
 
-            // await mytest.KlineCandlestickData_Response();
-            // long startMS = TimeToMS(DateTime.UtcNow);
-            long startMS = 1650844500000;
-            var maxCount = 1000;
-            var msPerMin = 60 * 1000;
-            var minPerDay = 60 * 24;
-            var intervalMin = 5;
-            // 每天多少个n分钟*一年多少天
-            for (int i = 0; i < (minPerDay * 365) / (intervalMin * maxCount); i++)
-            {
-                // 5分钟*每分钟多少秒*每次多少条
-                startMS -= intervalMin * msPerMin * maxCount;
 
-                LogMsg(timeStampStartTime.AddMilliseconds(startMS).ToString());
-                await mytest.KlineCandlestickData_Response(startMS);
-                Thread.Sleep(50);
+            // // request klines
+            // // long startMS = TimeToMS(DateTime.UtcNow);
+            // long startMS = 1650844500000;
+            // var maxCount = 1000;
+            // var msPerMin = 60 * 1000;
+            // var minPerDay = 60 * 24;
+            // var intervalMin = 5;
+            // // 每天多少个n分钟*一年多少天
+            // for (int i = 0; i < (minPerDay * 365) / (intervalMin * maxCount); i++)
+            // {
+            //     // 5分钟*每分钟多少秒*每次多少条
+            //     startMS -= intervalMin * msPerMin * maxCount;
+            //     LogMsg(timeStampStartTime.AddMilliseconds(startMS).ToString());
+            //     await thisobj.KlineCandlestickData_Response(startMS);
+            //     Thread.Sleep(50);
+            // }
 
-            }
+            thisobj.Data2Readable();
 
             Console.WriteLine("2 End 2222222");
         }
@@ -148,17 +150,17 @@ namespace Binance.Common.Tests
             }
             var result = await market.KlineCandlestickData("BTCUSDT", Interval.FIVE_MINUTE, limit: 1000, startTime: startTime);
             LogMsg(result);
-            List<MyKlines> klines = new List<MyKlines>();
+            // List<MyKlines> klines = new List<MyKlines>();
             // JArray.Parse(result);
 
 
             var karray = JArray.Parse(result);
 
-            using (StreamWriter sw = new StreamWriter("C:/Users/Admin/Desktop/data.txt", true))
+            using (StreamWriter sw = new StreamWriter(dataDir + "data.txt", true))
             {
                 for (int i = 0; i < karray.Count; i++)
                 {
-                    var item = karray[karray.Count-i-1];
+                    var item = karray[karray.Count - i - 1];
                     sw.WriteLine(item.ToString().Replace("\r\n", "").Replace(" ", ""));
 
                 }
@@ -180,6 +182,40 @@ namespace Binance.Common.Tests
             // LogMsg(klines.ToString());
             // Assert.Equal(responseContent, result);
         }
+
+        // 转化成可读内容
+        // [1644546000000,"42886.02000000","42902.96000000","42817.93000000","42897.75000000","141.19340000",1644546299999,"6049947.10973040",3257,"66.40442000","2845337.65305600","0"]
+        // 开始时间，开盘价，收盘价，最低价，最高价，平均价格，成交额
+        public void Data2Readable()
+        {
+            // List<MyKlines> klines = new List<MyKlines>();
+            StreamReader sr = new StreamReader(dataDir + "data_test.txt");
+            StreamWriter sw = new StreamWriter(dataDir + "output_test.txt", true);
+
+            // 先用列表一条条取出json
+            // using (StreamReader sr = new StreamReader(dataDir + "data_test.txt"))
+            // {
+            //判断文件中是否有字符
+            while (sr.Peek() != -1)
+            {
+                var obj = new MyKlines(sr.ReadLine());
+                // klines.Add(new MyKlines(sr.ReadLine()));
+                var readTm = timeStampStartTime.AddMilliseconds(obj.openTime).ToString("yy-M-d HH:mm:ss");
+                var avePrice = obj.volumePrice / obj.volume;
+                var line = $"{readTm}, {obj.openTime}, {obj.openPrice:F3}, {obj.closePrice:F3}, {obj.minPrice:F3}, {obj.maxPrice:F3}, {avePrice:F3}, {obj.volumePrice:F3}";
+                sw.WriteLine(line);
+            }
+            // }
+            // using (StreamWriter sw = new StreamWriter(dataDir + "output_test.txt", true))
+            // {
+            // foreach (var item in klines)
+            // {
+
+            // }
+            // }
+            sr.Close();
+            sw.Close();
+        }
     }
     public class MyKlines
     {
@@ -190,16 +226,16 @@ namespace Binance.Common.Tests
 
             var jObj = JArray.Parse(kJson);
             openTime = (long)jObj[0];
-            openPrice = (string)jObj[1];
-            maxPrice = (string)jObj[2];
-            minPrice = (string)jObj[3];
-            closePrice = (string)jObj[4];
-            volume = (string)jObj[5];
+            openPrice = (float)jObj[1];
+            maxPrice = (float)jObj[2];
+            minPrice = (float)jObj[3];
+            closePrice = (float)jObj[4];
+            volume = (float)jObj[5];
             closeTime = (long)jObj[6];
-            volumePrice = (string)jObj[7];
+            volumePrice = (float)jObj[7];
             volumeCount = (int)jObj[8];
-            activeVolume = (string)jObj[9];
-            activeVolumePrice = (string)jObj[10];
+            activeVolume = (float)jObj[9];
+            activeVolumePrice = (float)jObj[10];
         }
         /// <summary>
         /// 开盘时间
@@ -209,27 +245,27 @@ namespace Binance.Common.Tests
         /// <summary>
         /// 开盘价
         /// </summary>
-        public string openPrice { get; set; }
+        public float openPrice { get; set; }
 
         /// <summary>
         /// 最高价
         /// </summary>
-        public string maxPrice { get; set; }
+        public float maxPrice { get; set; }
 
         /// <summary>
         /// 最低价
         /// </summary>
-        public string minPrice { get; set; }
+        public float minPrice { get; set; }
 
         /// <summary>
         /// 收盘价
         /// </summary>
-        public string closePrice { get; set; }
+        public float closePrice { get; set; }
 
         /// <summary>
         /// 成交量，一手
         /// </summary>
-        public string volume { get; set; }
+        public float volume { get; set; }
 
         /// <summary>
         /// 收盘时间
@@ -239,7 +275,7 @@ namespace Binance.Common.Tests
         /// <summary>
         /// 成交额，价值
         /// </summary>
-        public string volumePrice { get; set; }
+        public float volumePrice { get; set; }
 
         /// <summary>
         /// 成交笔数
@@ -249,12 +285,12 @@ namespace Binance.Common.Tests
         /// <summary>
         /// 主动成交量
         /// </summary>
-        public string activeVolume { get; set; }
+        public float activeVolume { get; set; }
 
         /// <summary>
         /// 主动成交额
         /// </summary>
-        public string activeVolumePrice { get; set; }
+        public float activeVolumePrice { get; set; }
 
     }
 }
