@@ -25,7 +25,7 @@ namespace Binance.Spot.ConvertExamples
             string apiKey = "api-key";
             string apiSecret = "api-secret";
 
-            var convert = new Convert(httpClient, apiKey, apiSecret);
+            var convert = new Spot.Convert(httpClient, apiKey, apiSecret);
 
             var result = await convert.GetConvertTradeHistory(1563189166000, 1563282766000);
         }

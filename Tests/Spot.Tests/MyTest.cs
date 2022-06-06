@@ -46,6 +46,7 @@ namespace Binance.Common.Tests
     public class MyTest
     {
         static ILogger logger;
+        public static string dataDir = "E:/projects/binance-connector-dotnet/datas/";
         /// </summary>
         private static DateTime timeStampStartTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         public static long TimeToMS(DateTime dateTime)
@@ -154,7 +155,7 @@ namespace Binance.Common.Tests
 
             var karray = JArray.Parse(result);
 
-            using (StreamWriter sw = new StreamWriter("C:/Users/Admin/Desktop/data.txt", true))
+            using (StreamWriter sw = new StreamWriter(dataDir + "data.txt", true))
             {
                 for (int i = 0; i < karray.Count; i++)
                 {
