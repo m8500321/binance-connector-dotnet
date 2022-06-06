@@ -20,6 +20,7 @@ using Binance.Spot.Tests;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Binance.Common.Tests
 {
@@ -48,10 +49,11 @@ namespace Binance.Common.Tests
         static ILogger logger;
         public static string dataDir = "E:/projects/binance-connector-dotnet/datas/";
         /// </summary>
-        private static DateTime timeStampStartTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        private static DateTime UTC_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        long HOOUR_8 = 8l * 60 * 60 * 1000 * 10000;
         public static long TimeToMS(DateTime dateTime)
         {
-            return (long)(dateTime.ToUniversalTime() - timeStampStartTime).TotalMilliseconds;
+            return (long)(dateTime.ToUniversalTime() - UTC_START).TotalMilliseconds;
         }
         public static void LogMsg(params string[] msg)
         {
@@ -82,25 +84,26 @@ namespace Binance.Common.Tests
             logger = loggerFactory.CreateLogger<MyTest>();
 
 
-            // // request klines
-            // // long startMS = TimeToMS(DateTime.UtcNow);
+            // request klines
+            long startMS = TimeToMS(DateTime.UtcNow);
             // long startMS = 1650844500000;
-            // var maxCount = 1000;
-            // var msPerMin = 60 * 1000;
-            // var minPerDay = 60 * 24;
-            // var intervalMin = 5;
-            // // 每天多少个n分钟*一年多少天
-            // for (int i = 0; i < (minPerDay * 365) / (intervalMin * maxCount); i++)
-            // {
-            //     // 5分钟*每分钟多少秒*每次多少条
-            //     startMS -= intervalMin * msPerMin * maxCount;
-            //     LogMsg(timeStampStartTime.AddMilliseconds(startMS).ToString());
-            //     await thisobj.KlineCandlestickData_Response(startMS);
-            //     Thread.Sleep(50);
-            // }
+            var maxCount = 1000;
+            var msPerMin = 60 * 1000;
+            var minPerDay = 60 * 24;
+            var intervalMin = 5;
+            // 每天多少个n分钟*一年多少天
+            for (int i = 0; i < (minPerDay * 365) / (intervalMin * maxCount); i++)
+            {
+                // 5分钟*每分钟多少秒*每次多少条
+                startMS -= intervalMin * msPerMin * maxCount;
+                LogMsg(UTC_START.AddMilliseconds(startMS).ToString());
+                await thisobj.KlineCandlestickData_Response(startMS);
+                Thread.Sleep(50);
+            }
 
-            thisobj.Data2Readable();
-
+            // thisobj.Data2Readable();
+            // thisobj.Data2Serializable();
+            // thisobj.AnalyseTime();
             Console.WriteLine("2 End 2222222");
         }
 
@@ -190,37 +193,106 @@ namespace Binance.Common.Tests
         {
             // List<MyKlines> klines = new List<MyKlines>();
             StreamReader sr = new StreamReader(dataDir + "data_test.txt");
-            StreamWriter sw = new StreamWriter(dataDir + "output_test.txt", true);
-
-            // 先用列表一条条取出json
-            // using (StreamReader sr = new StreamReader(dataDir + "data_test.txt"))
-            // {
+            StreamWriter sw = new StreamWriter(dataDir + "data_output.txt", true);
             //判断文件中是否有字符
             while (sr.Peek() != -1)
             {
-                var obj = new MyKlines(sr.ReadLine());
+                var obj = new MyKline(sr.ReadLine());
                 // klines.Add(new MyKlines(sr.ReadLine()));
-                var readTm = timeStampStartTime.AddMilliseconds(obj.openTime).ToString("yy-M-d HH:mm:ss");
+                var readTm = UTC_START.AddMilliseconds(obj.openTime + HOOUR_8).ToString("yy-M-d HH:mm:ss");
                 var avePrice = obj.volumePrice / obj.volume;
                 var line = $"{readTm}, {obj.openTime}, {obj.openPrice:F3}, {obj.closePrice:F3}, {obj.minPrice:F3}, {obj.maxPrice:F3}, {avePrice:F3}, {obj.volumePrice:F3}";
                 sw.WriteLine(line);
             }
-            // }
-            // using (StreamWriter sw = new StreamWriter(dataDir + "output_test.txt", true))
-            // {
-            // foreach (var item in klines)
-            // {
-
-            // }
-            // }
             sr.Close();
             sw.Close();
         }
+        public void Data2Serializable()
+        {
+            StreamReader sr = new StreamReader(dataDir + "data.txt");
+            var sList = new KlineList();
+            //判断文件中是否有字符
+            FileStream fileStream = new FileStream(dataDir + "serializ.data", FileMode.Create);
+            BinaryFormatter bf = new BinaryFormatter();
+            while (sr.Peek() != -1)
+            {
+                var obj = new MyKline(sr.ReadLine());
+                sList.myKlines.Add(obj);
+            }
+            bf.Serialize(fileStream, sList);
+            fileStream.Flush();
+            fileStream.Close();
+            sr.Close();
+            // sw.Close();
+        }
+        public KlineList Serializable2Data()
+        {
+            FileStream fileStream = new FileStream(dataDir + "serializ.data", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            BinaryFormatter bf = new BinaryFormatter();
+            var sList = bf.Deserialize(fileStream) as KlineList;
+            fileStream.Flush();
+            fileStream.Close();
+            return sList;
+        }
+        public void AnalyseTime()
+        {
+            // 每个时刻的涨跌情况
+            Dictionary<string, List<float>> timeAdd = new Dictionary<string, List<float>>();
+            var slist = Serializable2Data();
+            foreach (var item in slist.myKlines)
+            {
+                var key = UTC_START.AddMilliseconds(item.openTime + HOOUR_8).ToString("HH:mm");
+                if (!timeAdd.ContainsKey(key))
+                {
+                    timeAdd.Add(key, new List<float>());
+                }
+                var addValue = (item.closePrice - item.openPrice) / item.openPrice;
+                timeAdd[key].Add(addValue);
+            }
+            // var timeProb = new Dictionary<string, float>();
+            string output = "";
+            foreach (var kv in timeAdd)
+            {
+                var incCount = 0;
+                var descCount = 0;
+                var sumAddValue = 0f;
+                foreach (var addValue in kv.Value)
+                {
+                    if (addValue > 0)
+                    {
+                        incCount++;
+                    }
+                    else
+                    {
+                        descCount++;
+                    }
+                    sumAddValue += (addValue * 100);
+                }
+                var sumPercent = sumAddValue / kv.Value.Count;
+                var probability = (float)incCount / (incCount + descCount);
+                if (sumPercent > 0.03 || sumPercent < -0.03)
+                // if (probability > 0.56 || probability < 0.44)
+                {
+                    probability *= 100;
+                    // timeProb.Add(kv.Key, probability);
+                    output += (kv.Key + "\t概率" + decimal.Round((decimal)probability, 3) + "%\t涨幅" + decimal.Round((decimal)sumPercent, 3) + "%\n");
+                }
+            }
+            LogMsg(output);
+
+        }
+
     }
-    public class MyKlines
+    [Serializable]
+    public class KlineList
+    {
+        public List<MyKline> myKlines = new List<MyKline>();
+    }
+    [Serializable]
+    public class MyKline
     {
 
-        public MyKlines(string kJson = "")
+        public MyKline(string kJson = "")
         {
             // MyTest.LogMsg(kJson);
 

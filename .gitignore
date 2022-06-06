@@ -22,3 +22,15 @@ msbuild.err
 msbuild.wrn
 
 .ionide/
+.vs/ProjectEvaluation/binance-connector-dotnet.projects.v2
+.vs/ProjectEvaluation/binance-connector-dotnet.metadata.v2
+.vs/binance-connector-dotnet/v17/TestStore/0/testlog.manifest
+.vs/binance-connector-dotnet/v17/TestStore/0/036.testlog
+.vs/binance-connector-dotnet/v17/.suo
+.vs/binance-connector-dotnet/v17/.futdcache.v1
+.vs/binance-connector-dotnet/FileContentIndex/read.lock
+.vs/binance-connector-dotnet/FileContentIndex/da79e83d-ef93-4772-8ff9-702165e851ff.vsidx
+.vs/binance-connector-dotnet/FileContentIndex/baeb958d-70c0-4c20-b1ff-f0a28218ca62.vsidx
+.vs/binance-connector-dotnet/FileContentIndex/96a5644c-6553-4510-a967-6c7255e7f5f3.vsidx
+.vs/binance-connector-dotnet/FileContentIndex/155d9508-292b-465d-a416-b74b41657637.vsidx
+.vs/binance-connector-dotnet/DesignTimeBuild/.dtbcache.v2
