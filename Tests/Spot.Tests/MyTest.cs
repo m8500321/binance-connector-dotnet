@@ -85,26 +85,40 @@ namespace Binance.Common.Tests
 
 
             // // request klines
+            // File.Delete(dataDir + "data.txt"); //删除指定文件;
             // long startMS = TimeToMS(DateTime.UtcNow);
             // // long startMS = 1650844500000;
             // var maxCount = 1000;
             // var msPerMin = 60 * 1000;
             // var minPerDay = 60 * 24;
             // var intervalMin = 5;
+            // var diffMS = intervalMin * msPerMin * maxCount;
+            // var yearday = 365;
+            // var forNum = (minPerDay * yearday * 1.5) / (intervalMin * maxCount);
             // // 每天多少个n分钟*一年多少天
-            // for (int i = 0; i < (minPerDay * 365) / (intervalMin * maxCount); i++)
+            // for (int i = 0; i < forNum; i++)
             // {
             //     // 5分钟*每分钟多少秒*每次多少条
-            //     startMS -= intervalMin * msPerMin * maxCount;
+            //     startMS -= diffMS;
             //     LogMsg(UTC_START.AddMilliseconds(startMS).ToString());
-            //     await thisobj.KlineCandlestickData_Response(startMS);
+            //     try
+            //     {
+            //         await thisobj.KlineCandlestickData_Response(startMS);
+            //     }
+            //     catch (Exception e)
+            //     {
+            //         LogMsg(e.ToString());
+            //         startMS += diffMS;
+            //     }
             //     Thread.Sleep(50);
             // }
 
+
+            // thisobj.FetchKlineData();
             // thisobj.Data2Readable();
             // thisobj.Data2Serializable();
             // thisobj.AnalyseTime();
-            thisobj.AnalysePrevKline();
+            // thisobj.AnalysePrevKline();
             Console.WriteLine("2 End 2222222");
         }
 
@@ -208,6 +222,27 @@ namespace Binance.Common.Tests
             sr.Close();
             sw.Close();
         }
+        public async Task FetchKlineData()
+        {
+            // request klines
+            File.Delete(dataDir + "data.txt"); //删除指定文件;
+            long startMS = TimeToMS(DateTime.UtcNow);
+            // long startMS = 1650844500000;
+            var maxCount = 1000;
+            var msPerMin = 60 * 1000;
+            var minPerDay = 60 * 24;
+            var intervalMin = 5;
+            // 每天多少个n分钟*一年多少天
+            var forNum = (minPerDay * 365) / (intervalMin * maxCount);
+            for (int i = 0; i < forNum; i++)
+            {
+                // 5分钟*每分钟多少秒*每次多少条
+                startMS -= intervalMin * msPerMin * maxCount;
+                LogMsg(UTC_START.AddMilliseconds(startMS).ToString());
+                await KlineCandlestickData_Response(startMS);
+                Thread.Sleep(50);
+            }
+        }
         public void Data2Serializable()
         {
             StreamReader sr = new StreamReader(dataDir + "data.txt");
@@ -281,6 +316,7 @@ namespace Binance.Common.Tests
             }
             LogMsg(output);
         }
+
         public void AnalysePrevKline()
         {
             // 每个时刻的涨跌情况
@@ -296,7 +332,7 @@ namespace Binance.Common.Tests
                 add1 *= 100;
                 add1 = add1 > 0.15f ? 0.15f : add1;
                 add1 = add1 < -0.15f ? -0.15f : add1;
-                var key = add1.ToString("f3");
+                var key = add1.ToString("f2");
                 if (!prevAdd.ContainsKey(key))
                 {
                     prevAdd.Add(key, new List<float>());
@@ -326,14 +362,38 @@ namespace Binance.Common.Tests
                 }
                 var sumPercent = sumAddValue / kv.Value.Count;
                 var probability = (float)incCount / (incCount + descCount);
-                if (sumPercent > 0.035 || sumPercent < -0.035)
-                // if (probability > 0.56 || probability < 0.44)
+                if (sumPercent > 0.01 || sumPercent < -0.01)
                 {
                     probability *= 100;
-                    output += (kv.Key + "\t上涨概率" + decimal.Round((decimal)probability, 3) + "%\t平均涨幅" + decimal.Round((decimal)sumPercent, 3) + "%\n");
+                    output += ("prev:" + float.Parse(kv.Key) * 100 + "\t上涨概率" + decimal.Round((decimal)probability, 3) + "%\t平均涨幅" + decimal.Round((decimal)sumPercent, 3) + "%\n");
                 }
             }
             LogMsg(output);
+        }
+
+        public void AnalyseBigVolume()
+        {
+            Dictionary<string, List<float>> prevVolume = new Dictionary<string, List<float>>();
+            var slist = Serializable2Data();
+            for (int i = 3; i < slist.myKlines.Count; i++)
+            {
+                var item = slist.myKlines[i];
+                var prevItem1 = slist.myKlines[i - 1];
+                // var prevItem2 = slist.myKlines[i-2];
+                // var key = UTC_START.AddMilliseconds(item.openTime + HOOUR_8).ToString("HH:mm");
+                var add1 = (prevItem1.closePrice - prevItem1.openPrice) / prevItem1.openPrice;
+                add1 *= 100;
+                add1 = add1 > 0.15f ? 0.15f : add1;
+                add1 = add1 < -0.15f ? -0.15f : add1;
+                var key = add1.ToString("f2");
+                // if (!prevAdd.ContainsKey(key))
+                // {
+                //     prevAdd.Add(key, new List<float>());
+                // }
+                var addValue = (item.closePrice - item.openPrice) / item.openPrice;
+                // prevAdd[key].Add(addValue);
+            }
+
         }
     }
     [Serializable]
@@ -348,73 +408,29 @@ namespace Binance.Common.Tests
         public MyKline(string kJson = "")
         {
             // MyTest.LogMsg(kJson);
-
             var jObj = JArray.Parse(kJson);
-            openTime = (long)jObj[0];
-            openPrice = (float)jObj[1];
-            maxPrice = (float)jObj[2];
-            minPrice = (float)jObj[3];
-            closePrice = (float)jObj[4];
-            volume = (float)jObj[5];
-            closeTime = (long)jObj[6];
-            volumePrice = (float)jObj[7];
-            volumeCount = (int)jObj[8];
-            activeVolume = (float)jObj[9];
-            activeVolumePrice = (float)jObj[10];
+            openTime = (long)jObj[0]; // 开盘时间
+            openPrice = (float)jObj[1]; // 开盘价
+            maxPrice = (float)jObj[2]; // 最高价
+            minPrice = (float)jObj[3]; // 最低价
+            closePrice = (float)jObj[4]; // 收盘价
+            volume = (float)jObj[5]; // 成交量，一手
+            closeTime = (long)jObj[6]; // 收盘时间
+            volumePrice = (float)jObj[7]; // 成交额，价值
+            volumeCount = (int)jObj[8]; // 成交笔数
+            activeVolume = (float)jObj[9]; // 主动成交量
+            activeVolumePrice = (float)jObj[10]; // 主动成交额
         }
-        /// <summary>
-        /// 开盘时间
-        /// </summary>
         public long openTime { get; set; }
-
-        /// <summary>
-        /// 开盘价
-        /// </summary>
         public float openPrice { get; set; }
-
-        /// <summary>
-        /// 最高价
-        /// </summary>
         public float maxPrice { get; set; }
-
-        /// <summary>
-        /// 最低价
-        /// </summary>
         public float minPrice { get; set; }
-
-        /// <summary>
-        /// 收盘价
-        /// </summary>
         public float closePrice { get; set; }
-
-        /// <summary>
-        /// 成交量，一手
-        /// </summary>
         public float volume { get; set; }
-
-        /// <summary>
-        /// 收盘时间
-        /// </summary>
         public long closeTime { get; set; }
-
-        /// <summary>
-        /// 成交额，价值
-        /// </summary>
         public float volumePrice { get; set; }
-
-        /// <summary>
-        /// 成交笔数
-        /// </summary>
         public int volumeCount { get; set; }
-
-        /// <summary>
-        /// 主动成交量
-        /// </summary>
         public float activeVolume { get; set; }
-
-        /// <summary>
-        /// 主动成交额
-        /// </summary>
         public float activeVolumePrice { get; set; }
 
     }
