@@ -84,26 +84,27 @@ namespace Binance.Common.Tests
             logger = loggerFactory.CreateLogger<MyTest>();
 
 
-            // request klines
-            long startMS = TimeToMS(DateTime.UtcNow);
-            // long startMS = 1650844500000;
-            var maxCount = 1000;
-            var msPerMin = 60 * 1000;
-            var minPerDay = 60 * 24;
-            var intervalMin = 5;
-            // 每天多少个n分钟*一年多少天
-            for (int i = 0; i < (minPerDay * 365) / (intervalMin * maxCount); i++)
-            {
-                // 5分钟*每分钟多少秒*每次多少条
-                startMS -= intervalMin * msPerMin * maxCount;
-                LogMsg(UTC_START.AddMilliseconds(startMS).ToString());
-                await thisobj.KlineCandlestickData_Response(startMS);
-                Thread.Sleep(50);
-            }
+            // // request klines
+            // long startMS = TimeToMS(DateTime.UtcNow);
+            // // long startMS = 1650844500000;
+            // var maxCount = 1000;
+            // var msPerMin = 60 * 1000;
+            // var minPerDay = 60 * 24;
+            // var intervalMin = 5;
+            // // 每天多少个n分钟*一年多少天
+            // for (int i = 0; i < (minPerDay * 365) / (intervalMin * maxCount); i++)
+            // {
+            //     // 5分钟*每分钟多少秒*每次多少条
+            //     startMS -= intervalMin * msPerMin * maxCount;
+            //     LogMsg(UTC_START.AddMilliseconds(startMS).ToString());
+            //     await thisobj.KlineCandlestickData_Response(startMS);
+            //     Thread.Sleep(50);
+            // }
 
             // thisobj.Data2Readable();
             // thisobj.Data2Serializable();
             // thisobj.AnalyseTime();
+            thisobj.AnalysePrevKline();
             Console.WriteLine("2 End 2222222");
         }
 
@@ -279,9 +280,61 @@ namespace Binance.Common.Tests
                 }
             }
             LogMsg(output);
-
         }
+        public void AnalysePrevKline()
+        {
+            // 每个时刻的涨跌情况
+            Dictionary<string, List<float>> prevAdd = new Dictionary<string, List<float>>();
+            var slist = Serializable2Data();
+            for (int i = 3; i < slist.myKlines.Count; i++)
+            {
+                var item = slist.myKlines[i];
+                var prevItem1 = slist.myKlines[i - 1];
+                // var prevItem2 = slist.myKlines[i-2];
+                // var key = UTC_START.AddMilliseconds(item.openTime + HOOUR_8).ToString("HH:mm");
+                var add1 = (prevItem1.closePrice - prevItem1.openPrice) / prevItem1.openPrice;
+                add1 *= 100;
+                add1 = add1 > 0.15f ? 0.15f : add1;
+                add1 = add1 < -0.15f ? -0.15f : add1;
+                var key = add1.ToString("f3");
+                if (!prevAdd.ContainsKey(key))
+                {
+                    prevAdd.Add(key, new List<float>());
+                }
+                var addValue = (item.closePrice - item.openPrice) / item.openPrice;
+                prevAdd[key].Add(addValue);
+            }
 
+            prevAdd = prevAdd.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+            string output = "";
+            foreach (var kv in prevAdd)
+            {
+                var incCount = 0;
+                var descCount = 0;
+                var sumAddValue = 0f;
+                foreach (var addValue in kv.Value)
+                {
+                    if (addValue > 0)
+                    {
+                        incCount++;
+                    }
+                    else
+                    {
+                        descCount++;
+                    }
+                    sumAddValue += (addValue * 100);
+                }
+                var sumPercent = sumAddValue / kv.Value.Count;
+                var probability = (float)incCount / (incCount + descCount);
+                if (sumPercent > 0.035 || sumPercent < -0.035)
+                // if (probability > 0.56 || probability < 0.44)
+                {
+                    probability *= 100;
+                    output += (kv.Key + "\t上涨概率" + decimal.Round((decimal)probability, 3) + "%\t平均涨幅" + decimal.Round((decimal)sumPercent, 3) + "%\n");
+                }
+            }
+            LogMsg(output);
+        }
     }
     [Serializable]
     public class KlineList
