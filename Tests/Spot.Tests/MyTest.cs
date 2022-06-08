@@ -48,7 +48,7 @@ namespace Binance.Common.Tests
     public class MyTest
     {
         static ILogger logger;
-        public static string dataDir = "E:/projects/binance-connector-dotnet/datas/";
+        public static string dataDir;
         /// </summary>
         private static DateTime UTC_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         long HOOUR_8 = 8l * 60 * 60 * 1000 * 10000;
@@ -71,15 +71,16 @@ namespace Binance.Common.Tests
         string apiSecret = "QnU7QZwESqUnsuwYrs8KESVBXo4W8zgERMukgUhj9DR8phoY43WQZ0TjZgbbYbs9";
         public static async Task Main(string[] args)
         {
+            dataDir = System.Environment.CurrentDirectory.Replace("\\", "/").Replace("Tests/Spot.Tests", "datas/");
+            Console.WriteLine("Started 1111111");
             var thisobj = new MyTest();
-            Console.WriteLine("1 Started 1111111");
 
 
             using var loggerFactory = LoggerFactory.Create(builder =>
             {
                 builder.AddConsole();
             });
-            logger = loggerFactory.CreateLogger<MyTest>();
+            logger = loggerFactory.CreateLogger("");
 
             // "BTCUSDT" "ETHUSDT" "BNBUSDT"
             var symbols = new List<string> { "BTCUSDT", "ETHUSDT", "BNBUSDT" };
@@ -89,11 +90,11 @@ namespace Binance.Common.Tests
                 // thisobj.Data2Readable(name);
                 // thisobj.Data2Serializable(name);
                 // thisobj.AnalyseTime(name);
-                thisobj.AnalysePrevKline(name);
-                // thisobj.AnalyseBigVolume(name);
+                // thisobj.AnalysePrevKline(name);
+                thisobj.AnalyseBigVolume(name);
 
             }
-            Console.WriteLine("2 End 2222222");
+            Console.WriteLine("End 2222222");
         }
 
 
@@ -224,21 +225,23 @@ namespace Binance.Common.Tests
             var kList = Serializable2Data(symbol);
             foreach (var item in kList.myKlines)
             {
+                // var key = UTC_START.AddMilliseconds(item.openTime + HOOUR_8).ToString("ddd");
                 var key = UTC_START.AddMilliseconds(item.openTime + HOOUR_8).ToString("HH:mm");
+                // var key = UTC_START.AddMilliseconds(item.openTime + HOOUR_8).ToString("ddd:HH:mm");
                 if (!timeAdd.ContainsKey(key))
                 {
                     timeAdd.Add(key, new List<float>());
                 }
-                var addValue = (item.closePrice - item.openPrice) / item.openPrice;
+                var addValue = item.incPercent;
                 timeAdd[key].Add(addValue);
             }
             // var timeProb = new Dictionary<string, float>();
             string output = "";
-            foreach (var kv in timeAdd)
+            foreach (var item in timeAdd)
             {
                 var incCount = 0;
                 var sumAddValue = 0f;
-                foreach (var addValue in kv.Value)
+                foreach (var addValue in item.Value)
                 {
                     if (addValue > 0)
                     {
@@ -246,13 +249,13 @@ namespace Binance.Common.Tests
                     }
                     sumAddValue += addValue;
                 }
-                var aveValue = sumAddValue / kv.Value.Count;
-                var probability = (float)incCount / kv.Value.Count;
-                if (MathF.Abs(aveValue) > 0.005)
+                var aveValue = sumAddValue / item.Value.Count;
+                var probability = (float)incCount / item.Value.Count;
+                if (MathF.Abs(aveValue) > 0.04 * 0.01)
                 // if (probability > 0.56 || probability < 0.44)
                 {
                     // timeProb.Add(kv.Key, probability);
-                    output += ("时间点" + kv.Key + "\t上涨概率" + ToPercent(probability) + "\t涨幅" + CutDecim(aveValue, 3) + "%\n");
+                    output += ("时间点" + item.Key + "\t上涨概率" + ToPercent(probability) + "\t涨幅" + ToPercent(aveValue) + "\n");
                 }
             }
             LogMsg(symbol, output);
@@ -275,11 +278,11 @@ namespace Binance.Common.Tests
                 var bigger = sum1 * sum1 > sum2 * sum2 ? sum1 : sum2;
                 bigger = bigger * bigger > sum2 * sum2 ? bigger : sum2;
                 // var maxSum = MathF.Max(Math.Abs(sum1), Math.Abs(sum2), Math.Abs(sum3));
-                if (Math.Abs(bigger) < 0.02)
+                if (Math.Abs(bigger) < 0.03)
                 {
                     continue;
                 }
-                bigger = Math.Clamp(bigger, -0.07f, 0.07f);
+                bigger = Math.Clamp(bigger, -0.06f, 0.06f);
                 var key = bigger.ToString("f2");
                 if (!addDict.ContainsKey(key))
                 {
@@ -325,36 +328,57 @@ namespace Binance.Common.Tests
         public string ToPercent(string s)
         {
             var f = float.Parse(s);
-            return MathF.Round(f * 100, 2) + "%";
+            var sig = f > 0 ? "+" : "";
+            return sig + MathF.Round(f * 100, 2) + "%";
         }
         public string ToPercent(float f)
         {
-            return MathF.Round(f * 100, 2) + "%";
+            var sig = f > 0 ? "+" : "";
+            return sig + MathF.Round(f * 100, 2) + "%";
         }
 
-        // public void AnalyseBigVolume()
-        // {
-        //     Dictionary<string, List<float>> prevVolume = new Dictionary<string, List<float>>();
-        //     var slist = Serializable2Data();
-        //     for (int i = 3; i < slist.myKlines.Count; i++)
-        //     {
-        //         var item = slist.myKlines[i];
-        //         var prevItem1 = slist.myKlines[i - 1];
-        //         // var prevItem2 = slist.myKlines[i-2];
-        //         // var key = UTC_START.AddMilliseconds(item.openTime + HOOUR_8).ToString("HH:mm");
-        //         var add1 = (prevItem1.closePrice - prevItem1.openPrice) / prevItem1.openPrice;
-        //         add1 *= 100;
-        //         add1 = add1 > 0.15f ? 0.15f : add1;
-        //         add1 = add1 < -0.15f ? -0.15f : add1;
-        //         var key = add1.ToString("f2");
-        //         // if (!prevAdd.ContainsKey(key))
-        //         // {
-        //         //     prevAdd.Add(key, new List<float>());
-        //         // }
-        //         var addValue = (item.closePrice - item.openPrice) / item.openPrice;
-        //         // prevAdd[key].Add(addValue);
-        //     }
-        // }
+        public void AnalyseBigVolume(string symbol)
+        {
+            Dictionary<string, List<float>> prevVolume = new Dictionary<string, List<float>>();
+            var slist = Serializable2Data(symbol);
+            for (int i = 3; i < slist.myKlines.Count; i++)
+            {
+                var item = slist.myKlines[i];
+                var prevItem1 = slist.myKlines[i - 1];
+                var prevItem2 = slist.myKlines[i - 2];
+                var prevItem3 = slist.myKlines[i - 3];
+                var multiFactor = prevItem1.volumePerHand * 2 / (prevItem2.volumePerHand + prevItem3.volumePerHand);
+                if (multiFactor > 2)
+                {
+                    var sig = prevItem1.isUp ? "+ x" : "- x";
+                    multiFactor = Math.Min(multiFactor, 4);
+                    var key = sig + CutDecim(multiFactor, 1);
+                    if (!prevVolume.ContainsKey(key))
+                    {
+                        prevVolume.Add(key, new List<float>());
+                    }
+                    // var addValue = (item.closePrice - item.openPrice) / item.openPrice;
+                    prevVolume[key].Add(item.incPercent);
+                }
+
+            }
+            prevVolume = prevVolume.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+            string output = "";
+            foreach (var dictItem in prevVolume)
+            {
+
+                var sum = dictItem.Value.Sum()/dictItem.Value.Count;
+                // foreach (var listItem in dictItem.Value)
+                // {
+
+                // }
+                if (Math.Abs(sum) > 0.0005)
+                {
+                    output += ($"{dictItem.Key} {ToPercent(sum)} count:{dictItem.Value.Count}\n");
+                }
+            }
+            LogMsg(symbol, output);
+        }
     }
 
     [Serializable]
@@ -380,6 +404,7 @@ namespace Binance.Common.Tests
             maxDescPercent = (minPrice - openPrice) / openPrice;
             avePrice = volumePrice / volume;
             volumePerHand = volumePrice / volumeCount;
+            isUp = closePrice > openPrice ? true : false;
 
         }
         public long openTime; // 开盘时间
@@ -399,6 +424,7 @@ namespace Binance.Common.Tests
         public float maxDescPercent = 0f; // 最大跌幅
         public float avePrice = 0f; // 平均价
         public float volumePerHand = 0f; // 交易额/手
+        public bool isUp = true; // 是否上涨
     }
 
     [Serializable]
