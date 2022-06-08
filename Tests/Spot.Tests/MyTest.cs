@@ -44,89 +44,6 @@ namespace Binance.Common.Tests
     // 逐行存入文本
     // 取出来的数据，全部放入内存，然后json转为单个字符串，
 
-    [Serializable]
-    public class MyKline
-    {
-        public MyKline(JsonKline jk)
-        {
-            openTime = jk.openTime;
-            openPrice = jk.openPrice;
-            maxPrice = jk.maxPrice;
-            minPrice = jk.minPrice;
-            closePrice = jk.closePrice;
-            volume = jk.volume;
-            closeTime = jk.closeTime;
-            volumePrice = jk.volumePrice;
-            volumeCount = jk.volumeCount;
-            activeVolume = jk.activeVolume;
-            activeVolumePrice = jk.activeVolumePrice;
-
-
-            incPercent = (closePrice - openPrice) / openPrice;
-            maxIncPercent = (maxPrice - openPrice) / openPrice;
-            maxDescPercent = (minPrice - openPrice) / openPrice;
-            avePrice = volumePrice / volume;
-            volumePerHand = volumePrice / volumeCount;
-
-        }
-        public long openTime; // 开盘时间
-        public float openPrice; // 开盘价
-        public float maxPrice; // 最高价
-        public float minPrice; // 最低价
-        public float closePrice; // 收盘价
-        public float volume; // 成交量，手
-        public long closeTime; // 收盘时间
-        public float volumePrice; // 成交额，价值
-        public int volumeCount; // 成交笔数
-        public float activeVolume; // 主动成交量
-        public float activeVolumePrice; // 主动成交额
-
-        public float incPercent = 0f; // 涨幅
-        public float maxIncPercent = 0f; // 最大涨幅
-        public float maxDescPercent = 0f; // 最大跌幅
-        public float avePrice = 0f; // 平均价
-        public float volumePerHand = 0f; // 交易额/手
-    }
-
-    [Serializable]
-    public class KlineList
-    {
-        public List<MyKline> myKlines = new List<MyKline>();
-    }
-
-    [Serializable]
-    public class JsonKline
-    {
-
-        public JsonKline(string kJson = "")
-        {
-            // MyTest.LogMsg(kJson);
-            var jObj = JArray.Parse(kJson);
-            openTime = (long)jObj[0]; // 开盘时间
-            openPrice = (float)jObj[1]; // 开盘价
-            maxPrice = (float)jObj[2]; // 最高价
-            minPrice = (float)jObj[3]; // 最低价
-            closePrice = (float)jObj[4]; // 收盘价
-            volume = (float)jObj[5]; // 成交量，手
-            closeTime = (long)jObj[6]; // 收盘时间
-            volumePrice = (float)jObj[7]; // 成交额，价值
-            volumeCount = (int)jObj[8]; // 成交笔数
-            activeVolume = (float)jObj[9]; // 主动成交量
-            activeVolumePrice = (float)jObj[10]; // 主动成交额
-        }
-        public long openTime { get; set; }
-        public float openPrice { get; set; }
-        public float maxPrice { get; set; }
-        public float minPrice { get; set; }
-        public float closePrice { get; set; }
-        public float volume { get; set; }
-        public long closeTime { get; set; }
-        public float volumePrice { get; set; }
-        public int volumeCount { get; set; }
-        public float activeVolume { get; set; }
-        public float activeVolumePrice { get; set; }
-
-    }
 
     public class MyTest
     {
@@ -144,10 +61,10 @@ namespace Binance.Common.Tests
             string output = "";
             foreach (var item in msg)
             {
-                output += ("\n" + item);
+                output += (item + "\n");
             }
-            output += ("\n" + new StackTrace(new StackFrame(1, true)).ToString());
             logger.LogInformation(output);
+            logger.LogInformation(new StackTrace(new StackFrame(1, true)).ToString());
 
         }
         string apiKey = "Sud7YtqxuBnwKDJZ7zgnGlZuOxssZ5QzrtvhkL7CfHMfP0fWglYzMScttIDsJ42v";
@@ -171,7 +88,7 @@ namespace Binance.Common.Tests
                 // await thisobj.FetchKlineData(name);
                 // thisobj.Data2Readable(name);
                 // thisobj.Data2Serializable(name);
-                thisobj.AnalyseTime(name);
+                // thisobj.AnalyseTime(name);
                 thisobj.AnalysePrevKline(name);
                 // thisobj.AnalyseBigVolume(name);
 
@@ -320,7 +237,6 @@ namespace Binance.Common.Tests
             foreach (var kv in timeAdd)
             {
                 var incCount = 0;
-                var descCount = 0;
                 var sumAddValue = 0f;
                 foreach (var addValue in kv.Value)
                 {
@@ -328,19 +244,15 @@ namespace Binance.Common.Tests
                     {
                         incCount++;
                     }
-                    else
-                    {
-                        descCount++;
-                    }
-                    sumAddValue += (addValue * 100);
+                    sumAddValue += addValue;
                 }
-                var sumPercent = sumAddValue / kv.Value.Count;
-                var probability = (float)incCount / (incCount + descCount);
-                if (MathF.Abs(sumPercent) > 0.035)
+                var aveValue = sumAddValue / kv.Value.Count;
+                var probability = (float)incCount / kv.Value.Count;
+                if (MathF.Abs(aveValue) > 0.005)
                 // if (probability > 0.56 || probability < 0.44)
                 {
                     // timeProb.Add(kv.Key, probability);
-                    output += ("时间点" + kv.Key + "\t上涨概率" + ToPercent(probability) + "\t涨幅" + CutDecim(sumPercent, 3) + "%\n");
+                    output += ("时间点" + kv.Key + "\t上涨概率" + ToPercent(probability) + "\t涨幅" + CutDecim(aveValue, 3) + "%\n");
                 }
             }
             LogMsg(symbol, output);
@@ -349,52 +261,53 @@ namespace Binance.Common.Tests
         public void AnalysePrevKline(string symbol)
         {
             // 每个时刻的涨跌情况
-            Dictionary<string, List<float>> prevAdd = new Dictionary<string, List<float>>();
+            Dictionary<string, List<float>> addDict = new Dictionary<string, List<float>>();
             var slist = Serializable2Data(symbol);
             for (int i = 3; i < slist.myKlines.Count; i++)
             {
                 var item = slist.myKlines[i];
                 var prevItem1 = slist.myKlines[i - 1];
-                // var prevItem2 = slist.myKlines[i-2];
-                // var key = UTC_START.AddMilliseconds(item.openTime + HOOUR_8).ToString("HH:mm");
-                var add1 = prevItem1.incPercent;
-                add1 *= 100;
-                add1 = add1 > 0.12f ? 0.12f : add1;
-                add1 = add1 < -0.12f ? -0.12f : add1;
-                var key = add1.ToString("f2");
-                if (!prevAdd.ContainsKey(key))
+                var prevItem2 = slist.myKlines[i - 2];
+                var prevItem3 = slist.myKlines[i - 3];
+                var sum1 = prevItem1.incPercent;
+                var sum2 = prevItem1.incPercent + prevItem2.incPercent;
+                var sum3 = prevItem1.incPercent + prevItem2.incPercent + prevItem3.incPercent;
+                var bigger = sum1 * sum1 > sum2 * sum2 ? sum1 : sum2;
+                bigger = bigger * bigger > sum2 * sum2 ? bigger : sum2;
+                // var maxSum = MathF.Max(Math.Abs(sum1), Math.Abs(sum2), Math.Abs(sum3));
+                if (Math.Abs(bigger) < 0.02)
                 {
-                    prevAdd.Add(key, new List<float>());
+                    continue;
                 }
-                prevAdd[key].Add(item.incPercent);
+                bigger = Math.Clamp(bigger, -0.07f, 0.07f);
+                var key = bigger.ToString("f2");
+                if (!addDict.ContainsKey(key))
+                {
+                    addDict.Add(key, new List<float>());
+                }
+                addDict[key].Add(item.incPercent);
             }
 
-            prevAdd = prevAdd.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+            addDict = addDict.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
             string output = "";
-            foreach (var kv in prevAdd)
+            foreach (var item in addDict)
             {
                 var incCount = 0;
-                var descCount = 0;
                 var sumAddValue = 0f;
-                foreach (var addValue in kv.Value)
+                foreach (var addValue in item.Value)
                 {
                     if (addValue > 0)
                     {
                         incCount++;
                     }
-                    else
-                    {
-                        descCount++;
-                    }
-                    sumAddValue += (addValue * 100);
+                    sumAddValue += (addValue);
                 }
-                var sumPercent = sumAddValue / kv.Value.Count;
-                var probability = (float)incCount / (incCount + descCount);
-                if (MathF.Abs(float.Parse(kv.Key)) > 0.07)
-                // if (MathF.Abs(sumPercent) > 0.01)
-                {
-                    output += ("前一条:" + ToPercent(kv.Key) + "\t上涨概率" + ToPercent(probability) + "\t涨幅" + ToPercent(sumPercent) + "\n");
-                }
+                var aveValue = sumAddValue / item.Value.Count;
+                var probability = (float)incCount / item.Value.Count;
+                // if (MathF.Abs(float.Parse(item.Key)) > 0.01f)
+                // {
+                output += ("前一条:" + ToPercent(item.Key) + "\tnum:" + item.Value.Count + "\t上涨概率" + ToPercent(probability) + "\t涨幅" + ToPercent(aveValue) + "\n");
+                // }
             }
             LogMsg(symbol, output);
         }
@@ -442,5 +355,89 @@ namespace Binance.Common.Tests
         //         // prevAdd[key].Add(addValue);
         //     }
         // }
+    }
+
+    [Serializable]
+    public class MyKline
+    {
+        public MyKline(JsonKline jk)
+        {
+            openTime = jk.openTime;
+            openPrice = jk.openPrice;
+            maxPrice = jk.maxPrice;
+            minPrice = jk.minPrice;
+            closePrice = jk.closePrice;
+            volume = jk.volume;
+            closeTime = jk.closeTime;
+            volumePrice = jk.volumePrice;
+            volumeCount = jk.volumeCount;
+            activeVolume = jk.activeVolume;
+            activeVolumePrice = jk.activeVolumePrice;
+
+
+            incPercent = (closePrice - openPrice) / openPrice;
+            maxIncPercent = (maxPrice - openPrice) / openPrice;
+            maxDescPercent = (minPrice - openPrice) / openPrice;
+            avePrice = volumePrice / volume;
+            volumePerHand = volumePrice / volumeCount;
+
+        }
+        public long openTime; // 开盘时间
+        public float openPrice; // 开盘价
+        public float maxPrice; // 最高价
+        public float minPrice; // 最低价
+        public float closePrice; // 收盘价
+        public float volume; // 成交量，手
+        public long closeTime; // 收盘时间
+        public float volumePrice; // 成交额，价值
+        public int volumeCount; // 成交笔数
+        public float activeVolume; // 主动成交量
+        public float activeVolumePrice; // 主动成交额
+
+        public float incPercent = 0f; // 涨幅
+        public float maxIncPercent = 0f; // 最大涨幅
+        public float maxDescPercent = 0f; // 最大跌幅
+        public float avePrice = 0f; // 平均价
+        public float volumePerHand = 0f; // 交易额/手
+    }
+
+    [Serializable]
+    public class KlineList
+    {
+        public List<MyKline> myKlines = new List<MyKline>();
+    }
+
+    [Serializable]
+    public class JsonKline
+    {
+
+        public JsonKline(string kJson = "")
+        {
+            // MyTest.LogMsg(kJson);
+            var jObj = JArray.Parse(kJson);
+            openTime = (long)jObj[0]; // 开盘时间
+            openPrice = (float)jObj[1]; // 开盘价
+            maxPrice = (float)jObj[2]; // 最高价
+            minPrice = (float)jObj[3]; // 最低价
+            closePrice = (float)jObj[4]; // 收盘价
+            volume = (float)jObj[5]; // 成交量，手
+            closeTime = (long)jObj[6]; // 收盘时间
+            volumePrice = (float)jObj[7]; // 成交额，价值
+            volumeCount = (int)jObj[8]; // 成交笔数
+            activeVolume = (float)jObj[9]; // 主动成交量
+            activeVolumePrice = (float)jObj[10]; // 主动成交额
+        }
+        public long openTime { get; set; }
+        public float openPrice { get; set; }
+        public float maxPrice { get; set; }
+        public float minPrice { get; set; }
+        public float closePrice { get; set; }
+        public float volume { get; set; }
+        public long closeTime { get; set; }
+        public float volumePrice { get; set; }
+        public int volumeCount { get; set; }
+        public float activeVolume { get; set; }
+        public float activeVolumePrice { get; set; }
+
     }
 }
