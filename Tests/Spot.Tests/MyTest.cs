@@ -89,9 +89,15 @@ namespace Binance.Common.Tests
                 // await thisobj.FetchKlineData(name);
                 // thisobj.Data2Readable(name);
                 // thisobj.Data2Serializable(name);
+
                 // thisobj.AnalyseTime(name);
                 // thisobj.AnalysePrevKline(name);
-                thisobj.AnalyseBigVolume(name);
+                
+                // undone
+                // thisobj.AnalysePrevN(name);
+                // thisobj.AnalyseBigVolume(name);
+                // thisobj.AnalyseTend(name);
+                // thisobj.AnalyseRelative(name);
 
             }
             Console.WriteLine("End 2222222");
@@ -201,6 +207,7 @@ namespace Binance.Common.Tests
                 var myobj = new MyKline(obj);
                 sList.myKlines.Add(myobj);
             }
+            sList.myKlines.Reverse();
             bf.Serialize(fileStream, sList);
             fileStream.Flush();
             fileStream.Close();
@@ -278,7 +285,62 @@ namespace Binance.Common.Tests
                 var bigger = sum1 * sum1 > sum2 * sum2 ? sum1 : sum2;
                 bigger = bigger * bigger > sum2 * sum2 ? bigger : sum2;
                 // var maxSum = MathF.Max(Math.Abs(sum1), Math.Abs(sum2), Math.Abs(sum3));
-                if (Math.Abs(bigger) < 0.03)
+                if (Math.Abs(bigger) < 0.02)
+                {
+                    continue;
+                }
+                bigger = Math.Clamp(bigger, -0.06f, 0.06f);
+                var key = bigger.ToString("f2");
+                if (!addDict.ContainsKey(key))
+                {
+                    addDict.Add(key, new List<float>());
+                }
+                addDict[key].Add(item.incPercent);
+            }
+
+            addDict = addDict.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+            string output = "";
+            foreach (var item in addDict)
+            {
+                var incCount = 0;
+                var sumAddValue = 0f;
+                foreach (var addValue in item.Value)
+                {
+                    if (addValue > 0)
+                    {
+                        incCount++;
+                    }
+                    sumAddValue += (addValue);
+                }
+                var aveValue = sumAddValue / item.Value.Count;
+                var probability = (float)incCount / item.Value.Count;
+                // if (MathF.Abs(float.Parse(item.Key)) > 0.01f)
+                // {
+                output += ("前一条:" + ToPercent(item.Key) + "\tnum:" + item.Value.Count + "\t上涨概率" + ToPercent(probability) + "\t涨幅" + ToPercent(aveValue) + "\n");
+                // }
+            }
+            LogMsg(symbol, output);
+        }
+        
+        // undone
+        public void AnalysePrevN(string symbol)
+        {
+            // 每个时刻的涨跌情况
+            Dictionary<string, List<float>> addDict = new Dictionary<string, List<float>>();
+            var slist = Serializable2Data(symbol);
+            for (int i = 50; i < slist.myKlines.Count; i++)
+            {
+                var item = slist.myKlines[i];
+                var prevItem1 = slist.myKlines[i - 1];
+                var prevItem2 = slist.myKlines[i - 2];
+                var prevItem3 = slist.myKlines[i - 3];
+                var sum1 = prevItem1.incPercent;
+                var sum2 = prevItem1.incPercent + prevItem2.incPercent;
+                var sum3 = prevItem1.incPercent + prevItem2.incPercent + prevItem3.incPercent;
+                var bigger = sum1 * sum1 > sum2 * sum2 ? sum1 : sum2;
+                bigger = bigger * bigger > sum2 * sum2 ? bigger : sum2;
+                // var maxSum = MathF.Max(Math.Abs(sum1), Math.Abs(sum2), Math.Abs(sum3));
+                if (Math.Abs(bigger) < 0.02)
                 {
                     continue;
                 }
@@ -329,12 +391,12 @@ namespace Binance.Common.Tests
         {
             var f = float.Parse(s);
             var sig = f > 0 ? "+" : "";
-            return sig + MathF.Round(f * 100, 2) + "%";
+            return sig + MathF.Round(f * 100, 3) + "%";
         }
         public string ToPercent(float f)
         {
             var sig = f > 0 ? "+" : "";
-            return sig + MathF.Round(f * 100, 2) + "%";
+            return sig + MathF.Round(f * 100, 3) + "%";
         }
 
         public void AnalyseBigVolume(string symbol)
@@ -347,8 +409,9 @@ namespace Binance.Common.Tests
                 var prevItem1 = slist.myKlines[i - 1];
                 var prevItem2 = slist.myKlines[i - 2];
                 var prevItem3 = slist.myKlines[i - 3];
-                var multiFactor = prevItem1.volumePerHand * 2 / (prevItem2.volumePerHand + prevItem3.volumePerHand);
-                if (multiFactor > 2)
+                var multiFactor = prevItem1.volume * 2 / (prevItem2.volume + prevItem3.volume);
+                // 交易量为2倍，涨幅超过0.5%
+                if (multiFactor > 2 && Math.Abs(prevItem1.incPercent) > 0.005)
                 {
                     var sig = prevItem1.isUp ? "+ x" : "- x";
                     multiFactor = Math.Min(multiFactor, 4);
@@ -357,21 +420,126 @@ namespace Binance.Common.Tests
                     {
                         prevVolume.Add(key, new List<float>());
                     }
-                    // var addValue = (item.closePrice - item.openPrice) / item.openPrice;
                     prevVolume[key].Add(item.incPercent);
                 }
-
             }
             prevVolume = prevVolume.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
             string output = "";
             foreach (var dictItem in prevVolume)
             {
 
-                var sum = dictItem.Value.Sum()/dictItem.Value.Count;
-                // foreach (var listItem in dictItem.Value)
-                // {
+                var sum = dictItem.Value.Sum() / dictItem.Value.Count;
+                if (Math.Abs(sum) > 0.0005)
+                {
+                    output += ($"{dictItem.Key} {ToPercent(sum)} count:{dictItem.Value.Count}\n");
+                }
+            }
+            LogMsg(symbol, output);
+        }
+        public void AnalyseTend(string symbol)
+        {
+            Dictionary<string, List<float>> count2inc = new Dictionary<string, List<float>>();
+            var slist = Serializable2Data(symbol);
+            for (int i = 10; i < slist.myKlines.Count; i++)
+            {
+                var item = slist.myKlines[i];
+                for (int count = 3; count <= 6; count++)
+                {
+                    var isContinuous = false;
+                    var firstSign = slist.myKlines[i - 1].incPercent;
+                    for (int j = 1; j <= count; j++)
+                    {
+                        var prev = slist.myKlines[i - j];
+                        if (firstSign * prev.incPercent < 0)
+                        {
+                            isContinuous = false;
+                            break;
+                        }
+                        else
+                        {
+                            firstSign += prev.incPercent;
+                        }
+                        if (j == count)
+                        {
+                            isContinuous = true;
+                        }
+                    }
+                    if (!isContinuous)
+                    {
+                        break;
+                    }
+                    else
+                    {
 
+                        // if (Math.Abs(firstSign) > 0.008)
+                        // {
+                            var key = (firstSign < 0 ? "-" : "+") + count;
+                            if (!count2inc.ContainsKey(key))
+                            {
+                                count2inc.Add(key, new List<float>());
+                            }
+                            count2inc[key].Add(item.incPercent);
+                        // }
+                    }
+
+                }
+
+            }
+            count2inc = count2inc.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+            string output = "";
+            foreach (var dictItem in count2inc)
+            {
+
+                var sum = dictItem.Value.Sum() / dictItem.Value.Count;
+                // if (Math.Abs(sum) > 0.0001)
+                // {
+                output += ($"{dictItem.Key} {ToPercent(sum)} count:{dictItem.Value.Count}\n");
                 // }
+            }
+            LogMsg(symbol, output);
+        }
+
+        // undone
+        public void AnalyseRelative(string symbol)
+        {
+            Dictionary<string, List<float>> inc2inc = new Dictionary<string, List<float>>();
+            var slist = Serializable2Data(symbol);
+            for (int i = 3; i < slist.myKlines.Count; i++)
+            {
+                var item = slist.myKlines[i];
+                var prevItem1 = slist.myKlines[i - 1];
+                if (Math.Abs(prevItem1.incPercent) > 0.002)
+                {
+                    var key = prevItem1.incPercent.ToString();
+                    if (!inc2inc.ContainsKey(key))
+                    {
+                        inc2inc.Add(key, new List<float>());
+                    }
+                    inc2inc[key].Add(item.incPercent);
+                }
+                // // var prevItem2 = slist.myKlines[i - 2];
+                // // var prevItem3 = slist.myKlines[i - 3];
+                // var multiFactor = prevItem1.volume * 2 / (prevItem2.volume + prevItem3.volume);
+                // // 交易量为2倍，涨幅超过0.5%
+                // if (multiFactor > 2 && Math.Abs(prevItem1.incPercent) > 0.005)
+                // {
+                //     var sig = prevItem1.isUp ? "+ x" : "- x";
+                //     multiFactor = Math.Min(multiFactor, 4);
+                //     var key = sig + CutDecim(multiFactor, 1);
+                //     if (!prevVolume.ContainsKey(key))
+                //     {
+                //         prevVolume.Add(key, new List<float>());
+                //     }
+                //     prevVolume[key].Add(item.incPercent);
+                // }
+            }
+            inc2inc = inc2inc.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+            string output = "";
+            foreach (var dictItem in inc2inc)
+            {
+
+                var sum = dictItem.Value.Sum() / dictItem.Value.Count;
+
                 if (Math.Abs(sum) > 0.0005)
                 {
                     output += ($"{dictItem.Key} {ToPercent(sum)} count:{dictItem.Value.Count}\n");
