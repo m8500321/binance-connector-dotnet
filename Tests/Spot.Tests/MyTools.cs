@@ -138,6 +138,42 @@ namespace Binance.Common.Tests
                 sList.myKlines.Add(myobj);
             }
             sList.myKlines.Reverse();
+            for (int i = 40; i < sList.myKlines.Count; i++)
+            {
+                var itemI = sList.myKlines[i];
+                var sumClose = 0f;
+                for (int j = 1; j <= 40; j++)
+                {
+                    var itemJ = sList.myKlines[i - j + 1];
+                    sumClose += itemJ.closePrice;
+                    var idx = -1;
+                    if (j == 5)
+                    {
+                        idx = 0;
+                    }
+                    else if (j == 10)
+                    {
+                        idx = 1;
+
+                    }
+                    else if (j == 20)
+                    {
+                        idx = 2;
+
+                    }
+                    else if (j == 40)
+                    {
+                        idx = 3;
+
+                    }
+                    if (idx > -1)
+                    {
+                        itemI.prevMaxList[idx] = Math.Max(itemI.prevMaxList[idx], itemJ.maxPrice);
+                        itemI.prevMinList[idx] = Math.Min(itemI.prevMinList[idx], itemJ.minPrice);
+                        itemI.prevAveCloseList[idx] = sumClose / j;
+                    }
+                }
+            }
             bf.Serialize(fileStream, sList);
             fileStream.Flush();
             fileStream.Close();
@@ -175,6 +211,24 @@ namespace Binance.Common.Tests
         {
             var sig = f > 0 ? "+" : "";
             return sig + MathF.Round(f * 100, 3) + "%";
+        }
+        // 百分数+绝对值,在范围内
+        static public float SimilarRate(float f1, float f2, float percent = 0.1f, float val = 0.001f)
+        {
+            var bigVal = Math.Max(Math.Abs(f1), Math.Abs(f2));
+            var diff = bigVal * percent + val;
+            // return f1 < f2 + diff && f1 > f2 - diff;
+            var maxDiff = Math.Abs(f1) * percent + val;
+            var curDiff = Math.Abs(f1 - f2);
+            if (curDiff > maxDiff)
+            {
+                return 0f;
+            }
+            else
+            {
+                var rt = 1 - curDiff / maxDiff;
+                return rt * rt;
+            }
         }
 
     }

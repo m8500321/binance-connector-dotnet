@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using Xunit.Abstractions;
 
 namespace Binance.Common.Tests
 {
@@ -59,8 +60,8 @@ namespace Binance.Common.Tests
             Console.WriteLine("Started 1111111");
             var thisobj = new MyTest();
 
-            long startMS = MyTools.MsFromUTC0(DateTime.UtcNow);
-
+            var startDt = DateTime.UtcNow;
+            long startMS = MyTools.MsFromUTC0(startDt);
             using var loggerFactory = LoggerFactory.Create(builder =>
             {
                 builder.AddConsole();
@@ -72,9 +73,9 @@ namespace Binance.Common.Tests
             // var symbols = new List<string> { "BTCUSDT", "ETHUSDT", "BNBUSDT" };
             foreach (var name in symbols)
             {
-                // await thisobj.FetchKlineData(name);
-                // thisobj.Data2Readable(name);
-                // thisobj.Data2Serializable(name);
+                // await MyTools.FetchKlineData(name);
+                // MyTools.Data2Readable(name);
+                // MyTools.Data2Serializable(name);
 
                 // thisobj.AnalyseTime(name);
                 // thisobj.AnalysePrevKline(name);
@@ -84,9 +85,8 @@ namespace Binance.Common.Tests
                 thisobj.AnalyseCurveMatch(name);
 
             }
-            MyTools.LogMsg($"运行耗时：{MyTools.MsFromUTC0(DateTime.UtcNow) - startMS / 1000}");
 
-            Console.WriteLine("End 2222222");
+            Console.WriteLine($"运行耗时：{DateTime.UtcNow - startDt}");
         }
 
 
@@ -193,7 +193,7 @@ namespace Binance.Common.Tests
         {
             Dictionary<string, List<float>> prevVolume = new Dictionary<string, List<float>>();
             var slist = MyTools.Serializable2Data(symbol);
-            for (int i = 3; i < slist.myKlines.Count; i++)
+            for (int i = 20; i < slist.myKlines.Count; i++)
             {
                 var item = slist.myKlines[i];
                 var prevItem1 = slist.myKlines[i - 1];
@@ -296,47 +296,61 @@ namespace Binance.Common.Tests
         // 曲线匹配
         public void AnalyseCurveMatch(string symbol)
         {
-            // 缓存前两条特征
-
             Dictionary<int, List<int>> cachePrev2 = new Dictionary<int, List<int>>();
             var slist = MyTools.Serializable2Data(symbol);
-            for (int i = 100; i < slist.myKlines.Count / 2; i++)
+            var PREV_WEIGHT = 10;
+            var MAX_WEIGHT = 4;
+            var AVE_WEIGHT = 6;
+            for (int i = 100; i < 1000; i++)
+            // for (int i = 100; i < slist.myKlines.Count / 2; i++)
             {
                 // 被匹配
                 for (int j = i + 20; j < slist.myKlines.Count; j++)
                 {
                     // 匹配项
-                    var isMatch = true;
-                    for (int idx = 0; idx < 5; idx++)
+                    // 相似度*权重
+                    var prevValue = 0f;
+                    for (int idx = 0; idx < 3; idx++)
                     {
-                        // 往前5条
-                        var itemI = slist.myKlines[i - idx];
-                        var itemJ = slist.myKlines[j - idx];
-                        var diff = Math.Max(Math.Abs(itemI.incPercent) * 0.15, 0.015 * 0.01);
-                        if (itemJ.incPercent < itemI.incPercent - diff || itemJ.incPercent > itemI.incPercent + diff)
-                        {
-                            isMatch = false;
-                            break;
-                        }
+                        // 往前2条
+                        var itemIPrev = slist.myKlines[i - idx];
+                        var itemJPrev = slist.myKlines[j - idx];
+                        var value = (PREV_WEIGHT - idx) * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, 0.15f, 0.5f * 0.01f);
+                        prevValue += value;
                     }
-                    if (isMatch)
+                    var itemI = slist.myKlines[i];
+                    var itemJ = slist.myKlines[j];
+                    // 最大最小值
+
+                    var maxValue = MAX_WEIGHT * MyTools.SimilarRate((itemI.prevMaxList[2] - itemI.closePrice) / itemI.closePrice, (itemJ.prevMaxList[2] - itemJ.closePrice) / itemJ.closePrice, 0.15f, 0.5f * 0.01f);
+                    var minValue = MAX_WEIGHT * MyTools.SimilarRate((itemI.prevMinList[2] - itemI.closePrice) / itemI.closePrice, (itemJ.prevMinList[2] - itemJ.closePrice) / itemJ.closePrice, 0.15f, 0.5f * 0.01f);
+                    // var prevAveMatch3 = MyTools.SimilarRate((itemI.prevAveCloseList[3] - itemI.closePrice) / itemI.closePrice, (itemJ.prevAveCloseList[3] - itemJ.closePrice) / itemJ.closePrice, 0.15f, 0.5f * 0.01f);
+                    var aveValue1 = AVE_WEIGHT * MyTools.SimilarRate((itemI.prevAveCloseList[2] - itemI.closePrice) / itemI.closePrice, (itemJ.prevAveCloseList[2] - itemJ.closePrice) / itemJ.closePrice, 0.15f, 0.5f * 0.01f);
+                    var aveValue2 = AVE_WEIGHT * MyTools.SimilarRate((itemI.prevAveCloseList[1] - itemI.closePrice) / itemI.closePrice, (itemJ.prevAveCloseList[1] - itemJ.closePrice) / itemJ.closePrice, 0.15f, 0.5f * 0.01f);
+                    var aveValue3 = AVE_WEIGHT * MyTools.SimilarRate((itemI.prevAveCloseList[0] - itemI.closePrice) / itemI.closePrice, (itemJ.prevAveCloseList[0] - itemJ.closePrice) / itemJ.closePrice, 0.15f, 0.5f * 0.01f);
+                    var sumValue = prevValue + maxValue + minValue + aveValue1 + aveValue2 + aveValue3;
+                    if (sumValue > 35)
                     {
                         if (!cachePrev2.ContainsKey(i))
                         {
                             cachePrev2.Add(i, new List<int>());
                             cachePrev2[i].Add(i);
+                            cachePrev2[i].Add((int)sumValue);
                         }
                         cachePrev2[i].Add(j);
+                        cachePrev2[i].Add((int)sumValue);
                     }
                 }
             }
+
             foreach (var item in cachePrev2)
             {
-                if (item.Value.Count < 6)
+                if (item.Value.Count < 100)
                 {
-                    cachePrev2[item.Key] = null;
+                    cachePrev2.Remove(item.Key);
                 }
             }
+            MyTools.LogMsg(symbol, $"总匹配量:{cachePrev2.Count}");
             // Dictionary<float, List<int>> similarIdx = new Dictionary<float, List<int>>();
 
 
@@ -355,20 +369,55 @@ namespace Binance.Common.Tests
             string output = "";
             foreach (var kvItem in cachePrev2)
             {
-                if (kvItem.Value == null)
+                // if (kvItem.Value == null)
+                // {
+                //     continue;
+                // }
+                var next1List = new List<float>();
+                var next2List = new List<float>();
+                var winCount1 = 0;
+                var winCount2 = 0;
+                var targetList = kvItem.Value;
+                // foreach (var item in targetList)
+                for (int i = 0; i < targetList.Count; i = i + 2)
+                // foreach (var item in targetList)
                 {
-                    continue;
+                    var item = targetList[i];
+                    if (slist.myKlines.Count <= item + 2)
+                    {
+                        continue;
+                    }
+                    var similar = targetList[i + 1];
+// todo deal sim
+
+
+
+
+                    next1List.Add(slist.myKlines[item + 1].incPercent);
+                    winCount1 += (slist.myKlines[item + 1].incPercent > 0 ? 1 : 0);
+                    var ave2 = slist.myKlines[item + 1].incPercent + slist.myKlines[item + 2].incPercent;
+                    next2List.Add(ave2);
+                    winCount2 += (ave2 > 0 ? 1 : 0);
+                    // var next0 = slist.myKlines[listItem + 0];
+                    // var next1 = slist.myKlines[listItem + 1];
+                    // var next2 = slist.myKlines[listItem + 2];
+                    // var next3 = slist.myKlines[listItem + 3];
+                    // output += ($"{listItem} \t0:{MyTools.ToPercent(next0.incPercent)} \t1:{MyTools.ToPercent(next1.incPercent)} \tave2:{MyTools.ToPercent(next1.incPercent + next2.incPercent)} \tave3:{MyTools.ToPercent(next1.incPercent + next2.incPercent + next3.incPercent)}\n");
                 }
-                foreach (var listItem in kvItem.Value)
+                var winRatio1 = (float)winCount1 / targetList.Count;
+                var highWin1 = winRatio1 > 0.6 || winRatio1 < 0.4;
+                var winRatio2 = (float)winCount2 / targetList.Count;
+                var highWin2 = winRatio2 > 0.6 || winRatio2 < 0.4;
+                var sum1 = next1List.Sum();
+                var sum2 = next2List.Sum();
+                if ((sum1 > 0.1 || sum1 < -0.1) && highWin1)
                 {
-
-                    var next0 = slist.myKlines[listItem + 0];
-                    var next1 = slist.myKlines[listItem + 1];
-                    var next2 = slist.myKlines[listItem + 2];
-                    output += ($"{listItem} \t0:{MyTools.ToPercent(next0.incPercent)} \t1:{MyTools.ToPercent(next1.incPercent)} \t2:{MyTools.ToPercent(next2.incPercent)} \tave:{MyTools.ToPercent(next2.incPercent + next1.incPercent)}\n");
+                    output += $"{kvItem.Key} count:{targetList.Count} next1 期望：{next1List.Sum()} 胜率：{winRatio1}\n";
                 }
-                output += kvItem.Value.Count + "\n------------------------------\n\n";
-
+                if ((sum2 > 0.1 || sum2 < -0.1) && highWin2)
+                {
+                    output += $"{kvItem.Key} count:{targetList.Count} next2 期望：{next2List.Sum()} 胜率：{winRatio2}\n";
+                }
             }
             // foreach (var dictItem in inc2inc)
             // {
