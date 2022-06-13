@@ -142,10 +142,14 @@ namespace Binance.Common.Tests
             {
                 var itemI = sList.myKlines[i];
                 var sumClose = 0f;
+                var sumPrice = 0f;
+                var sumVolume = 0f;
                 for (int j = 1; j <= 40; j++)
                 {
                     var itemJ = sList.myKlines[i - j + 1];
                     sumClose += itemJ.closePrice;
+                    sumPrice += itemJ.volumePrice;
+                    sumVolume += itemJ.volume;
                     var idx = -1;
                     if (j == 5)
                     {
@@ -168,6 +172,8 @@ namespace Binance.Common.Tests
                     }
                     if (idx > -1)
                     {
+                        itemI.prevAveVolumeList[idx] = sumVolume / j;
+                        itemI.prevAvePriceList[idx] = sumPrice / sumVolume;
                         itemI.prevMaxList[idx] = Math.Max(itemI.prevMaxList[idx], itemJ.maxPrice);
                         itemI.prevMinList[idx] = Math.Min(itemI.prevMinList[idx], itemJ.minPrice);
                         itemI.prevAveCloseList[idx] = sumClose / j;
@@ -204,31 +210,32 @@ namespace Binance.Common.Tests
         static public string ToPercent(string s)
         {
             var f = float.Parse(s);
-            var sig = f > 0 ? "+" : "";
-            return sig + MathF.Round(f * 100, 3) + "%";
+            // var sig = f > 0 ? "+" : "";
+            return MathF.Round(f * 100, 3) + "%";
         }
         static public string ToPercent(float f)
         {
-            var sig = f > 0 ? "+" : "";
-            return sig + MathF.Round(f * 100, 3) + "%";
+            // var sig = f > 0 ? "+" : "";
+            return MathF.Round(f * 100, 3) + "%";
         }
         // 百分数+绝对值,在范围内
         static public float SimilarRate(float f1, float f2, float percent = 0.1f, float val = 0.001f)
         {
-            var bigVal = Math.Max(Math.Abs(f1), Math.Abs(f2));
-            var diff = bigVal * percent + val;
+            // var bigVal = Math.Max(Math.Abs(f1), Math.Abs(f2));
+            // var diff = bigVal * percent + val;
             // return f1 < f2 + diff && f1 > f2 - diff;
             var maxDiff = Math.Abs(f1) * percent + val;
             var curDiff = Math.Abs(f1 - f2);
-            if (curDiff > maxDiff)
-            {
-                return 0f;
-            }
-            else
-            {
-                var rt = 1 - curDiff / maxDiff;
-                return rt * rt;
-            }
+            // if (curDiff > maxDiff)
+            // {
+            //     return 0f;
+            // }
+            // else
+            // {
+            var rt = 1 - curDiff / maxDiff;
+            // rt = (rt > 0 ? 1 : -1) * rt * rt;
+            return (float)Math.Max(rt, -0.5);
+            // }
         }
 
     }
