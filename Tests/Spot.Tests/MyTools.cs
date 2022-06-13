@@ -47,8 +47,7 @@ namespace Binance.Common.Tests
             {
                 output += (item + "\n");
             }
-            logger.LogInformation(output);
-            logger.LogInformation(new StackTrace(new StackFrame(1, true)).ToString());
+            logger.LogInformation(output + new StackTrace(new StackFrame(1, true)).ToString());
 
         }
 
@@ -232,9 +231,10 @@ namespace Binance.Common.Tests
             // }
             // else
             // {
-            var rt = 1 - curDiff / maxDiff;
-            // rt = (rt > 0 ? 1 : -1) * rt * rt;
-            return (float)Math.Max(rt, -0.5);
+            var s = 1 - curDiff / maxDiff;
+            s = (float)((s > 0 ? 1 : -1) * s * s);
+            // s = (float)(Math.Pow(s, 1.5));
+            return (float)Math.Max(s, -0.5);
             // }
         }
 
