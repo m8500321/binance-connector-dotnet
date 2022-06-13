@@ -47,7 +47,14 @@ namespace Binance.Common.Tests
             {
                 output += (item + "\n");
             }
-            logger.LogInformation(output + new StackTrace(new StackFrame(1, true)).ToString());
+            output += new StackTrace(new StackFrame(1, true)).ToString();
+            logger.LogInformation(output);
+            using (StreamWriter sw = new StreamWriter(dataDir + "log.txt", true))
+            {
+                sw.WriteLine("\n\n" + DateTime.Now);
+                sw.Write(output);
+
+            }
 
         }
 
@@ -234,7 +241,7 @@ namespace Binance.Common.Tests
             var s = 1 - curDiff / maxDiff;
             s = (float)((s > 0 ? 1 : -1) * s * s);
             // s = (float)(Math.Pow(s, 1.5));
-            return (float)Math.Max(s, -0.5);
+            return (float)Math.Max(s, -1);
             // }
         }
 
