@@ -82,6 +82,16 @@ namespace Binance.Common.Tests
     public class KlineList
     {
         public List<MyKline> myKlines = new List<MyKline>();
+        public float FollowingInc(int idx, int len)
+        {
+            var sum = 0f;
+            for (int i = idx; i < idx + len; i++)
+            {
+                sum += myKlines[idx].incPercent;
+            }
+            return sum;
+        }
+
     }
 
 

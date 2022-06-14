@@ -69,23 +69,30 @@ namespace Binance.Common.Tests
             MyTools.logger = loggerFactory.CreateLogger("");
 
             // "BTCUSDT" "ETHUSDT" "BNBUSDT"
+            var tasks = new List<Task>();
             // var symbols = new List<string> { "BTCUSDT" };
             var symbols = new List<string> { "BTCUSDT", "ETHUSDT", "BNBUSDT" };
             foreach (var name in symbols)
             {
-                // await MyTools.FetchKlineData(name);
-                // MyTools.Data2Readable(name);
-                // MyTools.Data2Serializable(name);
+                Task t = Task.Run(() =>
+                    {
 
-                // thisobj.AnalyseTime(name);
-                // thisobj.AnalysePrevKline(name);
+                        // await MyTools.FetchKlineData(name);
+                        // MyTools.Data2Readable(name);
+                        // MyTools.Data2Serializable(name);
 
-                // thisobj.AnalyseBigVolume(name);
-                // thisobj.AnalyseTend(name);
-                thisobj.AnalyseCurveMatch(name);
+                        // thisobj.AnalyseTime(name);
+                        // thisobj.AnalysePrevKline(name);
 
+                        // thisobj.AnalyseBigVolume(name);
+                        // thisobj.AnalyseTend(name);
+                        thisobj.AnalyseCurveMatch(name);
+                        // thisobj.TestRandomInc(name);
+                    });
+
+                tasks.Add(t);
             }
-
+            Task.WaitAll(tasks.ToArray());
             Console.WriteLine($"运行耗时：{DateTime.UtcNow - startDt}");
         }
 
@@ -291,6 +298,57 @@ namespace Binance.Common.Tests
             MyTools.LogMsg(symbol, output);
         }
 
+        // 70-25% 100-13%
+        public void TestRandomInc(string symbol)
+        {
+            Dictionary<int, List<int>> cachePrev2 = new Dictionary<int, List<int>>();
+            var slist = MyTools.Serializable2Data(symbol);
+
+            Random random = new Random();
+            var output = symbol;
+            var count = 0;
+            var checkCount = 100;
+            for (int i = 0; i < 1000; i++)
+            {
+                var nextList = new List<float>();
+                var nextList2 = new List<float>();
+                var addCount = 0f;
+                var addCount2 = 0f;
+                int r = random.Next(100, 30000);
+                for (int j = 0; j < checkCount; j += 5)
+                {
+                    var idx = r + i * checkCount + j;
+                    var item = slist.myKlines[idx];
+                    nextList.Add(item.incPercent);
+                    var sum = slist.FollowingInc(idx, 2);
+                    nextList2.Add(sum);
+                    if (item.incPercent > 0)
+                    {
+                        addCount++;
+                    }
+                    if (sum > 0)
+                    {
+                        addCount2++;
+                    }
+                }
+                var rate = addCount / checkCount;
+                var rate2 = addCount2 / checkCount;
+                var e = nextList.Sum() / checkCount;
+                var e2 = nextList2.Sum() / checkCount;
+                if ((e > 0.04f * 0.01 || e < -0.04f * 0.01) && (rate > 0.57 || rate < 0.43))
+                {
+                    output += $"\n{i} e1:{MyTools.ToPercent(e)} rate:{MyTools.ToPercent(rate)}";
+                    count++;
+                }
+                if ((e2 > 0.04f * 0.01 || e2 < -0.04f * 0.01) && (rate2 > 0.57 || rate2 < 0.43))
+                {
+                    output += $"\n{i} e2:{MyTools.ToPercent(e2)} rate:{MyTools.ToPercent(rate2)}";
+                    count++;
+                }
+            }
+            MyTools.LogMsg(output + "\ncount:" + count);
+
+        }
         // 0.01-0.30
         // 最低0.01，最高10%
         // 曲线匹配
@@ -321,7 +379,7 @@ namespace Binance.Common.Tests
             };
             var s_range = args["similar_range"];
             var s_val = args["similar_val"];
-            for (int i = 100; i < 500; i++)
+            for (int i = 2000; i < 3000; i++)
             // for (int i = 100; i < slist.myKlines.Count / 2; i++)
             {
                 // 被匹配
@@ -365,7 +423,7 @@ namespace Binance.Common.Tests
 
                     minValue1 = (args["max_weight"] - args["max_weight_down"]) * MyTools.SimilarRate((itemI.prevMinList[1] - closeI) / closeI, (itemJ.prevMinList[1] - closeJ) / closeJ, s_range * 1.5f, s_val);
                     maxValue1 = (args["max_weight"] - args["max_weight_down"]) * MyTools.SimilarRate((itemI.prevMaxList[1] - closeI) / closeI, (itemJ.prevMaxList[1] - closeJ) / closeJ, s_range * 1.5f, s_val);
-                    
+
                     minValue2 = (args["max_weight"] - 0) * MyTools.SimilarRate((itemI.prevMinList[2] - closeI) / closeI, (itemJ.prevMinList[2] - closeJ) / closeJ, s_range * 1.5f, s_val);
                     maxValue2 = (args["max_weight"] - 0) * MyTools.SimilarRate((itemI.prevMaxList[2] - closeI) / closeI, (itemJ.prevMaxList[2] - closeJ) / closeJ, s_range * 1.5f, s_val);
 
@@ -388,7 +446,7 @@ namespace Binance.Common.Tests
                         cachePrev2[i].Add((int)sumValue);
                     }
                 }
-                if (cachePrev2.ContainsKey(i) && cachePrev2[i].Count < 100)
+                if (cachePrev2.ContainsKey(i) && cachePrev2[i].Count < 200)
                 {
                     cachePrev2.Remove(i);
                 }
@@ -416,7 +474,8 @@ namespace Binance.Common.Tests
                     var similar = (float)targetList[i + 1] / args["need_weight"];
                     // var similar = 1;
                     next1List.Add(slist.myKlines[item + 1].incPercent * similar);
-                    var ave2 = slist.myKlines[item + 1].incPercent + slist.myKlines[item + 2].incPercent;
+                    var ave2 = slist.FollowingInc(item + 1, 2);
+                    // var ave2 = slist.myKlines[item + 1].incPercent + slist.myKlines[item + 2].incPercent;
                     next2List.Add(ave2 * similar);
                     // similar = (float)Math.Pow(similar, 1.5);
                     winCount1 += (slist.myKlines[item + 1].incPercent > 0 ? similar : 0);

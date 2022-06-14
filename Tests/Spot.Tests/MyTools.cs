@@ -32,7 +32,8 @@ namespace Binance.Common.Tests
         static string apiKey = "Sud7YtqxuBnwKDJZ7zgnGlZuOxssZ5QzrtvhkL7CfHMfP0fWglYzMScttIDsJ42v";
         static string apiSecret = "QnU7QZwESqUnsuwYrs8KESVBXo4W8zgERMukgUhj9DR8phoY43WQZ0TjZgbbYbs9";
         static public ILogger logger;
-        static public string dataDir = System.Environment.CurrentDirectory.Replace("\\", "/").Replace("Tests/Spot.Tests", "datas/");
+        private static readonly object LOCK = new object();
+        static private string dataDir = System.Environment.CurrentDirectory.Replace("\\", "/").Replace("Tests/Spot.Tests", "datas/");
         /// </summary>
         static private DateTime UTC_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         static readonly int HOOUR8_MS = 8 * 60 * 60 * 1000;
@@ -49,11 +50,12 @@ namespace Binance.Common.Tests
             }
             output += new StackTrace(new StackFrame(1, true)).ToString();
             logger.LogInformation(output);
-            using (StreamWriter sw = new StreamWriter(dataDir + "log.txt", true))
+            lock (LOCK)
             {
-                sw.WriteLine("\n\n" + DateTime.Now);
-                sw.Write(output);
-
+                using (StreamWriter sw = new StreamWriter(dataDir + "log.txt", true))
+                {
+                    sw.Write("\n\n" + DateTime.Now + "\n" + output);
+                }
             }
 
         }
