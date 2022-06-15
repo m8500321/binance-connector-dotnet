@@ -86,7 +86,8 @@ namespace Binance.Common.Tests
 
                         // thisobj.AnalyseBigVolume(name);
                         // thisobj.AnalyseTend(name);
-                        thisobj.AnalyseCurveMatch(name);
+                        // thisobj.AnalyseCurveMatch(name);
+                        thisobj.AnalyseCurveMatch2(name);
                         // thisobj.TestRandomInc(name);
                     });
 
@@ -298,7 +299,7 @@ namespace Binance.Common.Tests
             MyTools.LogMsg(symbol, output);
         }
 
-        // 70-25% 100-13%
+        // 70-25% 100-13% ；100 0.04 60% - 6%
         public void TestRandomInc(string symbol)
         {
             Dictionary<int, List<int>> cachePrev2 = new Dictionary<int, List<int>>();
@@ -315,7 +316,7 @@ namespace Binance.Common.Tests
                 var addCount = 0f;
                 var addCount2 = 0f;
                 int r = random.Next(100, 30000);
-                for (int j = 0; j < checkCount; j += 5)
+                for (int j = 0; j < checkCount * 5; j += 5)
                 {
                     var idx = r + i * checkCount + j;
                     var item = slist.myKlines[idx];
@@ -335,12 +336,12 @@ namespace Binance.Common.Tests
                 var rate2 = addCount2 / checkCount;
                 var e = nextList.Sum() / checkCount;
                 var e2 = nextList2.Sum() / checkCount;
-                if ((e > 0.04f * 0.01 || e < -0.04f * 0.01) && (rate > 0.57 || rate < 0.43))
+                if ((e > 0.04f * 0.01 || e < -0.04f * 0.01) && (rate > 0.6 || rate < 0.4))
                 {
                     output += $"\n{i} e1:{MyTools.ToPercent(e)} rate:{MyTools.ToPercent(rate)}";
                     count++;
                 }
-                if ((e2 > 0.04f * 0.01 || e2 < -0.04f * 0.01) && (rate2 > 0.57 || rate2 < 0.43))
+                if ((e2 > 0.04f * 0.01 || e2 < -0.04f * 0.01) && (rate2 > 0.6 || rate2 < 0.4))
                 {
                     output += $"\n{i} e2:{MyTools.ToPercent(e2)} rate:{MyTools.ToPercent(rate2)}";
                     count++;
@@ -352,34 +353,181 @@ namespace Binance.Common.Tests
         // 0.01-0.30
         // 最低0.01，最高10%
         // 曲线匹配
-        public void AnalyseCurveMatch(string symbol)
+        // public void AnalyseCurveMatch(string symbol)
+        // {
+        //     Dictionary<int, List<int>> cachePrev2 = new Dictionary<int, List<int>>();
+        //     var slist = MyTools.Serializable2Data(symbol);
+        //     var args = new Dictionary<string, float>()
+        //     {
+        //         {"prev_weight",8f},
+        //         {"prev_weight_down",1f},
+        //         {"max_weight",3f},
+        //         {"max_weight_down",3f},
+        //         {"price_weight",3f},
+        //         {"price_weight_down",1f},
+        //         {"close_weight",4f},
+        //         {"close_weight_down",1f},
+        //         {"volume_weight",2f},
+
+        //         {"need_weight",33f},
+        //         {"similar_range",0.1f},
+        //         {"similar_val",0.002f},
+        //     };
+        //     var s_range = args["similar_range"];
+        //     var s_val = args["similar_val"];
+        //     for (int i = 3000; i < 4000; i = i + 2)
+        //     // for (int i = 100; i < slist.myKlines.Count / 2; i++)
+        //     {
+        //         // 被匹配
+        //         for (int j = i + 20; j < slist.myKlines.Count; j++)
+        //         {
+        //             // 匹配项
+        //             // 相似度*权重
+
+        //             var prevValue = 0f;
+        //             var itemI = slist.myKlines[i];
+        //             var closeI = itemI.closePrice;
+        //             var itemJ = slist.myKlines[j];
+        //             var closeJ = itemJ.closePrice;
+        //             for (int idx = 1; idx < 5; idx++)
+        //             {
+        //                 // 往前2条
+        //                 var itemIPrev = slist.myKlines[i - idx];
+        //                 var itemJPrev = slist.myKlines[j - idx];
+        //                 var value = (args["prev_weight"] - idx * args["prev_weight_down"]) * MyTools.SimilarRate((itemIPrev.closePrice - closeI) / closeI, (itemJPrev.closePrice - closeJ) / closeJ, s_range, s_val, idx * 0.1f + 1);
+        //                 var value2 = (args["prev_weight"] - idx * args["prev_weight_down"]) * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, s_range, s_val, idx * 0.1f + 1);
+        //                 // var value = (args["prev_weight"] - idx * 2f) * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, s_range, s_val);
+        //                 prevValue += (value + value2);
+        //             }
+        //             var minValue2 = 0f;
+        //             var minValue1 = 0f;
+        //             var maxValue2 = 0f;
+        //             var maxValue1 = 0f;
+
+        //             var volumeRate = 0f;
+        //             // volumeRate = (args["volume_weight"] - 0) * MyTools.SimilarRate(itemI.prevAveVolumeList[0] / itemI.prevAveVolumeList[2], itemJ.prevAveVolumeList[0] / itemJ.prevAveVolumeList[2], s_range, s_val, 2f);
+
+        //             minValue1 = (args["max_weight"]) * MyTools.SimilarRate((itemI.prevMinList[1] - closeI) / closeI, (itemJ.prevMinList[1] - closeJ) / closeJ, s_range, s_val, 1.5f);
+        //             maxValue1 = (args["max_weight"]) * MyTools.SimilarRate((itemI.prevMaxList[1] - closeI) / closeI, (itemJ.prevMaxList[1] - closeJ) / closeJ, s_range, s_val, 1.5f);
+
+        //             minValue2 = (args["max_weight"] - 0) * MyTools.SimilarRate((itemI.prevMinList[2] - closeI) / closeI, (itemJ.prevMinList[2] - closeJ) / closeJ, s_range, s_val, 1.5f);
+        //             maxValue2 = (args["max_weight"] - 0) * MyTools.SimilarRate((itemI.prevMaxList[2] - closeI) / closeI, (itemJ.prevMaxList[2] - closeJ) / closeJ, s_range, s_val, 1.5f);
+
+        //             var avePrice2 = 0f;
+        //             var avePrice1 = 0f;
+        //             var avePrice0 = 0f;
+        //             avePrice2 = (args["price_weight"] - 2 * args["price_weight_down"]) * MyTools.SimilarRate((itemI.prevAvePriceList[2] - closeI) / closeI, (itemJ.prevAvePriceList[2] - closeJ) / closeJ, s_range, s_val);
+        //             avePrice1 = (args["price_weight"] - 1 * args["price_weight_down"]) * MyTools.SimilarRate((itemI.prevAvePriceList[1] - closeI) / closeI, (itemJ.prevAvePriceList[1] - closeJ) / closeJ, s_range, s_val);
+        //             avePrice0 = (args["price_weight"] - 0 * args["price_weight_down"]) * MyTools.SimilarRate((itemI.prevAvePriceList[0] - closeI) / closeI, (itemJ.prevAvePriceList[0] - closeJ) / closeJ, s_range, s_val);
+
+        //             var aveValue3 = 0f;
+        //             aveValue3 = (args["close_weight"] - 3 * args["close_weight_down"]) * MyTools.SimilarRate((itemI.prevAveCloseList[3] - closeI) / closeI, (itemJ.prevAveCloseList[3] - closeJ) / closeJ, s_range, s_val, 1.5f);
+        //             var aveValue2 = (args["close_weight"] - 2 * args["close_weight_down"]) * MyTools.SimilarRate((itemI.prevAveCloseList[2] - closeI) / closeI, (itemJ.prevAveCloseList[2] - closeJ) / closeJ, s_range, s_val);
+        //             var aveValue1 = (args["close_weight"] - 1 * args["close_weight_down"]) * MyTools.SimilarRate((itemI.prevAveCloseList[1] - closeI) / closeI, (itemJ.prevAveCloseList[1] - closeJ) / closeJ, s_range, s_val);
+        //             var aveValue0 = (args["close_weight"] - 0 * args["close_weight_down"]) * MyTools.SimilarRate((itemI.prevAveCloseList[0] - closeI) / closeI, (itemJ.prevAveCloseList[0] - closeJ) / closeJ, s_range, s_val);
+        //             var sumValue = volumeRate + prevValue + maxValue1 + minValue1 + maxValue2 + minValue2 + avePrice0 + avePrice1 + avePrice2 + aveValue0 + aveValue1 + aveValue2 + aveValue3;
+        //             if (sumValue > 0)
+        //             {
+        //                 if (!cachePrev2.ContainsKey(i))
+        //                 {
+        //                     cachePrev2.Add(i, new List<int>());
+        //                 }
+        //                 cachePrev2[i].Add(j);
+        //                 cachePrev2[i].Add((int)sumValue);
+        //             }
+        //         }
+        //         if (cachePrev2.ContainsKey(i) && cachePrev2[i].Count < 200)
+        //         {
+        //             cachePrev2.Remove(i);
+        //         }
+        //     }
+        //     // MyTools.LogMsg(symbol, $"总匹配量:{cachePrev2.Count}");
+        //     string output = "";
+        //     var countAll = 0f;
+        //     foreach (var kvItem in cachePrev2)
+        //     {
+        //         var next1List = new List<float>();
+        //         var next2List = new List<float>();
+        //         var winCount1 = 0f;
+        //         var winCount2 = 0f;
+        //         var loseCount1 = 0f;
+        //         var loseCount2 = 0f;
+        //         var targetList = kvItem.Value;
+        //         // foreach (var item in targetList)
+        //         for (int i = 0; i < targetList.Count; i = i + 2)
+        //         {
+        //             var item = targetList[i];
+        //             if (slist.myKlines.Count <= item + 2)
+        //             {
+        //                 continue;
+        //             }
+        //             var weight = 1f;
+        //             weight = (float)targetList[i + 1] / args["need_weight"] - 0.5f;
+        //             // weight = Math.Min(weight, 1f);
+        //             next1List.Add(slist.myKlines[item + 1].incPercent * weight);
+        //             var ave2 = slist.FollowingInc(item + 1, 2);
+        //             next2List.Add(ave2 * weight);
+        //             // similar = (float)Math.Pow(similar, 1.5);
+        //             winCount1 += (slist.myKlines[item + 1].incPercent > 0 ? weight : 0);
+        //             loseCount1 += (slist.myKlines[item + 1].incPercent < 0 ? weight : 0);
+        //             winCount2 += (ave2 > 0 ? weight : 0);
+        //             loseCount2 += (ave2 < 0 ? weight : 0);
+        //         }
+        //         var itemCount = targetList.Count / 2;
+        //         var weightCount1 = (winCount1 + loseCount1);
+        //         var weightCount2 = (winCount2 + loseCount2);
+        //         var winRatio1 = (float)winCount1 / weightCount1;
+        //         var winDelta = 0.08f;
+        //         var eDelta = 0.04f * 0.01;
+        //         var highWin1 = winRatio1 > 0.5 + winDelta || winRatio1 < 0.5 - winDelta;
+        //         var winRatio2 = (float)winCount2 / weightCount2;
+        //         var highWin2 = winRatio2 > 0.5 + winDelta || winRatio2 < 0.5 - winDelta;
+        //         var sum1 = next1List.Sum() / weightCount1;
+        //         var sum2 = next2List.Sum() / weightCount2;
+        //         if ((sum1 > eDelta || sum1 < -eDelta) && highWin1)
+        //         {
+        //             output += $"{kvItem.Key} count:{itemCount} w:{weightCount1} [1]涨幅:{MyTools.ToPercent(sum1)} 胜率:{MyTools.ToPercent(winRatio1)}\n";
+        //             countAll++;
+        //         }
+        //         if ((sum2 > eDelta || sum2 < -eDelta) && highWin2)
+        //         {
+        //             output += $"{kvItem.Key} count:{itemCount} w:{weightCount2} [2]涨幅:{MyTools.ToPercent(sum2)} 胜率:{MyTools.ToPercent(winRatio2)}\n";
+        //             countAll++;
+        //         }
+        //     }
+        //     var argStr = "";
+        //     foreach (var item in args)
+        //     {
+        //         argStr += (item.Key + ":" + MyTools.CutDecim(item.Value, 3) + ", ");
+        //     }
+        //     var title = "优质数:" + countAll + "\t优质率:" + MyTools.ToPercent(countAll / cachePrev2.Count);
+
+        //     MyTools.LogMsg(symbol, $"总匹配量:{cachePrev2.Count}", argStr, title, output);
+        // }
+        // 精准匹配
+        public void AnalyseCurveMatch2(string symbol)
         {
             Dictionary<int, List<int>> cachePrev2 = new Dictionary<int, List<int>>();
             var slist = MyTools.Serializable2Data(symbol);
-            // var args["prev_weight"] = 10f;
-            // var args["max_weight"] = 6f;
-            // var args["close_weight"] = 5f;
-            // var args["price_weight"] = 5f;
-            // var args["volume_weight"] = 2f;
-            // var args["need_weight"] = 28f;
             var args = new Dictionary<string, float>()
             {
-                {"prev_weight",10f},
-                {"prev_weight_down",2f},
-                {"max_weight",6f},
+                {"prev_weight",7f},
+                {"prev_weight_down",1f},
+                {"max_weight",3f},
                 {"max_weight_down",3f},
-                {"price_weight",5f},
+                {"price_weight",2.5f},
                 {"price_weight_down",1f},
-                {"close_weight",5f},
+                {"close_weight",2.5f},
                 {"close_weight_down",1f},
                 {"volume_weight",2f},
-                {"need_weight",28f},
+
+                {"need_weight",35f},
                 {"similar_range",0.1f},
                 {"similar_val",0.002f},
             };
             var s_range = args["similar_range"];
             var s_val = args["similar_val"];
-            for (int i = 2000; i < 3000; i++)
+            for (int i = 3000; i < 6000; i = i + 2)
             // for (int i = 100; i < slist.myKlines.Count / 2; i++)
             {
                 // 被匹配
@@ -398,45 +546,44 @@ namespace Binance.Common.Tests
                         // 往前2条
                         var itemIPrev = slist.myKlines[i - idx];
                         var itemJPrev = slist.myKlines[j - idx];
-                        var value = (args["prev_weight"] - idx * args["prev_weight_down"]) * MyTools.SimilarRate((itemIPrev.closePrice - closeI) / closeI, (itemJPrev.closePrice - closeJ) / closeJ, s_range, s_val);
-                        // var value = (args["prev_weight"] - idx * 2f) * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, s_range, s_val);
-                        prevValue += value;
+                        var value1 = (args["prev_weight"] - idx * args["prev_weight_down"]) * MyTools.SimilarValue(closeI, itemIPrev.closePrice, closeJ, itemJPrev.closePrice, s_range, s_val);
+                        var value2 = (args["prev_weight"] - idx * args["prev_weight_down"]) * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, s_range, s_val);
+                        prevValue += (value1 + value2);
                     }
-                    var minValue2 = 0f;
+                    var volumeRate0 = 0f;
+                    var volumeRate1 = 0f;
+                    volumeRate0 = (args["volume_weight"]) * MyTools.SimilarValue(itemI.prevAveVolumeList[0], itemI.prevAveVolumeList[1], itemJ.prevAveVolumeList[0], itemJ.prevAveVolumeList[1], s_range, s_val);
+                    volumeRate1 = (args["volume_weight"]) * MyTools.SimilarValue(itemI.prevAveVolumeList[1], itemI.prevAveVolumeList[2], itemJ.prevAveVolumeList[1], itemJ.prevAveVolumeList[2], s_range, s_val);
+
                     var minValue1 = 0f;
-                    var maxValue2 = 0f;
                     var maxValue1 = 0f;
-                    // if (Math.Abs(itemI.prevMaxList[2] - closeI) > Math.Abs(itemI.prevMinList[2] - closeI))
-                    // {
-                    //     // 距离max更远，用min
-                    //     minValue2 = (args["max_weight"] - 0) * MyTools.SimilarRate((itemI.prevMinList[2] - closeI) / closeI, (itemJ.prevMinList[2] - closeJ) / closeJ, s_range * 1.5f, s_val);
-                    //     // minValue1 = (args["max_weight"]) * MyTools.SimilarRate((itemI.prevMinList[1] - closeI) / closeI, (itemJ.prevMinList[1] - closeJ) / closeJ, s_range*1.5f, s_val);
-                    // }
-                    // else
-                    // {
-                    //     maxValue2 = (args["max_weight"] - 0) * MyTools.SimilarRate((itemI.prevMaxList[2] - closeI) / closeI, (itemJ.prevMaxList[2] - closeJ) / closeJ, s_range * 1.5f, s_val);
-                    //     // maxValue1 = (args["max_weight"]) * MyTools.SimilarRate((itemI.prevMaxList[1] - closeI) / closeI, (itemJ.prevMaxList[1] - closeJ) / closeJ, s_range*1.5f, s_val);
-                    // }
+                    var minValue2 = 0f;
+                    var maxValue2 = 0f;
+                    minValue1 = (args["max_weight"]) * MyTools.SimilarValue(closeI, itemI.prevMinList[1], closeJ, itemJ.prevMinList[1], s_range, s_val);
+                    maxValue1 = (args["max_weight"]) * MyTools.SimilarValue(closeI, itemI.prevMaxList[1], closeJ, itemJ.prevMaxList[1], s_range, s_val);
+                    minValue2 = (args["max_weight"]) * MyTools.SimilarValue(closeI, itemI.prevMinList[2], closeJ, itemJ.prevMinList[2], s_range, s_val);
+                    maxValue2 = (args["max_weight"]) * MyTools.SimilarValue(closeI, itemI.prevMaxList[2], closeJ, itemJ.prevMaxList[2], s_range, s_val);
 
-                    var volumeRate = (args["volume_weight"] - 0) * MyTools.SimilarRate(itemI.prevAveVolumeList[0] / itemI.prevAveVolumeList[2], itemJ.prevAveVolumeList[0] / itemJ.prevAveVolumeList[2], s_range * 2f, s_val);
-                    // var volumeRate = 0;
+                    var avePrice3 = 0f;
+                    var avePrice2 = 0f;
+                    var avePrice1 = 0f;
+                    var avePrice0 = 0f;
+                    avePrice3 = (args["price_weight"]) * MyTools.SimilarValue(closeI, itemI.prevAvePriceList[3], closeJ, itemJ.prevAvePriceList[3], s_range, s_val);
+                    avePrice2 = (args["price_weight"]) * MyTools.SimilarValue(closeI, itemI.prevAvePriceList[2], closeJ, itemJ.prevAvePriceList[2], s_range, s_val);
+                    avePrice1 = (args["price_weight"]) * MyTools.SimilarValue(closeI, itemI.prevAvePriceList[1], closeJ, itemJ.prevAvePriceList[1], s_range, s_val);
+                    avePrice0 = (args["price_weight"]) * MyTools.SimilarValue(closeI, itemI.prevAvePriceList[0], closeJ, itemJ.prevAvePriceList[0], s_range, s_val);
 
-                    minValue1 = (args["max_weight"] - args["max_weight_down"]) * MyTools.SimilarRate((itemI.prevMinList[1] - closeI) / closeI, (itemJ.prevMinList[1] - closeJ) / closeJ, s_range * 1.5f, s_val);
-                    maxValue1 = (args["max_weight"] - args["max_weight_down"]) * MyTools.SimilarRate((itemI.prevMaxList[1] - closeI) / closeI, (itemJ.prevMaxList[1] - closeJ) / closeJ, s_range * 1.5f, s_val);
+                    var aveValue3 = 0f;
+                    var aveValue2 = 0f;
+                    var aveValue1 = 0f;
+                    var aveValue0 = 0f;
+                    aveValue3 = (args["close_weight"]) * MyTools.SimilarValue(closeI, itemI.prevAveCloseList[3], closeJ, itemJ.prevAveCloseList[3], s_range, s_val);
+                    aveValue2 = (args["close_weight"]) * MyTools.SimilarValue(closeI, itemI.prevAveCloseList[2], closeJ, itemJ.prevAveCloseList[2], s_range, s_val);
+                    aveValue1 = (args["close_weight"]) * MyTools.SimilarValue(closeI, itemI.prevAveCloseList[1], closeJ, itemJ.prevAveCloseList[1], s_range, s_val);
+                    aveValue0 = (args["close_weight"]) * MyTools.SimilarValue(closeI, itemI.prevAveCloseList[0], closeJ, itemJ.prevAveCloseList[0], s_range, s_val);
 
-                    minValue2 = (args["max_weight"] - 0) * MyTools.SimilarRate((itemI.prevMinList[2] - closeI) / closeI, (itemJ.prevMinList[2] - closeJ) / closeJ, s_range * 1.5f, s_val);
-                    maxValue2 = (args["max_weight"] - 0) * MyTools.SimilarRate((itemI.prevMaxList[2] - closeI) / closeI, (itemJ.prevMaxList[2] - closeJ) / closeJ, s_range * 1.5f, s_val);
-
-                    var avePrice2 = (args["price_weight"] - 2 * args["price_weight_down"]) * MyTools.SimilarRate((itemI.prevAvePriceList[2] - closeI) / closeI, (itemJ.prevAvePriceList[2] - closeJ) / closeJ, s_range, s_val);
-                    var avePrice1 = (args["price_weight"] - 1 * args["price_weight_down"]) * MyTools.SimilarRate((itemI.prevAvePriceList[1] - closeI) / closeI, (itemJ.prevAvePriceList[1] - closeJ) / closeJ, s_range, s_val);
-                    var avePrice0 = (args["price_weight"] - 0 * args["price_weight_down"]) * MyTools.SimilarRate((itemI.prevAvePriceList[0] - closeI) / closeI, (itemJ.prevAvePriceList[0] - closeJ) / closeJ, s_range, s_val);
-
-                    var aveValue3 = (args["close_weight"] - 3 * args["close_weight_down"]) * MyTools.SimilarRate((itemI.prevAveCloseList[3] - closeI) / closeI, (itemJ.prevAveCloseList[3] - closeJ) / closeJ, s_range, s_val);
-                    var aveValue2 = (args["close_weight"] - 2 * args["close_weight_down"]) * MyTools.SimilarRate((itemI.prevAveCloseList[2] - closeI) / closeI, (itemJ.prevAveCloseList[2] - closeJ) / closeJ, s_range, s_val);
-                    var aveValue1 = (args["close_weight"] - 1 * args["close_weight_down"]) * MyTools.SimilarRate((itemI.prevAveCloseList[1] - closeI) / closeI, (itemJ.prevAveCloseList[1] - closeJ) / closeJ, s_range, s_val);
-                    var aveValue0 = (args["close_weight"] - 0 * args["close_weight_down"]) * MyTools.SimilarRate((itemI.prevAveCloseList[0] - closeI) / closeI, (itemJ.prevAveCloseList[0] - closeJ) / closeJ, s_range, s_val);
-                    var sumValue = volumeRate + prevValue + maxValue1 + minValue1 + maxValue2 + minValue2 + avePrice0 + avePrice1 + avePrice2 + aveValue0 + aveValue1 + aveValue2 + aveValue3;
-                    if (sumValue > args["need_weight"])
+                    var sumValue = volumeRate0 + volumeRate1 + prevValue + maxValue1 + minValue1 + maxValue2 + minValue2 + avePrice0 + avePrice1 + avePrice2 + aveValue0 + aveValue1 + aveValue2 + aveValue3;
+                    if (sumValue > 0)
                     {
                         if (!cachePrev2.ContainsKey(i))
                         {
@@ -451,7 +598,7 @@ namespace Binance.Common.Tests
                     cachePrev2.Remove(i);
                 }
             }
-            MyTools.LogMsg(symbol, $"总匹配量:{cachePrev2.Count}");
+            // MyTools.LogMsg(symbol, $"总匹配量:{cachePrev2.Count}");
             string output = "";
             var countAll = 0f;
             foreach (var kvItem in cachePrev2)
@@ -471,36 +618,37 @@ namespace Binance.Common.Tests
                     {
                         continue;
                     }
-                    var similar = (float)targetList[i + 1] / args["need_weight"];
-                    // var similar = 1;
-                    next1List.Add(slist.myKlines[item + 1].incPercent * similar);
+                    var weight = 1f;
+                    weight = (float)targetList[i + 1] / args["need_weight"];
+                    // weight = Math.Min(weight, 1f);
+                    next1List.Add(slist.myKlines[item + 1].incPercent * weight);
                     var ave2 = slist.FollowingInc(item + 1, 2);
-                    // var ave2 = slist.myKlines[item + 1].incPercent + slist.myKlines[item + 2].incPercent;
-                    next2List.Add(ave2 * similar);
+                    next2List.Add(ave2 * weight);
                     // similar = (float)Math.Pow(similar, 1.5);
-                    winCount1 += (slist.myKlines[item + 1].incPercent > 0 ? similar : 0);
-                    loseCount1 += (slist.myKlines[item + 1].incPercent < 0 ? similar : 0);
-                    winCount2 += (ave2 > 0 ? similar : 0);
-                    loseCount2 += (ave2 < 0 ? similar : 0);
+                    winCount1 += (slist.myKlines[item + 1].incPercent > 0 ? weight : 0);
+                    loseCount1 += (slist.myKlines[item + 1].incPercent < 0 ? weight : 0);
+                    winCount2 += (ave2 > 0 ? weight : 0);
+                    loseCount2 += (ave2 < 0 ? weight : 0);
                 }
                 var itemCount = targetList.Count / 2;
-                var weightCount = (int)(winCount1 + loseCount1);
-                var winRatio1 = (float)winCount1 / (winCount1 + loseCount1);
-                var winDelta = 0.07f;
+                var weightCount1 = (winCount1 + loseCount1);
+                var weightCount2 = (winCount2 + loseCount2);
+                var winRatio1 = (float)winCount1 / weightCount1;
+                var winDelta = 0.08f;
                 var eDelta = 0.04f * 0.01;
                 var highWin1 = winRatio1 > 0.5 + winDelta || winRatio1 < 0.5 - winDelta;
-                var winRatio2 = (float)winCount2 / (winCount2 + loseCount2);
+                var winRatio2 = (float)winCount2 / weightCount2;
                 var highWin2 = winRatio2 > 0.5 + winDelta || winRatio2 < 0.5 - winDelta;
-                var sum1 = next1List.Sum() / weightCount;
-                var sum2 = next2List.Sum() / weightCount;
+                var sum1 = next1List.Sum() / weightCount1;
+                var sum2 = next2List.Sum() / weightCount2;
                 if ((sum1 > eDelta || sum1 < -eDelta) && highWin1)
                 {
-                    output += $"{kvItem.Key} count:{itemCount} w:{weightCount} [1]涨幅:{MyTools.ToPercent(sum1)} 胜率:{MyTools.ToPercent(winRatio1)}\n";
+                    output += $"{kvItem.Key} count:{itemCount} w:{weightCount1} [1]涨幅:{MyTools.ToPercent(sum1)} 胜率:{MyTools.ToPercent(winRatio1)}\n";
                     countAll++;
                 }
                 if ((sum2 > eDelta || sum2 < -eDelta) && highWin2)
                 {
-                    output += $"{kvItem.Key} count:{itemCount} w:{weightCount} [2]涨幅:{MyTools.ToPercent(sum2)} 胜率:{MyTools.ToPercent(winRatio2)}\n";
+                    output += $"{kvItem.Key} count:{itemCount} w:{weightCount2} [2]涨幅:{MyTools.ToPercent(sum2)} 胜率:{MyTools.ToPercent(winRatio2)}\n";
                     countAll++;
                 }
             }
@@ -509,8 +657,9 @@ namespace Binance.Common.Tests
             {
                 argStr += (item.Key + ":" + MyTools.CutDecim(item.Value, 3) + ", ");
             }
-            output = argStr + "\n匹配数:" + countAll + "\t有效匹配率:" + MyTools.ToPercent(countAll / cachePrev2.Count) + "\n" + output;
-            MyTools.LogMsg(output);
+            var title = "优质数:" + countAll + "\t优质率:" + MyTools.ToPercent(countAll / cachePrev2.Count);
+
+            MyTools.LogMsg(symbol, $"总匹配量:{cachePrev2.Count}", argStr, title, output);
         }
     }
 }

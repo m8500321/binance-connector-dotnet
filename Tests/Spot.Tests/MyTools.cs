@@ -227,24 +227,29 @@ namespace Binance.Common.Tests
             return MathF.Round(f * 100, 3) + "%";
         }
         // 百分数+绝对值,在范围内
-        static public float SimilarRate(float f1, float f2, float percent = 0.1f, float val = 0.001f)
+        static public float DiffRate(float f1, float f2)
         {
-            // var bigVal = Math.Max(Math.Abs(f1), Math.Abs(f2));
-            // var diff = bigVal * percent + val;
-            // return f1 < f2 + diff && f1 > f2 - diff;
+            return (f1 - f2) / f1;
+        }
+
+        static public float SimilarValue(float a1, float a2, float b1, float b2, float percent = 0.1f, float val = 0.001f, float extraRange = 1f)
+        {
+            var rate1 = DiffRate(a1, a2);
+            var rate2 = DiffRate(b1, b2);
+            return SimilarRate(rate1, rate2, percent, val, extraRange);
+        }
+
+        static public float SimilarRate(float f1, float f2, float percent = 0.1f, float val = 0.001f, float extraRange = 1f)
+        {
             var maxDiff = Math.Abs(f1) * percent + val;
             var curDiff = Math.Abs(f1 - f2);
-            // if (curDiff > maxDiff)
-            // {
-            //     return 0f;
-            // }
-            // else
-            // {
             var s = 1 - curDiff / maxDiff;
-            s = (float)((s > 0 ? 1 : -1) * s * s);
-            // s = (float)(Math.Pow(s, 1.5));
-            return (float)Math.Max(s, -1);
-            // }
+            // s = (float)((s > 0 ? 1 : -1) * s * s);
+            if (s < -0f)
+            {
+                return -99999f;
+            }
+            return s;
         }
 
     }

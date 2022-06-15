@@ -70,12 +70,14 @@ namespace Binance.Common.Tests
         public float avePrice = 0f; // 平均价
         public float volumePerHand = 0f; // 交易额/手
         public bool isUp = true; // 是否上涨
-        // 5,10,20；包含自己
+        // 5,10,20,40；包含自己
         public List<float> prevAveVolumeList = new List<float>() { 0, 0, 0, 0 }; // 前几次平均成交量
         public List<float> prevAvePriceList = new List<float>() { 0, 0, 0, 0 }; // 前几次平均单价
         public List<float> prevAveCloseList = new List<float>() { 0, 0, 0, 0 }; // 前几次平均收盘价
         public List<float> prevMaxList = new List<float>() { 0, 0, 0, 0 }; // 前几次最高价
         public List<float> prevMinList = new List<float>() { 999999, 999999, 999999, 999999 }; // 前几次最低价
+        // public List<float> prevMaxList = new List<float>() { 0, 0, 0, 0 }; // 前几次最高价
+        // public List<float> prevMinList = new List<float>() { 999999, 999999, 999999, 999999 }; // 前几次最低价
     }
 
     [Serializable]
