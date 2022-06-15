@@ -546,14 +546,16 @@ namespace Binance.Common.Tests
                         // 往前2条
                         var itemIPrev = slist.myKlines[i - idx];
                         var itemJPrev = slist.myKlines[j - idx];
-                        var value1 = (args["prev_weight"] - idx * args["prev_weight_down"]) * MyTools.SimilarValue(closeI, itemIPrev.closePrice, closeJ, itemJPrev.closePrice, s_range, s_val);
-                        var value2 = (args["prev_weight"] - idx * args["prev_weight_down"]) * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, s_range, s_val);
+                        var value1 = 0f;
+                        value1 = (args["prev_weight"] - idx * args["prev_weight_down"]) * MyTools.SimilarValue(closeI, itemIPrev.closePrice, closeJ, itemJPrev.closePrice, s_range, s_val);
+                        var value2 = 0f;
+                        // value2 = (args["prev_weight"] - idx * args["prev_weight_down"]) * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, s_range, s_val);
                         prevValue += (value1 + value2);
                     }
                     var volumeRate0 = 0f;
                     var volumeRate1 = 0f;
-                    volumeRate0 = (args["volume_weight"]) * MyTools.SimilarValue(itemI.prevAveVolumeList[0], itemI.prevAveVolumeList[1], itemJ.prevAveVolumeList[0], itemJ.prevAveVolumeList[1], s_range, s_val);
-                    volumeRate1 = (args["volume_weight"]) * MyTools.SimilarValue(itemI.prevAveVolumeList[1], itemI.prevAveVolumeList[2], itemJ.prevAveVolumeList[1], itemJ.prevAveVolumeList[2], s_range, s_val);
+                    // volumeRate0 = (args["volume_weight"]) * MyTools.SimilarValue(itemI.volume, itemI.prevAveVolumeList[2], itemJ.volume, itemJ.prevAveVolumeList[2], s_range, s_val, 2f);
+                    // volumeRate1 = (args["volume_weight"]) * MyTools.SimilarValue(itemI.prevAveVolumeList[1], itemI.prevAveVolumeList[2], itemJ.prevAveVolumeList[1], itemJ.prevAveVolumeList[2], s_range, s_val, 2f);
 
                     var minValue1 = 0f;
                     var maxValue1 = 0f;
@@ -593,7 +595,7 @@ namespace Binance.Common.Tests
                         cachePrev2[i].Add((int)sumValue);
                     }
                 }
-                if (cachePrev2.ContainsKey(i) && cachePrev2[i].Count < 200)
+                if (cachePrev2.ContainsKey(i) && cachePrev2[i].Count < 100)
                 {
                     cachePrev2.Remove(i);
                 }
@@ -611,6 +613,12 @@ namespace Binance.Common.Tests
                 var loseCount2 = 0f;
                 var targetList = kvItem.Value;
                 // foreach (var item in targetList)
+                var totalWeight = 0f;
+                for (int i = 0; i < targetList.Count; i = i + 2)
+                {
+                    totalWeight += (float)targetList[i + 1];
+                }
+                var aveWeight = totalWeight / (targetList.Count / 2);
                 for (int i = 0; i < targetList.Count; i = i + 2)
                 {
                     var item = targetList[i];
@@ -619,7 +627,7 @@ namespace Binance.Common.Tests
                         continue;
                     }
                     var weight = 1f;
-                    weight = (float)targetList[i + 1] / args["need_weight"];
+                    weight = (float)targetList[i + 1] / aveWeight;
                     // weight = Math.Min(weight, 1f);
                     next1List.Add(slist.myKlines[item + 1].incPercent * weight);
                     var ave2 = slist.FollowingInc(item + 1, 2);
