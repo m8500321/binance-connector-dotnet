@@ -1,2347 +1,1349 @@
 
-22 6 14 周二 15:19:53
-BNBUSDT
-总匹配量:426
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:4, price_weight_down:1, close_weight:5, close_weight_down:1, volume_weight:2, need_weight:30, similar_range:0.1, similar_val:0.002, 
-优质数:5	优质率:1.174%
-3061 count:107 w:47.399994 [2]涨幅:-0.055% 胜率:39.944%
-3211 count:191 w:87.96666 [2]涨幅:0.056% 胜率:60.364%
-4151 count:131 w:59.83333 [2]涨幅:-0.044% 胜率:38.774%
-4340 count:144 w:72.19999 [1]涨幅:0.044% 胜率:64.681%
-4340 count:144 w:72.19999 [2]涨幅:0.089% 胜率:64.681%
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
-
-
-22 6 14 周二 15:20:04
-ETHUSDT
-总匹配量:72
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:4, price_weight_down:1, close_weight:5, close_weight_down:1, volume_weight:2, need_weight:30, similar_range:0.1, similar_val:0.002, 
-优质数:1	优质率:1.389%
-3137 count:101 w:54.466667 [2]涨幅:-0.067% 胜率:35.741%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
-
-
-22 6 14 周二 15:20:05
-BTCUSDT
-总匹配量:750
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:4, price_weight_down:1, close_weight:5, close_weight_down:1, volume_weight:2, need_weight:30, similar_range:0.1, similar_val:0.002, 
-优质数:18	优质率:2.4%
-3091 count:265 w:137.93338 [2]涨幅:-0.048% 胜率:39.512%
-3124 count:228 w:122.966675 [1]涨幅:0.045% 胜率:62.619%
-3124 count:228 w:122.966675 [2]涨幅:0.091% 胜率:62.619%
-3177 count:111 w:59.566666 [1]涨幅:-0.049% 胜率:36.542%
-3177 count:111 w:59.566666 [2]涨幅:-0.098% 胜率:36.542%
-3236 count:194 w:105.26666 [2]涨幅:0.08% 胜率:64.028%
-3264 count:466 w:250.6668 [2]涨幅:0.052% 胜率:62.979%
-3384 count:115 w:55.96667 [1]涨幅:0.047% 胜率:62.18%
-3384 count:115 w:55.96667 [2]涨幅:0.093% 胜率:62.18%
-3457 count:263 w:140.79999 [2]涨幅:-0.04% 胜率:35.724%
-4076 count:560 w:310.0334 [2]涨幅:0.051% 胜率:63.402%
-4167 count:253 w:135.10002 [2]涨幅:-0.043% 胜率:35.579%
-4168 count:159 w:86.866684 [2]涨幅:-0.056% 胜率:36.569%
-4169 count:104 w:52.133324 [2]涨幅:-0.056% 胜率:31.522%
-4248 count:111 w:59.46666 [1]涨幅:-0.065% 胜率:34.809%
-4248 count:111 w:59.46666 [2]涨幅:-0.13% 胜率:34.809%
-4696 count:119 w:57.966652 [2]涨幅:-0.05% 胜率:39.218%
-4944 count:195 w:103.36665 [2]涨幅:-0.059% 胜率:37.311%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
-
-
-22 6 14 周二 15:32:53
-BNBUSDT
-总匹配量:46
-prev_weight:8, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:4, price_weight_down:1, close_weight:5, close_weight_down:1, volume_weight:2, need_weight:30, similar_range:0.1, similar_val:0.002, 
-优质数:2	优质率:4.348%
-3239 count:135 w:93.7 [1]涨幅:0.045% 胜率:62.647%
-3239 count:135 w:93.7 [2]涨幅:0.09% 胜率:62.647%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
-
-
-22 6 14 周二 15:32:56
-BTCUSDT
-总匹配量:117
-prev_weight:8, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:4, price_weight_down:1, close_weight:5, close_weight_down:1, volume_weight:2, need_weight:30, similar_range:0.1, similar_val:0.002, 
-优质数:6	优质率:5.128%
-3210 count:148 w:107.100006 [2]涨幅:0.067% 胜率:63.025%
-3647 count:152 w:96.566666 [2]涨幅:-0.055% 胜率:38.971%
-4120 count:125 w:86.13332 [2]涨幅:-0.063% 胜率:39.899%
-4236 count:139 w:100.8 [2]涨幅:-0.052% 胜率:38.029%
-4675 count:105 w:78.19999 [2]涨幅:0.078% 胜率:61.04%
-4812 count:130 w:94.33333 [2]涨幅:-0.063% 胜率:34.7%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
-
-
-22 6 14 周二 15:33:07
-ETHUSDT
-总匹配量:3
-prev_weight:8, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:4, price_weight_down:1, close_weight:5, close_weight_down:1, volume_weight:2, need_weight:30, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:0%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
-
-
-22 6 14 周二 15:54:24
-BTCUSDT
-总匹配量:510
-prev_weight:8, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:30, similar_range:0.1, similar_val:0.002, 
-优质数:25	优质率:4.902%
-3081 count:163 w:111.93335 [2]涨幅:0.079% 胜率:58.547%
-3190 count:135 w:101 [2]涨幅:0.054% 胜率:58.383%
-3201 count:254 w:175.83333 [2]涨幅:0.054% 胜率:64.72%
-3457 count:268 w:194.09998 [2]涨幅:-0.046% 胜率:39.069%
-3680 count:378 w:275.79996 [2]涨幅:0.043% 胜率:60.213%
-3681 count:254 w:185.26663 [2]涨幅:0.053% 胜率:60.777%
-3865 count:174 w:126.66666 [2]涨幅:0.07% 胜率:64.789%
-3960 count:186 w:128 [2]涨幅:0.041% 胜率:58.255%
-4015 count:223 w:162.20003 [2]涨幅:-0.055% 胜率:38.718%
-4076 count:281 w:209.9 [2]涨幅:0.062% 胜率:65.793%
-4213 count:101 w:72.13334 [2]涨幅:0.04% 胜率:59.381%
-4233 count:136 w:98.899994 [1]涨幅:-0.045% 胜率:36.535%
-4233 count:136 w:98.899994 [2]涨幅:-0.09% 胜率:36.535%
-4260 count:178 w:124.09998 [2]涨幅:0.053% 胜率:41.902%
-4613 count:166 w:120.06665 [2]涨幅:-0.059% 胜率:40.394%
-4695 count:160 w:115.5 [2]涨幅:-0.054% 胜率:35.931%
-4716 count:107 w:75.23332 [2]涨幅:-0.058% 胜率:37.262%
-4764 count:114 w:83.23332 [1]涨幅:0.048% 胜率:64.638%
-4764 count:114 w:83.23332 [2]涨幅:0.096% 胜率:64.638%
-4782 count:105 w:75.43333 [1]涨幅:0.045% 胜率:66.063%
-4782 count:105 w:75.43333 [2]涨幅:0.091% 胜率:66.063%
-4783 count:112 w:81.33333 [2]涨幅:0.051% 胜率:60.656%
-4807 count:270 w:207.06668 [2]涨幅:-0.042% 胜率:38.426%
-4914 count:158 w:112.46666 [2]涨幅:0.046% 胜率:60.996%
-4944 count:154 w:110.39997 [2]涨幅:-0.045% 胜率:34.571%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
-
-
-22 6 14 周二 15:54:26
-BNBUSDT
-总匹配量:266
-prev_weight:8, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:30, similar_range:0.1, similar_val:0.002, 
-优质数:14	优质率:5.263%
-3083 count:111 w:72.3 [2]涨幅:0.048% 胜率:63.209%
-3098 count:113 w:75.96667 [2]涨幅:-0.076% 胜率:39.667%
-3290 count:197 w:129.96666 [2]涨幅:0.075% 胜率:62.862%
-3388 count:242 w:170.86664 [2]涨幅:-0.042% 胜率:41.592%
-3389 count:114 w:83.86666 [1]涨幅:-0.052% 胜率:33.307%
-3389 count:114 w:83.86666 [2]涨幅:-0.105% 胜率:33.307%
-3455 count:145 w:94.46666 [2]涨幅:0.059% 胜率:58.151%
-3467 count:112 w:83.8 [2]涨幅:-0.07% 胜率:38.385%
-3470 count:116 w:85.83334 [2]涨幅:-0.062% 胜率:41.942%
-3923 count:110 w:75.90001 [1]涨幅:0.048% 胜率:61.968%
-3923 count:110 w:75.90001 [2]涨幅:0.096% 胜率:61.968%
-4252 count:121 w:82.26668 [1]涨幅:-0.044% 胜率:37.763%
-4252 count:121 w:82.26668 [2]涨幅:-0.089% 胜率:37.763%
-4330 count:102 w:66.299995 [2]涨幅:-0.054% 胜率:39.517%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
-
-
-22 6 14 周二 15:54:36
-ETHUSDT
-总匹配量:36
-prev_weight:8, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:30, similar_range:0.1, similar_val:0.002, 
-优质数:2	优质率:5.556%
-4620 count:112 w:80.23332 [2]涨幅:-0.073% 胜率:36.269%
-4638 count:286 w:211.89995 [2]涨幅:-0.051% 胜率:39.122%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
-
-
-22 6 14 周二 19:16:01
-BNBUSDT
-总匹配量:150
-prev_weight:8, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:4, close_weight_down:1, volume_weight:2, need_weight:30, similar_range:0.1, similar_val:0.002, 
-优质数:4	优质率:2.667%
-3086 count:135 w:116.3 [2]涨幅:0.053% 胜率:60.304%
-3468 count:107 w:99.76666 [2]涨幅:-0.051% 胜率:40.494%
-4322 count:100 w:79.299995 [2]涨幅:-0.042% 胜率:41.404%
-4627 count:185 w:163.06668 [2]涨幅:0.042% 胜率:58.913%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 514
-
-
-22 6 14 周二 19:16:08
-BTCUSDT
-总匹配量:320
-prev_weight:8, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:4, close_weight_down:1, volume_weight:2, need_weight:30, similar_range:0.1, similar_val:0.002, 
-优质数:11	优质率:3.438%
-3092 count:166 w:152.03333 [2]涨幅:-0.042% 胜率:36.834%
-3201 count:108 w:95.3 [2]涨幅:0.067% 胜率:68.73%
-3669 count:204 w:189.76666 [2]涨幅:0.075% 胜率:58.405%
-3680 count:214 w:198.4667 [2]涨幅:0.06% 胜率:62.21%
-3681 count:165 w:152.00002 [2]涨幅:0.057% 胜率:60.768%
-3731 count:135 w:115.23334 [2]涨幅:0.056% 胜率:61.73%
-3865 count:123 w:112.566666 [2]涨幅:0.053% 胜率:62.422%
-4076 count:227 w:211.30002 [2]涨幅:0.056% 胜率:65.578%
-4613 count:102 w:91.66667 [2]涨幅:-0.043% 胜率:40.327%
-4695 count:123 w:110.133316 [2]涨幅:-0.055% 胜率:36.683%
-4756 count:118 w:106.33334 [2]涨幅:0.045% 胜率:59.561%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 514
-
-
-22 6 14 周二 19:16:16
-ETHUSDT
-总匹配量:21
-prev_weight:8, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:4, close_weight_down:1, volume_weight:2, need_weight:30, similar_range:0.1, similar_val:0.002, 
-优质数:2	优质率:9.524%
-4637 count:303 w:288.6 [2]涨幅:-0.059% 胜率:41.291%
-4638 count:137 w:126.90001 [2]涨幅:-0.065% 胜率:39.953%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 514
-
-
-22 6 15 周三 13:43:36
-BNBUSDT
-总匹配量:82
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:3	优质率:3.659%
-3086 count:136 w:141.74286 [2]涨幅:0.048% 胜率:59.645%
-3468 count:107 w:117.42857 [2]涨幅:-0.049% 胜率:40.973%
-4322 count:100 w:95.17142 [2]涨幅:-0.044% 胜率:41.129%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 660
-
-
-22 6 15 周三 13:43:37
-ETHUSDT
-总匹配量:11
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:1	优质率:9.091%
-4638 count:138 w:151.62859 [2]涨幅:-0.06% 胜率:40.343%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 660
-
-
-22 6 15 周三 13:43:38
-BTCUSDT
-总匹配量:157
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:3	优质率:1.911%
-3092 count:166 w:180.7143 [2]涨幅:-0.041% 胜率:37.233%
-3680 count:217 w:238.9143 [2]涨幅:0.057% 胜率:61.768%
-4076 count:230 w:253.57135 [2]涨幅:0.059% 胜率:65.915%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 660
-
-
-22 6 15 周三 15:34:34
-BNBUSDT
+2022/6/19 19:05:11
+XRPUSDT
 总匹配量:0
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:NaN%
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:NaN%	匹配成功率:NaN%	期望值:NaN%
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 662
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 718
 
 
-22 6 15 周三 15:34:46
+2022/6/19 19:05:12
 ETHUSDT
 总匹配量:0
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:NaN%
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:NaN%	匹配成功率:NaN%	期望值:NaN%
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 662
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 718
 
 
-22 6 15 周三 15:34:47
+2022/6/19 19:05:15
+BNBUSDT
+总匹配量:0
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:NaN%	匹配成功率:NaN%	期望值:NaN%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 718
+
+
+2022/6/19 19:05:18
 BTCUSDT
 总匹配量:0
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:NaN%
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:NaN%	匹配成功率:NaN%	期望值:NaN%
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 662
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 718
 
 
-22 6 15 周三 15:51:42
+2022/6/19 19:05:18
+运行耗时:00:07:29.8596656
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 101
+
+
+2022/6/19 19:14:43
+XRPUSDT
+总匹配量:0
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:NaN%	匹配成功率:NaN%	期望值:NaN%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 718
+
+
+2022/6/19 19:14:45
 BNBUSDT
-总匹配量:7
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:2	优质率:28.571%
-4218 count:74 w:69.88571 [1]涨幅:-0.048% 胜率:37.858%
-4218 count:74 w:69.88571 [2]涨幅:-0.097% 胜率:37.858%
+总匹配量:0
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:NaN%	匹配成功率:NaN%	期望值:NaN%
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 662
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 718
 
 
-22 6 15 周三 15:51:46
+2022/6/19 19:14:46
 BTCUSDT
-总匹配量:19
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:0%
+总匹配量:0
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:NaN%	匹配成功率:NaN%	期望值:NaN%
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 662
-
-
-22 6 15 周三 15:52:02
-ETHUSDT
-总匹配量:1
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:0%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 662
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 718
 
 
-22 6 15 周三 16:53:28
-BNBUSDT
-总匹配量:6
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:0%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 662
-
-
-22 6 15 周三 16:53:31
-BTCUSDT
-总匹配量:19
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:0%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 662
-
-
-22 6 15 周三 16:53:35
+2022/6/19 19:14:48
 ETHUSDT
 总匹配量:0
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:NaN%
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:NaN%	匹配成功率:NaN%	期望值:NaN%
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 662
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 718
 
 
-22 6 15 周三 17:09:32
+2022/6/19 19:14:48
+运行耗时:00:07:43.9761015
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 101
+
+
+2022/6/19 19:31:02
+Start: 2022/6/19 11:31:02
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 71
+
+
+2022/6/19 19:32:56
+Start: 2022/6/19 19:32:56
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 72
+
+
+2022/6/19 19:43:12
+Start: 2022/6/19 19:43:12
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 72
+
+
+2022/6/19 19:44:41
+Start: 2022/6/19 19:44:41
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 72
+
+
+2022/6/19 19:47:57
+Start: 2022/6/19 19:47:57
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 72
+
+
+2022/6/19 19:55:59
+Start: 2022/6/19 19:55:59
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 71
+
+
+2022/6/19 19:58:23
+Start: 2022/6/19 19:58:23
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 71
+
+
+2022/6/19 20:00:24
+Start: 2022/6/19 20:00:24
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 71
+
+
+2022/6/19 20:05:53
 BNBUSDT
-总匹配量:22
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0.002, 
-优质数:6	优质率:27.273%
-3070 count:53 w:49.400005 [2]涨幅:-0.062% 胜率:39.85%
-3076 count:63 w:64.42857 [2]涨幅:0.044% 胜率:58.492%
-4062 count:64 w:60.02858 [2]涨幅:0.051% 胜率:66.111%
-4220 count:66 w:63.51429 [2]涨幅:0.073% 胜率:60.504%
-4612 count:59 w:56.800003 [2]涨幅:-0.058% 胜率:41.7%
-5640 count:53 w:53.228577 [2]涨幅:0.063% 胜率:61.997%
+总匹配量:66
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:14	优质率:21.212%	匹配成功率:64.286%	期望值:0.04%
+1071 count:101 w:101 	[2]涨幅:0.148% 胜率:62.857% real:1.045%
+1130 count:63 w:62 	[2]涨幅:0.051% 胜率:55.115% real:0.23%
+1146 count:88 w:88 	[2]涨幅:0.044% 胜率:57.341% real:0.268%
+1149 count:134 w:132 	[2]涨幅:-0.041% 胜率:42.066% real:0.059%
+1182 count:71 w:71 	[2]涨幅:-0.057% 胜率:37.224% real:0.047%
+1183 count:58 w:57 	[2]涨幅:0.054% 胜率:58.689% real:0.112%
+1371 count:88 w:87 	[2]涨幅:-0.055% 胜率:36.24% real:0.498%
+1390 count:55 w:54 	[2]涨幅:-0.053% 胜率:44.257% real:0.278%
+1422 count:57 w:57 	[1]涨幅:-0.068% 胜率:32.716% real:-0.164%
+1422 count:57 w:57 	[2]涨幅:-0.051% 胜率:41.358% real:-0.421%
+1433 count:74 w:73 	[2]涨幅:0.042% 胜率:41.196% real:-0.179%
+1494 count:55 w:50 	[1]涨幅:0.063% 胜率:43.405% real:0.161%
+1499 count:53 w:52 	[2]涨幅:-0.058% 胜率:27.445% real:-0.399%
+1709 count:54 w:54 	[2]涨幅:0.045% 胜率:57.716% real:0.877%
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 662
-
-
-22 6 15 周三 17:09:32
-BTCUSDT
-总匹配量:53
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0.002, 
-优质数:5	优质率:9.434%
-3172 count:74 w:75.71428 [2]涨幅:-0.058% 胜率:40.075%
-3254 count:104 w:109.08573 [2]涨幅:-0.08% 胜率:38.214%
-3376 count:54 w:51.91429 [2]涨幅:0.045% 胜率:58.338%
-3982 count:74 w:77.97144 [2]涨幅:0.047% 胜率:62.477%
-4810 count:59 w:64.42857 [2]涨幅:-0.059% 胜率:37.472%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 662
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 715
 
 
-22 6 15 周三 17:09:35
+2022/6/19 20:13:22
+Start: 2022/6/19 20:13:22
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 71
+
+
+2022/6/19 20:16:12
 ETHUSDT
 总匹配量:2
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0.002, 
-优质数:0	优质率:0%
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:0%	匹配成功率:NaN%	期望值:NaN%
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 662
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 715
 
 
-22 6 15 周三 17:53:29
-BNBUSDT
-总匹配量:201
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:19	优质率:9.453%
-3098 count:122 w:78.028564 [2]涨幅:-0.073% 胜率:41.596%
-3114 count:144 w:101.11429 [2]涨幅:0.063% 胜率:63.945%
-3218 count:54 w:36.771427 [2]涨幅:-0.08% 胜率:34.033%
-3356 count:72 w:49.428574 [1]涨幅:0.051% 胜率:60.636%
-3356 count:72 w:49.428574 [2]涨幅:0.102% 胜率:60.636%
-3378 count:79 w:57.85714 [1]涨幅:-0.051% 胜率:40.79%
-3378 count:79 w:57.85714 [2]涨幅:-0.101% 胜率:40.79%
-3510 count:56 w:38.828568 [2]涨幅:-0.05% 胜率:41.354%
-3914 count:70 w:43.88571 [2]涨幅:0.057% 胜率:60.872%
-3916 count:53 w:36.885715 [1]涨幅:-0.042% 胜率:40.046%
-3916 count:53 w:36.885715 [2]涨幅:-0.085% 胜率:40.046%
-4190 count:68 w:41.028572 [1]涨幅:-0.045% 胜率:41.226%
-4190 count:68 w:41.028572 [2]涨幅:-0.09% 胜率:41.226%
-4196 count:52 w:35.914284 [1]涨幅:-0.07% 胜率:34.765%
-4196 count:52 w:35.914284 [2]涨幅:-0.14% 胜率:34.765%
-4252 count:133 w:97.8 [2]涨幅:-0.07% 胜率:37.394%
-4256 count:86 w:65.399994 [1]涨幅:0.044% 胜率:59.371%
-4256 count:86 w:65.399994 [2]涨幅:0.088% 胜率:59.371%
-4616 count:91 w:61.600006 [2]涨幅:0.057% 胜率:61.967%
+2022/6/19 20:17:21
+Start: 2022/6/19 20:17:21
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 71
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 663
 
-
-22 6 15 周三 17:53:39
-BTCUSDT
-总匹配量:414
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:35	优质率:8.454%
-3018 count:51 w:37.485714 [1]涨幅:-0.041% 胜率:39.101%
-3018 count:51 w:37.485714 [2]涨幅:-0.082% 胜率:39.101%
-3082 count:98 w:72.85713 [2]涨幅:0.055% 胜率:63.216%
-3176 count:55 w:38.457146 [2]涨幅:-0.076% 胜率:34.25%
-3234 count:64 w:44.6 [1]涨幅:0.047% 胜率:61.691%
-3234 count:64 w:44.6 [2]涨幅:0.094% 胜率:61.691%
-3264 count:221 w:167.9429 [2]涨幅:0.047% 胜率:60.054%
-3384 count:57 w:39.514282 [1]涨幅:0.057% 胜率:68.113%
-3384 count:57 w:39.514282 [2]涨幅:0.113% 胜率:68.113%
-3480 count:66 w:49.34285 [2]涨幅:-0.054% 胜率:39.722%
-3668 count:64 w:46.314278 [2]涨幅:0.041% 胜率:61.073%
-3680 count:321 w:243.37143 [2]涨幅:0.045% 胜率:59.263%
-3764 count:72 w:51.11429 [2]涨幅:-0.064% 胜率:29.961%
-4076 count:428 w:321.37152 [2]涨幅:0.055% 胜率:61.709%
-4166 count:92 w:68.171425 [2]涨幅:-0.049% 胜率:38.223%
-4180 count:54 w:37.971428 [2]涨幅:0.053% 胜率:40.858%
-4260 count:76 w:57.857147 [2]涨幅:-0.046% 胜率:37.531%
-4358 count:69 w:51.114285 [2]涨幅:-0.073% 胜率:39.799%
-4610 count:84 w:64.57143 [2]涨幅:0.074% 胜率:58.673%
-4622 count:50 w:33.942856 [1]涨幅:0.047% 胜率:68.013%
-4622 count:50 w:33.942856 [2]涨幅:0.095% 胜率:68.013%
-4656 count:126 w:93.85715 [2]涨幅:-0.05% 胜率:38.843%
-4716 count:76 w:55.714287 [1]涨幅:-0.05% 胜率:34.667%
-4716 count:76 w:55.714287 [2]涨幅:-0.099% 胜率:34.667%
-4764 count:169 w:127.97145 [2]涨幅:0.075% 胜率:59.232%
-4782 count:93 w:69.11429 [2]涨幅:0.043% 胜率:63.497%
-4944 count:111 w:83.71429 [2]涨幅:-0.062% 胜率:31.638%
-4968 count:113 w:83.60001 [2]涨幅:-0.054% 胜率:40.089%
-4978 count:115 w:86.057144 [1]涨幅:-0.056% 胜率:34.13%
-4978 count:115 w:86.057144 [2]涨幅:-0.112% 胜率:34.13%
-5056 count:92 w:67.34285 [2]涨幅:0.051% 胜率:58.591%
-5086 count:121 w:89.371414 [2]涨幅:0.043% 胜率:58.824%
-5280 count:65 w:45.828568 [2]涨幅:0.053% 胜率:59.352%
-5490 count:62 w:45.828568 [2]涨幅:-0.062% 胜率:38.092%
-5554 count:56 w:40.457138 [2]涨幅:-0.073% 胜率:30.155%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 663
-
-
-22 6 15 周三 17:53:45
-ETHUSDT
-总匹配量:26
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:5	优质率:19.231%
-4318 count:102 w:76.371414 [2]涨幅:0.057% 胜率:58.212%
-4578 count:53 w:37.685707 [2]涨幅:0.059% 胜率:67.475%
-4620 count:159 w:116.48573 [2]涨幅:-0.043% 胜率:40.397%
-4638 count:255 w:189.68575 [2]涨幅:-0.047% 胜率:41.557%
-4644 count:60 w:42.82857 [2]涨幅:-0.077% 胜率:38.626%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 663
-
-
-22 6 15 周三 18:06:39
-BNBUSDT
-总匹配量:242
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:21	优质率:8.678%
-3010 count:114 w:69422.28 [2]涨幅:-0.062% 胜率:41.167%
-3020 count:183 w:70541.8 [2]涨幅:-0.076% 胜率:41.119%
-3098 count:154 w:67847.87 [2]涨幅:-0.066% 胜率:38.084%
-3110 count:52 w:66485.67 [1]涨幅:0.065% 胜率:63.322%
-3110 count:52 w:66485.67 [2]涨幅:0.13% 胜率:63.322%
-3166 count:65 w:66986.375 [2]涨幅:-0.06% 胜率:41.155%
-3290 count:190 w:66596.445 [2]涨幅:0.05% 胜率:60.757%
-3338 count:133 w:69089.89 [2]涨幅:0.07% 胜率:63.843%
-3448 count:108 w:68801.53 [2]涨幅:0.04% 胜率:58.689%
-3930 count:80 w:68959.38 [1]涨幅:0.049% 胜率:61.9%
-3930 count:80 w:68959.38 [2]涨幅:0.098% 胜率:61.9%
-3950 count:55 w:69607.7 [2]涨幅:0.068% 胜率:62.535%
-4124 count:63 w:71231.02 [2]涨幅:-0.051% 胜率:41.33%
-4340 count:58 w:68363.94 [1]涨幅:0.07% 胜率:66.203%
-4340 count:58 w:68363.94 [2]涨幅:0.139% 胜率:66.203%
-4614 count:91 w:68217.03 [1]涨幅:0.046% 胜率:62.284%
-4614 count:91 w:68217.03 [2]涨幅:0.091% 胜率:62.284%
-4616 count:138 w:68328.45 [2]涨幅:0.052% 胜率:62.549%
-5502 count:71 w:69724.89 [2]涨幅:0.068% 胜率:61.802%
-5648 count:59 w:68477.53 [2]涨幅:-0.048% 胜率:41.189%
-5652 count:96 w:69339.08 [2]涨幅:-0.049% 胜率:39.992%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-22 6 15 周三 18:06:45
-BTCUSDT
-总匹配量:507
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:49	优质率:9.665%
-3008 count:50 w:72499.99 [1]涨幅:-0.056% 胜率:30.958%
-3008 count:50 w:72499.99 [2]涨幅:-0.112% 胜率:30.958%
-3090 count:63 w:72500 [2]涨幅:-0.045% 胜率:33.211%
-3092 count:258 w:72500.016 [2]涨幅:-0.043% 胜率:37.307%
-3156 count:60 w:72500 [1]涨幅:-0.048% 胜率:38.157%
-3156 count:60 w:72500 [2]涨幅:-0.097% 胜率:38.157%
-3166 count:84 w:72500 [2]涨幅:-0.064% 胜率:31.857%
-3168 count:113 w:72500 [1]涨幅:0.063% 胜率:58.995%
-3168 count:113 w:72500 [2]涨幅:0.126% 胜率:58.995%
-3256 count:84 w:72500 [1]涨幅:-0.046% 胜率:38.533%
-3256 count:84 w:72500 [2]涨幅:-0.091% 胜率:38.533%
-3298 count:96 w:72500.016 [1]涨幅:0.041% 胜率:58.713%
-3298 count:96 w:72500.016 [2]涨幅:0.083% 胜率:58.713%
-3764 count:95 w:72499.99 [2]涨幅:-0.064% 胜率:30.775%
-3766 count:53 w:72500.01 [1]涨幅:-0.041% 胜率:35.409%
-3766 count:53 w:72500.01 [2]涨幅:-0.082% 胜率:35.409%
-3790 count:77 w:72500 [2]涨幅:-0.059% 胜率:40.28%
-3792 count:108 w:72499.984 [2]涨幅:-0.07% 胜率:37.445%
-3844 count:69 w:72500 [1]涨幅:0.052% 胜率:60.601%
-3844 count:69 w:72500 [2]涨幅:0.104% 胜率:60.601%
-3920 count:54 w:72499.99 [1]涨幅:-0.049% 胜率:41.801%
-3920 count:54 w:72499.99 [2]涨幅:-0.099% 胜率:41.801%
-4028 count:67 w:72500.01 [2]涨幅:-0.072% 胜率:41.448%
-4076 count:472 w:72499.98 [2]涨幅:0.049% 胜率:64.274%
-4078 count:83 w:72500 [1]涨幅:0.044% 胜率:58.257%
-4078 count:83 w:72500 [2]涨幅:0.088% 胜率:58.257%
-4114 count:92 w:72500.016 [2]涨幅:-0.051% 胜率:28.583%
-4260 count:62 w:72500 [2]涨幅:0.061% 胜率:37.865%
-4314 count:104 w:72499.984 [2]涨幅:0.078% 胜率:59.328%
-4326 count:51 w:72499.984 [2]涨幅:0.065% 胜率:59.257%
-4346 count:179 w:72500.01 [2]涨幅:-0.069% 胜率:36.384%
-4444 count:52 w:72500 [1]涨幅:0.049% 胜率:70.691%
-4444 count:52 w:72500 [2]涨幅:0.099% 胜率:70.691%
-4592 count:52 w:72500.01 [1]涨幅:0.046% 胜率:65.734%
-4592 count:52 w:72500.01 [2]涨幅:0.092% 胜率:65.734%
-4622 count:51 w:72500.01 [1]涨幅:0.061% 胜率:67.752%
-4622 count:51 w:72500.01 [2]涨幅:0.121% 胜率:67.752%
-4718 count:67 w:72500.01 [2]涨幅:-0.053% 胜率:37.023%
-4782 count:115 w:72499.99 [2]涨幅:0.055% 胜率:64.329%
-4944 count:104 w:72499.99 [2]涨幅:-0.078% 胜率:36.276%
-4946 count:61 w:72499.99 [2]涨幅:-0.056% 胜率:38.275%
-4978 count:140 w:72500 [2]涨幅:-0.052% 胜率:38.651%
-5044 count:58 w:72500.01 [2]涨幅:0.06% 胜率:61.1%
-5046 count:60 w:72499.99 [2]涨幅:0.045% 胜率:60.515%
-5070 count:83 w:72500 [2]涨幅:-0.056% 胜率:40.112%
-5482 count:229 w:72499.97 [2]涨幅:-0.042% 胜率:37.268%
-5490 count:126 w:72500.016 [2]涨幅:-0.079% 胜率:40.192%
-5508 count:53 w:72500 [2]涨幅:-0.057% 胜率:37.933%
-5542 count:159 w:72500 [2]涨幅:0.048% 胜率:59.723%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-22 6 15 周三 18:06:46
-ETHUSDT
-总匹配量:45
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:5	优质率:11.111%
-3136 count:64 w:75000 [2]涨幅:-0.047% 胜率:39.631%
-3294 count:51 w:74999.99 [2]涨幅:0.044% 胜率:60.681%
-4640 count:66 w:74999.99 [1]涨幅:-0.041% 胜率:34.825%
-4640 count:66 w:74999.99 [2]涨幅:-0.082% 胜率:34.825%
-4644 count:258 w:75000 [2]涨幅:-0.053% 胜率:41.125%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-22 6 15 周三 18:15:31
-BNBUSDT
-总匹配量:242
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:21	优质率:8.678%
-3010 count:114 w:109.16055 [2]涨幅:-0.062% 胜率:41.167%
-3020 count:183 w:178.05719 [2]涨幅:-0.076% 胜率:41.119%
-3098 count:154 w:144.11829 [2]涨幅:-0.066% 胜率:38.084%
-3110 count:52 w:47.68628 [1]涨幅:0.065% 胜率:63.322%
-3110 count:52 w:47.68628 [2]涨幅:0.13% 胜率:63.322%
-3166 count:65 w:60.056755 [2]涨幅:-0.06% 胜率:41.155%
-3290 count:190 w:174.52866 [2]涨幅:0.05% 胜率:60.757%
-3338 count:133 w:126.74422 [2]涨幅:0.07% 胜率:63.843%
-3448 count:108 w:102.49057 [2]涨幅:0.04% 胜率:58.689%
-3930 count:80 w:76.09311 [1]涨幅:0.049% 胜率:61.9%
-3930 count:80 w:76.09311 [2]涨幅:0.098% 胜率:61.9%
-3950 count:55 w:52.80585 [2]涨幅:0.068% 胜率:62.535%
-4124 count:63 w:61.897324 [2]涨幅:-0.051% 胜率:41.33%
-4340 count:58 w:54.691147 [1]涨幅:0.07% 胜率:66.203%
-4340 count:58 w:54.691147 [2]涨幅:0.139% 胜率:66.203%
-4614 count:91 w:85.624146 [1]涨幅:0.046% 胜率:62.284%
-4614 count:91 w:85.624146 [2]涨幅:0.091% 胜率:62.284%
-4616 count:138 w:130.05968 [2]涨幅:0.052% 胜率:62.549%
-5502 count:71 w:68.2823 [2]涨幅:0.068% 胜率:61.802%
-5648 count:59 w:55.726555 [2]涨幅:-0.048% 胜率:41.189%
-5652 count:96 w:91.8145 [2]涨幅:-0.049% 胜率:39.992%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-22 6 15 周三 18:15:31
-ETHUSDT
-总匹配量:45
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:5	优质率:11.111%
-3136 count:64 w:64 [2]涨幅:-0.047% 胜率:39.631%
-3294 count:51 w:50.999992 [2]涨幅:0.044% 胜率:60.681%
-4640 count:66 w:66 [1]涨幅:-0.041% 胜率:34.825%
-4640 count:66 w:66 [2]涨幅:-0.082% 胜率:34.825%
-4644 count:258 w:257.99994 [2]涨幅:-0.053% 胜率:41.125%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-22 6 15 周三 18:15:34
-BTCUSDT
-总匹配量:507
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:49	优质率:9.665%
-3008 count:50 w:49.999992 [1]涨幅:-0.056% 胜率:30.958%
-3008 count:50 w:49.999992 [2]涨幅:-0.112% 胜率:30.958%
-3090 count:63 w:63 [2]涨幅:-0.045% 胜率:33.211%
-3092 count:258 w:258 [2]涨幅:-0.043% 胜率:37.307%
-3156 count:60 w:59.999996 [1]涨幅:-0.048% 胜率:38.157%
-3156 count:60 w:59.999996 [2]涨幅:-0.097% 胜率:38.157%
-3166 count:84 w:83.99998 [2]涨幅:-0.064% 胜率:31.857%
-3168 count:113 w:113.00001 [1]涨幅:0.063% 胜率:58.995%
-3168 count:113 w:113.00001 [2]涨幅:0.126% 胜率:58.995%
-3256 count:84 w:84 [1]涨幅:-0.046% 胜率:38.533%
-3256 count:84 w:84 [2]涨幅:-0.091% 胜率:38.533%
-3298 count:96 w:96 [1]涨幅:0.041% 胜率:58.713%
-3298 count:96 w:96 [2]涨幅:0.083% 胜率:58.713%
-3764 count:95 w:94.999985 [2]涨幅:-0.064% 胜率:30.775%
-3766 count:53 w:53 [1]涨幅:-0.041% 胜率:35.409%
-3766 count:53 w:53 [2]涨幅:-0.082% 胜率:35.409%
-3790 count:77 w:77 [2]涨幅:-0.059% 胜率:40.28%
-3792 count:108 w:108 [2]涨幅:-0.07% 胜率:37.445%
-3844 count:69 w:69 [1]涨幅:0.052% 胜率:60.601%
-3844 count:69 w:69 [2]涨幅:0.104% 胜率:60.601%
-3920 count:54 w:54 [1]涨幅:-0.049% 胜率:41.801%
-3920 count:54 w:54 [2]涨幅:-0.099% 胜率:41.801%
-4028 count:67 w:66.99999 [2]涨幅:-0.072% 胜率:41.448%
-4076 count:472 w:471.99994 [2]涨幅:0.049% 胜率:64.274%
-4078 count:83 w:83 [1]涨幅:0.044% 胜率:58.257%
-4078 count:83 w:83 [2]涨幅:0.088% 胜率:58.257%
-4114 count:92 w:92.00001 [2]涨幅:-0.051% 胜率:28.583%
-4260 count:62 w:62.000015 [2]涨幅:0.061% 胜率:37.865%
-4314 count:104 w:104.00001 [2]涨幅:0.078% 胜率:59.328%
-4326 count:51 w:51.000004 [2]涨幅:0.065% 胜率:59.257%
-4346 count:179 w:178.99998 [2]涨幅:-0.069% 胜率:36.384%
-4444 count:52 w:52.000008 [1]涨幅:0.049% 胜率:70.691%
-4444 count:52 w:52.000008 [2]涨幅:0.099% 胜率:70.691%
-4592 count:52 w:52.000004 [1]涨幅:0.046% 胜率:65.734%
-4592 count:52 w:52.000004 [2]涨幅:0.092% 胜率:65.734%
-4622 count:51 w:51 [1]涨幅:0.061% 胜率:67.752%
-4622 count:51 w:51 [2]涨幅:0.121% 胜率:67.752%
-4718 count:67 w:67 [2]涨幅:-0.053% 胜率:37.023%
-4782 count:115 w:114.999954 [2]涨幅:0.055% 胜率:64.329%
-4944 count:104 w:104 [2]涨幅:-0.078% 胜率:36.276%
-4946 count:61 w:61 [2]涨幅:-0.056% 胜率:38.275%
-4978 count:140 w:139.99998 [2]涨幅:-0.052% 胜率:38.651%
-5044 count:58 w:58.000004 [2]涨幅:0.06% 胜率:61.1%
-5046 count:60 w:60 [2]涨幅:0.045% 胜率:60.515%
-5070 count:83 w:83.00001 [2]涨幅:-0.056% 胜率:40.112%
-5482 count:229 w:229.00003 [2]涨幅:-0.042% 胜率:37.268%
-5490 count:126 w:126.000015 [2]涨幅:-0.079% 胜率:40.192%
-5508 count:53 w:52.999992 [2]涨幅:-0.057% 胜率:37.933%
-5542 count:159 w:159.00003 [2]涨幅:0.048% 胜率:59.723%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-6.16 周四 11:36:59
-BNBUSDT
-总匹配量:83
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:4	优质率:4.819%
-3249 count:95 w:92.4779 [1]涨幅:0.041% 胜率:59.209%
-3249 count:95 w:92.4779 [2]涨幅:0.082% 胜率:59.209%
-3930 count:80 w:76.09311 [1]涨幅:0.049% 胜率:61.9%
-3930 count:80 w:76.09311 [2]涨幅:0.098% 胜率:61.9%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-6.16 周四 11:36:59
-BTCUSDT
-总匹配量:132
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:9	优质率:6.818%
-3090 count:63 w:63 [2]涨幅:-0.045% 胜率:33.211%
-3156 count:60 w:59.999996 [1]涨幅:-0.048% 胜率:38.157%
-3156 count:60 w:59.999996 [2]涨幅:-0.097% 胜率:38.157%
-3168 count:113 w:113.00001 [1]涨幅:0.063% 胜率:58.995%
-3168 count:113 w:113.00001 [2]涨幅:0.126% 胜率:58.995%
-3393 count:56 w:56.000004 [2]涨幅:0.044% 胜率:59.323%
-3501 count:73 w:73 [2]涨幅:-0.075% 胜率:35.134%
-3765 count:52 w:52 [2]涨幅:-0.041% 胜率:35.226%
-3792 count:108 w:108 [2]涨幅:-0.07% 胜率:37.445%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-6.16 周四 11:37:00
-ETHUSDT
-总匹配量:4
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:1	优质率:25%
-3294 count:51 w:50.999992 [2]涨幅:0.044% 胜率:60.681%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-6.16 周四 23:52:03
-BTCUSDT
-总匹配量:25
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.001, 
-优质数:5	优质率:20%
-3675 count:131 w:131.00002 [2]涨幅:0.066% 胜率:62.842%
-3681 count:63 w:63 [1]涨幅:-0.041% 胜率:40.844%
-3681 count:63 w:63 [2]涨幅:-0.082% 胜率:40.844%
-3735 count:203 w:201.6784 [2]涨幅:0.048% 胜率:58.388%
-3981 count:54 w:54 [2]涨幅:0.073% 胜率:64.35%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-6.16 周四 23:52:03
-BNBUSDT
-总匹配量:14
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.001, 
-优质数:3	优质率:21.429%
-3069 count:159 w:148.0635 [2]涨幅:0.041% 胜率:59.74%
-3075 count:132 w:126.54344 [2]涨幅:-0.066% 胜率:40.552%
-3117 count:67 w:62.04367 [2]涨幅:0.049% 胜率:64.004%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-6.16 周四 23:52:04
-ETHUSDT
-总匹配量:0
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.001, 
-优质数:0	优质率:NaN%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-6.17 周五 0:04:01
-ETHUSDT
-总匹配量:12
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.001, 
-优质数:1	优质率:8.333%
-8255 count:76 w:76.00001 [2]涨幅:-0.05% 胜率:36.444%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-6.17 周五 0:04:02
-BNBUSDT
-总匹配量:6
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.001, 
-优质数:2	优质率:33.333%
-5642 count:85 w:75.569176 [2]涨幅:-0.053% 胜率:41.005%
-8045 count:56 w:52.935623 [2]涨幅:0.06% 胜率:63.905%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-6.17 周五 0:04:02
-BTCUSDT
-总匹配量:166
-prev_weight:7, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.001, 
-优质数:30	优质率:18.072%
-6347 count:214 w:214 [2]涨幅:-0.066% 胜率:35.877%
-6701 count:51 w:50.999992 [2]涨幅:0.057% 胜率:60.836%
-6824 count:53 w:53.000004 [2]涨幅:0.043% 胜率:58.81%
-6971 count:85 w:85.00001 [2]涨幅:0.054% 胜率:58.333%
-7076 count:50 w:50 [2]涨幅:0.073% 胜率:68.734%
-7277 count:53 w:53.000004 [2]涨幅:0.054% 胜率:58.204%
-7304 count:56 w:56 [2]涨幅:-0.045% 胜率:36.686%
-7403 count:65 w:65 [1]涨幅:-0.041% 胜率:41.28%
-7403 count:65 w:65 [2]涨幅:-0.082% 胜率:41.28%
-7409 count:54 w:53.999996 [2]涨幅:0.052% 胜率:58.817%
-7448 count:52 w:52 [2]涨幅:-0.043% 胜率:38.066%
-7700 count:100 w:99.999985 [2]涨幅:0.057% 胜率:66.848%
-7859 count:70 w:69.99999 [2]涨幅:0.061% 胜率:63.034%
-8228 count:61 w:61.000008 [1]涨幅:-0.041% 胜率:38.477%
-8228 count:61 w:61.000008 [2]涨幅:-0.081% 胜率:38.477%
-8333 count:143 w:143 [2]涨幅:-0.041% 胜率:39.256%
-8444 count:61 w:60.999992 [1]涨幅:-0.084% 胜率:37.55%
-8444 count:61 w:60.999992 [2]涨幅:-0.168% 胜率:37.55%
-8555 count:62 w:62 [1]涨幅:0.046% 胜率:60.453%
-8555 count:62 w:62 [2]涨幅:0.093% 胜率:60.453%
-8570 count:110 w:110 [2]涨幅:-0.058% 胜率:58.663%
-8645 count:69 w:69 [1]涨幅:0.04% 胜率:65.189%
-8645 count:69 w:69 [2]涨幅:0.081% 胜率:65.189%
-8651 count:58 w:58 [2]涨幅:-0.045% 胜率:39.105%
-8663 count:64 w:64 [2]涨幅:-0.043% 胜率:35.513%
-8687 count:69 w:69.00001 [2]涨幅:-0.049% 胜率:35.204%
-9242 count:65 w:65 [2]涨幅:0.045% 胜率:70.392%
-9284 count:134 w:134.00002 [2]涨幅:-0.064% 胜率:39.09%
-9383 count:72 w:72.00001 [1]涨幅:-0.045% 胜率:39.631%
-9383 count:72 w:72.00001 [2]涨幅:-0.09% 胜率:39.631%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-6.17 周五 13:30:12
-BNBUSDT
-总匹配量:1
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:0%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-6.17 周五 13:30:12
-BTCUSDT
-总匹配量:6
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:1	优质率:16.667%
-5051 count:52 w:52 [2]涨幅:-0.041% 胜率:41.702%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-6.17 周五 13:30:14
-ETHUSDT
-总匹配量:0
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:NaN%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-6.17 周五 13:34:33
-BNBUSDT
-总匹配量:0
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:NaN%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-6.17 周五 13:34:34
-BTCUSDT
-总匹配量:2
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:0%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-6.17 周五 13:34:36
-ETHUSDT
-总匹配量:0
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:NaN%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 670
-
-
-6.17 周五 13:47:15
-BNBUSDT
-总匹配量:1
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:0%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 674
-
-
-6.17 周五 13:47:15
-BTCUSDT
-总匹配量:20
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:2	优质率:10%
-5525 count:61 w:61 [2]涨幅:-0.075% 胜率:38.79%
-5555 count:60 w:59.999996 [2]涨幅:-0.069% 胜率:41.676%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 674
-
-
-6.17 周五 13:47:17
-ETHUSDT
-总匹配量:0
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:NaN%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 674
-
-
-6.17 周五 13:47:20
-XRPUSDT
-总匹配量:2
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:1	优质率:50%
-5093 count:116 w:113.9435 [2]涨幅:-0.053% 胜率:37.225%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 674
-
-
-6.17 周五 13:52:54
-BTCUSDT
-总匹配量:195
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:23	优质率:11.795%
-3050 count:67 w:67 [2]涨幅:-0.076% 胜率:38.557%
-3056 count:310 w:310.00003 [2]涨幅:-0.053% 胜率:40.716%
-3092 count:52 w:51.999992 [1]涨幅:-0.044% 胜率:27.009%
-3092 count:52 w:51.999992 [2]涨幅:-0.088% 胜率:27.009%
-3191 count:130 w:129.99997 [2]涨幅:0.066% 胜率:63.039%
-3200 count:83 w:83.000015 [1]涨幅:0.041% 胜率:62.144%
-3200 count:83 w:83.000015 [2]涨幅:0.082% 胜率:62.144%
-3206 count:75 w:75.00001 [2]涨幅:0.073% 胜率:61.285%
-3224 count:75 w:75.00001 [2]涨幅:0.053% 胜率:60.637%
-3236 count:94 w:94.000015 [1]涨幅:0.058% 胜率:62.425%
-3236 count:94 w:94.000015 [2]涨幅:0.117% 胜率:62.425%
-3695 count:61 w:61 [2]涨幅:-0.048% 胜率:38.817%
-3980 count:53 w:53 [2]涨幅:0.041% 胜率:58.802%
-4022 count:60 w:60 [1]涨幅:-0.063% 胜率:26.042%
-4022 count:60 w:60 [2]涨幅:-0.126% 胜率:26.042%
-4763 count:74 w:74 [1]涨幅:-0.061% 胜率:37.081%
-4763 count:74 w:74 [2]涨幅:-0.123% 胜率:37.081%
-5525 count:61 w:61 [2]涨幅:-0.075% 胜率:38.79%
-5555 count:60 w:59.999996 [2]涨幅:-0.069% 胜率:41.676%
-6044 count:302 w:301.99994 [2]涨幅:0.048% 胜率:60.931%
-6107 count:87 w:87 [2]涨幅:-0.047% 胜率:36.357%
-6881 count:75 w:74.99999 [2]涨幅:-0.06% 胜率:32.216%
-6956 count:55 w:55.000008 [2]涨幅:0.049% 胜率:58.621%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 674
-
-
-6.17 周五 13:52:54
-BNBUSDT
-总匹配量:142
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:19	优质率:13.38%
-2009 count:61 w:55.82686 [1]涨幅:0.074% 胜率:62.806%
-2009 count:61 w:55.82686 [2]涨幅:0.148% 胜率:62.806%
-2411 count:102 w:99.79085 [2]涨幅:0.059% 胜率:58.254%
-2834 count:54 w:50.86775 [1]涨幅:0.074% 胜率:67.365%
-2834 count:54 w:50.86775 [2]涨幅:0.149% 胜率:67.365%
-2900 count:53 w:49.60652 [1]涨幅:0.042% 胜率:61.318%
-2900 count:53 w:49.60652 [2]涨幅:0.084% 胜率:61.318%
-2924 count:62 w:59.27615 [2]涨幅:-0.074% 胜率:37.965%
-3065 count:107 w:97.70151 [2]涨幅:0.059% 胜率:62%
-3113 count:60 w:55.907593 [2]涨幅:0.061% 胜率:64.581%
-3353 count:118 w:111.54588 [2]涨幅:0.05% 胜率:59.497%
-3470 count:56 w:53.984734 [1]涨幅:-0.049% 胜率:41.968%
-3470 count:56 w:53.984734 [2]涨幅:-0.099% 胜率:41.968%
-4247 count:80 w:74.86864 [1]涨幅:0.051% 胜率:63.254%
-4247 count:80 w:74.86864 [2]涨幅:0.103% 胜率:63.254%
-4274 count:60 w:57.889122 [2]涨幅:0.065% 胜率:60.11%
-4610 count:59 w:57.00724 [1]涨幅:0.042% 胜率:59.301%
-4610 count:59 w:57.00724 [2]涨幅:0.085% 胜率:59.301%
-4619 count:76 w:72.134476 [2]涨幅:-0.066% 胜率:33.243%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 674
-
-
-6.17 周五 13:52:56
-ETHUSDT
-总匹配量:12
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:2	优质率:16.667%
-4649 count:73 w:72.99999 [1]涨幅:-0.041% 胜率:41.216%
-4649 count:73 w:72.99999 [2]涨幅:-0.081% 胜率:41.216%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 674
-
-
-6.17 周五 13:53:05
-XRPUSDT
-总匹配量:10
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:3	优质率:30%
-5093 count:116 w:113.9435 [2]涨幅:-0.053% 胜率:37.225%
-6296 count:53 w:51.127213 [1]涨幅:-0.04% 胜率:33.089%
-6296 count:53 w:51.127213 [2]涨幅:-0.081% 胜率:33.089%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 674
-
-
-6.17 周五 14:14:09
-ETHUSDT
-总匹配量:252
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.001, 
-优质数:23	优质率:9.127%
-3092 count:54 w:52.98877 [2]涨幅:-0.071% 胜率:41.476%
-3188 count:74 w:74 [2]涨幅:0.056% 胜率:64.216%
-3191 count:76 w:72.52757 [1]涨幅:0.049% 胜率:69.106%
-3224 count:65 w:65 [2]涨幅:0.049% 胜率:62.877%
-3386 count:56 w:56 [2]涨幅:-0.044% 胜率:39.623%
-3695 count:59 w:56.53334 [1]涨幅:-0.042% 胜率:38.561%
-4076 count:59 w:59.000004 [2]涨幅:0.058% 胜率:62.324%
-4784 count:51 w:51 [2]涨幅:0.063% 胜率:58.158%
-5033 count:93 w:91.81806 [2]涨幅:-0.051% 胜率:39.024%
-5087 count:76 w:76.00001 [2]涨幅:0.057% 胜率:64.47%
-6077 count:56 w:56 [2]涨幅:0.067% 胜率:61.167%
-6386 count:109 w:109 [2]涨幅:-0.044% 胜率:40.036%
-6671 count:60 w:59.057964 [1]涨幅:-0.049% 胜率:40.613%
-6671 count:60 w:59.999996 [2]涨幅:-0.067% 胜率:40.821%
-6851 count:67 w:67.00001 [2]涨幅:-0.053% 胜率:38.827%
-6926 count:56 w:56 [2]涨幅:0.077% 胜率:61.23%
-7094 count:56 w:56 [2]涨幅:-0.051% 胜率:41.789%
-7187 count:74 w:74.00001 [2]涨幅:-0.096% 胜率:33.392%
-7274 count:63 w:63.000004 [2]涨幅:-0.062% 胜率:40.515%
-7418 count:94 w:94 [1]涨幅:-0.052% 胜率:35.653%
-7418 count:94 w:93.999985 [2]涨幅:-0.071% 胜率:32.538%
-7700 count:225 w:224.99995 [2]涨幅:0.05% 胜率:62.136%
-7994 count:68 w:67.01545 [2]涨幅:0.056% 胜率:61.117%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 682
-
-
-6.17 周五 14:14:16
-BTCUSDT
-总匹配量:252
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.001, 
-优质数:23	优质率:9.127%
-3092 count:54 w:52.98877 [2]涨幅:-0.071% 胜率:41.476%
-3188 count:74 w:74 [2]涨幅:0.056% 胜率:64.216%
-3191 count:76 w:72.52757 [1]涨幅:0.049% 胜率:69.106%
-3224 count:65 w:65 [2]涨幅:0.049% 胜率:62.877%
-3386 count:56 w:56 [2]涨幅:-0.044% 胜率:39.623%
-3695 count:59 w:56.53334 [1]涨幅:-0.042% 胜率:38.561%
-4076 count:59 w:59.000004 [2]涨幅:0.058% 胜率:62.324%
-4784 count:51 w:51 [2]涨幅:0.063% 胜率:58.158%
-5033 count:93 w:91.81806 [2]涨幅:-0.051% 胜率:39.024%
-5087 count:76 w:76.00001 [2]涨幅:0.057% 胜率:64.47%
-6077 count:56 w:56 [2]涨幅:0.067% 胜率:61.167%
-6386 count:109 w:109 [2]涨幅:-0.044% 胜率:40.036%
-6671 count:60 w:59.057964 [1]涨幅:-0.049% 胜率:40.613%
-6671 count:60 w:59.999996 [2]涨幅:-0.067% 胜率:40.821%
-6851 count:67 w:67.00001 [2]涨幅:-0.053% 胜率:38.827%
-6926 count:56 w:56 [2]涨幅:0.077% 胜率:61.23%
-7094 count:56 w:56 [2]涨幅:-0.051% 胜率:41.789%
-7187 count:74 w:74.00001 [2]涨幅:-0.096% 胜率:33.392%
-7274 count:63 w:63.000004 [2]涨幅:-0.062% 胜率:40.515%
-7418 count:94 w:94 [1]涨幅:-0.052% 胜率:35.653%
-7418 count:94 w:93.999985 [2]涨幅:-0.071% 胜率:32.538%
-7700 count:225 w:224.99995 [2]涨幅:0.05% 胜率:62.136%
-7994 count:68 w:67.01545 [2]涨幅:0.056% 胜率:61.117%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 682
-
-
-6.17 周五 14:14:17
-XRPUSDT
-总匹配量:252
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.001, 
-优质数:23	优质率:9.127%
-3092 count:54 w:52.98877 [2]涨幅:-0.071% 胜率:41.476%
-3188 count:74 w:74 [2]涨幅:0.056% 胜率:64.216%
-3191 count:76 w:72.52757 [1]涨幅:0.049% 胜率:69.106%
-3224 count:65 w:65 [2]涨幅:0.049% 胜率:62.877%
-3386 count:56 w:56 [2]涨幅:-0.044% 胜率:39.623%
-3695 count:59 w:56.53334 [1]涨幅:-0.042% 胜率:38.561%
-4076 count:59 w:59.000004 [2]涨幅:0.058% 胜率:62.324%
-4784 count:51 w:51 [2]涨幅:0.063% 胜率:58.158%
-5033 count:93 w:91.81806 [2]涨幅:-0.051% 胜率:39.024%
-5087 count:76 w:76.00001 [2]涨幅:0.057% 胜率:64.47%
-6077 count:56 w:56 [2]涨幅:0.067% 胜率:61.167%
-6386 count:109 w:109 [2]涨幅:-0.044% 胜率:40.036%
-6671 count:60 w:59.057964 [1]涨幅:-0.049% 胜率:40.613%
-6671 count:60 w:59.999996 [2]涨幅:-0.067% 胜率:40.821%
-6851 count:67 w:67.00001 [2]涨幅:-0.053% 胜率:38.827%
-6926 count:56 w:56 [2]涨幅:0.077% 胜率:61.23%
-7094 count:56 w:56 [2]涨幅:-0.051% 胜率:41.789%
-7187 count:74 w:74.00001 [2]涨幅:-0.096% 胜率:33.392%
-7274 count:63 w:63.000004 [2]涨幅:-0.062% 胜率:40.515%
-7418 count:94 w:94 [1]涨幅:-0.052% 胜率:35.653%
-7418 count:94 w:93.999985 [2]涨幅:-0.071% 胜率:32.538%
-7700 count:225 w:224.99995 [2]涨幅:0.05% 胜率:62.136%
-7994 count:68 w:67.01545 [2]涨幅:0.056% 胜率:61.117%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 682
-
-
-6.17 周五 14:14:32
-BNBUSDT
-总匹配量:252
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:2.5, price_weight_down:1, close_weight:2.5, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.001, 
-优质数:23	优质率:9.127%
-3092 count:54 w:52.98877 [2]涨幅:-0.071% 胜率:41.476%
-3188 count:74 w:74 [2]涨幅:0.056% 胜率:64.216%
-3191 count:76 w:72.52757 [1]涨幅:0.049% 胜率:69.106%
-3224 count:65 w:65 [2]涨幅:0.049% 胜率:62.877%
-3386 count:56 w:56 [2]涨幅:-0.044% 胜率:39.623%
-3695 count:59 w:56.53334 [1]涨幅:-0.042% 胜率:38.561%
-4076 count:59 w:59.000004 [2]涨幅:0.058% 胜率:62.324%
-4784 count:51 w:51 [2]涨幅:0.063% 胜率:58.158%
-5033 count:93 w:91.81806 [2]涨幅:-0.051% 胜率:39.024%
-5087 count:76 w:76.00001 [2]涨幅:0.057% 胜率:64.47%
-6077 count:56 w:56 [2]涨幅:0.067% 胜率:61.167%
-6386 count:109 w:109 [2]涨幅:-0.044% 胜率:40.036%
-6671 count:60 w:59.057964 [1]涨幅:-0.049% 胜率:40.613%
-6671 count:60 w:59.999996 [2]涨幅:-0.067% 胜率:40.821%
-6851 count:67 w:67.00001 [2]涨幅:-0.053% 胜率:38.827%
-6926 count:56 w:56 [2]涨幅:0.077% 胜率:61.23%
-7094 count:56 w:56 [2]涨幅:-0.051% 胜率:41.789%
-7187 count:74 w:74.00001 [2]涨幅:-0.096% 胜率:33.392%
-7274 count:63 w:63.000004 [2]涨幅:-0.062% 胜率:40.515%
-7418 count:94 w:94 [1]涨幅:-0.052% 胜率:35.653%
-7418 count:94 w:93.999985 [2]涨幅:-0.071% 胜率:32.538%
-7700 count:225 w:224.99995 [2]涨幅:0.05% 胜率:62.136%
-7994 count:68 w:67.01545 [2]涨幅:0.056% 胜率:61.117%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 682
-
-
-6.17 周五 16:37:45
-BNBUSDT
-总匹配量:293
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:29	优质率:9.898%	匹配成功率：0.3448276
-3092 count:52 w:52 [1]涨幅:-0.043% 胜率:27.104% real:-0.000102079815
-3092 count:52 w:52 [2]涨幅:-0.053% 胜率:40.223% real:0.0090836575
-3200 count:83 w:82.99999 [1]涨幅:0.041% 胜率:62.247% real:-0.0006412162
-3200 count:83 w:82.99999 [2]涨幅:0.045% 胜率:59.386% real:-0.00050215155
-3206 count:75 w:75 [2]涨幅:0.04% 胜率:63.228% real:-0.0011934589
-3224 count:75 w:75 [2]涨幅:0.057% 胜率:67.661% real:0.002377565
-3236 count:94 w:94 [1]涨幅:0.059% 胜率:62.453% real:-0.0024022448
-3236 count:94 w:94.00001 [2]涨幅:0.075% 胜率:61.389% real:-0.005122025
-3251 count:124 w:124.00002 [2]涨幅:0.04% 胜率:62.809% real:-0.0008101117
-4022 count:60 w:60 [1]涨幅:-0.063% 胜率:26.172% real:0.0005905444
-4022 count:60 w:60 [2]涨幅:-0.081% 胜率:31.445% real:0.001613544
-4763 count:74 w:73.999985 [1]涨幅:-0.06% 胜率:37.468% real:-0.0005295966
-4763 count:74 w:74.00001 [2]涨幅:-0.045% 胜率:39.747% real:-0.0019103914
-5483 count:89 w:88.99999 [2]涨幅:-0.044% 胜率:34.053% real:-0.0010536885
-5504 count:73 w:73 [2]涨幅:0.049% 胜率:60.987% real:-0.0005343157
-5525 count:61 w:61.000004 [2]涨幅:-0.079% 胜率:24.805% real:-0.0025956465
-6881 count:75 w:75 [2]涨幅:-0.048% 胜率:31.285% real:-0.00024887966
-7199 count:52 w:52.000004 [2]涨幅:-0.041% 胜率:39.763% real:0.000122678
-7205 count:85 w:85 [2]涨幅:-0.054% 胜率:39.679% real:0.004823921
-7214 count:101 w:101.00001 [2]涨幅:-0.045% 胜率:40.62% real:0.006804685
-7274 count:50 w:50.000004 [1]涨幅:-0.044% 胜率:33.413% real:0.0024918267
-7274 count:50 w:50 [2]涨幅:-0.067% 胜率:27.163% real:0.0022982212
-7304 count:161 w:160.99997 [2]涨幅:-0.052% 胜率:33.321% real:0.0002049272
-7418 count:69 w:69 [2]涨幅:-0.056% 胜率:27.303% real:0.0037700213
-7580 count:123 w:122.999985 [2]涨幅:-0.041% 胜率:36.559% real:-0.0019054648
-7679 count:152 w:151.99998 [2]涨幅:-0.056% 胜率:40.281% real:-0.0021008155
-7685 count:83 w:83 [2]涨幅:-0.043% 胜率:41.66% real:0.0011045446
-7856 count:71 w:71.00001 [2]涨幅:-0.047% 胜率:36.882% real:0.0014293176
-7979 count:55 w:55.000008 [2]涨幅:-0.051% 胜率:40.394% real:-0.002204544
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 691
-
-
-6.17 周五 16:37:45
-ETHUSDT
-总匹配量:293
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:29	优质率:9.898%	匹配成功率：0.3448276
-3092 count:52 w:52 [1]涨幅:-0.043% 胜率:27.104% real:-0.000102079815
-3092 count:52 w:52 [2]涨幅:-0.053% 胜率:40.223% real:0.0090836575
-3200 count:83 w:82.99999 [1]涨幅:0.041% 胜率:62.247% real:-0.0006412162
-3200 count:83 w:82.99999 [2]涨幅:0.045% 胜率:59.386% real:-0.00050215155
-3206 count:75 w:75 [2]涨幅:0.04% 胜率:63.228% real:-0.0011934589
-3224 count:75 w:75 [2]涨幅:0.057% 胜率:67.661% real:0.002377565
-3236 count:94 w:94 [1]涨幅:0.059% 胜率:62.453% real:-0.0024022448
-3236 count:94 w:94.00001 [2]涨幅:0.075% 胜率:61.389% real:-0.005122025
-3251 count:124 w:124.00002 [2]涨幅:0.04% 胜率:62.809% real:-0.0008101117
-4022 count:60 w:60 [1]涨幅:-0.063% 胜率:26.172% real:0.0005905444
-4022 count:60 w:60 [2]涨幅:-0.081% 胜率:31.445% real:0.001613544
-4763 count:74 w:73.999985 [1]涨幅:-0.06% 胜率:37.468% real:-0.0005295966
-4763 count:74 w:74.00001 [2]涨幅:-0.045% 胜率:39.747% real:-0.0019103914
-5483 count:89 w:88.99999 [2]涨幅:-0.044% 胜率:34.053% real:-0.0010536885
-5504 count:73 w:73 [2]涨幅:0.049% 胜率:60.987% real:-0.0005343157
-5525 count:61 w:61.000004 [2]涨幅:-0.079% 胜率:24.805% real:-0.0025956465
-6881 count:75 w:75 [2]涨幅:-0.048% 胜率:31.285% real:-0.00024887966
-7199 count:52 w:52.000004 [2]涨幅:-0.041% 胜率:39.763% real:0.000122678
-7205 count:85 w:85 [2]涨幅:-0.054% 胜率:39.679% real:0.004823921
-7214 count:101 w:101.00001 [2]涨幅:-0.045% 胜率:40.62% real:0.006804685
-7274 count:50 w:50.000004 [1]涨幅:-0.044% 胜率:33.413% real:0.0024918267
-7274 count:50 w:50 [2]涨幅:-0.067% 胜率:27.163% real:0.0022982212
-7304 count:161 w:160.99997 [2]涨幅:-0.052% 胜率:33.321% real:0.0002049272
-7418 count:69 w:69 [2]涨幅:-0.056% 胜率:27.303% real:0.0037700213
-7580 count:123 w:122.999985 [2]涨幅:-0.041% 胜率:36.559% real:-0.0019054648
-7679 count:152 w:151.99998 [2]涨幅:-0.056% 胜率:40.281% real:-0.0021008155
-7685 count:83 w:83 [2]涨幅:-0.043% 胜率:41.66% real:0.0011045446
-7856 count:71 w:71.00001 [2]涨幅:-0.047% 胜率:36.882% real:0.0014293176
-7979 count:55 w:55.000008 [2]涨幅:-0.051% 胜率:40.394% real:-0.002204544
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 691
-
-
-6.17 周五 16:37:46
-BTCUSDT
-总匹配量:293
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:29	优质率:9.898%	匹配成功率：0.3448276
-3092 count:52 w:52 [1]涨幅:-0.043% 胜率:27.104% real:-0.000102079815
-3092 count:52 w:52 [2]涨幅:-0.053% 胜率:40.223% real:0.0090836575
-3200 count:83 w:82.99999 [1]涨幅:0.041% 胜率:62.247% real:-0.0006412162
-3200 count:83 w:82.99999 [2]涨幅:0.045% 胜率:59.386% real:-0.00050215155
-3206 count:75 w:75 [2]涨幅:0.04% 胜率:63.228% real:-0.0011934589
-3224 count:75 w:75 [2]涨幅:0.057% 胜率:67.661% real:0.002377565
-3236 count:94 w:94 [1]涨幅:0.059% 胜率:62.453% real:-0.0024022448
-3236 count:94 w:94.00001 [2]涨幅:0.075% 胜率:61.389% real:-0.005122025
-3251 count:124 w:124.00002 [2]涨幅:0.04% 胜率:62.809% real:-0.0008101117
-4022 count:60 w:60 [1]涨幅:-0.063% 胜率:26.172% real:0.0005905444
-4022 count:60 w:60 [2]涨幅:-0.081% 胜率:31.445% real:0.001613544
-4763 count:74 w:73.999985 [1]涨幅:-0.06% 胜率:37.468% real:-0.0005295966
-4763 count:74 w:74.00001 [2]涨幅:-0.045% 胜率:39.747% real:-0.0019103914
-5483 count:89 w:88.99999 [2]涨幅:-0.044% 胜率:34.053% real:-0.0010536885
-5504 count:73 w:73 [2]涨幅:0.049% 胜率:60.987% real:-0.0005343157
-5525 count:61 w:61.000004 [2]涨幅:-0.079% 胜率:24.805% real:-0.0025956465
-6881 count:75 w:75 [2]涨幅:-0.048% 胜率:31.285% real:-0.00024887966
-7199 count:52 w:52.000004 [2]涨幅:-0.041% 胜率:39.763% real:0.000122678
-7205 count:85 w:85 [2]涨幅:-0.054% 胜率:39.679% real:0.004823921
-7214 count:101 w:101.00001 [2]涨幅:-0.045% 胜率:40.62% real:0.006804685
-7274 count:50 w:50.000004 [1]涨幅:-0.044% 胜率:33.413% real:0.0024918267
-7274 count:50 w:50 [2]涨幅:-0.067% 胜率:27.163% real:0.0022982212
-7304 count:161 w:160.99997 [2]涨幅:-0.052% 胜率:33.321% real:0.0002049272
-7418 count:69 w:69 [2]涨幅:-0.056% 胜率:27.303% real:0.0037700213
-7580 count:123 w:122.999985 [2]涨幅:-0.041% 胜率:36.559% real:-0.0019054648
-7679 count:152 w:151.99998 [2]涨幅:-0.056% 胜率:40.281% real:-0.0021008155
-7685 count:83 w:83 [2]涨幅:-0.043% 胜率:41.66% real:0.0011045446
-7856 count:71 w:71.00001 [2]涨幅:-0.047% 胜率:36.882% real:0.0014293176
-7979 count:55 w:55.000008 [2]涨幅:-0.051% 胜率:40.394% real:-0.002204544
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 691
-
-
-6.17 周五 16:37:46
-XRPUSDT
-总匹配量:293
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:29	优质率:9.898%	匹配成功率：0.3448276
-3092 count:52 w:52 [1]涨幅:-0.043% 胜率:27.104% real:-0.000102079815
-3092 count:52 w:52 [2]涨幅:-0.053% 胜率:40.223% real:0.0090836575
-3200 count:83 w:82.99999 [1]涨幅:0.041% 胜率:62.247% real:-0.0006412162
-3200 count:83 w:82.99999 [2]涨幅:0.045% 胜率:59.386% real:-0.00050215155
-3206 count:75 w:75 [2]涨幅:0.04% 胜率:63.228% real:-0.0011934589
-3224 count:75 w:75 [2]涨幅:0.057% 胜率:67.661% real:0.002377565
-3236 count:94 w:94 [1]涨幅:0.059% 胜率:62.453% real:-0.0024022448
-3236 count:94 w:94.00001 [2]涨幅:0.075% 胜率:61.389% real:-0.005122025
-3251 count:124 w:124.00002 [2]涨幅:0.04% 胜率:62.809% real:-0.0008101117
-4022 count:60 w:60 [1]涨幅:-0.063% 胜率:26.172% real:0.0005905444
-4022 count:60 w:60 [2]涨幅:-0.081% 胜率:31.445% real:0.001613544
-4763 count:74 w:73.999985 [1]涨幅:-0.06% 胜率:37.468% real:-0.0005295966
-4763 count:74 w:74.00001 [2]涨幅:-0.045% 胜率:39.747% real:-0.0019103914
-5483 count:89 w:88.99999 [2]涨幅:-0.044% 胜率:34.053% real:-0.0010536885
-5504 count:73 w:73 [2]涨幅:0.049% 胜率:60.987% real:-0.0005343157
-5525 count:61 w:61.000004 [2]涨幅:-0.079% 胜率:24.805% real:-0.0025956465
-6881 count:75 w:75 [2]涨幅:-0.048% 胜率:31.285% real:-0.00024887966
-7199 count:52 w:52.000004 [2]涨幅:-0.041% 胜率:39.763% real:0.000122678
-7205 count:85 w:85 [2]涨幅:-0.054% 胜率:39.679% real:0.004823921
-7214 count:101 w:101.00001 [2]涨幅:-0.045% 胜率:40.62% real:0.006804685
-7274 count:50 w:50.000004 [1]涨幅:-0.044% 胜率:33.413% real:0.0024918267
-7274 count:50 w:50 [2]涨幅:-0.067% 胜率:27.163% real:0.0022982212
-7304 count:161 w:160.99997 [2]涨幅:-0.052% 胜率:33.321% real:0.0002049272
-7418 count:69 w:69 [2]涨幅:-0.056% 胜率:27.303% real:0.0037700213
-7580 count:123 w:122.999985 [2]涨幅:-0.041% 胜率:36.559% real:-0.0019054648
-7679 count:152 w:151.99998 [2]涨幅:-0.056% 胜率:40.281% real:-0.0021008155
-7685 count:83 w:83 [2]涨幅:-0.043% 胜率:41.66% real:0.0011045446
-7856 count:71 w:71.00001 [2]涨幅:-0.047% 胜率:36.882% real:0.0014293176
-7979 count:55 w:55.000008 [2]涨幅:-0.051% 胜率:40.394% real:-0.002204544
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 691
-
-
-6.17 周五 18:33:14
-XRPUSDT
-总匹配量:14
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:0%	匹配成功率：NaN
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.17 周五 18:33:16
-BNBUSDT
-总匹配量:183
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:6	优质率:3.279%	匹配成功率：0.33333334
-2222 count:52 w:52.000004 [2]涨幅:0.046% 胜率:60.588% real:-0.000895598
-2462 count:50 w:50.000004 [2]涨幅:0.06% 胜率:66.486% real:-0.0019855362
-2729 count:66 w:66 [1]涨幅:0.057% 胜率:61.323% real:-0.004333666
-4169 count:76 w:76 [2]涨幅:-0.056% 胜率:34.298% real:-0.00061780977
-7628 count:69 w:69 [2]涨幅:0.064% 胜率:59.249% real:0.00028866684
-7994 count:53 w:52.999992 [2]涨幅:0.054% 胜率:58.142% real:-0.00152679
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.17 周五 18:33:16
-ETHUSDT
-总匹配量:24
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:2	优质率:8.333%	匹配成功率：0.5
-2009 count:82 w:81.999985 [2]涨幅:-0.047% 胜率:37.206% real:-0.00020296196
-3140 count:93 w:93.00001 [2]涨幅:-0.043% 胜率:38.7% real:0.007635392
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.17 周五 18:33:20
-BTCUSDT
-总匹配量:293
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:29	优质率:9.898%	匹配成功率：0.3448276
-3092 count:52 w:52 [1]涨幅:-0.043% 胜率:27.104% real:-0.000102079815
-3092 count:52 w:52 [2]涨幅:-0.053% 胜率:40.223% real:0.0090836575
-3200 count:83 w:82.99999 [1]涨幅:0.041% 胜率:62.247% real:-0.0006412162
-3200 count:83 w:82.99999 [2]涨幅:0.045% 胜率:59.386% real:-0.00050215155
-3206 count:75 w:75 [2]涨幅:0.04% 胜率:63.228% real:-0.0011934589
-3224 count:75 w:75 [2]涨幅:0.057% 胜率:67.661% real:0.002377565
-3236 count:94 w:94 [1]涨幅:0.059% 胜率:62.453% real:-0.0024022448
-3236 count:94 w:94.00001 [2]涨幅:0.075% 胜率:61.389% real:-0.005122025
-3251 count:124 w:124.00002 [2]涨幅:0.04% 胜率:62.809% real:-0.0008101117
-4022 count:60 w:60 [1]涨幅:-0.063% 胜率:26.172% real:0.0005905444
-4022 count:60 w:60 [2]涨幅:-0.081% 胜率:31.445% real:0.001613544
-4763 count:74 w:73.999985 [1]涨幅:-0.06% 胜率:37.468% real:-0.0005295966
-4763 count:74 w:74.00001 [2]涨幅:-0.045% 胜率:39.747% real:-0.0019103914
-5483 count:89 w:88.99999 [2]涨幅:-0.044% 胜率:34.053% real:-0.0010536885
-5504 count:73 w:73 [2]涨幅:0.049% 胜率:60.987% real:-0.0005343157
-5525 count:61 w:61.000004 [2]涨幅:-0.079% 胜率:24.805% real:-0.0025956465
-6881 count:75 w:75 [2]涨幅:-0.048% 胜率:31.285% real:-0.00024887966
-7199 count:52 w:52.000004 [2]涨幅:-0.041% 胜率:39.763% real:0.000122678
-7205 count:85 w:85 [2]涨幅:-0.054% 胜率:39.679% real:0.004823921
-7214 count:101 w:101.00001 [2]涨幅:-0.045% 胜率:40.62% real:0.006804685
-7274 count:50 w:50.000004 [1]涨幅:-0.044% 胜率:33.413% real:0.0024918267
-7274 count:50 w:50 [2]涨幅:-0.067% 胜率:27.163% real:0.0022982212
-7304 count:161 w:160.99997 [2]涨幅:-0.052% 胜率:33.321% real:0.0002049272
-7418 count:69 w:69 [2]涨幅:-0.056% 胜率:27.303% real:0.0037700213
-7580 count:123 w:122.999985 [2]涨幅:-0.041% 胜率:36.559% real:-0.0019054648
-7679 count:152 w:151.99998 [2]涨幅:-0.056% 胜率:40.281% real:-0.0021008155
-7685 count:83 w:83 [2]涨幅:-0.043% 胜率:41.66% real:0.0011045446
-7856 count:71 w:71.00001 [2]涨幅:-0.047% 胜率:36.882% real:0.0014293176
-7979 count:55 w:55.000008 [2]涨幅:-0.051% 胜率:40.394% real:-0.002204544
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.17 周五 18:47:18
-XRPUSDT
-总匹配量:14
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:0%	匹配成功率：NaN%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.17 周五 18:47:20
-ETHUSDT
-总匹配量:24
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:2	优质率:8.333%	匹配成功率：100%
-2009 count:82 w:81.999985 [2]涨幅:-0.047% 胜率:37.206% real:-0.246%
-3140 count:93 w:93.00001 [2]涨幅:-0.043% 胜率:38.7% real:-0.121%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.17 周五 18:47:22
-BTCUSDT
-总匹配量:293
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:29	优质率:9.898%	匹配成功率：72.414%
-3092 count:52 w:52 [1]涨幅:-0.043% 胜率:27.104% real:0.919%
-3092 count:52 w:52 [2]涨幅:-0.053% 胜率:40.223% real:0.867%
-3200 count:83 w:82.99999 [1]涨幅:0.041% 胜率:62.247% real:0.014%
-3200 count:83 w:82.99999 [2]涨幅:0.045% 胜率:59.386% real:0.036%
-3206 count:75 w:75 [2]涨幅:0.04% 胜率:63.228% real:-0.139%
-3224 count:75 w:75 [2]涨幅:0.057% 胜率:67.661% real:0.569%
-3236 count:94 w:94 [1]涨幅:0.059% 胜率:62.453% real:-0.272%
-3236 count:94 w:94.00001 [2]涨幅:0.075% 胜率:61.389% real:0.054%
-3251 count:124 w:124.00002 [2]涨幅:0.04% 胜率:62.809% real:0.139%
-4022 count:60 w:60 [1]涨幅:-0.063% 胜率:26.172% real:0.102%
-4022 count:60 w:60 [2]涨幅:-0.081% 胜率:31.445% real:-0.159%
-4763 count:74 w:73.999985 [1]涨幅:-0.06% 胜率:37.468% real:-0.138%
-4763 count:74 w:74.00001 [2]涨幅:-0.045% 胜率:39.747% real:-0.177%
-5483 count:89 w:88.99999 [2]涨幅:-0.044% 胜率:34.053% real:-0.257%
-5504 count:73 w:73 [2]涨幅:0.049% 胜率:60.987% real:0.032%
-5525 count:61 w:61.000004 [2]涨幅:-0.079% 胜率:24.805% real:-0.193%
-6881 count:75 w:75 [2]涨幅:-0.048% 胜率:31.285% real:-0.077%
-7199 count:52 w:52.000004 [2]涨幅:-0.041% 胜率:39.763% real:-0.22%
-7205 count:85 w:85 [2]涨幅:-0.054% 胜率:39.679% real:-0.057%
-7214 count:101 w:101.00001 [2]涨幅:-0.045% 胜率:40.62% real:0.561%
-7274 count:50 w:50.000004 [1]涨幅:-0.044% 胜率:33.413% real:-0.019%
-7274 count:50 w:50 [2]涨幅:-0.067% 胜率:27.163% real:-0.14%
-7304 count:161 w:160.99997 [2]涨幅:-0.052% 胜率:33.321% real:0.177%
-7418 count:69 w:69 [2]涨幅:-0.056% 胜率:27.303% real:-0.019%
-7580 count:123 w:122.999985 [2]涨幅:-0.041% 胜率:36.559% real:-0.289%
-7679 count:152 w:151.99998 [2]涨幅:-0.056% 胜率:40.281% real:-0.073%
-7685 count:83 w:83 [2]涨幅:-0.043% 胜率:41.66% real:0.097%
-7856 count:71 w:71.00001 [2]涨幅:-0.047% 胜率:36.882% real:-0.265%
-7979 count:55 w:55.000008 [2]涨幅:-0.051% 胜率:40.394% real:-0.612%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.17 周五 18:47:22
-BNBUSDT
-总匹配量:183
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:6	优质率:3.279%	匹配成功率：66.667%
-2222 count:52 w:52.000004 [2]涨幅:0.046% 胜率:60.588% real:-1.065%
-2462 count:50 w:50.000004 [2]涨幅:0.06% 胜率:66.486% real:0.003%
-2729 count:66 w:66 [1]涨幅:0.057% 胜率:61.323% real:-0.006%
-4169 count:76 w:76 [2]涨幅:-0.056% 胜率:34.298% real:-0.148%
-7628 count:69 w:69 [2]涨幅:0.064% 胜率:59.249% real:0.437%
-7994 count:53 w:52.999992 [2]涨幅:0.054% 胜率:58.142% real:0.047%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.17 周五 18:58:42
-XRPUSDT
-总匹配量:249
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:19	优质率:7.631%	匹配成功率：36.842%
-8402 count:56 w:56 [1]涨幅:-0.053% 胜率:27.282% real:0.14%
-8408 count:66 w:66 [2]涨幅:-0.06% 胜率:37.857% real:-0.559%
-8888 count:69 w:67.96561 [1]涨幅:-0.062% 胜率:38.138% real:0.07%
-9293 count:109 w:108.99999 [2]涨幅:0.047% 胜率:59.304% real:-0.431%
-9485 count:64 w:64 [2]涨幅:-0.057% 胜率:41.453% real:-0.287%
-9545 count:64 w:64 [2]涨幅:-0.059% 胜率:39.229% real:0.1%
-9557 count:84 w:84.000015 [2]涨幅:-0.051% 胜率:38.192% real:0.229%
-9884 count:161 w:161.00002 [2]涨幅:-0.041% 胜率:38.045% real:2.31%
-9887 count:171 w:171 [2]涨幅:-0.058% 胜率:32.759% real:1.54%
-11456 count:66 w:66.000015 [2]涨幅:-0.044% 胜率:37.199% real:1.6%
-11471 count:73 w:73 [2]涨幅:-0.058% 胜率:32.528% real:1.99%
-11525 count:60 w:60.000008 [2]涨幅:0.06% 胜率:61.687% real:0.659%
-11957 count:50 w:49.999996 [1]涨幅:0.044% 胜率:58.998% real:-0.439%
-12764 count:54 w:53.999992 [1]涨幅:0.047% 胜率:58.316% real:0.277%
-15170 count:57 w:57.000008 [2]涨幅:-0.056% 胜率:39.326% real:0.497%
-16730 count:51 w:50.999992 [2]涨幅:0.054% 胜率:59.973% real:0.162%
-16742 count:66 w:66 [1]涨幅:-0.052% 胜率:35.16% real:0.119%
-16742 count:66 w:66 [2]涨幅:-0.078% 胜率:36.347% real:-0.081%
-18509 count:70 w:70.00001 [2]涨幅:-0.098% 胜率:36.041% real:-0.499%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.17 周五 18:58:42
-ETHUSDT
-总匹配量:441
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:44	优质率:9.977%	匹配成功率：52.273%
-2009 count:82 w:81.999985 [2]涨幅:-0.047% 胜率:37.206% real:-0.246%
-3140 count:93 w:93.00001 [2]涨幅:-0.043% 胜率:38.7% real:-0.121%
-8069 count:54 w:54 [1]涨幅:0.058% 胜率:62.09% real:-0.156%
-8102 count:111 w:111.000015 [2]涨幅:-0.041% 胜率:37.981% real:-0.189%
-8159 count:57 w:56.999996 [2]涨幅:0.053% 胜率:58.903% real:0.087%
-8225 count:53 w:53 [2]涨幅:-0.049% 胜率:40.484% real:0.39%
-8558 count:50 w:49.999996 [1]涨幅:-0.062% 胜率:25.658% real:0.058%
-8558 count:50 w:50.000004 [2]涨幅:-0.044% 胜率:40.395% real:0.189%
-8585 count:72 w:72 [1]涨幅:0.048% 胜率:65.898% real:-0.076%
-8585 count:72 w:72 [2]涨幅:0.09% 胜率:71.463% real:0.064%
-8657 count:58 w:58 [1]涨幅:-0.043% 胜率:39.639% real:-0.169%
-8657 count:58 w:57.999992 [2]涨幅:-0.064% 胜率:28.055% real:-0.162%
-8762 count:105 w:105.00001 [2]涨幅:-0.046% 胜率:38.488% real:0.066%
-10982 count:52 w:51.999996 [1]涨幅:0.053% 胜率:67.708% real:0.048%
-11102 count:55 w:54.999992 [2]涨幅:0.043% 胜率:64.416% real:-0.152%
-11345 count:62 w:61.999992 [2]涨幅:-0.049% 胜率:35.973% real:0.096%
-11360 count:86 w:86 [2]涨幅:-0.053% 胜率:41.864% real:0.096%
-11477 count:61 w:61.000004 [1]涨幅:0.047% 胜率:62.281% real:-0.407%
-11642 count:81 w:81 [1]涨幅:0.044% 胜率:61.453% real:0.329%
-12104 count:56 w:56 [2]涨幅:0.078% 胜率:61.049% real:-0.264%
-12167 count:90 w:89.99997 [2]涨幅:-0.058% 胜率:39.13% real:-0.165%
-12410 count:100 w:100 [2]涨幅:-0.041% 胜率:37.44% real:-0.2%
-12824 count:62 w:62 [2]涨幅:0.049% 胜率:61.759% real:0.551%
-13187 count:53 w:52.999996 [2]涨幅:0.075% 胜率:65.827% real:-0.084%
-13247 count:184 w:183.99991 [2]涨幅:-0.049% 胜率:34.267% real:-0.012%
-13256 count:60 w:60.000004 [2]涨幅:-0.043% 胜率:37.463% real:-0.471%
-13412 count:54 w:53.999992 [1]涨幅:-0.062% 胜率:34.216% real:0.351%
-13412 count:54 w:53.999992 [2]涨幅:-0.11% 胜率:32.45% real:0.06%
-13415 count:66 w:66 [2]涨幅:-0.058% 胜率:35.556% real:-0.226%
-13421 count:114 w:113.999985 [2]涨幅:-0.092% 胜率:30.882% real:-0.053%
-13475 count:75 w:74.999985 [2]涨幅:-0.041% 胜率:38.7% real:-0.05%
-13703 count:56 w:56.000008 [2]涨幅:-0.043% 胜率:34.335% real:0.496%
-13778 count:50 w:49.999992 [2]涨幅:0.043% 胜率:60.1% real:0.085%
-13844 count:91 w:91.00001 [2]涨幅:-0.067% 胜率:39.308% real:0.501%
-14105 count:63 w:62.999992 [2]涨幅:0.042% 胜率:66.7% real:-0.665%
-14285 count:57 w:57 [1]涨幅:0.048% 胜率:60% real:-0.111%
-14285 count:57 w:57.000004 [2]涨幅:0.052% 胜率:65.026% real:-0.395%
-14492 count:85 w:85.000015 [2]涨幅:0.052% 胜率:60.396% real:0.274%
-18365 count:59 w:59 [1]涨幅:0.041% 胜率:59.936% real:-0.152%
-18863 count:57 w:57.000004 [1]涨幅:0.058% 胜率:59.259% real:0.016%
-18863 count:57 w:57.000004 [2]涨幅:0.105% 胜率:67.078% real:0.463%
-19019 count:160 w:160 [2]涨幅:-0.05% 胜率:36.249% real:-0.358%
-19202 count:61 w:61 [2]涨幅:0.041% 胜率:63.307% real:-0.116%
-19709 count:102 w:101.99999 [2]涨幅:-0.043% 胜率:30.632% real:-0.065%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.17 周五 18:58:53
-BTCUSDT
-总匹配量:1092
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:75	优质率:6.868%	匹配成功率：56%
-3092 count:52 w:52 [1]涨幅:-0.043% 胜率:27.104% real:0.919%
-3092 count:52 w:52 [2]涨幅:-0.053% 胜率:40.223% real:0.867%
-3200 count:83 w:82.99999 [1]涨幅:0.041% 胜率:62.247% real:0.014%
-3200 count:83 w:82.99999 [2]涨幅:0.045% 胜率:59.386% real:0.036%
-3206 count:75 w:75 [2]涨幅:0.04% 胜率:63.228% real:-0.139%
-3224 count:75 w:75 [2]涨幅:0.057% 胜率:67.661% real:0.569%
-3236 count:94 w:94 [1]涨幅:0.059% 胜率:62.453% real:-0.272%
-3236 count:94 w:94.00001 [2]涨幅:0.075% 胜率:61.389% real:0.054%
-3251 count:124 w:124.00002 [2]涨幅:0.04% 胜率:62.809% real:0.139%
-4022 count:60 w:60 [1]涨幅:-0.063% 胜率:26.172% real:0.102%
-4022 count:60 w:60 [2]涨幅:-0.081% 胜率:31.445% real:-0.159%
-4763 count:74 w:73.999985 [1]涨幅:-0.06% 胜率:37.468% real:-0.138%
-4763 count:74 w:74.00001 [2]涨幅:-0.045% 胜率:39.747% real:-0.177%
-5483 count:89 w:88.99999 [2]涨幅:-0.044% 胜率:34.053% real:-0.257%
-5504 count:73 w:73 [2]涨幅:0.049% 胜率:60.987% real:0.032%
-5525 count:61 w:61.000004 [2]涨幅:-0.079% 胜率:24.805% real:-0.193%
-6881 count:75 w:75 [2]涨幅:-0.048% 胜率:31.285% real:-0.077%
-7199 count:52 w:52.000004 [2]涨幅:-0.041% 胜率:39.763% real:-0.22%
-7205 count:85 w:85 [2]涨幅:-0.054% 胜率:39.679% real:-0.057%
-7214 count:101 w:101.00001 [2]涨幅:-0.045% 胜率:40.62% real:0.561%
-7274 count:50 w:50.000004 [1]涨幅:-0.044% 胜率:33.413% real:-0.019%
-7274 count:50 w:50 [2]涨幅:-0.067% 胜率:27.163% real:-0.14%
-7304 count:161 w:160.99997 [2]涨幅:-0.052% 胜率:33.321% real:0.177%
-7418 count:69 w:69 [2]涨幅:-0.056% 胜率:27.303% real:-0.019%
-7580 count:123 w:122.999985 [2]涨幅:-0.041% 胜率:36.559% real:-0.289%
-7679 count:152 w:151.99998 [2]涨幅:-0.056% 胜率:40.281% real:-0.073%
-7685 count:83 w:83 [2]涨幅:-0.043% 胜率:41.66% real:0.097%
-7856 count:71 w:71.00001 [2]涨幅:-0.047% 胜率:36.882% real:-0.265%
-7979 count:55 w:55.000008 [2]涨幅:-0.051% 胜率:40.394% real:-0.612%
-8432 count:53 w:52.999992 [2]涨幅:0.065% 胜率:66.707% real:-0.097%
-8459 count:64 w:63.999992 [1]涨幅:0.054% 胜率:67.233% real:-0.089%
-8459 count:64 w:63.999992 [2]涨幅:0.073% 胜率:61.568% real:0.062%
-8474 count:68 w:68 [1]涨幅:-0.054% 胜率:28.928% real:0.055%
-8474 count:68 w:68 [2]涨幅:-0.073% 胜率:34.935% real:0.449%
-8525 count:113 w:112.99999 [2]涨幅:-0.043% 胜率:36.489% real:-0.366%
-8663 count:90 w:90 [1]涨幅:-0.06% 胜率:32.349% real:-0.078%
-8663 count:90 w:89.99999 [2]涨幅:-0.096% 胜率:25.628% real:0.08%
-9020 count:55 w:54.999992 [1]涨幅:-0.053% 胜率:30.998% real:0.468%
-9134 count:60 w:60 [2]涨幅:0.088% 胜率:59.286% real:0.617%
-9221 count:86 w:86 [2]涨幅:-0.041% 胜率:39.185% real:-0.266%
-9332 count:67 w:67.00001 [1]涨幅:0.047% 胜率:65.986% real:-0.015%
-9332 count:67 w:67.00001 [2]涨幅:0.05% 胜率:61.812% real:0.255%
-12107 count:70 w:70 [2]涨幅:0.05% 胜率:58.46% real:0.316%
-12620 count:57 w:57.000008 [1]涨幅:0.044% 胜率:59.768% real:-0.314%
-12986 count:64 w:64 [2]涨幅:0.041% 胜率:62.092% real:0.183%
-13049 count:52 w:52 [2]涨幅:0.051% 胜率:62.857% real:-0.005%
-13883 count:66 w:65.99999 [2]涨幅:-0.042% 胜率:37.799% real:-0.23%
-13892 count:102 w:102 [2]涨幅:0.049% 胜率:58.53% real:0.36%
-14150 count:55 w:55.000008 [1]涨幅:-0.041% 胜率:35.494% real:-0.046%
-14414 count:68 w:68.00001 [1]涨幅:0.042% 胜率:64.929% real:0.234%
-14699 count:68 w:68.00001 [2]涨幅:0.057% 胜率:59.169% real:-0.61%
-14969 count:50 w:49.999992 [2]涨幅:0.064% 胜率:62.999% real:-0.017%
-14993 count:70 w:70 [2]涨幅:-0.041% 胜率:41.332% real:0.027%
-15002 count:62 w:61.999996 [2]涨幅:-0.047% 胜率:39.337% real:-0.036%
-15140 count:60 w:60.000008 [1]涨幅:-0.051% 胜率:31.041% real:0.062%
-15140 count:60 w:60.000004 [2]涨幅:-0.104% 胜率:38.29% real:0.012%
-15413 count:56 w:56.000004 [2]涨幅:0.046% 胜率:60.144% real:0.143%
-16103 count:59 w:59 [1]涨幅:-0.068% 胜率:39.961% real:0.261%
-16403 count:101 w:101 [2]涨幅:0.05% 胜率:58.577% real:-0.153%
-16466 count:50 w:50 [2]涨幅:-0.064% 胜率:40.941% real:-0.067%
-16514 count:92 w:91.99999 [2]涨幅:0.074% 胜率:67.561% real:-0.08%
-16715 count:93 w:93.00001 [2]涨幅:-0.046% 胜率:38.903% real:0.067%
-16952 count:75 w:75 [1]涨幅:-0.04% 胜率:35.466% real:0.113%
-16952 count:75 w:75 [2]涨幅:-0.065% 胜率:27.172% real:0.001%
-16991 count:61 w:60.999996 [2]涨幅:-0.06% 胜率:34.483% real:0.004%
-17600 count:55 w:55 [1]涨幅:-0.078% 胜率:27.662% real:-0.103%
-17600 count:55 w:54.999996 [2]涨幅:-0.07% 胜率:28.979% real:-0.159%
-17699 count:78 w:77.999985 [2]涨幅:0.054% 胜率:58.511% real:0.092%
-19100 count:95 w:95 [2]涨幅:0.047% 胜率:58.746% real:0.022%
-19436 count:103 w:102.999985 [2]涨幅:-0.047% 胜率:34.247% real:0.069%
-19724 count:62 w:62 [2]涨幅:-0.044% 胜率:41.407% real:-0.466%
-19751 count:96 w:96 [2]涨幅:-0.07% 胜率:39.683% real:0.065%
-19826 count:77 w:77.00001 [1]涨幅:-0.04% 胜率:38.813% real:-0.033%
-19874 count:217 w:217.00003 [2]涨幅:-0.054% 胜率:38.375% real:0.243%
-19988 count:114 w:113.99999 [2]涨幅:0.053% 胜率:66.148% real:-0.111%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.17 周五 18:59:42
-BNBUSDT
-总匹配量:553
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:30	优质率:5.425%	匹配成功率：50%
-2222 count:52 w:52.000004 [2]涨幅:0.046% 胜率:60.588% real:-1.065%
-2462 count:50 w:50.000004 [2]涨幅:0.06% 胜率:66.486% real:0.003%
-2729 count:66 w:66 [1]涨幅:0.057% 胜率:61.323% real:-0.006%
-4169 count:76 w:76 [2]涨幅:-0.056% 胜率:34.298% real:-0.148%
-7628 count:69 w:69 [2]涨幅:0.064% 胜率:59.249% real:0.437%
-7994 count:53 w:52.999992 [2]涨幅:0.054% 胜率:58.142% real:0.047%
-13118 count:61 w:61.000008 [2]涨幅:-0.064% 胜率:38.254% real:0.915%
-13142 count:105 w:105 [2]涨幅:-0.053% 胜率:37.977% real:0.325%
-13172 count:53 w:53.000004 [2]涨幅:-0.044% 胜率:38.999% real:0.087%
-13247 count:57 w:56.999996 [2]涨幅:-0.08% 胜率:41.41% real:-0.012%
-13424 count:52 w:52.000004 [1]涨幅:-0.042% 胜率:41.285% real:-0.203%
-13424 count:52 w:52 [2]涨幅:-0.054% 胜率:37.8% real:-0.472%
-13667 count:93 w:93 [2]涨幅:-0.044% 胜率:40% real:0.069%
-15470 count:214 w:214 [2]涨幅:0.044% 胜率:64.32% real:-0.115%
-15755 count:90 w:90 [2]涨幅:0.052% 胜率:65.531% real:0.253%
-16286 count:97 w:97.00001 [2]涨幅:-0.053% 胜率:37.733% real:0.053%
-16748 count:61 w:61.000008 [2]涨幅:0.074% 胜率:68.103% real:-0.718%
-16790 count:69 w:69 [2]涨幅:0.057% 胜率:60.507% real:0.209%
-16967 count:91 w:91 [1]涨幅:-0.043% 胜率:39.384% real:0.206%
-16997 count:60 w:60.000008 [2]涨幅:-0.046% 胜率:40.258% real:-0.083%
-17513 count:50 w:49.999996 [1]涨幅:-0.053% 胜率:36.021% real:-0.196%
-17513 count:50 w:49.999996 [2]涨幅:-0.112% 胜率:30.299% real:-0.428%
-17621 count:73 w:73.00001 [2]涨幅:0.077% 胜率:63.761% real:-0.161%
-18128 count:94 w:94.000015 [2]涨幅:-0.063% 胜率:34.988% real:-0.057%
-18167 count:53 w:53.000004 [2]涨幅:0.059% 胜率:63.716% real:0.165%
-18908 count:144 w:144 [2]涨幅:-0.044% 胜率:34.721% real:0.334%
-18989 count:51 w:51.000004 [2]涨幅:0.075% 胜率:67.734% real:-0.003%
-18992 count:193 w:192.99991 [2]涨幅:0.045% 胜率:61.338% real:-0.214%
-19526 count:96 w:96.00001 [2]涨幅:-0.04% 胜率:37.235% real:0.155%
-19532 count:67 w:67 [2]涨幅:-0.041% 胜率:41.985% real:-0.057%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.17 周五 19:23:20
-XRPUSDT
-总匹配量:249
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:36	优质率:14.458%	匹配成功率：50%
-3632 count:83 w:82.99999 [1]涨幅:-0.027% 胜率:33.854% real:-0.477%
-3632 count:83 w:82.999985 [2]涨幅:-0.025% 胜率:39.957% real:-0.255%
-6296 count:76 w:76 [1]涨幅:-0.022% 胜率:36.408% real:0.192%
-8402 count:56 w:56 [1]涨幅:-0.053% 胜率:27.282% real:0.14%
-8408 count:66 w:66 [2]涨幅:-0.06% 胜率:37.857% real:-0.559%
-8888 count:69 w:67.96561 [1]涨幅:-0.062% 胜率:38.138% real:0.07%
-9293 count:109 w:109 [1]涨幅:0.031% 胜率:63.501% real:-0.275%
-9545 count:64 w:64 [2]涨幅:-0.059% 胜率:39.229% real:0.1%
-9557 count:84 w:84.000015 [2]涨幅:-0.051% 胜率:38.192% real:0.229%
-9884 count:161 w:161.00002 [2]涨幅:-0.041% 胜率:38.045% real:2.31%
-9887 count:171 w:170.99997 [1]涨幅:-0.029% 胜率:39.414% real:0.007%
-9887 count:171 w:171 [2]涨幅:-0.058% 胜率:32.759% real:1.54%
-11129 count:237 w:237 [2]涨幅:-0.025% 胜率:39.518% real:0.353%
-11327 count:87 w:87 [1]涨幅:-0.036% 胜率:32.875% real:-0.285%
-11456 count:66 w:66.000015 [2]涨幅:-0.044% 胜率:37.199% real:1.6%
-11471 count:73 w:73.00001 [1]涨幅:-0.028% 胜率:32.045% real:0.452%
-11471 count:73 w:73 [2]涨幅:-0.058% 胜率:32.528% real:1.99%
-11516 count:63 w:63 [2]涨幅:0.034% 胜率:67.471% real:0.097%
-11525 count:60 w:60.000008 [2]涨幅:0.06% 胜率:61.687% real:0.659%
-11699 count:67 w:67.00001 [1]涨幅:0.024% 胜率:61.629% real:0.045%
-11729 count:171 w:170.99998 [1]涨幅:0.028% 胜率:60.805% real:0.128%
-11939 count:88 w:88 [1]涨幅:-0.025% 胜率:37.517% real:-0.433%
-12170 count:58 w:58.000004 [1]涨幅:0.022% 胜率:38.872% real:0.296%
-12197 count:82 w:82 [1]涨幅:-0.033% 胜率:37.252% real:0.395%
-12203 count:155 w:154.99997 [2]涨幅:-0.03% 胜率:37.456% real:-1.052%
-12728 count:78 w:78.00001 [1]涨幅:0.03% 胜率:61.737% real:0.144%
-12746 count:75 w:75 [1]涨幅:-0.025% 胜率:35.761% real:-0.019%
-12746 count:75 w:75 [2]涨幅:-0.027% 胜率:37.971% real:-0.091%
-15170 count:57 w:57.000008 [2]涨幅:-0.056% 胜率:39.326% real:0.497%
-15374 count:55 w:54.999996 [2]涨幅:0.025% 胜率:60.731% real:-0.295%
-16742 count:66 w:66 [1]涨幅:-0.052% 胜率:35.16% real:0.119%
-16742 count:66 w:66 [2]涨幅:-0.078% 胜率:36.347% real:-0.081%
-18509 count:70 w:70.00001 [2]涨幅:-0.098% 胜率:36.041% real:-0.499%
-18770 count:78 w:78 [1]涨幅:0.027% 胜率:65.24% real:0.178%
-18785 count:77 w:77 [2]涨幅:0.038% 胜率:36.507% real:-0.466%
-19283 count:104 w:104 [1]涨幅:-0.027% 胜率:35.153% real:-0.032%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.17 周五 19:23:20
-ETHUSDT
-总匹配量:441
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:83	优质率:18.821%	匹配成功率：55.422%
-2009 count:82 w:81.999985 [2]涨幅:-0.047% 胜率:37.206% real:-0.246%
-3140 count:93 w:93.00001 [2]涨幅:-0.043% 胜率:38.7% real:-0.121%
-4649 count:88 w:88 [2]涨幅:-0.022% 胜率:36.48% real:-0.065%
-7577 count:53 w:53 [1]涨幅:-0.033% 胜率:37.947% real:0.097%
-7988 count:70 w:69.99999 [1]涨幅:-0.027% 胜率:31.392% real:-0.222%
-8069 count:54 w:54 [1]涨幅:0.058% 胜率:62.09% real:-0.156%
-8084 count:96 w:96 [2]涨幅:-0.029% 胜率:38.594% real:0.066%
-8102 count:111 w:111.000015 [1]涨幅:-0.022% 胜率:38.996% real:-0.478%
-8102 count:111 w:111.000015 [2]涨幅:-0.041% 胜率:37.981% real:-0.189%
-8237 count:260 w:260 [1]涨幅:0.029% 胜率:61.658% real:-0.092%
-8558 count:50 w:49.999996 [1]涨幅:-0.062% 胜率:25.658% real:0.058%
-8585 count:72 w:72 [1]涨幅:0.048% 胜率:65.898% real:-0.076%
-8585 count:72 w:72 [2]涨幅:0.09% 胜率:71.463% real:0.064%
-8624 count:66 w:66 [1]涨幅:-0.028% 胜率:33.363% real:-0.026%
-8630 count:87 w:87 [1]涨幅:-0.034% 胜率:35.78% real:-0.02%
-8630 count:87 w:87 [2]涨幅:-0.036% 胜率:33.592% real:0.258%
-8636 count:66 w:65.999985 [1]涨幅:-0.03% 胜率:38.704% real:-0.208%
-8636 count:66 w:65.999985 [2]涨幅:-0.03% 胜率:36.184% real:0.05%
-8639 count:79 w:79.00001 [2]涨幅:-0.03% 胜率:38.669% real:0.289%
-8657 count:58 w:58 [1]涨幅:-0.043% 胜率:39.639% real:-0.169%
-8657 count:58 w:57.999992 [2]涨幅:-0.064% 胜率:28.055% real:-0.162%
-8762 count:105 w:105.00001 [1]涨幅:-0.022% 胜率:39.873% real:0.1%
-8762 count:105 w:105.00001 [2]涨幅:-0.046% 胜率:38.488% real:0.066%
-10085 count:117 w:117 [2]涨幅:-0.022% 胜率:38.093% real:0.148%
-10982 count:52 w:51.999996 [1]涨幅:0.053% 胜率:67.708% real:0.048%
-11102 count:55 w:54.999992 [2]涨幅:0.043% 胜率:64.416% real:-0.152%
-11345 count:62 w:62 [1]涨幅:-0.032% 胜率:33.138% real:0.12%
-11345 count:62 w:61.999992 [2]涨幅:-0.049% 胜率:35.973% real:0.096%
-11477 count:61 w:61.000004 [1]涨幅:0.047% 胜率:62.281% real:-0.407%
-11480 count:55 w:54.999992 [2]涨幅:0.04% 胜率:62.471% real:-0.46%
-11642 count:81 w:81 [1]涨幅:0.044% 胜率:61.453% real:0.329%
-11858 count:62 w:62 [2]涨幅:0.031% 胜率:61.249% real:0.451%
-11918 count:109 w:109 [2]涨幅:0.037% 胜率:65.066% real:0.001%
-12104 count:56 w:56 [1]涨幅:0.021% 胜率:63.393% real:-0.229%
-12104 count:56 w:56 [2]涨幅:0.078% 胜率:61.049% real:-0.264%
-12107 count:91 w:91.00001 [1]涨幅:0.021% 胜率:61.604% real:0.175%
-12167 count:90 w:89.99997 [2]涨幅:-0.058% 胜率:39.13% real:-0.165%
-12191 count:61 w:61 [2]涨幅:-0.021% 胜率:33.129% real:-0.069%
-12293 count:57 w:57 [2]涨幅:0.032% 胜率:64.178% real:-0.787%
-12323 count:50 w:50 [1]涨幅:0.037% 胜率:64.875% real:0.083%
-12410 count:100 w:100 [2]涨幅:-0.041% 胜率:37.44% real:-0.2%
-12428 count:128 w:128 [2]涨幅:0.035% 胜率:61.187% real:1.215%
-12671 count:235 w:234.99997 [2]涨幅:-0.029% 胜率:38.956% real:-0.26%
-12689 count:72 w:72 [2]涨幅:-0.038% 胜率:36.185% real:-0.093%
-12824 count:62 w:62 [2]涨幅:0.049% 胜率:61.759% real:0.551%
-13187 count:53 w:52.999996 [2]涨幅:0.075% 胜率:65.827% real:-0.084%
-13247 count:184 w:183.99992 [1]涨幅:-0.037% 胜率:34.5% real:-0.335%
-13247 count:184 w:183.99991 [2]涨幅:-0.049% 胜率:34.267% real:-0.012%
-13256 count:60 w:60.000004 [2]涨幅:-0.043% 胜率:37.463% real:-0.471%
-13412 count:54 w:53.999992 [1]涨幅:-0.062% 胜率:34.216% real:0.351%
-13412 count:54 w:53.999992 [2]涨幅:-0.11% 胜率:32.45% real:0.06%
-13415 count:66 w:66 [2]涨幅:-0.058% 胜率:35.556% real:-0.226%
-13421 count:114 w:113.99999 [1]涨幅:-0.027% 胜率:37.078% real:-0.014%
-13421 count:114 w:113.999985 [2]涨幅:-0.092% 胜率:30.882% real:-0.053%
-13475 count:75 w:74.999985 [2]涨幅:-0.041% 胜率:38.7% real:-0.05%
-13523 count:58 w:58 [1]涨幅:-0.035% 胜率:29.825% real:-0.514%
-13523 count:58 w:57.999996 [2]涨幅:-0.038% 胜率:38.816% real:-0.421%
-13571 count:58 w:57.999992 [2]涨幅:0.028% 胜率:64.233% real:-0.716%
-13661 count:64 w:64 [1]涨幅:-0.025% 胜率:29.719% real:0.73%
-13703 count:56 w:56.000008 [2]涨幅:-0.043% 胜率:34.335% real:0.496%
-13748 count:118 w:118 [1]涨幅:0.029% 胜率:60.834% real:-0.069%
-13748 count:118 w:117.999985 [2]涨幅:0.031% 胜率:65.62% real:-0.366%
-13763 count:55 w:54.999992 [1]涨幅:0.026% 胜率:64.435% real:-0.11%
-13772 count:94 w:94 [2]涨幅:0.023% 胜率:62.45% real:0.023%
-13778 count:50 w:49.999992 [2]涨幅:0.043% 胜率:60.1% real:0.085%
-13844 count:91 w:91.00001 [2]涨幅:-0.067% 胜率:39.308% real:0.501%
-14105 count:63 w:62.99999 [1]涨幅:0.029% 胜率:64.2% real:-0.316%
-14105 count:63 w:62.999992 [2]涨幅:0.042% 胜率:66.7% real:-0.665%
-14285 count:57 w:57 [1]涨幅:0.048% 胜率:60% real:-0.111%
-14285 count:57 w:57.000004 [2]涨幅:0.052% 胜率:65.026% real:-0.395%
-14405 count:61 w:60.999992 [2]涨幅:-0.038% 胜率:33.077% real:-0.53%
-14492 count:85 w:85 [1]涨幅:0.023% 胜率:60.255% real:0.44%
-14492 count:85 w:85.000015 [2]涨幅:0.052% 胜率:60.396% real:0.274%
-17690 count:163 w:163 [1]涨幅:0.022% 胜率:60.629% real:0.117%
-17759 count:133 w:133.00006 [2]涨幅:-0.023% 胜率:39.527% real:0.215%
-18863 count:57 w:57.000004 [2]涨幅:0.105% 胜率:67.078% real:0.463%
-19019 count:160 w:160 [1]涨幅:-0.034% 胜率:37.684% real:-0.185%
-19019 count:160 w:160 [2]涨幅:-0.05% 胜率:36.249% real:-0.358%
-19022 count:171 w:171 [2]涨幅:-0.022% 胜率:38.693% real:0.191%
-19202 count:61 w:61 [2]涨幅:0.041% 胜率:63.307% real:-0.116%
-19697 count:53 w:52.999992 [2]涨幅:-0.037% 胜率:39.18% real:-0.229%
-19709 count:102 w:102 [1]涨幅:-0.024% 胜率:36.832% real:-0.113%
-19709 count:102 w:101.99999 [2]涨幅:-0.043% 胜率:30.632% real:-0.065%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.17 周五 19:23:22
-BNBUSDT
-总匹配量:553
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:66	优质率:11.935%	匹配成功率：40.909%
-2222 count:52 w:52.000004 [1]涨幅:0.031% 胜率:62% real:-0.101%
-2222 count:52 w:52.000004 [2]涨幅:0.046% 胜率:60.588% real:-1.065%
-2411 count:162 w:162.00002 [2]涨幅:0.034% 胜率:62.873% real:0.012%
-2462 count:50 w:50.000004 [2]涨幅:0.06% 胜率:66.486% real:0.003%
-2468 count:111 w:111 [2]涨幅:-0.036% 胜率:39.737% real:0.41%
-2729 count:66 w:66 [1]涨幅:0.057% 胜率:61.323% real:-0.006%
-2729 count:66 w:66 [2]涨幅:0.034% 胜率:63.747% real:-0.125%
-2822 count:159 w:159 [2]涨幅:-0.034% 胜率:37.954% real:-0.432%
-2867 count:59 w:59.00001 [1]涨幅:-0.023% 胜率:38.71% real:-0.842%
-2867 count:59 w:59.000015 [2]涨幅:-0.03% 胜率:38.351% real:-0.666%
-3221 count:50 w:49.999992 [1]涨幅:-0.026% 胜率:39.835% real:-0.045%
-3239 count:230 w:230.00006 [1]涨幅:-0.02% 胜率:38.713% real:0.3%
-3242 count:192 w:191.99998 [2]涨幅:-0.038% 胜率:37.636% real:0.456%
-3392 count:202 w:201.99997 [2]涨幅:-0.023% 胜率:38.14% real:0.556%
-3401 count:65 w:65 [1]涨幅:-0.031% 胜率:38.241% real:-0.088%
-3401 count:65 w:65 [2]涨幅:-0.03% 胜率:37.037% real:-0.064%
-4169 count:76 w:76 [2]涨幅:-0.056% 胜率:34.298% real:-0.148%
-7268 count:116 w:115.999985 [2]涨幅:-0.032% 胜率:39.442% real:-0.017%
-11129 count:50 w:49.999996 [2]涨幅:-0.032% 胜率:36.548% real:0.353%
-12266 count:58 w:58 [1]涨幅:0.039% 胜率:60.463% real:-0.013%
-13118 count:61 w:61.000008 [2]涨幅:-0.064% 胜率:38.254% real:0.915%
-13142 count:105 w:105 [2]涨幅:-0.053% 胜率:37.977% real:0.325%
-13172 count:53 w:53.000004 [2]涨幅:-0.044% 胜率:38.999% real:0.087%
-13424 count:52 w:52 [2]涨幅:-0.054% 胜率:37.8% real:-0.472%
-13670 count:404 w:404.00003 [2]涨幅:-0.026% 胜率:38.954% real:0.291%
-13748 count:287 w:287.00003 [1]涨幅:-0.021% 胜率:39.326% real:-0.069%
-13748 count:287 w:287.00003 [2]涨幅:-0.033% 胜率:39.125% real:-0.366%
-15470 count:214 w:214 [2]涨幅:0.044% 胜率:64.32% real:-0.115%
-15479 count:153 w:153.00003 [1]涨幅:0.023% 胜率:62.389% real:-0.188%
-15755 count:90 w:90 [2]涨幅:0.052% 胜率:65.531% real:0.253%
-16091 count:74 w:74.000015 [1]涨幅:0.023% 胜率:65.69% real:-0.245%
-16100 count:72 w:72 [1]涨幅:-0.024% 胜率:39.25% real:0.209%
-16286 count:97 w:97.00001 [2]涨幅:-0.053% 胜率:37.733% real:0.053%
-16748 count:61 w:61.000008 [2]涨幅:0.074% 胜率:68.103% real:-0.718%
-16790 count:69 w:69 [2]涨幅:0.057% 胜率:60.507% real:0.209%
-16892 count:80 w:80 [1]涨幅:0.02% 胜率:61.413% real:-0.048%
-16907 count:53 w:53 [1]涨幅:-0.031% 胜率:34.59% real:0.008%
-16955 count:76 w:76 [1]涨幅:-0.022% 胜率:36.49% real:-0.09%
-16967 count:91 w:91 [1]涨幅:-0.043% 胜率:39.384% real:0.206%
-17012 count:222 w:222 [2]涨幅:0.036% 胜率:62.105% real:-0.123%
-17141 count:123 w:122.999985 [2]涨幅:-0.031% 胜率:39.733% real:-0.092%
-17330 count:162 w:162 [1]涨幅:-0.032% 胜率:33.555% real:0.06%
-17330 count:162 w:161.99998 [2]涨幅:-0.037% 胜率:33.888% real:-0.121%
-17462 count:202 w:201.99995 [2]涨幅:-0.024% 胜率:38.853% real:-0.016%
-17474 count:52 w:52 [2]涨幅:-0.032% 胜率:38.124% real:-0.16%
-17492 count:101 w:101 [2]涨幅:-0.033% 胜率:31.261% real:-0.082%
-17513 count:50 w:49.999996 [1]涨幅:-0.053% 胜率:36.021% real:-0.196%
-17513 count:50 w:49.999996 [2]涨幅:-0.112% 胜率:30.299% real:-0.428%
-17618 count:87 w:86.999985 [1]涨幅:0.037% 胜率:60.16% real:-0.221%
-17621 count:73 w:73.00001 [2]涨幅:0.077% 胜率:63.761% real:-0.161%
-17681 count:244 w:243.04544 [1]涨幅:0.022% 胜率:64.016% real:-0.395%
-17684 count:51 w:51 [2]涨幅:-0.033% 胜率:39.576% real:0.084%
-17687 count:81 w:80.99999 [2]涨幅:-0.022% 胜率:35.58% real:-0.024%
-18032 count:133 w:133 [1]涨幅:0.026% 胜率:63.988% real:-0.244%
-18032 count:133 w:133 [2]涨幅:0.026% 胜率:63.61% real:-0.021%
-18128 count:94 w:94.000015 [2]涨幅:-0.063% 胜率:34.988% real:-0.057%
-18167 count:53 w:53.000004 [2]涨幅:0.059% 胜率:63.716% real:0.165%
-18269 count:57 w:57.000008 [1]涨幅:0.024% 胜率:60.104% real:-0.012%
-18845 count:252 w:252.00006 [2]涨幅:-0.022% 胜率:39.995% real:0.184%
-18908 count:144 w:144 [2]涨幅:-0.044% 胜率:34.721% real:0.334%
-18989 count:51 w:51.000004 [1]涨幅:0.039% 胜率:61.084% real:0.149%
-18989 count:51 w:51.000004 [2]涨幅:0.075% 胜率:67.734% real:-0.003%
-18992 count:193 w:192.99991 [2]涨幅:0.045% 胜率:61.338% real:-0.214%
-19526 count:96 w:96.00001 [2]涨幅:-0.04% 胜率:37.235% real:0.155%
-19574 count:80 w:80 [1]涨幅:-0.026% 胜率:38.753% real:0.059%
-19877 count:76 w:76 [2]涨幅:-0.037% 胜率:34.515% real:0.338%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.17 周五 19:23:28
-BTCUSDT
-总匹配量:1092
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:156	优质率:14.286%	匹配成功率：55.769%
-3050 count:67 w:67 [1]涨幅:-0.038% 胜率:38.339% real:-0.108%
-3092 count:52 w:52 [1]涨幅:-0.043% 胜率:27.104% real:0.919%
-3191 count:130 w:130 [1]涨幅:0.033% 胜率:63.005% real:0.329%
-3191 count:130 w:129.99998 [2]涨幅:0.032% 胜率:60.704% real:-0.054%
-3200 count:83 w:82.99999 [1]涨幅:0.041% 胜率:62.247% real:0.014%
-3206 count:75 w:75 [1]涨幅:0.036% 胜率:60.866% real:-0.025%
-3206 count:75 w:75 [2]涨幅:0.04% 胜率:63.228% real:-0.139%
-3224 count:75 w:75.00001 [1]涨幅:0.025% 胜率:60.484% real:0.262%
-3224 count:75 w:75 [2]涨幅:0.057% 胜率:67.661% real:0.569%
-3236 count:94 w:94 [1]涨幅:0.059% 胜率:62.453% real:-0.272%
-3236 count:94 w:94.00001 [2]涨幅:0.075% 胜率:61.389% real:0.054%
-3251 count:124 w:124.00002 [2]涨幅:0.04% 胜率:62.809% real:0.139%
-3650 count:160 w:160.00002 [2]涨幅:-0.025% 胜率:39.28% real:-0.199%
-3677 count:79 w:79 [2]涨幅:0.026% 胜率:64.626% real:0.222%
-3695 count:61 w:60.999992 [1]涨幅:-0.023% 胜率:38.956% real:0.713%
-4022 count:60 w:60 [1]涨幅:-0.063% 胜率:26.172% real:0.102%
-4022 count:60 w:60 [2]涨幅:-0.081% 胜率:31.445% real:-0.159%
-4694 count:312 w:312.00003 [2]涨幅:-0.022% 胜率:36.567% real:0.139%
-4763 count:74 w:73.999985 [1]涨幅:-0.06% 胜率:37.468% real:-0.138%
-4763 count:74 w:74.00001 [2]涨幅:-0.045% 胜率:39.747% real:-0.177%
-4838 count:348 w:348.0001 [2]涨幅:-0.029% 胜率:36.879% real:-0.135%
-5483 count:89 w:88.99999 [2]涨幅:-0.044% 胜率:34.053% real:-0.257%
-5504 count:73 w:73 [2]涨幅:0.049% 胜率:60.987% real:0.032%
-5525 count:61 w:61 [1]涨幅:-0.038% 胜率:38.867% real:-0.29%
-5525 count:61 w:61.000004 [2]涨幅:-0.079% 胜率:24.805% real:-0.193%
-6044 count:302 w:302.00012 [1]涨幅:0.024% 胜率:60.962% real:-0.064%
-6083 count:219 w:218.99997 [2]涨幅:-0.023% 胜率:39.397% real:-0.038%
-6107 count:87 w:87.000015 [1]涨幅:-0.023% 胜率:36.447% real:-0.094%
-6107 count:87 w:87.00002 [2]涨幅:-0.027% 胜率:35.527% real:0.06%
-6128 count:131 w:131 [2]涨幅:-0.031% 胜率:35.015% real:-0.558%
-6881 count:75 w:75 [1]涨幅:-0.031% 胜率:32.094% real:-0.197%
-6881 count:75 w:75 [2]涨幅:-0.048% 胜率:31.285% real:-0.077%
-6938 count:51 w:51.000004 [2]涨幅:-0.024% 胜率:60.722% real:0.092%
-6956 count:55 w:55 [2]涨幅:0.034% 胜率:64.08% real:0.262%
-7040 count:66 w:65.999985 [2]涨幅:-0.024% 胜率:31.211% real:0.656%
-7067 count:99 w:99.00001 [2]涨幅:-0.034% 胜率:38.022% real:-0.246%
-7112 count:129 w:129 [2]涨幅:-0.03% 胜率:39.793% real:-0.012%
-7199 count:52 w:52.000004 [2]涨幅:-0.041% 胜率:39.763% real:-0.22%
-7205 count:85 w:85 [2]涨幅:-0.054% 胜率:39.679% real:-0.057%
-7274 count:50 w:50.000004 [1]涨幅:-0.044% 胜率:33.413% real:-0.019%
-7274 count:50 w:50 [2]涨幅:-0.067% 胜率:27.163% real:-0.14%
-7289 count:103 w:102.999954 [2]涨幅:0.031% 胜率:69.011% real:0.365%
-7304 count:161 w:160.99997 [2]涨幅:-0.052% 胜率:33.321% real:0.177%
-7382 count:55 w:55.000008 [1]涨幅:0.022% 胜率:60.511% real:-0.227%
-7418 count:69 w:69 [1]涨幅:-0.035% 胜率:38.651% real:0.108%
-7418 count:69 w:69 [2]涨幅:-0.056% 胜率:27.303% real:-0.019%
-7529 count:79 w:79.000015 [1]涨幅:-0.034% 胜率:38.834% real:-0.071%
-7529 count:79 w:79.000015 [2]涨幅:-0.026% 胜率:35.352% real:-0.223%
-7574 count:131 w:130.99998 [2]涨幅:-0.023% 胜率:36.212% real:0.426%
-7580 count:123 w:122.999985 [2]涨幅:-0.041% 胜率:36.559% real:-0.289%
-7697 count:57 w:57.000008 [2]涨幅:0.023% 胜率:62.175% real:-0.356%
-7856 count:71 w:71.00001 [2]涨幅:-0.047% 胜率:36.882% real:-0.265%
-8348 count:154 w:154.00003 [1]涨幅:0.021% 胜率:60.391% real:-0.025%
-8420 count:91 w:91.00001 [1]涨幅:-0.021% 胜率:32.654% real:-0.133%
-8420 count:91 w:91 [2]涨幅:-0.033% 胜率:39.882% real:-0.093%
-8432 count:53 w:52.999992 [1]涨幅:0.038% 胜率:66.466% real:-0.09%
-8432 count:53 w:52.999992 [2]涨幅:0.065% 胜率:66.707% real:-0.097%
-8459 count:64 w:63.999992 [1]涨幅:0.054% 胜率:67.233% real:-0.089%
-8459 count:64 w:63.999992 [2]涨幅:0.073% 胜率:61.568% real:0.062%
-8474 count:68 w:68 [1]涨幅:-0.054% 胜率:28.928% real:0.055%
-8474 count:68 w:68 [2]涨幅:-0.073% 胜率:34.935% real:0.449%
-8525 count:113 w:112.99999 [1]涨幅:-0.025% 胜率:35.548% real:-0.275%
-8525 count:113 w:112.99999 [2]涨幅:-0.043% 胜率:36.489% real:-0.366%
-8570 count:88 w:88.00001 [2]涨幅:0.029% 胜率:61.327% real:0.275%
-8594 count:74 w:74 [1]涨幅:-0.022% 胜率:39.573% real:0.052%
-8663 count:90 w:90 [1]涨幅:-0.06% 胜率:32.349% real:-0.078%
-8663 count:90 w:89.99999 [2]涨幅:-0.096% 胜率:25.628% real:0.08%
-8966 count:92 w:92.00001 [1]涨幅:0.034% 胜率:62.815% real:0.177%
-9020 count:55 w:54.999992 [1]涨幅:-0.053% 胜率:30.998% real:0.468%
-9221 count:86 w:86 [1]涨幅:-0.028% 胜率:37.781% real:0.032%
-9221 count:86 w:86 [2]涨幅:-0.041% 胜率:39.185% real:-0.266%
-9242 count:143 w:142.99998 [1]涨幅:0.028% 胜率:66.201% real:0.194%
-9242 count:143 w:142.99997 [2]涨幅:0.03% 胜率:64.515% real:0.027%
-9332 count:67 w:67.00001 [1]涨幅:0.047% 胜率:65.986% real:-0.015%
-9332 count:67 w:67.00001 [2]涨幅:0.05% 胜率:61.812% real:0.255%
-9554 count:60 w:59.999992 [2]涨幅:-0.025% 胜率:38.352% real:-0.345%
-11123 count:169 w:169 [1]涨幅:-0.034% 胜率:38.127% real:0.226%
-12704 count:69 w:68.99999 [2]涨幅:-0.021% 胜率:39.732% real:0.169%
-12764 count:79 w:78.99999 [1]涨幅:-0.021% 胜率:39.377% real:0.277%
-12764 count:79 w:78.99999 [2]涨幅:-0.024% 胜率:34.942% real:0.66%
-12986 count:64 w:64 [2]涨幅:0.041% 胜率:62.092% real:0.183%
-12992 count:98 w:98.00001 [2]涨幅:-0.031% 胜率:35.518% real:-0.055%
-13049 count:52 w:52 [2]涨幅:0.051% 胜率:62.857% real:-0.005%
-13424 count:157 w:157.00002 [1]涨幅:0.02% 胜率:62.157% real:-0.203%
-13634 count:51 w:51 [1]涨幅:-0.02% 胜率:38.261% real:0.001%
-13883 count:66 w:65.99999 [1]涨幅:-0.033% 胜率:28.995% real:-0.092%
-13883 count:66 w:65.99999 [2]涨幅:-0.042% 胜率:37.799% real:-0.23%
-13994 count:50 w:50.000008 [1]涨幅:-0.039% 胜率:39.371% real:0.135%
-14150 count:55 w:55.000008 [1]涨幅:-0.041% 胜率:35.494% real:-0.046%
-14414 count:68 w:68.00001 [1]涨幅:0.042% 胜率:64.929% real:0.234%
-14969 count:50 w:49.999992 [2]涨幅:0.064% 胜率:62.999% real:-0.017%
-14975 count:69 w:68.99999 [1]涨幅:0.03% 胜率:60.036% real:0.172%
-15002 count:62 w:62.000008 [1]涨幅:-0.039% 胜率:33.23% real:0.067%
-15002 count:62 w:61.999996 [2]涨幅:-0.047% 胜率:39.337% real:-0.036%
-15113 count:63 w:63 [2]涨幅:0.034% 胜率:66.073% real:0.143%
-15140 count:60 w:60.000008 [1]涨幅:-0.051% 胜率:31.041% real:0.062%
-15140 count:60 w:60.000004 [2]涨幅:-0.104% 胜率:38.29% real:0.012%
-15146 count:58 w:58.000008 [1]涨幅:-0.021% 胜率:37.272% real:0.056%
-15305 count:127 w:126.999985 [1]涨幅:0.039% 胜率:63.725% real:0.044%
-15323 count:86 w:85.99999 [1]涨幅:-0.022% 胜率:30.482% real:-0.044%
-15323 count:86 w:85.999985 [2]涨幅:-0.03% 胜率:38.318% real:-0.108%
-15413 count:56 w:56.000008 [1]涨幅:0.033% 胜率:63.749% real:0.328%
-15413 count:56 w:56.000004 [2]涨幅:0.046% 胜率:60.144% real:0.143%
-15464 count:111 w:111.00001 [2]涨幅:0.025% 胜率:39.707% real:0.33%
-16010 count:70 w:70 [2]涨幅:0.024% 胜率:62.654% real:-0.071%
-16103 count:59 w:59 [1]涨幅:-0.068% 胜率:39.961% real:0.261%
-16253 count:161 w:161 [2]涨幅:0.02% 胜率:60.137% real:-0.251%
-16289 count:80 w:80 [1]涨幅:-0.025% 胜率:39.462% real:0.068%
-16430 count:211 w:211.00008 [2]涨幅:-0.023% 胜率:39.862% real:-0.406%
-16463 count:75 w:75.00001 [1]涨幅:-0.023% 胜率:36.581% real:0.029%
-16466 count:50 w:50.000004 [1]涨幅:-0.031% 胜率:39.412% real:-0.206%
-16508 count:81 w:81 [1]涨幅:0.035% 胜率:62.913% real:0.306%
-16514 count:92 w:91.99999 [2]涨幅:0.074% 胜率:67.561% real:-0.08%
-16526 count:61 w:61 [1]涨幅:-0.027% 胜率:35.22% real:-0.066%
-16715 count:93 w:93.00001 [2]涨幅:-0.046% 胜率:38.903% real:0.067%
-16952 count:75 w:75 [1]涨幅:-0.04% 胜率:35.466% real:0.113%
-16952 count:75 w:75 [2]涨幅:-0.065% 胜率:27.172% real:0.001%
-16991 count:61 w:60.999992 [1]涨幅:-0.031% 胜率:35.881% real:0.06%
-16991 count:61 w:60.999996 [2]涨幅:-0.06% 胜率:34.483% real:0.004%
-17072 count:382 w:381.99997 [2]涨幅:-0.022% 胜率:38.132% real:-0.16%
-17321 count:98 w:97.999985 [1]涨幅:0.024% 胜率:61.603% real:0.118%
-17486 count:177 w:177 [2]涨幅:-0.037% 胜率:39.138% real:-0.149%
-17519 count:61 w:61 [1]涨幅:0.033% 胜率:60.983% real:0.469%
-17600 count:55 w:55 [1]涨幅:-0.078% 胜率:27.662% real:-0.103%
-17600 count:55 w:54.999996 [2]涨幅:-0.07% 胜率:28.979% real:-0.159%
-17621 count:177 w:177.00002 [2]涨幅:0.04% 胜率:63.704% real:-0.161%
-17627 count:92 w:92 [2]涨幅:0.029% 胜率:61.122% real:0.258%
-17699 count:78 w:77.99999 [1]涨幅:0.02% 胜率:62.158% real:-0.046%
-17837 count:70 w:69.99999 [1]涨幅:-0.034% 胜率:31.958% real:-0.071%
-18011 count:121 w:120.999954 [1]涨幅:-0.022% 胜率:35.242% real:-0.025%
-18011 count:121 w:120.999954 [2]涨幅:-0.027% 胜率:35.34% real:0.212%
-18266 count:58 w:57.999996 [2]涨幅:0.032% 胜率:61.026% real:-0.042%
-18269 count:120 w:119.999985 [2]涨幅:0.028% 胜率:60.848% real:-0.025%
-18440 count:98 w:97.99997 [2]涨幅:0.021% 胜率:61.538% real:0.292%
-18854 count:196 w:195.99997 [1]涨幅:-0.026% 胜率:38.974% real:-0.117%
-18911 count:197 w:196.99995 [1]涨幅:-0.022% 胜率:35.453% real:0.433%
-19133 count:92 w:91.999985 [1]涨幅:-0.026% 胜率:36.962% real:-0.15%
-19262 count:52 w:52.000004 [2]涨幅:-0.033% 胜率:36.886% real:0.09%
-19295 count:278 w:278.00003 [2]涨幅:-0.035% 胜率:39.053% real:-0.023%
-19436 count:103 w:102.999985 [2]涨幅:-0.047% 胜率:34.247% real:0.069%
-19448 count:70 w:70 [1]涨幅:-0.036% 胜率:33.108% real:0.09%
-19463 count:110 w:110 [1]涨幅:0.024% 胜率:66.614% real:-0.155%
-19535 count:140 w:139.99997 [1]涨幅:0.032% 胜率:60.457% real:0.256%
-19583 count:59 w:59.000008 [1]涨幅:0.023% 胜率:64.882% real:0.004%
-19583 count:59 w:59.000004 [2]涨幅:0.025% 胜率:66.274% real:-0.019%
-19724 count:62 w:61.999996 [1]涨幅:-0.034% 胜率:36.482% real:-0.12%
-19751 count:96 w:96 [2]涨幅:-0.07% 胜率:39.683% real:0.065%
-19787 count:93 w:93 [1]涨幅:-0.031% 胜率:34.26% real:-0.179%
-19823 count:66 w:66 [1]涨幅:0.031% 胜率:65.118% real:-0.032%
-19823 count:66 w:66 [2]涨幅:0.025% 胜率:64.936% real:0.068%
-19826 count:77 w:77.00001 [1]涨幅:-0.04% 胜率:38.813% real:-0.033%
-19874 count:217 w:217.00003 [2]涨幅:-0.054% 胜率:38.375% real:0.243%
-19916 count:161 w:160.99997 [2]涨幅:-0.022% 胜率:39.164% real:0.162%
-19925 count:92 w:92.00001 [1]涨幅:-0.029% 胜率:35.6% real:0.087%
-19988 count:114 w:113.999985 [1]涨幅:0.033% 胜率:65.215% real:0.051%
-19988 count:114 w:113.99999 [2]涨幅:0.053% 胜率:66.148% real:-0.111%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 12:04:05
-BTCUSDT
-总匹配量:30
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:0%	匹配成功率：NaN%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 12:04:05
-BNBUSDT
-总匹配量:61
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:2	优质率:3.279%	匹配成功率：100%
-1024 count:125 w:120 	[1]涨幅:0.054% 胜率:60.951% real:0.01%
-1024 count:125 w:125 	[2]涨幅:0.053% 胜率:60.462% real:0.072%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 12:04:07
-ETHUSDT
-总匹配量:1
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:0%	匹配成功率：NaN%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 12:04:11
-XRPUSDT
-总匹配量:10
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:0%	匹配成功率：NaN%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 12:09:40
-XRPUSDT
-总匹配量:47
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:1	优质率:2.128%	匹配成功率：100%
-1057 count:148 w:148 	[2]涨幅:0.032% 胜率:61.626% real:0.235%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 12:09:40
-BTCUSDT
-总匹配量:76
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:4	优质率:5.263%	匹配成功率：50%
-1045 count:102 w:100 	[2]涨幅:-0.039% 胜率:39.475% real:0.01%
-1135 count:103 w:103 	[2]涨幅:0.027% 胜率:61.36% real:-0.07%
-1255 count:130 w:130 	[2]涨幅:0.035% 胜率:60.47% real:0.089%
-1942 count:119 w:118 	[2]涨幅:0.04% 胜率:63.778% real:0.34%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 12:09:41
-ETHUSDT
-总匹配量:4
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:0	优质率:0%	匹配成功率：NaN%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 12:09:43
-BNBUSDT
-总匹配量:157
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.002, 
-优质数:4	优质率:2.548%	匹配成功率：0%
-1084 count:380 w:380 	[2]涨幅:0.025% 胜率:60.763% real:-0.479%
-1699 count:115 w:115 	[2]涨幅:-0.061% 胜率:37.627% real:0.088%
-1891 count:125 w:125 	[2]涨幅:-0.061% 胜率:36.76% real:0.416%
-1942 count:251 w:243 	[1]涨幅:0.031% 胜率:60.24% real:-0.116%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 22:10:45
-BTCUSDT
-总匹配量:11
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.001, 
-优质数:2	优质率:18.182%	匹配成功率：100%
-1222 count:69 w:69 	[2]涨幅:0.03% 胜率:60.349% real:0.011%
-4840 count:63 w:63 	[2]涨幅:0.029% 胜率:61.611% real:0.048%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 22:10:45
-BNBUSDT
-总匹配量:9
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.001, 
-优质数:1	优质率:11.111%	匹配成功率：100%
-2707 count:51 w:47 	[1]涨幅:-0.029% 胜率:36.568% real:-0.171%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 22:10:48
-ETHUSDT
-总匹配量:0
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.001, 
-优质数:0	优质率:NaN%	匹配成功率：NaN%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 22:10:56
-XRPUSDT
-总匹配量:0
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.1, similar_val:0.001, 
-优质数:0	优质率:NaN%	匹配成功率：NaN%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 22:29:47
-BNBUSDT
-总匹配量:130
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.12, similar_val:0.001, 
-优质数:27	优质率:20.769%	匹配成功率：33.333%
-1045 count:90 w:85 	[1]涨幅:-0.028% 胜率:38.046% real:0.063%
-1045 count:90 w:90 	[2]涨幅:-0.051% 胜率:34.632% real:0.01%
-1144 count:136 w:133 	[2]涨幅:-0.025% 胜率:39.23% real:0.561%
-1150 count:110 w:107 	[1]涨幅:-0.032% 胜率:38.82% real:0.14%
-1150 count:110 w:110 	[2]涨幅:-0.026% 胜率:36.976% real:0.016%
-1216 count:91 w:89 	[1]涨幅:-0.026% 胜率:37.935% real:-0.085%
-1267 count:58 w:58 	[2]涨幅:0.071% 胜率:61.047% real:-0.106%
-1888 count:59 w:55 	[1]涨幅:-0.052% 胜率:27.873% real:0.103%
-1888 count:59 w:58 	[2]涨幅:-0.051% 胜率:34.545% real:0.006%
-1921 count:95 w:95 	[2]涨幅:-0.027% 胜率:39.817% real:-0.504%
-1930 count:70 w:69 	[2]涨幅:-0.05% 胜率:38.418% real:0.223%
-2494 count:112 w:111 	[1]涨幅:-0.045% 胜率:36.103% real:0.203%
-2494 count:112 w:111 	[2]涨幅:-0.08% 胜率:36.145% real:0.484%
-2506 count:133 w:132 	[2]涨幅:-0.028% 胜率:39.202% real:0.526%
-2524 count:120 w:116 	[1]涨幅:-0.027% 胜率:37.98% real:0.097%
-2917 count:142 w:141 	[2]涨幅:-0.03% 胜率:39.523% real:0.315%
-3010 count:62 w:60 	[1]涨幅:-0.075% 胜率:33.198% real:-0.104%
-3010 count:62 w:61 	[2]涨幅:-0.076% 胜率:38.761% real:-0.256%
-3091 count:75 w:71 	[1]涨幅:0.042% 胜率:67.792% real:-0.01%
-3091 count:75 w:75 	[2]涨幅:0.023% 胜率:60.6% real:0.908%
-3244 count:63 w:59 	[1]涨幅:-0.037% 胜率:35.478% real:-0.184%
-3244 count:63 w:62 	[2]涨幅:-0.053% 胜率:36.969% real:-0.211%
-3919 count:56 w:51 	[1]涨幅:0.036% 胜率:60.286% real:0.328%
-3919 count:56 w:56 	[2]涨幅:-0.02% 胜率:39.703% real:0.324%
-4204 count:90 w:88 	[1]涨幅:-0.028% 胜率:38.773% real:0.208%
-4204 count:90 w:90 	[2]涨幅:-0.037% 胜率:38.182% real:-0.003%
-4210 count:71 w:70 	[1]涨幅:0.04% 胜率:60.729% real:-0.049%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 22:29:50
+2022/6/19 20:17:59
 XRPUSDT
 总匹配量:5
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.12, similar_val:0.001, 
-优质数:0	优质率:0%	匹配成功率：NaN%
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:0%	匹配成功率:NaN%	期望值:NaN%
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
 
 
-6.18 周六 22:29:51
+2022/6/19 20:19:04
+Start: 2022/6/19 20:19:04
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 71
+
+
+2022/6/19 20:19:34
+BNBUSDT
+总匹配量:15
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:1	优质率:6.667%	匹配成功率:100%	期望值:1.045%
+1071 count:101 w:101 	[2]涨幅:0.148% 胜率:62.857% real:1.045%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
+
+
+2022/6/19 20:19:34
+ETHUSDT
+总匹配量:0
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:NaN%	匹配成功率:NaN%	期望值:NaN%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
+
+
+2022/6/19 20:19:34
 BTCUSDT
-总匹配量:71
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.12, similar_val:0.001, 
-优质数:15	优质率:21.127%	匹配成功率：53.333%
-1144 count:119 w:115 	[1]涨幅:0.056% 胜率:63.928% real:0.309%
-1240 count:69 w:66 	[1]涨幅:-0.022% 胜率:36.079% real:0.015%
-3124 count:107 w:107 	[2]涨幅:0.039% 胜率:62.951% real:-0.415%
-3184 count:53 w:51 	[1]涨幅:0.073% 胜率:69.508% real:0.035%
-3457 count:56 w:56 	[1]涨幅:-0.067% 胜率:37.865% real:0.363%
-3466 count:50 w:48 	[1]涨幅:0.03% 胜率:64.135% real:0.246%
-3670 count:53 w:53 	[2]涨幅:0.064% 胜率:66.383% real:0.293%
-4120 count:84 w:84 	[2]涨幅:-0.058% 胜率:39.363% real:0.267%
-4222 count:88 w:86 	[1]涨幅:0.048% 胜率:61.907% real:0.156%
-4222 count:88 w:88 	[2]涨幅:0.077% 胜率:68.342% real:0.072%
-4228 count:52 w:52 	[2]涨幅:0.046% 胜率:62.952% real:0.36%
-4360 count:53 w:49 	[1]涨幅:0.047% 胜率:69.87% real:-0.084%
-4768 count:51 w:51 	[2]涨幅:-0.051% 胜率:38.813% real:-0.046%
-4777 count:60 w:58 	[1]涨幅:0.043% 胜率:62.211% real:-0.041%
-4783 count:51 w:50 	[2]涨幅:0.124% 胜率:65.295% real:-0.44%
+总匹配量:0
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:NaN%	匹配成功率:NaN%	期望值:NaN%
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
 
 
-6.18 周六 22:29:51
+2022/6/19 20:19:34
+XRPUSDT
+总匹配量:5
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:0%	匹配成功率:NaN%	期望值:NaN%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
+
+
+2022/6/19 20:19:34
+End: 2022/6/19 20:19:34 运行耗时: 00:00:30.4865030
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 98
+
+
+2022/6/19 20:21:03
+Start: 2022/6/19 20:21:03
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 71
+
+
+2022/6/19 20:22:41
+ETHUSDT
+总匹配量:0
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:NaN%	匹配成功率:NaN%	期望值:NaN%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
+
+
+2022/6/19 20:22:41
+BTCUSDT
+总匹配量:11
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:2	优质率:18.182%	匹配成功率:50%	期望值:1.188%
+1225 count:64 w:63 	[2]涨幅:0.05% 胜率:55.414% real:-0.033%
+1370 count:50 w:50 	[2]涨幅:0.068% 胜率:58.491% real:1.221%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
+
+
+2022/6/19 20:22:41
+XRPUSDT
+总匹配量:19
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:1	优质率:5.263%	匹配成功率:0%	期望值:-∞%
+1115 count:66 w:66 	[2]涨幅:-0.091% 胜率:39.712% real:0.498%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
+
+
+2022/6/19 20:22:41
+BNBUSDT
+总匹配量:53
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:11	优质率:20.755%	匹配成功率:63.636%	期望值:0.251%
+1071 count:101 w:101 	[2]涨幅:0.148% 胜率:62.857% real:1.045%
+1130 count:63 w:62 	[2]涨幅:0.051% 胜率:55.115% real:0.23%
+1146 count:88 w:88 	[2]涨幅:0.044% 胜率:57.341% real:0.268%
+1149 count:134 w:132 	[2]涨幅:-0.041% 胜率:42.066% real:0.059%
+1182 count:71 w:71 	[2]涨幅:-0.057% 胜率:37.224% real:0.047%
+1183 count:58 w:57 	[2]涨幅:0.054% 胜率:58.689% real:0.112%
+1371 count:88 w:87 	[2]涨幅:-0.055% 胜率:36.24% real:0.498%
+1390 count:55 w:54 	[2]涨幅:-0.053% 胜率:44.257% real:0.278%
+1422 count:57 w:57 	[1]涨幅:-0.068% 胜率:32.716% real:-0.164%
+1422 count:57 w:57 	[2]涨幅:-0.051% 胜率:41.358% real:-0.421%
+1499 count:53 w:52 	[2]涨幅:-0.058% 胜率:27.445% real:-0.399%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
+
+
+2022/6/19 20:22:41
+End: 2022/6/19 20:22:41 运行耗时: 00:01:37.6447948
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 98
+
+
+2022/6/19 20:23:25
+Start: 2022/6/19 20:23:25
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 71
+
+
+2022/6/19 20:25:05
 ETHUSDT
 总匹配量:8
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.12, similar_val:0.001, 
-优质数:3	优质率:37.5%	匹配成功率：33.333%
-4402 count:69 w:69 	[2]涨幅:0.032% 胜率:65.243% real:0.029%
-4639 count:120 w:120 	[1]涨幅:-0.029% 胜率:39.348% real:0.097%
-4639 count:120 w:120 	[2]涨幅:-0.021% 胜率:36.884% real:0.084%
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:5	优质率:62.5%	匹配成功率:100%	期望值:0.447%
+1001 count:52 w:50 	[1]涨幅:-0.101% 胜率:36.542% real:-0.486%
+1040 count:75 w:75 	[2]涨幅:-0.062% 胜率:37.212% real:-0.251%
+1277 count:170 w:170 	[2]涨幅:-0.058% 胜率:41.329% real:-0.101%
+1282 count:83 w:82 	[1]涨幅:0.042% 胜率:55.382% real:0.752%
+1282 count:83 w:83 	[2]涨幅:0.112% 胜率:59.198% real:0.644%
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 22:49:59
-BNBUSDT
-总匹配量:17
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.12, similar_val:0.001, 
-优质数:3	优质率:17.647%	匹配成功率：33.333%
-1069 count:53 w:53 	[2]涨幅:0.024% 胜率:65.32% real:-0.669%
-1423 count:50 w:48 	[1]涨幅:0.023% 胜率:62.688% real:-0.257%
-2707 count:64 w:60 	[1]涨幅:-0.036% 胜率:37.391% real:-0.171%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
 
 
-6.18 周六 22:50:02
-BTCUSDT
-总匹配量:16
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.12, similar_val:0.001, 
-优质数:3	优质率:18.75%	匹配成功率：33.333%
-1222 count:80 w:80 	[2]涨幅:0.047% 胜率:63.151% real:0.011%
-3760 count:58 w:58 	[1]涨幅:-0.047% 胜率:35.5% real:0.057%
-4702 count:61 w:60 	[2]涨幅:0.032% 胜率:60.017% real:-0.12%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 22:50:05
-ETHUSDT
-总匹配量:0
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.12, similar_val:0.001, 
-优质数:0	优质率:NaN%	匹配成功率：NaN%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
-
-
-6.18 周六 22:50:11
+2022/6/19 20:25:05
 XRPUSDT
-总匹配量:0
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.12, similar_val:0.001, 
-优质数:0	优质率:NaN%	匹配成功率：NaN%
+总匹配量:64
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:20	优质率:31.25%	匹配成功率:85%	期望值:0.259%
+1031 count:55 w:53 	[1]涨幅:0.054% 胜率:58.22% real:0.028%
+1031 count:55 w:55 	[2]涨幅:0.05% 胜率:56.176% real:0.309%
+1039 count:50 w:50 	[2]涨幅:0.067% 胜率:72.213% real:-0.066%
+1042 count:121 w:121 	[2]涨幅:0.051% 胜率:58.21% real:0.176%
+1061 count:56 w:56 	[2]涨幅:0.119% 胜率:58.14% real:-0.371%
+1074 count:54 w:52 	[1]涨幅:-0.047% 胜率:34.641% real:-0.092%
+1074 count:54 w:52 	[2]涨幅:-0.052% 胜率:31.699% real:-0.091%
+1105 count:70 w:68 	[1]涨幅:-0.041% 胜率:35.936% real:-0.344%
+1105 count:70 w:70 	[2]涨幅:-0.066% 胜率:35.237% real:-0.766%
+1139 count:58 w:57 	[2]涨幅:0.142% 胜率:55.093% real:1.058%
+1167 count:55 w:55 	[1]涨幅:-0.058% 胜率:35.912% real:-0.279%
+1245 count:61 w:59 	[1]涨幅:-0.059% 胜率:36.212% real:-0.153%
+1245 count:61 w:60 	[2]涨幅:-0.082% 胜率:35.849% real:-0.168%
+1345 count:54 w:53 	[1]涨幅:0.096% 胜率:67.597% real:0.298%
+1410 count:94 w:93 	[2]涨幅:0.041% 胜率:55.062% real:-0.491%
+1432 count:79 w:79 	[2]涨幅:-0.048% 胜率:34.132% real:-0.238%
+1449 count:59 w:59 	[1]涨幅:-0.052% 胜率:41.541% real:-0.647%
+1468 count:56 w:55 	[1]涨幅:0.049% 胜率:62.715% real:0.075%
+1470 count:69 w:69 	[2]涨幅:-0.07% 胜率:43.531% real:-0.243%
+1477 count:66 w:66 	[2]涨幅:0.101% 胜率:63.569% real:0.364%
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
 
 
-6.18 周六 23:04:57
+2022/6/19 20:25:05
 BNBUSDT
-总匹配量:4
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.12, similar_val:0.001, 
-优质数:1	优质率:25%	匹配成功率：0%
-13750 count:73 w:67 	[1]涨幅:-0.026% 胜率:36.395% real:0.036%
+总匹配量:170
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:20	优质率:11.765%	匹配成功率:75%	期望值:0.211%
+1023 count:94 w:93 	[2]涨幅:0.061% 胜率:57.447% real:0.1%
+1084 count:59 w:58 	[1]涨幅:-0.057% 胜率:42.653% real:-0.331%
+1089 count:55 w:55 	[1]涨幅:0.056% 胜率:59.568% real:0.566%
+1113 count:67 w:67 	[2]涨幅:0.048% 胜率:62.404% real:0.225%
+1141 count:124 w:123 	[2]涨幅:-0.048% 胜率:37.391% real:-0.017%
+1150 count:201 w:201 	[2]涨幅:-0.07% 胜率:32.74% real:-0.519%
+1162 count:94 w:92 	[1]涨幅:0.065% 胜率:56.053% real:-0.096%
+1165 count:61 w:60 	[2]涨幅:-0.049% 胜率:41.525% real:-0.352%
+1192 count:74 w:73 	[2]涨幅:0.049% 胜率:66.63% real:0.255%
+1198 count:191 w:187 	[1]涨幅:-0.046% 胜率:33.181% real:0.254%
+1260 count:57 w:57 	[1]涨幅:0.051% 胜率:66.268% real:0.405%
+1260 count:57 w:57 	[2]涨幅:0.046% 胜率:69.987% real:0.285%
+1267 count:86 w:86 	[2]涨幅:0.078% 胜率:59.231% real:0.171%
+1268 count:54 w:50 	[1]涨幅:0.046% 胜率:59.934% real:0.288%
+1383 count:60 w:59 	[2]涨幅:0.055% 胜率:68.95% real:0.208%
+1389 count:97 w:96 	[2]涨幅:-0.052% 胜率:40.26% real:0.313%
+1390 count:85 w:83 	[1]涨幅:-0.053% 胜率:41.095% real:0.141%
+1390 count:85 w:83 	[2]涨幅:-0.053% 胜率:42.388% real:0.278%
+1450 count:60 w:60 	[2]涨幅:0.069% 胜率:67.841% real:0.23%
+1474 count:171 w:169 	[1]涨幅:-0.04% 胜率:44.124% real:-0.291%
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
 
 
-6.18 周六 23:04:59
+2022/6/19 20:25:06
 BTCUSDT
-总匹配量:20
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.12, similar_val:0.001, 
-优质数:9	优质率:45%	匹配成功率：55.556%
-12127 count:42 w:42 	[1]涨幅:-0.043% 胜率:35.544% real:0.207%
-12127 count:42 w:42 	[2]涨幅:-0.09% 胜率:25.657% real:0.12%
-13366 count:87 w:87 	[1]涨幅:-0.026% 胜率:37.583% real:0.75%
-13366 count:87 w:86 	[2]涨幅:-0.047% 胜率:39.735% real:-0.033%
-13465 count:47 w:46 	[1]涨幅:-0.025% 胜率:36.842% real:0.006%
-13765 count:42 w:42 	[2]涨幅:0.022% 胜率:63.946% real:0.129%
-14014 count:68 w:68 	[1]涨幅:-0.023% 胜率:36.311% real:-0.015%
-14014 count:68 w:68 	[2]涨幅:-0.03% 胜率:38.998% real:-0.08%
-14968 count:65 w:65 	[2]涨幅:-0.047% 胜率:34.191% real:-0.078%
+总匹配量:84
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:24	优质率:28.571%	匹配成功率:70.833%	期望值:0.06%
+1024 count:54 w:54 	[1]涨幅:-0.044% 胜率:41.946% real:0.503%
+1025 count:99 w:99 	[2]涨幅:-0.049% 胜率:44.283% real:0.047%
+1026 count:82 w:79 	[1]涨幅:-0.071% 胜率:31.464% real:-0.11%
+1026 count:82 w:82 	[2]涨幅:-0.099% 胜率:32.365% real:-0.145%
+1046 count:82 w:77 	[1]涨幅:-0.053% 胜率:38.427% real:-0.053%
+1046 count:82 w:81 	[2]涨幅:-0.084% 胜率:39.852% real:-0.138%
+1048 count:69 w:67 	[1]涨幅:-0.061% 胜率:32.112% real:-0.028%
+1048 count:69 w:69 	[2]涨幅:-0.058% 胜率:41.617% real:0.042%
+1072 count:50 w:49 	[2]涨幅:-0.143% 胜率:43.272% real:1.204%
+1208 count:62 w:60 	[1]涨幅:0.047% 胜率:66.714% real:0.093%
+1208 count:62 w:62 	[2]涨幅:0.051% 胜率:68.289% real:0.085%
+1211 count:106 w:105 	[2]涨幅:0.068% 胜率:63.987% real:0.332%
+1299 count:98 w:98 	[2]涨幅:0.042% 胜率:61.837% real:0.39%
+1326 count:68 w:65 	[1]涨幅:0.042% 胜率:55.924% real:0.022%
+1364 count:62 w:62 	[1]涨幅:-0.048% 胜率:38.045% real:-0.077%
+1364 count:62 w:62 	[2]涨幅:-0.048% 胜率:42.404% real:-0.344%
+1393 count:50 w:47 	[1]涨幅:0.07% 胜率:62.281% real:0.449%
+1394 count:52 w:52 	[1]涨幅:-0.05% 胜率:42.219% real:0.155%
+1399 count:72 w:71 	[1]涨幅:-0.04% 胜率:34.002% real:-0.479%
+1434 count:51 w:51 	[1]涨幅:-0.041% 胜率:36.408% real:0.511%
+1463 count:50 w:50 	[2]涨幅:-0.064% 胜率:38.814% real:-0.034%
+1469 count:60 w:59 	[1]涨幅:0.044% 胜率:57.036% real:0.349%
+1469 count:60 w:59 	[2]涨幅:0.058% 胜率:56.785% real:0.469%
+1496 count:60 w:60 	[1]涨幅:0.059% 胜率:55.794% real:-0.11%
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
 
 
-6.18 周六 23:05:07
-ETHUSDT
-总匹配量:28
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.12, similar_val:0.001, 
-优质数:5	优质率:17.857%	匹配成功率：20%
-11587 count:44 w:44 	[2]涨幅:0.063% 胜率:62.273% real:-0.249%
-12265 count:46 w:46 	[2]涨幅:-0.063% 胜率:30.365% real:0.132%
-12277 count:43 w:43 	[2]涨幅:-0.022% 胜率:36.189% real:-0.156%
-13516 count:41 w:41 	[2]涨幅:0.053% 胜率:66.157% real:-0.101%
-14020 count:46 w:46 	[1]涨幅:-0.023% 胜率:38.702% real:0.36%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+2022/6/19 20:25:06
+End: 2022/6/19 20:25:06 运行耗时: 00:01:40.3459819
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 98
 
 
-6.18 周六 23:05:17
+2022/6/19 20:32:54
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 71
+
+
+2022/6/19 20:44:47
 XRPUSDT
-总匹配量:13
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.12, similar_val:0.001, 
-优质数:6	优质率:46.154%	匹配成功率：16.667%
-11383 count:69 w:65 	[1]涨幅:-0.027% 胜率:38.127% real:0.07%
-11383 count:69 w:69 	[2]涨幅:-0.033% 胜率:39.428% real:0.106%
-11602 count:104 w:104 	[2]涨幅:0.021% 胜率:60.334% real:-0.144%
-11605 count:53 w:53 	[1]涨幅:-0.028% 胜率:38.169% real:0.155%
-11608 count:51 w:51 	[2]涨幅:-0.055% 胜率:37.091% real:0.14%
-12733 count:42 w:42 	[1]涨幅:-0.027% 胜率:35.096% real:-0.061%
+总匹配量:154 样本数:5000 百分比:0.0308
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:25	优质率:16.234%	匹配成功率:76%	期望值:0.451%
+1039 count:50 w:50 	[2]涨幅:0.067% 胜率:72.213% real:-0.066%
+1061 count:56 w:56 	[2]涨幅:0.119% 胜率:58.14% real:-0.371%
+1105 count:70 w:70 	[2]涨幅:-0.066% 胜率:35.237% real:-0.766%
+1245 count:61 w:60 	[2]涨幅:-0.082% 胜率:35.849% real:-0.168%
+1345 count:54 w:53 	[1]涨幅:0.096% 胜率:67.597% real:0.298%
+1470 count:69 w:69 	[2]涨幅:-0.07% 胜率:43.531% real:-0.243%
+1477 count:66 w:66 	[2]涨幅:0.101% 胜率:63.569% real:0.364%
+1504 count:64 w:64 	[2]涨幅:0.121% 胜率:61.617% real:-0.033%
+1593 count:70 w:69 	[2]涨幅:0.062% 胜率:59.413% real:0.266%
+1604 count:54 w:54 	[2]涨幅:-0.098% 胜率:37.778% real:-0.213%
+3745 count:101 w:101 	[2]涨幅:0.06% 胜率:59.554% real:-0.589%
+3746 count:67 w:65 	[1]涨幅:-0.065% 胜率:43.59% real:-0.493%
+3747 count:114 w:114 	[1]涨幅:0.077% 胜率:63.943% real:-0.21%
+4670 count:54 w:54 	[1]涨幅:0.079% 胜率:56.978% real:0.651%
+5070 count:64 w:61 	[1]涨幅:0.066% 胜率:63.613% real:0.385%
+5070 count:64 w:64 	[2]涨幅:0.067% 胜率:59.975% real:0.892%
+5292 count:50 w:50 	[2]涨幅:-0.096% 胜率:38.072% real:-0.828%
+5586 count:68 w:68 	[1]涨幅:0.082% 胜率:66.213% real:0.179%
+5586 count:68 w:68 	[2]涨幅:0.084% 胜率:60.644% real:0.29%
+5793 count:82 w:82 	[1]涨幅:0.108% 胜率:59.725% real:0.882%
+5793 count:82 w:82 	[2]涨幅:0.149% 胜率:62.181% real:1.121%
+5976 count:66 w:63 	[1]涨幅:-0.077% 胜率:33.377% real:-0.185%
+5976 count:66 w:65 	[2]涨幅:-0.079% 胜率:38.198% real:0.155%
+5993 count:68 w:68 	[1]涨幅:-0.092% 胜率:33.293% real:-0.637%
+5993 count:68 w:68 	[2]涨幅:-0.107% 胜率:39.663% real:-1.133%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
 
 
-6.18 周六 23:10:51
+2022/6/19 20:44:48
+ETHUSDT
+总匹配量:98 样本数:5000 百分比:0.0196
+
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:21	优质率:21.429%	匹配成功率:80.952%	期望值:0.354%
+1001 count:52 w:50 	[1]涨幅:-0.101% 胜率:36.542% real:-0.486%
+1040 count:75 w:75 	[2]涨幅:-0.062% 胜率:37.212% real:-0.251%
+1282 count:83 w:83 	[2]涨幅:0.112% 胜率:59.198% real:0.644%
+1886 count:78 w:77 	[1]涨幅:-0.078% 胜率:37.394% real:0.261%
+1886 count:78 w:78 	[2]涨幅:-0.067% 胜率:36.506% real:-0.042%
+2004 count:82 w:82 	[2]涨幅:-0.063% 胜率:42.679% real:-0.459%
+3140 count:60 w:59 	[1]涨幅:-0.078% 胜率:30.152% real:-0.733%
+3193 count:63 w:63 	[2]涨幅:0.107% 胜率:58.286% real:1.281%
+3857 count:71 w:70 	[2]涨幅:-0.082% 胜率:32.902% real:-0.404%
+4143 count:102 w:101 	[1]涨幅:0.078% 胜率:62.571% real:-0.158%
+4143 count:102 w:102 	[2]涨幅:0.06% 胜率:56.809% real:0.148%
+4323 count:56 w:56 	[1]涨幅:-0.07% 胜率:39.759% real:-0.224%
+4483 count:53 w:52 	[1]涨幅:-0.084% 胜率:31.536% real:-0.252%
+4483 count:53 w:52 	[2]涨幅:-0.11% 胜率:35.458% real:-0.357%
+4672 count:76 w:74 	[1]涨幅:0.066% 胜率:57.189% real:0.269%
+4672 count:76 w:76 	[2]涨幅:0.122% 胜率:57.521% real:0.519%
+5057 count:64 w:63 	[1]涨幅:0.088% 胜率:57.841% real:0.235%
+5258 count:71 w:69 	[1]涨幅:0.074% 胜率:62.683% real:-0.413%
+5258 count:71 w:71 	[2]涨幅:0.072% 胜率:59.181% real:-0.131%
+5259 count:58 w:58 	[1]涨幅:0.096% 胜率:61.357% real:0.282%
+5858 count:84 w:84 	[2]涨幅:-0.08% 胜率:39.796% real:-0.389%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
+
+
+2022/6/19 20:44:52
+BTCUSDT
+总匹配量:546 样本数:5000 百分比:0.1092
+
+prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:39	优质率:7.143%	匹配成功率:53.846%	期望值:0.091%
+1026 count:82 w:79 	[1]涨幅:-0.071% 胜率:31.464% real:-0.11%
+1026 count:82 w:82 	[2]涨幅:-0.099% 胜率:32.365% real:-0.145%
+1046 count:82 w:81 	[2]涨幅:-0.084% 胜率:39.852% real:-0.138%
+1048 count:69 w:67 	[1]涨幅:-0.061% 胜率:32.112% real:-0.028%
+1072 count:50 w:49 	[2]涨幅:-0.143% 胜率:43.272% real:1.204%
+1211 count:106 w:105 	[2]涨幅:0.068% 胜率:63.987% real:0.332%
+1393 count:50 w:47 	[1]涨幅:0.07% 胜率:62.281% real:0.449%
+1463 count:50 w:50 	[2]涨幅:-0.064% 胜率:38.814% real:-0.034%
+2069 count:57 w:56 	[2]涨幅:0.087% 胜率:60.961% real:-0.26%
+2072 count:61 w:61 	[1]涨幅:0.065% 胜率:71.074% real:-0.253%
+2072 count:61 w:61 	[2]涨幅:0.13% 胜率:67.493% real:-0.146%
+2348 count:55 w:55 	[1]涨幅:-0.097% 胜率:35.877% real:0.255%
+2456 count:82 w:82 	[2]涨幅:0.069% 胜率:59.627% real:0.211%
+2479 count:71 w:71 	[2]涨幅:0.061% 胜率:56.97% real:0.195%
+2518 count:51 w:51 	[1]涨幅:-0.09% 胜率:39.614% real:-0.33%
+2629 count:52 w:52 	[1]涨幅:0.174% 胜率:62.58% real:0.017%
+3067 count:50 w:50 	[2]涨幅:0.11% 胜率:58.761% real:-0.076%
+3681 count:61 w:57 	[1]涨幅:-0.083% 胜率:40.798% real:0.241%
+3683 count:51 w:49 	[2]涨幅:0.107% 胜率:67.71% real:-0.093%
+3748 count:79 w:79 	[2]涨幅:-0.063% 胜率:41.026% real:-0.32%
+3965 count:88 w:87 	[1]涨幅:-0.096% 胜率:40.243% real:-0.109%
+3965 count:88 w:88 	[2]涨幅:-0.129% 胜率:39.6% real:0.071%
+4079 count:55 w:55 	[2]涨幅:-0.096% 胜率:41.478% real:-0.214%
+4080 count:53 w:52 	[1]涨幅:0.066% 胜率:61.635% real:0.24%
+4080 count:53 w:53 	[2]涨幅:0.075% 胜率:67.957% real:0.362%
+4353 count:59 w:58 	[2]涨幅:-0.061% 胜率:33.094% real:-0.167%
+4486 count:74 w:74 	[2]涨幅:-0.091% 胜率:40.186% real:0.109%
+4553 count:80 w:80 	[2]涨幅:0.081% 胜率:59.574% real:-0.34%
+4579 count:65 w:65 	[2]涨幅:-0.114% 胜率:43.194% real:-0.626%
+4723 count:50 w:50 	[1]涨幅:-0.069% 胜率:36.554% real:0.173%
+4723 count:50 w:49 	[2]涨幅:-0.072% 胜率:37.842% real:0.263%
+4734 count:59 w:56 	[1]涨幅:0.151% 胜率:58.552% real:-0.13%
+4835 count:126 w:126 	[2]涨幅:0.064% 胜率:61.427% real:-0.02%
+5033 count:50 w:49 	[2]涨幅:-0.093% 胜率:32.55% real:0.217%
+5061 count:54 w:53 	[2]涨幅:0.069% 胜率:62.614% real:-0.156%
+5162 count:61 w:61 	[1]涨幅:0.127% 胜率:70.109% real:0.826%
+5162 count:61 w:61 	[2]涨幅:0.169% 胜率:67.12% real:0.761%
+5317 count:67 w:66 	[2]涨幅:0.091% 胜率:58.473% real:0.335%
+5957 count:65 w:65 	[2]涨幅:-0.072% 胜率:31.148% real:0.031%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
+
+
+2022/6/19 20:44:54
 BNBUSDT
-总匹配量:0
+总匹配量:692 样本数:5000 百分比:0.1384
+
 prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
-优质数:0	优质率:NaN%	匹配成功率：NaN%
+优质数:46	优质率:6.647%	匹配成功率:76.087%	期望值:0.214%
+1023 count:94 w:93 	[2]涨幅:0.061% 胜率:57.447% real:0.1%
+1150 count:201 w:201 	[2]涨幅:-0.07% 胜率:32.74% real:-0.519%
+1162 count:94 w:92 	[1]涨幅:0.065% 胜率:56.053% real:-0.096%
+1267 count:86 w:86 	[2]涨幅:0.078% 胜率:59.231% real:0.171%
+1450 count:60 w:60 	[2]涨幅:0.069% 胜率:67.841% real:0.23%
+1713 count:88 w:88 	[2]涨幅:0.079% 胜率:56.155% real:0.276%
+1714 count:94 w:93 	[1]涨幅:-0.084% 胜率:36.962% real:-0.411%
+1831 count:67 w:67 	[1]涨幅:0.062% 胜率:60.848% real:-0.047%
+1964 count:61 w:61 	[2]涨幅:-0.089% 胜率:43.265% real:-1.036%
+2142 count:59 w:59 	[2]涨幅:0.1% 胜率:61.433% real:0.293%
+2255 count:78 w:78 	[2]涨幅:-0.132% 胜率:39.52% real:-0.242%
+2256 count:54 w:53 	[1]涨幅:0.088% 胜率:62.282% real:-0.009%
+2256 count:54 w:53 	[2]涨幅:0.066% 胜率:70.892% real:0.458%
+2314 count:74 w:71 	[1]涨幅:0.077% 胜率:58.885% real:0.096%
+2321 count:130 w:127 	[1]涨幅:0.072% 胜率:56.078% real:0.145%
+2414 count:51 w:50 	[2]涨幅:0.106% 胜率:61.958% real:0.422%
+2425 count:56 w:56 	[2]涨幅:0.076% 胜率:60.184% real:-0.094%
+2432 count:76 w:75 	[2]涨幅:-0.061% 胜率:42.287% real:-0.408%
+2499 count:84 w:84 	[2]涨幅:0.064% 胜率:63.988% real:0.107%
+2551 count:102 w:102 	[2]涨幅:-0.07% 胜率:43.029% real:-0.511%
+2811 count:52 w:52 	[2]涨幅:0.12% 胜率:60% real:0.653%
+2830 count:74 w:71 	[1]涨幅:-0.084% 胜率:32.067% real:-0.107%
+2830 count:74 w:74 	[2]涨幅:-0.118% 胜率:29.032% real:-0.197%
+2836 count:61 w:60 	[1]涨幅:0.073% 胜率:63.291% real:0.012%
+2836 count:61 w:61 	[2]涨幅:0.09% 胜率:65.599% real:0.073%
+2882 count:61 w:61 	[2]涨幅:0.071% 胜率:60.924% real:0.679%
+2901 count:52 w:52 	[2]涨幅:0.066% 胜率:59.091% real:-0.228%
+3180 count:79 w:79 	[2]涨幅:-0.062% 胜率:41.537% real:-0.06%
+3198 count:76 w:76 	[1]涨幅:0.061% 胜率:65.076% real:0.069%
+3198 count:76 w:76 	[2]涨幅:0.113% 胜率:64.642% real:0.083%
+3248 count:62 w:61 	[2]涨幅:-0.063% 胜率:32.275% real:0.363%
+3287 count:54 w:54 	[1]涨幅:0.098% 胜率:67.776% real:0.17%
+3299 count:52 w:52 	[1]涨幅:0.11% 胜率:63.198% real:-0.254%
+3299 count:52 w:52 	[2]涨幅:0.101% 胜率:66.516% real:-0.347%
+3343 count:82 w:82 	[2]涨幅:0.067% 胜率:59.448% real:0.212%
+3398 count:55 w:55 	[2]涨幅:0.104% 胜率:59.125% real:0.073%
+3654 count:59 w:59 	[2]涨幅:0.064% 胜率:60.276% real:0.047%
+3848 count:85 w:83 	[2]涨幅:0.075% 胜率:61.056% real:0.537%
+3966 count:74 w:74 	[2]涨幅:-0.086% 胜率:37.303% real:0.378%
+3967 count:53 w:53 	[1]涨幅:-0.085% 胜率:33.032% real:-0.216%
+3967 count:53 w:53 	[2]涨幅:-0.1% 胜率:34.54% real:-0.492%
+4161 count:87 w:87 	[2]涨幅:0.105% 胜率:59.427% real:0.42%
+4348 count:57 w:57 	[2]涨幅:0.083% 胜率:58.044% real:-0.122%
+4506 count:50 w:50 	[2]涨幅:-0.095% 胜率:42.903% real:0.713%
+5071 count:58 w:57 	[1]涨幅:0.187% 胜率:69.376% real:0.229%
+5071 count:58 w:58 	[2]涨幅:0.22% 胜率:67.001% real:0.402%
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 717
 
 
-6.18 周六 23:10:53
-BTCUSDT
-总匹配量:0
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
-优质数:0	优质率:NaN%	匹配成功率：NaN%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+2022/6/19 20:44:54
+End~ 运行耗时: 00:12:00.1241076
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 98
 
 
-6.18 周六 23:11:02
-ETHUSDT
-总匹配量:0
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
-优质数:0	优质率:NaN%	匹配成功率：NaN%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+2022/6/19 22:02:59
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 71
 
 
-6.18 周六 23:11:12
+2022/6/19 22:20:37
 XRPUSDT
-总匹配量:0
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
-优质数:0	优质率:NaN%	匹配成功率：NaN%
+总匹配量:32 样本数:5000 百分比:0.0064
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:1	优质率:3.125%	匹配成功率:0%	期望值:-∞%
+1115 count:66 w:66 	[2]涨幅:-0.089% 胜率:39.791% real:0.498%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 712
 
 
-6.18 周六 23:17:56
+2022/6/19 22:20:39
+ETHUSDT
+总匹配量:17 样本数:5000 百分比:0.0034
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:1	优质率:5.882%	匹配成功率:100%	期望值:0.281%
+2014 count:56 w:56 	[2]涨幅:-0.092% 胜率:33.858% real:-0.281%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 712
+
+
+2022/6/19 22:20:39
 BNBUSDT
-总匹配量:0
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
-优质数:0	优质率:NaN%	匹配成功率：NaN%
+总匹配量:214 样本数:5000 百分比:0.0428
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:12	优质率:5.607%	匹配成功率:50%	期望值:0.025%
+1071 count:101 w:101 	[2]涨幅:0.146% 胜率:62.531% real:1.045%
+1422 count:57 w:57 	[1]涨幅:-0.066% 胜率:33.333% real:-0.164%
+2409 count:60 w:59 	[1]涨幅:-0.069% 胜率:37.083% real:0.135%
+2409 count:60 w:60 	[2]涨幅:-0.072% 胜率:40.028% real:-0.03%
+2591 count:64 w:63 	[2]涨幅:0.117% 胜率:63.405% real:-0.193%
+2903 count:59 w:58 	[1]涨幅:0.08% 胜率:67.472% real:-0.06%
+3144 count:100 w:100 	[2]涨幅:0.063% 胜率:61.513% real:-0.295%
+3957 count:93 w:92 	[2]涨幅:-0.061% 胜率:34.675% real:0.737%
+4105 count:70 w:68 	[2]涨幅:-0.07% 胜率:38.27% real:-0.3%
+4122 count:52 w:52 	[2]涨幅:-0.06% 胜率:37.174% real:-0.244%
+4396 count:76 w:76 	[2]涨幅:-0.123% 胜率:26.651% real:-0.049%
+4420 count:58 w:58 	[1]涨幅:-0.072% 胜率:41.21% real:0.261%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 712
 
 
-6.18 周六 23:17:56
+2022/6/19 22:20:40
 BTCUSDT
-总匹配量:2
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
-优质数:1	优质率:50%	匹配成功率：0%
-13216 count:31 w:31 	[1]涨幅:-0.032% 胜率:38.866% real:0.33%
+总匹配量:128 样本数:5000 百分比:0.0256
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:15	优质率:11.719%	匹配成功率:73.333%	期望值:0.294%
+1370 count:50 w:50 	[2]涨幅:0.068% 胜率:58.532% real:1.221%
+2373 count:53 w:53 	[1]涨幅:-0.065% 胜率:39.297% real:-0.276%
+3018 count:51 w:51 	[2]涨幅:-0.065% 胜率:36.271% real:-0.196%
+3456 count:54 w:54 	[2]涨幅:0.096% 胜率:62.537% real:0.571%
+3920 count:66 w:65 	[1]涨幅:-0.06% 胜率:37.132% real:-0.004%
+4028 count:58 w:58 	[2]涨幅:-0.07% 胜率:38.983% real:0.801%
+4121 count:64 w:62 	[1]涨幅:-0.066% 胜率:29.524% real:-0.211%
+4121 count:64 w:64 	[2]涨幅:-0.079% 胜率:36.026% real:-0.273%
+4472 count:92 w:89 	[1]涨幅:-0.064% 胜率:36.415% real:0.091%
+4472 count:92 w:92 	[2]涨幅:-0.1% 胜率:31.034% real:0.144%
+4785 count:61 w:61 	[2]涨幅:0.088% 胜率:67.518% real:0.13%
+5035 count:62 w:62 	[2]涨幅:-0.063% 胜率:29.395% real:0.361%
+5186 count:60 w:59 	[2]涨幅:-0.093% 胜率:39.608% real:-1.063%
+5270 count:66 w:66 	[2]涨幅:0.099% 胜率:61.892% real:0.394%
+5542 count:68 w:68 	[2]涨幅:0.102% 胜率:58.389% real:0.289%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 712
 
 
-6.18 周六 23:17:59
-ETHUSDT
-总匹配量:0
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
-优质数:0	优质率:NaN%	匹配成功率：NaN%
-
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+2022/6/19 22:20:40
+End~ 运行耗时: 00:17:40.9670382
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 98
 
 
-6.18 周六 23:18:11
+2022/6/19 22:22:14
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 71
+
+
+2022/6/19 22:28:47
 XRPUSDT
-总匹配量:0
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
-优质数:0	优质率:NaN%	匹配成功率：NaN%
+总匹配量:80 样本数:1000 百分比:0.08
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:11	优质率:13.75%	匹配成功率:72.727%	期望值:0.266%
+1039 count:50 w:50 	[2]涨幅:0.068% 胜率:72.461% 	real:-0.066%
+1061 count:56 w:56 	[2]涨幅:0.119% 胜率:58.14% 	real:-0.371%
+1105 count:70 w:70 	[2]涨幅:-0.068% 胜率:35.33% 	real:-0.766%
+1167 count:55 w:55 	[1]涨幅:-0.061% 胜率:36.152% 	real:-0.279%
+1245 count:61 w:61 	[2]涨幅:-0.083% 胜率:35.484% 	real:-0.168%
+1345 count:54 w:53 	[1]涨幅:0.095% 胜率:67.18% 	real:0.298%
+1470 count:69 w:69 	[2]涨幅:-0.072% 胜率:43.457% 	real:-0.243%
+1477 count:66 w:66 	[2]涨幅:0.098% 胜率:63.546% 	real:0.364%
+1504 count:64 w:64 	[2]涨幅:0.124% 胜率:61.868% 	real:-0.033%
+1593 count:70 w:70 	[2]涨幅:0.064% 胜率:59.074% 	real:0.266%
+1604 count:54 w:54 	[2]涨幅:-0.096% 胜率:38.035% 	real:-0.213%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 712
 
 
-6.18 周六 23:31:55
+2022/6/19 22:28:49
+ETHUSDT
+总匹配量:18 样本数:1000 百分比:0.018
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:5	优质率:27.778%	匹配成功率:80%	期望值:0.291%
+1001 count:52 w:50 	[1]涨幅:-0.099% 胜率:36.645% 	real:-0.486%
+1040 count:75 w:75 	[2]涨幅:-0.062% 胜率:37.199% 	real:-0.251%
+1282 count:83 w:83 	[2]涨幅:0.113% 胜率:59.292% 	real:0.644%
+1886 count:78 w:77 	[1]涨幅:-0.079% 胜率:37.236% 	real:0.261%
+1886 count:78 w:77 	[2]涨幅:-0.068% 胜率:36.667% 	real:-0.042%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 712
+
+
+2022/6/19 22:28:49
 BTCUSDT
-总匹配量:2
-prev_weight:6, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
-优质数:1	优质率:50%	匹配成功率：0%
-13216 count:31 w:31 	[1]涨幅:-0.032% 胜率:38.866% real:0.33%
+总匹配量:105 样本数:1000 百分比:0.105
 
-   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in D:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 693
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:9	优质率:8.571%	匹配成功率:88.889%	期望值:0.063%
+1026 count:82 w:79 	[1]涨幅:-0.07% 胜率:31.672% 	real:-0.11%
+1026 count:82 w:82 	[2]涨幅:-0.098% 胜率:32.565% 	real:-0.145%
+1046 count:82 w:81 	[2]涨幅:-0.085% 胜率:39.684% 	real:-0.138%
+1048 count:69 w:67 	[1]涨幅:-0.061% 胜率:32.328% 	real:-0.028%
+1072 count:50 w:49 	[2]涨幅:-0.143% 胜率:42.813% 	real:1.204%
+1211 count:106 w:105 	[2]涨幅:0.068% 胜率:64.078% 	real:0.332%
+1393 count:50 w:47 	[1]涨幅:0.069% 胜率:62.304% 	real:0.449%
+1463 count:50 w:50 	[2]涨幅:-0.064% 胜率:38.621% 	real:-0.034%
+1469 count:60 w:60 	[2]涨幅:0.063% 胜率:57.481% 	real:0.469%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 712
+
+
+2022/6/19 22:28:53
+BNBUSDT
+总匹配量:229 样本数:1000 百分比:0.229
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:8	优质率:3.493%	匹配成功率:75%	期望值:0.253%
+1084 count:59 w:58 	[1]涨幅:-0.061% 胜率:42.09% 	real:-0.331%
+1150 count:201 w:201 	[2]涨幅:-0.07% 胜率:32.78% 	real:-0.519%
+1162 count:94 w:92 	[1]涨幅:0.064% 胜率:56.163% 	real:-0.096%
+1267 count:86 w:86 	[2]涨幅:0.077% 胜率:59.148% 	real:0.171%
+1450 count:60 w:60 	[2]涨幅:0.069% 胜率:67.737% 	real:0.23%
+1713 count:88 w:88 	[2]涨幅:0.071% 胜率:56.072% 	real:0.276%
+1714 count:94 w:94 	[1]涨幅:-0.086% 胜率:36.441% 	real:-0.411%
+1981 count:60 w:60 	[2]涨幅:-0.061% 胜率:42.857% 	real:0.327%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 712
+
+
+2022/6/19 22:29:05
+End~ 运行耗时: 00:06:51.3433926
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 98
+
+
+
+2022/6/19 23:06:42
+E:\projects\binance-connector-dotnet\Tests\Spot.Tests
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+2022/6/19 23:06:42
+C:\Program Files\dotnet\dotnet.exe
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 77
+
+
+2022/6/19 23:06:42
+E:\projects\binance-connector-dotnet\Tests\Spot.Tests
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
+
+
+2022/6/19 23:06:42
+E:\projects\binance-connector-dotnet\Tests\Spot.Tests\bin\Debug\net5.0\
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 79
+
+
+2022/6/19 23:06:42
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 81
+
+
+2022/6/19 23:10:26
+BTCUSDT
+总匹配量:105 样本数:1000 百分比:0.105
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:1	优质率:0.952%	匹配成功率:0%	期望值:-∞%
+1072 count:50 w:49 	[2]涨幅:-0.143% 胜率:42.813% 	real:1.204%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 722
+
+
+2022/6/19 23:10:27
+XRPUSDT
+总匹配量:80 样本数:1000 百分比:0.08
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:3	优质率:3.75%	匹配成功率:33.333%	期望值:0.654%
+1061 count:56 w:56 	[2]涨幅:0.119% 胜率:58.14% 	real:-0.371%
+1139 count:58 w:58 	[2]涨幅:0.142% 胜率:54.848% 	real:1.058%
+1504 count:64 w:64 	[2]涨幅:0.124% 胜率:61.868% 	real:-0.033%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 722
+
+
+2022/6/19 23:10:27
+BNBUSDT
+总匹配量:229 样本数:1000 百分比:0.229
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:0%	匹配成功率:NaN%	期望值:NaN%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 722
+
+
+2022/6/19 23:10:27
+ETHUSDT
+总匹配量:18 样本数:1000 百分比:0.018
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:1	优质率:5.556%	匹配成功率:100%	期望值:0.644%
+1282 count:83 w:83 	[2]涨幅:0.113% 胜率:59.292% 	real:0.644%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 722
+
+
+2022/6/19 23:10:27
+End~ 运行耗时: 00:03:45.8007916
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 108
+
+
+2022/6/19 23:11:28
+E:\projects\binance-connector-dotnet\Tests\Spot.Tests
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+2022/6/19 23:11:28
+C:\Program Files\dotnet\dotnet.exe
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 77
+
+
+2022/6/19 23:11:28
+E:\projects\binance-connector-dotnet\Tests\Spot.Tests
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
+
+
+2022/6/19 23:11:28
+E:\projects\binance-connector-dotnet\Tests\Spot.Tests\bin\Debug\net5.0\
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 79
+
+
+2022/6/19 23:11:28
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 81
+
+
+2022/6/19 23:15:03
+BTCUSDT
+总匹配量:105 样本数:1000 百分比:0.105
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:0%	正确率:NaN%	交易期望:NaN%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 722
+
+
+2022/6/19 23:15:03
+XRPUSDT
+总匹配量:80 样本数:1000 百分比:0.08
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:0%	正确率:NaN%	交易期望:NaN%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 722
+
+
+2022/6/19 23:15:03
+ETHUSDT
+总匹配量:18 样本数:1000 百分比:0.018
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:0%	正确率:NaN%	交易期望:NaN%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 722
+
+
+2022/6/19 23:15:04
+BNBUSDT
+总匹配量:229 样本数:1000 百分比:0.229
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:0%	正确率:NaN%	交易期望:NaN%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 722
+
+
+2022/6/19 23:15:07
+End~ 运行耗时: 00:03:39.3311274
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 108
+
+
+2022/6/19 23:15:24
+E:\projects\binance-connector-dotnet\Tests\Spot.Tests
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+2022/6/19 23:15:24
+C:\Program Files\dotnet\dotnet.exe
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 77
+
+
+2022/6/19 23:15:24
+E:\projects\binance-connector-dotnet\Tests\Spot.Tests
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
+
+
+2022/6/19 23:15:24
+E:\projects\binance-connector-dotnet\Tests\Spot.Tests\bin\Debug\net5.0\
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 79
+
+
+2022/6/19 23:15:24
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 81
+
+
+2022/6/19 23:19:03
+ETHUSDT
+总匹配量:18 样本数:1000 百分比:0.018
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:5	优质率:27.778%	正确率:80%	交易期望:0.291%
+1001 count:52 w:50 	[1]涨幅:-0.099% 胜率:36.645% 	real:-0.486%
+1040 count:75 w:75 	[2]涨幅:-0.062% 胜率:37.199% 	real:-0.251%
+1282 count:83 w:83 	[2]涨幅:0.113% 胜率:59.292% 	real:0.644%
+1886 count:78 w:77 	[1]涨幅:-0.079% 胜率:37.236% 	real:0.261%
+1886 count:78 w:77 	[2]涨幅:-0.068% 胜率:36.667% 	real:-0.042%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 722
+
+
+2022/6/19 23:19:03
+BTCUSDT
+总匹配量:105 样本数:1000 百分比:0.105
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:10	优质率:9.524%	正确率:80%	交易期望:0.012%
+1026 count:82 w:79 	[1]涨幅:-0.07% 胜率:31.672% 	real:-0.11%
+1026 count:82 w:82 	[2]涨幅:-0.098% 胜率:32.565% 	real:-0.145%
+1046 count:82 w:81 	[2]涨幅:-0.085% 胜率:39.684% 	real:-0.138%
+1048 count:69 w:67 	[1]涨幅:-0.061% 胜率:32.328% 	real:-0.028%
+1072 count:50 w:49 	[1]涨幅:-0.076% 胜率:47.45% 	real:0.407%
+1072 count:50 w:49 	[2]涨幅:-0.143% 胜率:42.813% 	real:1.204%
+1211 count:106 w:105 	[2]涨幅:0.068% 胜率:64.078% 	real:0.332%
+1393 count:50 w:47 	[1]涨幅:0.069% 胜率:62.304% 	real:0.449%
+1463 count:50 w:50 	[2]涨幅:-0.064% 胜率:38.621% 	real:-0.034%
+1469 count:60 w:60 	[2]涨幅:0.063% 胜率:57.481% 	real:0.469%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 722
+
+
+2022/6/19 23:19:03
+BNBUSDT
+总匹配量:229 样本数:1000 百分比:0.229
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:13	优质率:5.677%	正确率:69.231%	交易期望:0.323%
+1084 count:59 w:58 	[1]涨幅:-0.061% 胜率:42.09% 	real:-0.331%
+1150 count:201 w:201 	[2]涨幅:-0.07% 胜率:32.78% 	real:-0.519%
+1162 count:94 w:92 	[1]涨幅:0.064% 胜率:56.163% 	real:-0.096%
+1267 count:86 w:86 	[2]涨幅:0.077% 胜率:59.148% 	real:0.171%
+1393 count:81 w:79 	[1]涨幅:0.073% 胜率:52.821% 	real:-0.029%
+1450 count:60 w:60 	[2]涨幅:0.069% 胜率:67.737% 	real:0.23%
+1582 count:100 w:100 	[2]涨幅:-0.064% 胜率:46.65% 	real:-0.091%
+1713 count:88 w:88 	[2]涨幅:0.071% 胜率:56.072% 	real:0.276%
+1714 count:94 w:94 	[1]涨幅:-0.086% 胜率:36.441% 	real:-0.411%
+1787 count:53 w:52 	[2]涨幅:-0.082% 胜率:44.081% 	real:-0.676%
+1831 count:67 w:67 	[2]涨幅:0.064% 胜率:53.576% 	real:-0.381%
+1964 count:61 w:60 	[2]涨幅:-0.085% 胜率:44.13% 	real:-1.036%
+1981 count:60 w:60 	[2]涨幅:-0.061% 胜率:42.857% 	real:0.327%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 722
+
+
+2022/6/19 23:19:03
+XRPUSDT
+总匹配量:80 样本数:1000 百分比:0.08
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:15	优质率:18.75%	正确率:80%	交易期望:0.302%
+1039 count:50 w:50 	[2]涨幅:0.068% 胜率:72.461% 	real:-0.066%
+1061 count:56 w:56 	[2]涨幅:0.119% 胜率:58.14% 	real:-0.371%
+1105 count:70 w:70 	[2]涨幅:-0.068% 胜率:35.33% 	real:-0.766%
+1139 count:58 w:58 	[2]涨幅:0.142% 胜率:54.848% 	real:1.058%
+1166 count:54 w:54 	[2]涨幅:0.065% 胜率:52.88% 	real:0.07%
+1167 count:55 w:55 	[1]涨幅:-0.061% 胜率:36.152% 	real:-0.279%
+1245 count:61 w:61 	[2]涨幅:-0.083% 胜率:35.484% 	real:-0.168%
+1345 count:54 w:53 	[1]涨幅:0.095% 胜率:67.18% 	real:0.298%
+1345 count:54 w:54 	[2]涨幅:0.087% 胜率:53.404% 	real:0.365%
+1470 count:69 w:69 	[2]涨幅:-0.072% 胜率:43.457% 	real:-0.243%
+1477 count:66 w:66 	[2]涨幅:0.098% 胜率:63.546% 	real:0.364%
+1504 count:64 w:64 	[1]涨幅:0.081% 胜率:53.697% 	real:0.007%
+1504 count:64 w:64 	[2]涨幅:0.124% 胜率:61.868% 	real:-0.033%
+1593 count:70 w:70 	[2]涨幅:0.064% 胜率:59.074% 	real:0.266%
+1604 count:54 w:54 	[2]涨幅:-0.096% 胜率:38.035% 	real:-0.213%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 722
+
+
+2022/6/19 23:19:05
+End~ 运行耗时: 00:03:41.1165748
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 108
+
+
+2022/6/19 23:20:50
+E:\projects\binance-connector-dotnet\Tests\Spot.Tests
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+2022/6/19 23:20:50
+C:\Program Files\dotnet\dotnet.exe
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 77
+
+
+2022/6/19 23:20:50
+E:\projects\binance-connector-dotnet\Tests\Spot.Tests
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
+
+
+2022/6/19 23:20:50
+E:\projects\binance-connector-dotnet\Tests\Spot.Tests\bin\Debug\net5.0\
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 79
+
+
+2022/6/19 23:20:50
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 81
+
+
+2022/6/19 23:22:11
+BNBUSDT
+总匹配量:0 样本数:1000 百分比:0
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:NaN%	正确率:NaN%	交易期望:NaN%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 722
+
+
+2022/6/19 23:22:11
+XRPUSDT
+总匹配量:12 样本数:1000 百分比:0.012
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:2	优质率:16.667%	正确率:100%	交易期望:0.417%
+10474 count:62 w:61 	[1]涨幅:-0.088% 胜率:29.752% 	real:-0.374%
+10474 count:62 w:61 	[2]涨幅:-0.097% 胜率:39.484% 	real:-0.459%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 722
+
+
+2022/6/19 23:22:11
+ETHUSDT
+总匹配量:18 样本数:1000 百分比:0.018
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:3	优质率:16.667%	正确率:100%	交易期望:0.42%
+10126 count:65 w:64 	[1]涨幅:0.104% 胜率:66.531% 	real:0.236%
+10126 count:65 w:65 	[2]涨幅:0.067% 胜率:55.898% 	real:0.175%
+10945 count:57 w:56 	[2]涨幅:0.109% 胜率:55.937% 	real:0.848%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 722
+
+
+2022/6/19 23:22:12
+BTCUSDT
+总匹配量:9 样本数:1000 百分比:0.009
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:6	优质率:66.667%	正确率:50%	交易期望:0.097%
+10558 count:83 w:82 	[1]涨幅:-0.067% 胜率:47.571% 	real:-0.81%
+10558 count:83 w:82 	[2]涨幅:-0.082% 胜率:43.9% 	real:-0.895%
+10579 count:58 w:58 	[2]涨幅:0.07% 胜率:62.5% 	real:-0.415%
+10840 count:53 w:52 	[1]涨幅:0.072% 胜率:60.447% 	real:-0.594%
+10840 count:53 w:52 	[2]涨幅:0.073% 胜率:60.447% 	real:-0.771%
+10966 count:72 w:72 	[2]涨幅:-0.067% 胜率:33.252% 	real:-0.367%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 722
+
+
+2022/6/19 23:22:12
+End~ 运行耗时: 00:01:21.7421415
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 108
+
+
+2022/6/19 23:23:35
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+2022/6/19 23:24:12
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+2022/6/19 23:25:34
+XRPUSDT
+总匹配量:2 样本数:1000 百分比:0.002
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:0%	正确率:NaN%	交易期望:NaN%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 716
+
+
+2022/6/19 23:25:34
+ETHUSDT
+总匹配量:69 样本数:1000 百分比:0.069
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:5	优质率:7.246%	正确率:60%	交易期望:0.382%
+20396 count:125 w:125 	[2]涨幅:0.075% 胜率:62.094% 	real:0.555%
+20570 count:64 w:62 	[1]涨幅:0.063% 胜率:60.728% 	real:-0.169%
+20570 count:64 w:64 	[2]涨幅:0.126% 胜率:70.16% 	real:-0.477%
+20576 count:79 w:79 	[1]涨幅:-0.061% 胜率:45.708% 	real:-0.561%
+20942 count:108 w:107 	[2]涨幅:0.06% 胜率:54.329% 	real:0.678%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 716
+
+
+2022/6/19 23:25:34
+BTCUSDT
+总匹配量:207 样本数:1000 百分比:0.207
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:6	优质率:2.899%	正确率:66.667%	交易期望:0.305%
+20063 count:55 w:55 	[2]涨幅:-0.062% 胜率:44.091% 	real:0.157%
+20387 count:63 w:63 	[2]涨幅:0.067% 胜率:66.008% 	real:0.107%
+20396 count:63 w:62 	[2]涨幅:0.074% 胜率:65.645% 	real:0.581%
+20417 count:50 w:49 	[1]涨幅:0.06% 胜率:62.153% 	real:-0.002%
+20534 count:59 w:58 	[2]涨幅:0.067% 胜率:62.235% 	real:0.495%
+20966 count:139 w:138 	[2]涨幅:0.067% 胜率:61.409% 	real:0.197%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 716
+
+
+2022/6/19 23:25:35
+BNBUSDT
+总匹配量:20 样本数:1000 百分比:0.02
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:3	优质率:15%	正确率:100%	交易期望:0.521%
+20120 count:115 w:114 	[1]涨幅:-0.069% 胜率:38.575% 	real:-0.368%
+20303 count:54 w:54 	[2]涨幅:-0.064% 胜率:46.382% 	real:-0.313%
+20960 count:123 w:123 	[2]涨幅:0.07% 胜率:54.945% 	real:0.883%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 716
+
+
+2022/6/19 23:25:37
+End~ 运行耗时: 00:01:25.6743604
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 102
+
+
+2022/6/19 23:31:38
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+2022/6/19 23:33:00
+ETHUSDT
+总匹配量:20 样本数:1000 百分比:0.02
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:3	优质率:15%	正确率:66.667%	交易期望:0.272%
+20489 count:76 w:75 	[2]涨幅:-0.063% 胜率:32.486% 	real:0.059%
+20576 count:75 w:74 	[2]涨幅:-0.075% 胜率:42.811% 	real:-0.365%
+20672 count:61 w:60 	[2]涨幅:-0.075% 胜率:36.806% 	real:-0.237%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 716
+
+
+2022/6/19 23:33:00
+XRPUSDT
+总匹配量:0 样本数:1000 百分比:0
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:NaN%	正确率:NaN%	交易期望:NaN%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 716
+
+
+2022/6/19 23:33:00
+BNBUSDT
+总匹配量:4 样本数:1000 百分比:0.004
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:0%	正确率:NaN%	交易期望:NaN%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 716
+
+
+2022/6/19 23:33:00
+BTCUSDT
+总匹配量:94 样本数:1000 百分比:0.094
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:3	优质率:3.191%	正确率:100%	交易期望:0.285%
+20561 count:68 w:67 	[2]涨幅:-0.062% 胜率:38.773% 	real:-0.014%
+20615 count:54 w:54 	[2]涨幅:-0.084% 胜率:47.695% 	real:-0.84%
+20963 count:51 w:51 	[2]涨幅:0.064% 胜率:64.887% 	real:0%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 716
+
+
+2022/6/19 23:33:03
+End~ 运行耗时: 00:01:24.5880884
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 102
+
+
+2022/6/20 0:01:40
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+2022/6/20 0:03:27
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+2022/6/20 0:03:33
+End~ 运行耗时: 00:00:05.9578717
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 102
+
+
+2022/6/20 0:04:06
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+2022/6/20 0:05:15
+XRPUSDT
+总匹配量:2 样本数:1000 百分比:0.002
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:0	优质率:0%	正确率:NaN%	交易期望:NaN%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 725
+
+
+2022/6/20 0:05:15
+BNBUSDT
+总匹配量:20 样本数:1000 百分比:0.02
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:3	优质率:15%	正确率:100%	交易期望:0.521%
+20120 count:115 w:114 	[1]涨幅:-0.069% 胜率:38.575% 	real:-0.368%
+20303 count:54 w:54 	[2]涨幅:-0.064% 胜率:46.382% 	real:-0.313%
+20960 count:123 w:123 	[2]涨幅:0.07% 胜率:54.945% 	real:0.883%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 725
+
+
+2022/6/20 0:05:15
+ETHUSDT
+总匹配量:69 样本数:1000 百分比:0.069
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:5	优质率:7.246%	正确率:60%	交易期望:0.382%
+20396 count:125 w:125 	[2]涨幅:0.075% 胜率:62.094% 	real:0.555%
+20570 count:64 w:62 	[1]涨幅:0.063% 胜率:60.728% 	real:-0.169%
+20570 count:64 w:64 	[2]涨幅:0.126% 胜率:70.16% 	real:-0.477%
+20576 count:79 w:79 	[1]涨幅:-0.061% 胜率:45.708% 	real:-0.561%
+20942 count:108 w:107 	[2]涨幅:0.06% 胜率:54.329% 	real:0.678%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 725
+
+
+2022/6/20 0:05:16
+BTCUSDT
+总匹配量:207 样本数:1000 百分比:0.207
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:6	优质率:2.899%	正确率:66.667%	交易期望:0.305%
+20063 count:55 w:55 	[2]涨幅:-0.062% 胜率:44.091% 	real:0.157%
+20387 count:63 w:63 	[2]涨幅:0.067% 胜率:66.008% 	real:0.107%
+20396 count:63 w:62 	[2]涨幅:0.074% 胜率:65.645% 	real:0.581%
+20417 count:50 w:49 	[1]涨幅:0.06% 胜率:62.153% 	real:-0.002%
+20534 count:59 w:58 	[2]涨幅:0.067% 胜率:62.235% 	real:0.495%
+20966 count:139 w:138 	[2]涨幅:0.067% 胜率:61.409% 	real:0.197%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 725
+
+
+2022/6/20 0:05:18
+End~ 运行耗时: 00:01:11.2050966
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 102
+
+
+2022/6/20 0:06:57
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+2022/6/20 0:08:05
+XRPUSDT
+总匹配量:2 样本数:1000 百分比:0.002
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:1	优质率:50%	正确率:0%	交易期望:-∞%
+20495 count:84 w:83 	[2]涨幅:0.087% 胜率:63.255% 	real:-0.328%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 733
+
+
+2022/6/20 0:08:06
+BNBUSDT
+总匹配量:24 样本数:1000 百分比:0.024
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:2	优质率:8.333%	正确率:100%	交易期望:0.576%
+20387 count:82 w:80 	[1]涨幅:0.071% 胜率:52.546% 	real:0.269%
+20960 count:105 w:105 	[2]涨幅:0.082% 胜率:57.552% 	real:0.883%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 733
+
+
+2022/6/20 0:08:06
+ETHUSDT
+总匹配量:77 样本数:1000 百分比:0.077
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:8	优质率:10.39%	正确率:87.5%	交易期望:0.389%
+20288 count:101 w:99 	[1]涨幅:0.082% 胜率:69.547% 	real:0.083%
+20288 count:101 w:101 	[2]涨幅:0.1% 胜率:64.315% 	real:-0.111%
+20558 count:97 w:97 	[2]涨幅:0.06% 胜率:56.286% 	real:0.003%
+20672 count:67 w:67 	[2]涨幅:-0.071% 胜率:37.26% 	real:-0.237%
+20693 count:65 w:65 	[2]涨幅:0.062% 胜率:58.527% 	real:1.103%
+20705 count:59 w:58 	[2]涨幅:-0.096% 胜率:45.404% 	real:-0.225%
+20942 count:77 w:76 	[1]涨幅:0.096% 胜率:59.932% 	real:0.505%
+20942 count:77 w:77 	[2]涨幅:0.075% 胜率:55.357% 	real:0.678%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 733
+
+
+2022/6/20 0:08:06
+BTCUSDT
+总匹配量:230 样本数:1000 百分比:0.23
+
+prev_weight:4, prev_weight_down:1, max_weight:3, max_weight_down:3, price_weight:3, price_weight_down:1, close_weight:3, close_weight_down:1, volume_weight:2, need_weight:35, similar_range:0.15, similar_val:0, 
+优质数:6	优质率:2.609%	正确率:100%	交易期望:0.21%
+20234 count:71 w:71 	[2]涨幅:0.108% 胜率:68.729% 	real:0.284%
+20387 count:67 w:67 	[2]涨幅:0.07% 胜率:60.997% 	real:0.107%
+20396 count:78 w:78 	[2]涨幅:0.084% 胜率:67.452% 	real:0.581%
+20657 count:53 w:53 	[2]涨幅:0.074% 胜率:62.276% 	real:0.143%
+20807 count:77 w:75 	[2]涨幅:0.066% 胜率:69.273% 	real:0.106%
+20969 count:58 w:58 	[2]涨幅:-0.061% 胜率:41.655% 	real:-0.036%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 733
+
+
+2022/6/20 0:08:09
+End~ 运行耗时: 00:01:11.4213464
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 102

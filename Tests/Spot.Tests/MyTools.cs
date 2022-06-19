@@ -32,11 +32,13 @@ namespace Binance.Common.Tests
         static string apiKey = "Sud7YtqxuBnwKDJZ7zgnGlZuOxssZ5QzrtvhkL7CfHMfP0fWglYzMScttIDsJ42v";
         static string apiSecret = "QnU7QZwESqUnsuwYrs8KESVBXo4W8zgERMukgUhj9DR8phoY43WQZ0TjZgbbYbs9";
         static public ILogger logger;
+        //E:\projects\binance-connector-dotnet\datas
         private static readonly object LOCK = new object();
-        static private string dataDir = System.Environment.CurrentDirectory.Replace("\\", "/").Replace("Tests/Spot.Tests", "datas/");
+        static public string dataDir = "";
         /// </summary>
         static private DateTime UTC_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         static readonly int HOOUR8_MS = 8 * 60 * 60 * 1000;
+        static public Dictionary<string, KlineList> klCache = new Dictionary<string, KlineList>();
         static public long MsFromUTC0(DateTime dateTime)
         {
             return (long)(dateTime.ToUniversalTime() - UTC_START).TotalMilliseconds;
@@ -153,6 +155,7 @@ namespace Binance.Common.Tests
                 var sumClose = 0f;
                 var sumPrice = 0f;
                 var sumVolume = 0f;
+                // var sumVolume = 0f;
                 for (int j = 1; j <= MAX_LEN; j++)
                 {
                     var itemJ = sList.myKlines[i - j + 1];
@@ -181,13 +184,49 @@ namespace Binance.Common.Tests
                     }
                     if (idx > -1)
                     {
-                        itemI.prevAveVolumeList[idx] = sumVolume / j;
+                        // itemI.prevAveVolumeList[idx] = sumVolume / j;
                         itemI.prevAvePriceList[idx] = sumPrice / sumVolume;
-                        itemI.prevMaxList[idx] = Math.Max(itemI.prevMaxList[idx], itemJ.maxPrice);
-                        itemI.prevMinList[idx] = Math.Min(itemI.prevMinList[idx], itemJ.minPrice);
-                        itemI.prevAveCloseList[idx] = sumClose / j;
+                        // itemI.prevMaxList[idx] = Math.Max(itemI.prevMaxList[idx], itemJ.maxPrice);
+                        // itemI.prevMinList[idx] = Math.Min(itemI.prevMinList[idx], itemJ.minPrice);
+                        // itemI.prevAveCloseList[idx] = sumClose / j;
                     }
                 }
+                var aveVolume = sumVolume / MAX_LEN;
+                var curSumVolume = 0f;
+                var curSumPrice = 0f;
+                for (int j = 1; j <= MAX_LEN; j++)
+                {
+                    var itemJ = sList.myKlines[i - j + 1];
+                    curSumPrice += itemJ.volumePrice;
+                    curSumVolume += itemJ.volume;
+                    var rate = curSumVolume / sumVolume;
+                    var idx = -1;
+                    if (rate >= 1)
+                    {
+                        idx = 3;
+                    }
+                    else if (rate >= 1 / 2f)
+                    {
+                        idx = 2;
+                    }
+                    else if (rate >= 1 / 4f)
+                    {
+                        idx = 1;
+                    }
+                    else if (rate >= 1 / 8f)
+                    {
+                        idx = 0;
+                    }
+                    if (idx > -1)
+                    {
+                        // itemI.prevAveVolumeList[idx] = sumVolume / j;
+                        itemI.prevVolumePriceList[idx] = curSumPrice / curSumVolume;
+                        // itemI.prevMaxList[idx] = Math.Max(itemI.prevMaxList[idx], itemJ.maxPrice);
+                        // itemI.prevMinList[idx] = Math.Min(itemI.prevMinList[idx], itemJ.minPrice);
+                        // itemI.prevAveCloseList[idx] = sumClose / j;
+                    }
+                }
+
             }
             bf.Serialize(fileStream, sList);
             fileStream.Flush();
@@ -198,12 +237,19 @@ namespace Binance.Common.Tests
 
         static public KlineList Serializable2Data(string symbol)
         {
-            FileStream fileStream = new FileStream(dataDir + symbol + ".data", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            BinaryFormatter bf = new BinaryFormatter();
-            var kList = bf.Deserialize(fileStream) as KlineList;
-            fileStream.Flush();
-            fileStream.Close();
-            return kList;
+            lock (klCache)
+            {
+                if (!klCache.ContainsKey(symbol))
+                {
+                    FileStream fileStream = new FileStream(dataDir + symbol + ".data", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                    BinaryFormatter bf = new BinaryFormatter();
+                    var kList = bf.Deserialize(fileStream) as KlineList;
+                    klCache.Add(symbol, kList);
+                    fileStream.Flush();
+                    fileStream.Close();
+                }
+            }
+            return klCache[symbol];
         }
 
         static public float CutDecim(string s, int count)
@@ -227,6 +273,7 @@ namespace Binance.Common.Tests
             // var sig = f > 0 ? "+" : "";
             return MathF.Round(f * 100, 3) + "%";
         }
+
         // 百分数+绝对值,在范围内
         static public float DiffRate(float f1, float f2)
         {
@@ -240,10 +287,10 @@ namespace Binance.Common.Tests
             return SimilarRate(rate1, rate2, percent, val, extraRange);
         }
 
-        static public float SimilarRate(float f1, float f2, float percent = 0.1f, float val = 0.001f, float extraRange = 1f)
+        static public float SimilarRate(float r1, float r2, float percent = 0.1f, float val = 0.001f, float extraRange = 1f)
         {
-            var maxDiff = Math.Abs(f1) * percent + val;
-            var curDiff = Math.Abs(f1 - f2);
+            var maxDiff = Math.Abs(r1) * percent + val;
+            var curDiff = Math.Abs(r1 - r2);
             var s = 1 - curDiff / maxDiff;
             // s = (float)((s > 0 ? 1 : -1) * s * s);
             if (s < -0f)

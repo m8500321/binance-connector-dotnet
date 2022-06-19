@@ -33,49 +33,52 @@ namespace Binance.Common.Tests
         {
             openTime = jk.openTime;
             openPrice = jk.openPrice;
-            maxPrice = jk.maxPrice;
-            minPrice = jk.minPrice;
+            // maxPrice = jk.maxPrice;
+            // minPrice = jk.minPrice;
             closePrice = jk.closePrice;
             volume = jk.volume;
-            closeTime = jk.closeTime;
+            // closeTime = jk.closeTime;
             volumePrice = jk.volumePrice;
-            volumeCount = jk.volumeCount;
-            activeVolume = jk.activeVolume;
-            activeVolumePrice = jk.activeVolumePrice;
+            // volumeCount = jk.volumeCount;
+            // activeVolume = jk.activeVolume;
+            // activeVolumePrice = jk.activeVolumePrice;
 
 
             incPercent = (closePrice - openPrice) / openPrice;
-            maxIncPercent = (maxPrice - openPrice) / openPrice;
-            maxDescPercent = (minPrice - openPrice) / openPrice;
-            avePrice = volumePrice / volume;
-            volumePerHand = volumePrice / volumeCount;
+            // maxIncPercent = (maxPrice - openPrice) / openPrice;
+            // maxDescPercent = (minPrice - openPrice) / openPrice;
+            // avePrice = volumePrice / volume;
+            // volumePerHand = volumePrice / volumeCount;
             isUp = closePrice > openPrice ? true : false;
 
         }
         public long openTime; // 开盘时间
         public float openPrice; // 开盘价
-        public float maxPrice; // 最高价
-        public float minPrice; // 最低价
+        // public float maxPrice; // 最高价
+        // public float minPrice; // 最低价
         public float closePrice; // 收盘价
         public float volume; // 成交量，手
-        public long closeTime; // 收盘时间
+        // public long closeTime; // 收盘时间
         public float volumePrice; // 成交额，价值
-        public int volumeCount; // 成交笔数
-        public float activeVolume; // 主动成交量
-        public float activeVolumePrice; // 主动成交额
+        // public int volumeCount; // 成交笔数
+        // public float activeVolume; // 主动成交量
+        // public float activeVolumePrice; // 主动成交额
 
         public float incPercent = 0f; // 涨幅
-        public float maxIncPercent = 0f; // 最大涨幅
-        public float maxDescPercent = 0f; // 最大跌幅
-        public float avePrice = 0f; // 平均价
-        public float volumePerHand = 0f; // 交易额/手
+        // public float maxIncPercent = 0f; // 最大涨幅
+        // public float maxDescPercent = 0f; // 最大跌幅
+        // public float avePrice = 0f; // 平均价
+        // public float volumePerHand = 0f; // 交易额/手
         public bool isUp = true; // 是否上涨
+
+
         // 5,10,20,40；包含自己
-        public List<float> prevAveVolumeList = new List<float>() { 0, 0, 0, 0 }; // 前几次平均成交量
+        // public List<float> prevAveVolumeList = new List<float>() { 0, 0, 0, 0 }; // 前几次平均成交量
         public List<float> prevAvePriceList = new List<float>() { 0, 0, 0, 0 }; // 前几次平均单价
-        public List<float> prevAveCloseList = new List<float>() { 0, 0, 0, 0 }; // 前几次平均收盘价
-        public List<float> prevMaxList = new List<float>() { 0, 0, 0, 0 }; // 前几次最高价
-        public List<float> prevMinList = new List<float>() { 999999, 999999, 999999, 999999 }; // 前几次最低价
+        public List<float> prevVolumePriceList = new List<float>() { 0, 0, 0, 0 }; // 前面每单位量的价格
+        // public List<float> prevAveCloseList = new List<float>() { 0, 0, 0, 0 }; // 前几次平均收盘价
+        // public List<float> prevMaxList = new List<float>() { 0, 0, 0, 0 }; // 前几次最高价
+        // public List<float> prevMinList = new List<float>() { 999999, 999999, 999999, 999999 }; // 前几次最低价
         // public List<float> prevMaxList = new List<float>() { 0, 0, 0, 0 }; // 前几次最高价
         // public List<float> prevMinList = new List<float>() { 999999, 999999, 999999, 999999 }; // 前几次最低价
     }
