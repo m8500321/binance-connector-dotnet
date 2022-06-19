@@ -146,34 +146,35 @@ namespace Binance.Common.Tests
                 sList.myKlines.Add(myobj);
             }
             sList.myKlines.Reverse();
-            for (int i = 40; i < sList.myKlines.Count; i++)
+            var MAX_LEN = 40;
+            for (int i = MAX_LEN; i < sList.myKlines.Count; i++)
             {
                 var itemI = sList.myKlines[i];
                 var sumClose = 0f;
                 var sumPrice = 0f;
                 var sumVolume = 0f;
-                for (int j = 1; j <= 40; j++)
+                for (int j = 1; j <= MAX_LEN; j++)
                 {
                     var itemJ = sList.myKlines[i - j + 1];
                     sumClose += itemJ.closePrice;
                     sumPrice += itemJ.volumePrice;
                     sumVolume += itemJ.volume;
                     var idx = -1;
-                    if (j == 5)
+                    if (j == MAX_LEN / 8)
                     {
                         idx = 0;
                     }
-                    else if (j == 10)
+                    else if (j == MAX_LEN / 4)
                     {
                         idx = 1;
 
                     }
-                    else if (j == 20)
+                    else if (j == MAX_LEN / 2)
                     {
                         idx = 2;
 
                     }
-                    else if (j == 40)
+                    else if (j == MAX_LEN)
                     {
                         idx = 3;
 
