@@ -18,7 +18,7 @@ namespace Binance.Spot
         {
         }
 
-        private const string TEST_CONNECTIVITY = "/api/v3/ping";
+        public string TEST_CONNECTIVITY = "/api/v3/ping";
 
         /// <summary>
         /// Test connectivity to the Rest API.<para />
@@ -34,7 +34,7 @@ namespace Binance.Spot
             return result;
         }
 
-        private const string CHECK_SERVER_TIME = "/api/v3/time";
+        public string CHECK_SERVER_TIME = "/api/v3/time";
 
         /// <summary>
         /// Test connectivity to the Rest API and get the current server time.<para />
@@ -50,7 +50,7 @@ namespace Binance.Spot
             return result;
         }
 
-        private const string EXCHANGE_INFORMATION = "/api/v3/exchangeInfo";
+        public string EXCHANGE_INFORMATION = "/api/v3/exchangeInfo";
 
         /// <summary>
         /// Current exchange trading rules and symbol information.<para />
@@ -74,7 +74,7 @@ namespace Binance.Spot
             return result;
         }
 
-        private const string ORDER_BOOK = "/api/v3/depth";
+        public string ORDER_BOOK = "/api/v3/depth";
 
         /// <summary>
         /// | Limit               | Weight(IP)  |.<para />
@@ -101,7 +101,7 @@ namespace Binance.Spot
             return result;
         }
 
-        private const string RECENT_TRADES_LIST = "/api/v3/trades";
+        public string RECENT_TRADES_LIST = "/api/v3/trades";
 
         /// <summary>
         /// Get recent trades.<para />
@@ -124,7 +124,7 @@ namespace Binance.Spot
             return result;
         }
 
-        private const string OLD_TRADE_LOOKUP = "/api/v3/historicalTrades";
+        public string OLD_TRADE_LOOKUP = "/api/v3/historicalTrades";
 
         /// <summary>
         /// Get older market trades.<para />
@@ -149,7 +149,7 @@ namespace Binance.Spot
             return result;
         }
 
-        private const string COMPRESSED_AGGREGATE_TRADES_LIST = "/api/v3/aggTrades";
+        public string COMPRESSED_AGGREGATE_TRADES_LIST = "/api/v3/aggTrades";
 
         /// <summary>
         /// Get compressed, aggregate trades. Trades that fill at the time, from the same order, with the same price will have the quantity aggregated.<para />
@@ -180,7 +180,7 @@ namespace Binance.Spot
             return result;
         }
 
-        private const string KLINE_CANDLESTICK_DATA = "/api/v3/klines";
+        public string KLINE_CANDLESTICK_DATA = "/api/v3/klines";
 
         /// <summary>
         /// Kline/candlestick bars for a symbol.<para />
@@ -211,7 +211,25 @@ namespace Binance.Spot
             return result;
         }
 
-        private const string CURRENT_AVERAGE_PRICE = "/api/v3/avgPrice";
+        public string openInterestHistData = "/futures/data/openInterestHist";
+        public async Task<string> OpenInterestHistData(string symbol, Interval interval, long? startTime = null, long? endTime = null, int? limit = null)
+        {
+            var result = await this.SendPublicAsync<string>(
+                openInterestHistData,
+                HttpMethod.Get,
+                query: new Dictionary<string, object>
+                {
+                    { "symbol", symbol },
+                    { "period", interval },
+                    { "startTime", startTime },
+                    { "endTime", endTime },
+                    { "limit", limit },
+                });
+
+            return result;
+        }
+
+        public string CURRENT_AVERAGE_PRICE = "/api/v3/avgPrice";
 
         /// <summary>
         /// Current average price for a symbol.<para />
@@ -232,7 +250,7 @@ namespace Binance.Spot
             return result;
         }
 
-        private const string TWENTY_FOUR_HR_TICKER_PRICE_CHANGE_STATISTICS = "/api/v3/ticker/24hr";
+        public string TWENTY_FOUR_HR_TICKER_PRICE_CHANGE_STATISTICS = "/api/v3/ticker/24hr";
 
         /// <summary>
         /// 24 hour rolling window price change statistics. Careful when accessing this with no symbol.<para />
@@ -258,7 +276,7 @@ namespace Binance.Spot
             return result;
         }
 
-        private const string SYMBOL_PRICE_TICKER = "/api/v3/ticker/price";
+        public string SYMBOL_PRICE_TICKER = "/api/v3/ticker/price";
 
         /// <summary>
         /// Latest price for a symbol or symbols.<para />
@@ -284,7 +302,7 @@ namespace Binance.Spot
             return result;
         }
 
-        private const string SYMBOL_ORDER_BOOK_TICKER = "/api/v3/ticker/bookTicker";
+        public string SYMBOL_ORDER_BOOK_TICKER = "/api/v3/ticker/bookTicker";
 
         /// <summary>
         /// Best price/qty on the order book for a symbol or symbols.<para />

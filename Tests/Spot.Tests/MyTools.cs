@@ -31,6 +31,8 @@ namespace Binance.Common.Tests
 
         static string apiKey = "Sud7YtqxuBnwKDJZ7zgnGlZuOxssZ5QzrtvhkL7CfHMfP0fWglYzMScttIDsJ42v";
         static string apiSecret = "QnU7QZwESqUnsuwYrs8KESVBXo4W8zgERMukgUhj9DR8phoY43WQZ0TjZgbbYbs9";
+
+        static public bool IsFuture = false;
         static public ILogger logger;
         //E:\projects\binance-connector-dotnet\datas
         private static readonly object LOCK = new object();
@@ -80,20 +82,57 @@ namespace Binance.Common.Tests
         }
 
 
-        static public async Task KlineCandlestickData_Response(long startTime, string symbol)
+        static public async Task KlineCandlestickData_Response(long startTime, string symbol, string type = "kline")
         {
-            Market market = new Market(apiKey: apiKey, apiSecret: apiSecret);
-            var result = await market.KlineCandlestickData(symbol, Interval.FIVE_MINUTE, limit: 1000, startTime: startTime);
 
-            var karray = JArray.Parse(result);
+            var url = "https://api.binance.com";
+            if (symbol.EndsWith("_F")) ;
+            {
+                url = "https://fapi.binance.com";
+            }
+            Market market = new Market(baseUrl: url, apiKey: apiKey, apiSecret: apiSecret);
 
-            using (StreamWriter sw = new StreamWriter(dataDir + symbol + ".txt", true))
+
+            market.TEST_CONNECTIVITY = "/api/v3/ping";
+            market.CHECK_SERVER_TIME = "/api/v3/time";
+            market.EXCHANGE_INFORMATION = "/api/v3/exchangeInfo";
+            market.ORDER_BOOK = "/api/v3/depth";
+            market.RECENT_TRADES_LIST = "/api/v3/trades";
+            market.OLD_TRADE_LOOKUP = "/api/v3/historicalTrades";
+            market.COMPRESSED_AGGREGATE_TRADES_LIST = "/api/v3/aggTrades";
+            market.KLINE_CANDLESTICK_DATA = "/api/v3/klines";
+            market.CURRENT_AVERAGE_PRICE = "/api/v3/avgPrice";
+            market.TWENTY_FOUR_HR_TICKER_PRICE_CHANGE_STATISTICS = "/api/v3/ticker/24hr";
+            market.SYMBOL_PRICE_TICKER = "/api/v3/ticker/price";
+            market.SYMBOL_ORDER_BOOK_TICKER = "/api/v3/ticker/bookTicker";
+
+            if (symbol.EndsWith("_F")) ;
+            {
+                market.KLINE_CANDLESTICK_DATA = "/fapi/v1/klines";
+            }
+            var tag = symbol.Replace("_F", "");
+
+            JArray karray = null;
+            if (type == "kline")
+            {
+                var result = await market.KlineCandlestickData(tag, Interval.FIVE_MINUTE, limit: 1000, startTime: startTime);
+                karray = JArray.Parse(result);
+            }
+            else if (type == "openInterestHist")
+            {
+                var result = await market.OpenInterestHistData(tag, Interval.FIVE_MINUTE, limit: 500, startTime: startTime);
+                karray = JArray.Parse(result);
+            }
+
+
+            // var karray = JArray.Parse(result);
+            var fileName = symbol + (type == "kline" ? "" : type);
+            using (StreamWriter sw = new StreamWriter(dataDir + fileName + ".txt", true))
             {
                 for (int i = 0; i < karray.Count; i++)
                 {
                     var item = karray[karray.Count - i - 1];
                     sw.WriteLine(item.ToString().Replace("\r\n", "").Replace(" ", ""));
-
                 }
             }
         }
@@ -119,40 +158,53 @@ namespace Binance.Common.Tests
         //     sw.Close();
         // }
 
-        static public async Task FetchKlineData(string symbol)
+        static public async Task RequestData(string symbol, string type = "kline")
         {
             // request klines
             File.Delete(dataDir + symbol + ".txt"); //删除指定文件;
             long startMS = MsFromUTC0(DateTime.UtcNow);
-            // long startMS = 1650844500000;
+            // long startMS = 1644339900000;
             var maxCount = 1000;
             var msPerMin = 60 * 1000;
             var minPerDay = 60 * 24;
             var intervalMin = 5;
             var diffMS = intervalMin * msPerMin * maxCount;
-            var yearday = 365;
-            var forNum = (minPerDay * yearday * 1.5) / (intervalMin * maxCount);
+
+            var days = 365f;
+            if (type == "kline")
+            {
+                days = 365 * 1.5f;
+            }
+            else
+            {
+                days = 30;
+                maxCount = 500;
+            }
+
+            var iteCount = (minPerDay * days) / (intervalMin * maxCount);
             // 每天多少个n分钟*一年多少天
-            for (int i = 0; i < forNum; i++)
+            for (int i = 0; i < iteCount; i++)
             {
                 // 5分钟*每分钟多少秒*每次多少条
                 startMS -= diffMS;
                 // LogMsg(UTC_START.AddMilliseconds(startMS).ToString());
                 try
                 {
-                    await KlineCandlestickData_Response(startMS, symbol);
+                    await KlineCandlestickData_Response(startMS, symbol, type);
                 }
                 catch (Exception e)
                 {
                     LogMsg("Error!", e.ToString());
                     startMS += diffMS;
                 }
-                Thread.Sleep(30);
+                var waitTm = symbol.EndsWith("_F") ? 100 : 30;
+                Thread.Sleep(waitTm);
             }
         }
 
         static public void Data2Serializable(string symbol)
         {
+            symbol = symbol + (MyTools.IsFuture ? "_future" : "");
             StreamReader sr = new StreamReader(dataDir + symbol + ".txt");
             var sList = new KlineList();
             //判断文件中是否有字符
@@ -255,12 +307,13 @@ namespace Binance.Common.Tests
             // sw.Close();
         }
 
-        static public KlineList Serializable2Data(string symbol)
+        static public KlineList LoadFileData(string symbol)
         {
             lock (klCache)
             {
                 if (!klCache.ContainsKey(symbol))
                 {
+                    symbol = symbol + (MyTools.IsFuture ? "_future" : "");
                     FileStream fileStream = new FileStream(dataDir + symbol + ".data", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                     BinaryFormatter bf = new BinaryFormatter();
                     var kList = bf.Deserialize(fileStream) as KlineList;

@@ -52,9 +52,13 @@ namespace Binance.Common.Tests
         // static public string dataDir = "";
         static private DateTime UTC_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         readonly int HOOUR8_MS = 8 * 60 * 60 * 1000;
-        string apiKey = "Sud7YtqxuBnwKDJZ7zgnGlZuOxssZ5QzrtvhkL7CfHMfP0fWglYzMScttIDsJ42v";
-        string apiSecret = "QnU7QZwESqUnsuwYrs8KESVBXo4W8zgERMukgUhj9DR8phoY43WQZ0TjZgbbYbs9";
-        static List<string> symbols = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT" };
+        // string apiKey = "Sud7YtqxuBnwKDJZ7zgnGlZuOxssZ5QzrtvhkL7CfHMfP0fWglYzMScttIDsJ42v";
+        // string apiSecret = "QnU7QZwESqUnsuwYrs8KESVBXo4W8zgERMukgUhj9DR8phoY43WQZ0TjZgbbYbs9";
+        // static List<string> symbols = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT" };
+        static List<string> symbols = new List<string> { "BTCUSDT_F", "ETHUSDT_F", "XRPUSDT_F", "BNBUSDT_F", "SOLUSDT_F", "ADAUSDT_F", "DOGEUSDT_F", "DOTUSDT_F" };
+        // static List<string> symbols = new List<string> { "BTCUSDT_F", "ETHUSDT_F", "XRPUSDT_F", "BNBUSDT_F" };
+
+        // var symbolAll = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT", "BTCUSDT_F", "ETHUSDT_F", "XRPUSDT_F", "BNBUSDT_F" };
 
         static public async Task Main(string[] args)
         {
@@ -74,26 +78,27 @@ namespace Binance.Common.Tests
             var tasks = new List<Task>();
             foreach (var name in symbols)
             {
-                Task t = Task.Run(async () =>
-                    {
+                // Task t = Task.Run(async () =>
+                //     {
 
-                        // await MyTools.FetchKlineData(name);
-                        // MyTools.Data2Readable(name);
-                        // MyTools.Data2Serializable(name);
+                // await MyTools.RequestData(name, "kline");
+                await MyTools.RequestData(name, "openInterestHist");
+                // MyTools.Data2Readable(name);
+                // MyTools.Data2Serializable(name);
 
-                        // thisobj.AnalyseTime(name);
-                        // thisobj.AnalysePrevKline(name);
+                // thisobj.AnalyseTime(name);
+                // thisobj.AnalysePrevKline(name);
 
-                        // thisobj.AnalyseBigVolume(name);
-                        // thisobj.AnalyseTend(name);
-                        // thisobj.TestRandomInc(name);
-                        // thisobj.AnalyseCurveMatch(name);
-                        thisobj.AnalyseCurveMatch2(name);
-                    });
+                // thisobj.AnalyseBigVolume(name);
+                // thisobj.AnalyseTend(name);
+                // thisobj.TestRandomInc(name);
+                // thisobj.AnalyseCurveMatch(name);
+                // thisobj.AnalyseCurveMatch2(name);
+                //     });
 
-                tasks.Add(t);
+                // tasks.Add(t);
             }
-            Task.WaitAll(tasks.ToArray());
+            // Task.WaitAll(tasks.ToArray());
             MyTools.LogMsg($"End~ 运行耗时: {DateTime.Now - startDt}");
         }
 
@@ -103,7 +108,7 @@ namespace Binance.Common.Tests
         {
             // 每个时刻的涨跌情况
             Dictionary<string, List<float>> timeAdd = new Dictionary<string, List<float>>();
-            var kList = MyTools.Serializable2Data(symbol);
+            var kList = MyTools.LoadFileData(symbol);
             foreach (var item in kList.myKlines)
             {
                 // var key = UTC_START.AddMilliseconds(item.openTime + HOOUR8_MS).ToString("ddd");
@@ -147,7 +152,7 @@ namespace Binance.Common.Tests
         {
             // 每个时刻的涨跌情况
             Dictionary<string, List<float>> addDict = new Dictionary<string, List<float>>();
-            var slist = MyTools.Serializable2Data(symbol);
+            var slist = MyTools.LoadFileData(symbol);
             for (int i = 3; i < slist.myKlines.Count; i++)
             {
                 var item = slist.myKlines[i];
@@ -200,7 +205,7 @@ namespace Binance.Common.Tests
         public void AnalyseBigVolume(string symbol)
         {
             Dictionary<string, List<float>> prevVolume = new Dictionary<string, List<float>>();
-            var slist = MyTools.Serializable2Data(symbol);
+            var slist = MyTools.LoadFileData(symbol);
             for (int i = 20; i < slist.myKlines.Count; i++)
             {
                 var item = slist.myKlines[i];
@@ -239,7 +244,7 @@ namespace Binance.Common.Tests
         public void AnalyseTend(string symbol)
         {
             Dictionary<string, List<float>> count2inc = new Dictionary<string, List<float>>();
-            var slist = MyTools.Serializable2Data(symbol);
+            var slist = MyTools.LoadFileData(symbol);
             for (int i = 10; i < slist.myKlines.Count; i++)
             {
                 var item = slist.myKlines[i];
@@ -303,7 +308,7 @@ namespace Binance.Common.Tests
         public void TestRandomInc(string symbol)
         {
             Dictionary<int, List<int>> cachePrev2 = new Dictionary<int, List<int>>();
-            var slist = MyTools.Serializable2Data(symbol);
+            var slist = MyTools.LoadFileData(symbol);
 
             Random random = new Random();
             var output = symbol;
@@ -533,10 +538,10 @@ namespace Binance.Common.Tests
             List<MyKline> allKlines = new List<MyKline>();
             foreach (var s in symbolAll)
             {
-                var slist = MyTools.Serializable2Data(s);
+                var slist = MyTools.LoadFileData(s);
                 allKlines.AddRange(slist.myKlines);
             }
-            var thisKline = MyTools.Serializable2Data(symbol).myKlines;
+            var thisKline = MyTools.LoadFileData(symbol).myKlines;
             var start = 1000;
             var len = 500;
             for (int i = start; i < start + len; i = i + 1)
@@ -562,14 +567,14 @@ namespace Binance.Common.Tests
                         var value1 = 0f;
                         value1 = (matchArgs["prev_weight"]) * MyTools.SimilarValue(closeI, itemIPrev.closePrice, closeJ, itemJPrev.closePrice, s_range, s_val);
                         var value2 = 0f;
-                        // value2 = (args["prev_weight"] - idx * args["prev_weight_down"]) * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, s_range, s_val);
+                        // value2 = matchArgs["prev_weight"] * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, s_range, s_val);
                         // prevValue += (value1 + value2);
                         prevList.Add(value1 + value2);
                     }
                     var volumeRate0 = 0f;
                     var volumeRate1 = 0f;
-                    // volumeRate0 = (args["volume_weight"]) * MyTools.SimilarValue(itemI.volume, itemI.prevAveVolumeList[2], itemJ.volume, itemJ.prevAveVolumeList[2], s_range, s_val, 2f);
-                    // volumeRate1 = (args["volume_weight"]) * MyTools.SimilarValue(itemI.prevAveVolumeList[1], itemI.prevAveVolumeList[2], itemJ.prevAveVolumeList[1], itemJ.prevAveVolumeList[2], s_range, s_val, 2f);
+                    // volumeRate0 = (matchArgs["volume_weight"]) * MyTools.SimilarValue(itemI.volume, itemI.prevAveVolumeList[2], itemJ.volume, itemJ.prevAveVolumeList[2], s_range, s_val, 2f);
+                    // volumeRate1 = (matchArgs["volume_weight"]) * MyTools.SimilarValue(itemI.prevAveVolumeList[1], itemI.prevAveVolumeList[2], itemJ.prevAveVolumeList[1], itemJ.prevAveVolumeList[2], s_range, s_val, 2f);
 
                     var minValue1 = 0f;
                     var maxValue1 = 0f;
@@ -695,7 +700,7 @@ namespace Binance.Common.Tests
                     if ((eInc > filterArgs["E_DELTA"] && winRate > 0.5 + filterArgs["RATE_DELTA"]) || (eInc < -filterArgs["E_DELTA"] && winRate < 0.5 - filterArgs["RATE_DELTA"]))
                     {
                         var nextInc = thisKline[kvItem.Key].nextSumIncList[idx];
-                        output += $"{kvItem.Key} num:{itemCount} \t{idx + 1}-涨幅:{MyTools.ToPercent(eInc)} 胜率:{MyTools.ToPercent(winRate)} \treal:{MyTools.ToPercent(nextInc)}\n";
+                        output += $"{kvItem.Key} num:{itemCount} \t{idx + 1}-涨幅:{MyTools.ToPercent(eInc)} 胜率:{MyTools.ToPercent(winRate)} \t{nextInc * eInc > 0}:{MyTools.ToPercent(nextInc)}\n";
                         usefulCount++;
                         if (nextInc * eInc > 0)
                         {
