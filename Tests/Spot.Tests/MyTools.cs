@@ -161,6 +161,10 @@ namespace Binance.Common.Tests
         static public async Task RequestData(string symbol, string type = "kline")
         {
             // request klines
+            // todo
+
+
+            被干掉了
             File.Delete(dataDir + symbol + ".txt"); //删除指定文件;
             long startMS = MsFromUTC0(DateTime.UtcNow);
             // long startMS = 1644339900000;
