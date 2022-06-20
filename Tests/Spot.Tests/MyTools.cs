@@ -36,6 +36,7 @@ namespace Binance.Common.Tests
         private static readonly object LOCK = new object();
         static public string dataDir = "";
         /// </summary>
+
         static private DateTime UTC_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         static readonly int HOOUR8_MS = 8 * 60 * 60 * 1000;
         static public Dictionary<string, KlineList> klCache = new Dictionary<string, KlineList>();
@@ -54,9 +55,25 @@ namespace Binance.Common.Tests
             logger.LogInformation(output);
             lock (LOCK)
             {
-                using (StreamWriter sw = new StreamWriter(dataDir + "log.txt", true))
+                var s = "";
+                using (StreamReader sr = new StreamReader(dataDir + "log.txt"))
                 {
-                    sw.Write("\n\n" + DateTime.Now + "\n" + output);
+                    s = sr.ReadToEnd();
+                }
+                output = "\n\n" + DateTime.Now + "\n" + output;
+                if (s.Length > 100000)
+                {
+                    using (StreamWriter sw = new StreamWriter(dataDir + "log.txt"))
+                    {
+                        sw.Write(s.Substring(s.Length - 30000) + output);
+                    }
+                }
+                else
+                {
+                    using (StreamWriter sw = new StreamWriter(dataDir + "log.txt", true))
+                    {
+                        sw.Write(output);
+                    }
                 }
             }
 
@@ -149,7 +166,7 @@ namespace Binance.Common.Tests
             }
             sList.myKlines.Reverse();
             var MAX_LEN = 40;
-            for (int i = MAX_LEN; i < sList.myKlines.Count; i++)
+            for (int i = MAX_LEN; i < sList.myKlines.Count - MAX_LEN; i++)
             {
                 var itemI = sList.myKlines[i];
                 var sumClose = 0f;
@@ -158,6 +175,7 @@ namespace Binance.Common.Tests
                 // var sumVolume = 0f;
                 for (int j = 1; j <= MAX_LEN; j++)
                 {
+                    // 前面40条的平均价格
                     var itemJ = sList.myKlines[i - j + 1];
                     sumClose += itemJ.closePrice;
                     sumPrice += itemJ.volumePrice;
@@ -196,6 +214,7 @@ namespace Binance.Common.Tests
                 var curSumPrice = 0f;
                 for (int j = 1; j <= MAX_LEN; j++)
                 {
+                    // 单位成交量的平均价格
                     var itemJ = sList.myKlines[i - j + 1];
                     curSumPrice += itemJ.volumePrice;
                     curSumVolume += itemJ.volume;
@@ -219,12 +238,13 @@ namespace Binance.Common.Tests
                     }
                     if (idx > -1)
                     {
-                        // itemI.prevAveVolumeList[idx] = sumVolume / j;
                         itemI.prevVolumePriceList[idx] = curSumPrice / curSumVolume;
-                        // itemI.prevMaxList[idx] = Math.Max(itemI.prevMaxList[idx], itemJ.maxPrice);
-                        // itemI.prevMinList[idx] = Math.Min(itemI.prevMinList[idx], itemJ.minPrice);
-                        // itemI.prevAveCloseList[idx] = sumClose / j;
                     }
+                }
+                for (int j = 0; j < 4; j++)
+                {
+                    var prevVal = j > 0 ? itemI.nextSumIncList[j - 1] : 0;
+                    itemI.nextSumIncList[j] = prevVal + sList.myKlines[i + j + 1].incPercent;
                 }
 
             }
@@ -282,13 +302,12 @@ namespace Binance.Common.Tests
 
         static public float SimilarValue(float a1, float a2, float b1, float b2, float percent = 0.1f, float val = 0.001f, float extraRange = 1f)
         {
-            var rate1 = DiffRate(a1, a2);
-            var rate2 = DiffRate(b1, b2);
-            return SimilarRate(rate1, rate2, percent, val, extraRange);
+            return SimilarRate((a1 - a2) / a1, (b1 - b2) / b1, percent, val, extraRange);
         }
 
         static public float SimilarRate(float r1, float r2, float percent = 0.1f, float val = 0.001f, float extraRange = 1f)
         {
+            // var a = new System.Diagnostics.CodeAnalysis.ObjectPool();
             var maxDiff = Math.Abs(r1) * percent + val;
             var curDiff = Math.Abs(r1 - r2);
             var s = 1 - curDiff / maxDiff;
@@ -301,4 +320,25 @@ namespace Binance.Common.Tests
         }
 
     }
+
+    public class ListPool<T>
+    {
+
+        Stack<List<T>> listPool = new Stack<List<T>>();
+        public List<T> PopItem()
+        {
+            // if (listPool.Count > 0)
+            // {
+            //     return listPool.Pop();
+            // }
+            return new List<T>();
+        }
+        public void PushItem(List<T> l)
+        {
+            // l.Clear();
+            // listPool.Push(l);
+        }
+    }
+
+
 }

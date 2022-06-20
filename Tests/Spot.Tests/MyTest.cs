@@ -54,9 +54,6 @@ namespace Binance.Common.Tests
         readonly int HOOUR8_MS = 8 * 60 * 60 * 1000;
         string apiKey = "Sud7YtqxuBnwKDJZ7zgnGlZuOxssZ5QzrtvhkL7CfHMfP0fWglYzMScttIDsJ42v";
         string apiSecret = "QnU7QZwESqUnsuwYrs8KESVBXo4W8zgERMukgUhj9DR8phoY43WQZ0TjZgbbYbs9";
-        // var symbols = new List<string> { "XRPUSDT" };
-
-        // static List<string> symbols = new List<string> { "BTCUSDT" };
         static List<string> symbols = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT" };
 
         static public async Task Main(string[] args)
@@ -74,9 +71,7 @@ namespace Binance.Common.Tests
             var startDt = DateTime.Now;
             MyTools.LogMsg("Start~");
             var thisobj = new MyTest();
-            // "BTCUSDT" "ETHUSDT" "BNBUSDT"
             var tasks = new List<Task>();
-            // var symbols = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT" };
             foreach (var name in symbols)
             {
                 Task t = Task.Run(async () =>
@@ -451,8 +446,8 @@ namespace Binance.Common.Tests
         //     var countAll = 0f;
         //     foreach (var kvItem in cachePrev2)
         //     {
-        //         var next1List = new List<float>();
-        //         var next2List = new List<float>();
+        //         var next1List = ListPool<float>.PopItem();
+        //         var next2List = ListPool<float>.PopItem();
         //         var winCount1 = 0f;
         //         var winCount2 = 0f;
         //         var loseCount1 = 0f;
@@ -513,9 +508,10 @@ namespace Binance.Common.Tests
         public void AnalyseCurveMatch2(string symbol)
         {
             Dictionary<int, List<int>> cachePrev2 = new Dictionary<int, List<int>>();
+            var floatPool = new ListPool<float>();
+            var intPool = new ListPool<int>();
 
-
-            var args = new Dictionary<string, float>()
+            var matchArgs = new Dictionary<string, float>()
             {
                 {"prev_weight",4f},
                 {"prev_weight_down",1f},
@@ -531,8 +527,8 @@ namespace Binance.Common.Tests
                 {"similar_range",0.15f},
                 {"similar_val",0.0005f},
             };
-            var s_range = args["similar_range"];
-            var s_val = args["similar_val"];
+            var s_range = matchArgs["similar_range"];
+            var s_val = matchArgs["similar_val"];
             var symbolAll = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT" };
             List<MyKline> allKlines = new List<MyKline>();
             foreach (var s in symbolAll)
@@ -542,7 +538,7 @@ namespace Binance.Common.Tests
             }
             var thisKline = MyTools.Serializable2Data(symbol).myKlines;
             var start = 1000;
-            var len = 5000;
+            var len = 500;
             for (int i = start; i < start + len; i = i + 1)
             // for (int i = 100; i < allKlines.Count / 2; i++)
             {
@@ -557,14 +553,14 @@ namespace Binance.Common.Tests
                     var closeI = itemI.closePrice;
                     var itemJ = allKlines[j];
                     var closeJ = itemJ.closePrice;
-                    var prevList = new List<float>();
+                    var prevList = floatPool.PopItem();
                     for (int idx = 1; idx < 4; idx++)
                     {
                         // 往前2条
                         var itemIPrev = thisKline[i - idx];
                         var itemJPrev = allKlines[j - idx];
                         var value1 = 0f;
-                        value1 = (args["prev_weight"]) * MyTools.SimilarValue(closeI, itemIPrev.closePrice, closeJ, itemJPrev.closePrice, s_range, s_val);
+                        value1 = (matchArgs["prev_weight"]) * MyTools.SimilarValue(closeI, itemIPrev.closePrice, closeJ, itemJPrev.closePrice, s_range, s_val);
                         var value2 = 0f;
                         // value2 = (args["prev_weight"] - idx * args["prev_weight_down"]) * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, s_range, s_val);
                         // prevValue += (value1 + value2);
@@ -583,7 +579,7 @@ namespace Binance.Common.Tests
                     // maxValue1 = (args["max_weight"]) * MyTools.SimilarValue(closeI, itemI.prevMaxList[1], closeJ, itemJ.prevMaxList[1], s_range, s_val);
                     // minValue2 = (args["max_weight"]) * MyTools.SimilarValue(closeI, itemI.prevMinList[0], closeJ, itemJ.prevMinList[0], s_range, s_val);
                     // maxValue2 = (args["max_weight"]) * MyTools.SimilarValue(closeI, itemI.prevMaxList[0], closeJ, itemJ.prevMaxList[0], s_range, s_val);
-                    var aveList = new List<float>();
+                    var aveList = floatPool.PopItem();
                     // var lastidx = 0;
                     // for (int idx = 0; idx < 4; idx++)
                     // {
@@ -592,11 +588,11 @@ namespace Binance.Common.Tests
                     //     aveList.Add(args["price_weight"] * MyTools.SimilarValue(closeI, thisKline[i - idx * 5].prevAvePriceList[i], closeJ, allKlines[j - idx * 5].prevAvePriceList[i], s_range, s_val));
                     // }
 
-                    // for (int idx = 0; idx < 4; idx++)
-                    // {
-                    //     // 5 10 20 40
-                    //     aveList.Add(args["price_weight"] * MyTools.SimilarValue(closeI, itemI.prevAvePriceList[idx], closeJ, itemJ.prevAvePriceList[idx], s_range, s_val));
-                    // }
+                    for (int idx = 0; idx < 4; idx++)
+                    {
+                        // 5 10 20 40
+                        aveList.Add(matchArgs["price_weight"] * MyTools.SimilarValue(closeI, itemI.prevAvePriceList[idx], closeJ, itemJ.prevAvePriceList[idx], s_range, s_val));
+                    }
 
                     // for (int idx = 0; idx < 4; idx++)
                     // {
@@ -604,11 +600,11 @@ namespace Binance.Common.Tests
                     //     aveList.Add(args["price_weight"] * MyTools.SimilarValue(closeI, thisKline[i - idx * 5].prevAvePriceList[0], closeJ, allKlines[j - idx * 5].prevAvePriceList[0], s_range, s_val));
                     // }
 
-                    for (int idx = 0; idx < 4; idx++)
-                    {
-                        // 交易量尺度的比较
-                        aveList.Add(args["price_weight"] * MyTools.SimilarValue(closeI, itemI.prevVolumePriceList[idx], closeJ, itemJ.prevVolumePriceList[idx], s_range, s_val));
-                    }
+                    // for (int idx = 0; idx < 4; idx++)
+                    // {
+                    //     // 交易量尺度的比较
+                    //     aveList.Add(args["price_weight"] * MyTools.SimilarValue(closeI, itemI.prevVolumePriceList[idx], closeJ, itemJ.prevVolumePriceList[idx], s_range, s_val));
+                    // }
 
                     var aveClose3 = 0f;
                     var aveClose2 = 0f;
@@ -624,41 +620,45 @@ namespace Binance.Common.Tests
                     {
                         if (!cachePrev2.ContainsKey(i))
                         {
-                            cachePrev2.Add(i, new List<int>());
+                            cachePrev2.Add(i, intPool.PopItem());
                         }
                         cachePrev2[i].Add(j);
                         cachePrev2[i].Add((int)sumValue);
                     }
+                    floatPool.PushItem(prevList);
+                    floatPool.PushItem(aveList);
                 }
-                if (cachePrev2.ContainsKey(i) && cachePrev2[i].Count < 100)
+                if (cachePrev2.ContainsKey(i) && cachePrev2[i].Count < 150)
                 {
+                    intPool.PushItem(cachePrev2[i]);
                     cachePrev2.Remove(i);
                 }
             }
             // MyTools.LogMsg(symbol, $"总匹配量:{cachePrev2.Count}");
             string output = "";
-            var countAll = 0f;
-            var matchCount = 0f;
+            var usefulCount = 0f;
+            var rightCount = 0f;
             var realSum = 0f;
 
+            // var RATE_DELTA = 0.02f;
+            // var E_DELTA = 0.06f * 0.01;
+            var filterArgs = new Dictionary<string, float>()
+            {
+                {"RATE_DELTA", 0.02f},
+                {"E_DELTA", 0.06f * 0.01f}
+            };
             foreach (var kvItem in cachePrev2)
             {
                 // 1-3的涨幅
-                var incList = new List<float>();
-                // var nextList1 = new List<float>();
-                // var nextList2 = new List<float>();
-                // var riseWeight1 = 0f;
-                // var riseWeight2 = 0f;
-                // var fallWeight1 = 0f;
-                // var fallWeight2 = 0f;
+                var incList = floatPool.PopItem();
                 var targetList = kvItem.Value;
-                // foreach (var item in targetList)
                 var totalWeight = 0f;
                 for (int i = 0; i < targetList.Count; i = i + 2)
                 {
                     totalWeight += (float)targetList[i + 1];
                 }
-                var aveWeight = totalWeight / (targetList.Count / 2);
+                var itemCount = targetList.Count / 2;
+                var aveWeight = totalWeight / itemCount;
                 for (int i = 0; i < targetList.Count; i = i + 2)
                 {
                     var itemIdx = targetList[i];
@@ -668,83 +668,59 @@ namespace Binance.Common.Tests
                     }
                     var weight = 1f;
                     weight = (float)targetList[i + 1] / aveWeight;
-                    incList.Add(allKlines[itemIdx + 1].incPercent * weight);
-                    incList.Add((allKlines[itemIdx + 1].incPercent + allKlines[itemIdx + 2].incPercent) * weight);
-                    incList.Add((allKlines[itemIdx + 1].incPercent + allKlines[itemIdx + 2].incPercent + allKlines[itemIdx + 3].incPercent) * weight);
-                    // // weight = Math.Min(weight, 1f);
-                    // nextList1.Add(allKlines[itemIdx + 1].incPercent * weight);
-                    // var ave2 = allKlines[itemIdx + 1].incPercent + allKlines[itemIdx + 2].incPercent;
-                    // nextList2.Add(ave2 * weight);
-                    // // similar = (float)Math.Pow(similar, 1.5);
-                    // riseWeight1 += (allKlines[itemIdx + 1].incPercent > 0 ? weight : 0);
-                    // fallWeight1 += (allKlines[itemIdx + 1].incPercent < 0 ? weight : 0);
-                    // riseWeight2 += (ave2 > 0 ? weight : 0);
-                    // fallWeight2 += (ave2 < 0 ? weight : 0);
+                    for (int j = 0; j < 3; j++)
+                    {
+                        incList.Add(allKlines[itemIdx].nextSumIncList[j]);
+                    }
+                    incList.Add(weight);
                 }
                 // 每个阶段期望
-                var eList = new List<float>();
+                var eList = floatPool.PopItem();
                 // 每阶段胜率
-                var winList = new List<float>();
-
-                for (int i = 0; i < 3; i++)
+                var winList = floatPool.PopItem();
+                for (int idx = 0; idx < 3; idx++)
                 {
-
-                }
-                // var itemCount = targetList.Count / 2;
-                var weight1 = (riseWeight1 + fallWeight1);
-                var weight2 = (riseWeight2 + fallWeight2);
-                var winRatio1 = (float)riseWeight1 / weight1;
-                var winDelta = 0.02f;
-                var eDelta = 0.06f * 0.01;
-                var highWin1 = winRatio1 > 0.5 + winDelta || winRatio1 < 0.5 - winDelta;
-                var winRatio2 = (float)riseWeight2 / weight2;
-                var highWin2 = winRatio2 > 0.5 + winDelta || winRatio2 < 0.5 - winDelta;
-                var sum1 = nextList1.Sum() / weight1;
-                var sum2 = nextList2.Sum() / weight2;
-
-                var realInc1 = thisKline[kvItem.Key + 1].incPercent;
-                var realInc2 = thisKline[kvItem.Key + 1].incPercent + thisKline[kvItem.Key + 2].incPercent;
-                if ((sum1 > eDelta && winRatio1 > 0.5 + winDelta) || (sum1 < -eDelta && winRatio1 < 0.5 - winDelta))
-                // if ((sum1 > eDelta || sum1 < -eDelta) && highWin1)
-                {
-                    output += $"{kvItem.Key}w:{(int)weight1} \t[1]涨幅:{MyTools.ToPercent(sum1)} 胜率:{MyTools.ToPercent(winRatio1)} \treal:{MyTools.ToPercent(realInc1)}\n";
-                    countAll++;
-                    // matchCount += (realInc1 * sum1 > 0 ? 1 : 0);
-                    if (realInc1 * sum1 > 0)
+                    var sumInc = 0f;
+                    var incCount = 0f;
+                    for (int i = 0; i < incList.Count; i = i + 4)
                     {
-                        matchCount++;
-                        realSum += Math.Abs(realInc1);
+                        if (incList[i + idx] > 0)
+                        {
+                            incCount += incList[i + 3];
+                        }
+                        sumInc += incList[i + idx] * incList[i + 3];
                     }
-                    else
+                    var eInc = sumInc / itemCount;
+                    var winRate = incCount / itemCount;
+                    if ((eInc > filterArgs["E_DELTA"] && winRate > 0.5 + filterArgs["RATE_DELTA"]) || (eInc < -filterArgs["E_DELTA"] && winRate < 0.5 - filterArgs["RATE_DELTA"]))
                     {
-                        realSum -= Math.Abs(realInc1);
+                        var nextInc = thisKline[kvItem.Key].nextSumIncList[idx];
+                        output += $"{kvItem.Key} num:{itemCount} \t{idx + 1}-涨幅:{MyTools.ToPercent(eInc)} 胜率:{MyTools.ToPercent(winRate)} \treal:{MyTools.ToPercent(nextInc)}\n";
+                        usefulCount++;
+                        if (nextInc * eInc > 0)
+                        {
+                            rightCount++;
+                            realSum += Math.Abs(nextInc);
+                        }
+                        else
+                        {
+                            realSum -= Math.Abs(nextInc);
+                        }
                     }
                 }
-                if ((sum2 > eDelta && winRatio2 > 0.5 + winDelta) || (sum2 < -eDelta && winRatio2 < 0.5 - winDelta))
-                // if ((sum2 > eDelta || sum2 < -eDelta) && highWin2)
-                {
-                    output += $"{kvItem.Key}w:{(int)weight2} \t[2]涨幅:{MyTools.ToPercent(sum2)} 胜率:{MyTools.ToPercent(winRatio2)} \treal:{MyTools.ToPercent(realInc2)}\n";
-                    countAll++;
-                    // matchCount += (realInc2 * sum2 > 0 ? 1 : 0);
-                    if (realInc2 * sum2 > 0)
-                    {
-                        matchCount++;
-                        realSum += Math.Abs(realInc2);
-                    }
-                    else
-                    {
-                        realSum -= Math.Abs(realInc2);
-                    }
-                }
+                floatPool.PushItem(incList);
+                floatPool.PushItem(eList);
+                floatPool.PushItem(winList);
+
             }
             var argStr = "";
-            foreach (var item in args)
+            foreach (var item in matchArgs)
             {
                 argStr += (item.Key + ":" + MyTools.CutDecim(item.Value, 3) + ", ");
             }
-            var title = "优质数:" + countAll + "\t优质率:" + MyTools.ToPercent(countAll / cachePrev2.Count) + "\t正确率:" + MyTools.ToPercent(matchCount / countAll) + "\t交易期望:" + MyTools.ToPercent(realSum / matchCount);
+            var title = "\n优质数:" + usefulCount + "\t优质率:" + MyTools.ToPercent(usefulCount / cachePrev2.Count) + "\t正确率:" + MyTools.ToPercent(rightCount / usefulCount) + "\t交易期望:" + MyTools.ToPercent(realSum / usefulCount);
 
-            MyTools.LogMsg(symbol, $"总匹配量:{cachePrev2.Count} 样本数:{len} 百分比:{(float)cachePrev2.Count / len}\n", argStr, title, output);
+            MyTools.LogMsg(symbol, $"样本数:{len} 总匹配量:{cachePrev2.Count} 百分比:{(float)cachePrev2.Count / len}\n", argStr, title, output);
         }
     }
 }
