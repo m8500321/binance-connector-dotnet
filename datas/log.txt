@@ -907,3 +907,38 @@ End~ 运行耗时: 00:03:35.0979605
 [0]:22 6 21 周二 19:28:25
 Start~
    at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 77
+
+
+[0]:22 6 21 周二 19:34:19
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 77
+
+
+[1]:22 6 21 周二 19:34:30
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 112
+
+
+[2]:22 6 21 周二 19:34:32
+End~ 运行耗时: 00:00:12.7602291
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 137
+
+
+[0]:22 6 21 周二 19:36:37
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 77
+
+
+[1]:22 6 21 周二 19:36:48
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 112
+
+
+[2]:22 6 21 周二 19:36:49
+End~ 运行耗时: 00:00:12.9014499
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 137
+
+
+[0]:22 6 21 周二 19:37:02
+Start~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 77

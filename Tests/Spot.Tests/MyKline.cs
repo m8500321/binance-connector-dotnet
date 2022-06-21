@@ -43,7 +43,7 @@ namespace Binance.Common.Tests
             // activeVolume = jk.activeVolume;
             // activeVolumePrice = jk.activeVolumePrice;
 
-
+            perVolumePrice = volumePrice / volume;
             incPercent = (closePrice - openPrice) / openPrice;
             // maxIncPercent = (maxPrice - openPrice) / openPrice;
             // maxDescPercent = (minPrice - openPrice) / openPrice;
@@ -60,6 +60,7 @@ namespace Binance.Common.Tests
         public float volume; // 成交量，手
         // public long closeTime; // 收盘时间
         public float volumePrice; // 成交额，价值
+        public float perVolumePrice; // 单价
         // public int volumeCount; // 成交笔数
         // public float activeVolume; // 主动成交量
         // public float activeVolumePrice; // 主动成交额
