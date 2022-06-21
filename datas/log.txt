@@ -942,3 +942,204 @@ End~ 运行耗时: 00:00:12.9014499
 [0]:22 6 21 周二 19:37:02
 Start~
    at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 77
+
+
+[1]:22 6 21 周二 19:40:59
+XRPUSDT_F
+样本数:500 总匹配量:2 百分比:0.002
+
+RATE_DELTA:0.04, E_DELTA:0.001, 
+
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 629
+
+
+[2]:22 6 21 周二 19:41:00
+ETHUSDT_F
+样本数:500 总匹配量:74 百分比:0.074
+
+RATE_DELTA:0.04, E_DELTA:0.001, 
+
+优质数:15	正确率:73.333%	交易期望:0.17%
+
+1008 num:90 	3-涨幅:0.076% 胜率:55.068% 	True:0.329%
+1020 num:101 	1-涨幅:-0.065% 胜率:38.676% 	True:-0.441%
+1020 num:101 	3-涨幅:-0.068% 胜率:40.112% 	True:-0.438%
+1046 num:105 	1-涨幅:0.078% 胜率:61.883% 	False:-0.302%
+1088 num:163 	2-涨幅:0.093% 胜率:62.5% 	True:0.7%
+1088 num:163 	3-涨幅:0.096% 胜率:59.191% 	True:0.706%
+1118 num:293 	2-涨幅:-0.068% 胜率:40.181% 	True:-0.172%
+1118 num:293 	3-涨幅:-0.082% 胜率:40.124% 	True:-0.231%
+1274 num:83 	3-涨幅:0.069% 胜率:61.641% 	False:-0.611%
+1388 num:114 	2-涨幅:0.092% 胜率:65.148% 	True:0.19%
+1566 num:104 	2-涨幅:-0.071% 胜率:41.233% 	True:-0.565%
+1712 num:249 	2-涨幅:-0.094% 胜率:36.278% 	False:0.124%
+1712 num:249 	3-涨幅:-0.083% 胜率:36.784% 	False:0.346%
+1800 num:107 	3-涨幅:0.082% 胜率:65.424% 	True:0.122%
+1898 num:203 	3-涨幅:-0.066% 胜率:41.313% 	True:-0.045%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 629
+
+
+[3]:22 6 21 周二 19:41:01
+ADAUSDT_F
+样本数:500 总匹配量:43 百分比:0.043
+
+RATE_DELTA:0.04, E_DELTA:0.001, 
+
+优质数:14	正确率:71.429%	交易期望:0.447%
+
+1038 num:113 	1-涨幅:0.1% 胜率:62.851% 	False:-0.083%
+1038 num:113 	2-涨幅:0.121% 胜率:63.643% 	False:-0.18%
+1038 num:113 	3-涨幅:0.184% 胜率:65.587% 	False:-0.411%
+1084 num:76 	2-涨幅:-0.095% 胜率:42.123% 	True:-1.02%
+1222 num:94 	2-涨幅:0.062% 胜率:56.861% 	True:1.161%
+1604 num:87 	3-涨幅:-0.08% 胜率:36.852% 	True:-0.037%
+1722 num:114 	3-涨幅:-0.063% 胜率:41.332% 	True:-0.029%
+1730 num:79 	1-涨幅:0.073% 胜率:55.679% 	True:0.699%
+1786 num:116 	3-涨幅:0.099% 胜率:61.044% 	True:1.429%
+1896 num:100 	3-涨幅:0.095% 胜率:57.711% 	False:-0.212%
+1930 num:152 	2-涨幅:-0.091% 胜率:45.107% 	True:-0.608%
+1962 num:101 	1-涨幅:0.078% 胜率:62.145% 	True:0.549%
+1962 num:101 	2-涨幅:0.126% 胜率:60.489% 	True:0.839%
+1962 num:101 	3-涨幅:0.187% 胜率:65.536% 	True:0.767%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 629
+
+
+[4]:22 6 21 周二 19:41:02
+DOGEUSDT_F
+样本数:500 总匹配量:32 百分比:0.032
+
+RATE_DELTA:0.04, E_DELTA:0.001, 
+
+优质数:18	正确率:44.444%	交易期望:-0.157%
+
+1078 num:118 	2-涨幅:0.091% 胜率:61.375% 	False:-1.102%
+1078 num:118 	3-涨幅:0.074% 胜率:55.258% 	False:-1.302%
+1080 num:82 	3-涨幅:-0.158% 胜率:45.833% 	True:-0.578%
+1148 num:89 	2-涨幅:0.154% 胜率:61.823% 	False:-1.289%
+1260 num:117 	3-涨幅:-0.109% 胜率:44.492% 	True:-1.094%
+1262 num:196 	3-涨幅:0.066% 胜率:56.906% 	False:-0.298%
+1272 num:81 	1-涨幅:0.1% 胜率:57.128% 	False:-0.408%
+1272 num:81 	2-涨幅:0.093% 胜率:60.666% 	False:-0.716%
+1272 num:81 	3-涨幅:0.134% 胜率:59.001% 	False:-0.767%
+1414 num:78 	1-涨幅:-0.098% 胜率:39.63% 	True:-0.226%
+1414 num:78 	2-涨幅:-0.115% 胜率:33.984% 	True:-0.025%
+1414 num:78 	3-涨幅:-0.124% 胜率:41.684% 	True:-0.176%
+1654 num:90 	3-涨幅:-0.098% 胜率:36.2% 	True:-0.513%
+1678 num:167 	2-涨幅:-0.082% 胜率:37.767% 	True:-0.662%
+1678 num:167 	3-涨幅:-0.094% 胜率:39.305% 	True:-0.729%
+1740 num:115 	1-涨幅:-0.068% 胜率:33.438% 	False:0.066%
+1740 num:115 	2-涨幅:-0.078% 胜率:40.615% 	False:0.59%
+1740 num:115 	3-涨幅:-0.102% 胜率:40.3% 	False:0.286%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 629
+
+
+[5]:22 6 21 周二 19:41:03
+SOLUSDT_F
+样本数:500 总匹配量:46 百分比:0.046
+
+RATE_DELTA:0.04, E_DELTA:0.001, 
+
+优质数:15	正确率:53.333%	交易期望:0.011%
+
+1030 num:198 	3-涨幅:-0.071% 胜率:38.452% 	False:0.232%
+1252 num:167 	3-涨幅:0.06% 胜率:57.727% 	True:0.278%
+1562 num:191 	3-涨幅:-0.071% 胜率:42.998% 	False:0.24%
+1620 num:83 	2-涨幅:-0.073% 胜率:37.487% 	True:-0.209%
+1620 num:83 	3-涨幅:-0.079% 胜率:45.729% 	True:-0.057%
+1714 num:97 	2-涨幅:-0.072% 胜率:44.125% 	False:0.126%
+1714 num:97 	3-涨幅:-0.076% 胜率:42.907% 	False:0.07%
+1880 num:88 	1-涨幅:-0.072% 胜率:37.593% 	False:0.007%
+1880 num:88 	2-涨幅:-0.11% 胜率:35.261% 	True:-0.007%
+1880 num:88 	3-涨幅:-0.11% 胜率:35.821% 	False:0%
+1896 num:109 	2-涨幅:-0.065% 胜率:43.811% 	True:-0.23%
+1896 num:109 	3-涨幅:-0.076% 胜率:42.461% 	True:-0.32%
+1998 num:82 	1-涨幅:0.107% 胜率:63.892% 	True:0.044%
+1998 num:82 	2-涨幅:0.108% 胜率:63.788% 	False:-0.387%
+1998 num:82 	3-涨幅:0.102% 胜率:63.267% 	True:0.082%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 629
+
+
+[6]:22 6 21 周二 19:41:04
+BNBUSDT_F
+样本数:500 总匹配量:71 百分比:0.071
+
+RATE_DELTA:0.04, E_DELTA:0.001, 
+
+优质数:11	正确率:90.909%	交易期望:0.245%
+
+1210 num:91 	2-涨幅:0.081% 胜率:54.034% 	False:-0.107%
+1252 num:89 	3-涨幅:0.074% 胜率:59.981% 	True:0.324%
+1274 num:140 	1-涨幅:0.062% 胜率:56.481% 	True:0.123%
+1472 num:86 	1-涨幅:-0.074% 胜率:35.151% 	True:-0.413%
+1536 num:186 	3-涨幅:-0.075% 胜率:39.297% 	True:-0.525%
+1772 num:77 	1-涨幅:-0.11% 胜率:41.838% 	True:-0.574%
+1832 num:228 	2-涨幅:-0.069% 胜率:37.228% 	True:-0.052%
+1832 num:228 	3-涨幅:-0.069% 胜率:38.867% 	True:-0.089%
+1858 num:132 	2-涨幅:-0.064% 胜率:39.937% 	True:-0.009%
+1858 num:132 	3-涨幅:-0.106% 胜率:40.38% 	True:-0.092%
+1864 num:83 	3-涨幅:0.071% 胜率:55.48% 	True:0.604%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 629
+
+
+[7]:22 6 21 周二 19:41:05
+DOTUSDT_F
+样本数:500 总匹配量:26 百分比:0.026
+
+RATE_DELTA:0.04, E_DELTA:0.001, 
+
+优质数:5	正确率:40%	交易期望:0.027%
+
+1196 num:80 	2-涨幅:-0.073% 胜率:42.021% 	False:0.529%
+1266 num:90 	3-涨幅:0.095% 胜率:61.69% 	False:-0.189%
+1528 num:113 	3-涨幅:-0.065% 胜率:41.596% 	False:0.359%
+1630 num:110 	2-涨幅:-0.133% 胜率:41.572% 	True:-0.984%
+1630 num:110 	3-涨幅:-0.068% 胜率:41.421% 	True:-0.227%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 629
+
+
+[8]:22 6 21 周二 19:41:06
+BTCUSDT_F
+样本数:500 总匹配量:131 百分比:0.131
+
+RATE_DELTA:0.04, E_DELTA:0.001, 
+
+优质数:9	正确率:66.667%	交易期望:-0.02%
+
+1082 num:91 	2-涨幅:0.061% 胜率:64.224% 	True:0.192%
+1082 num:91 	3-涨幅:0.113% 胜率:68.081% 	True:0.218%
+1244 num:88 	3-涨幅:0.08% 胜率:57.729% 	True:0.185%
+1458 num:110 	3-涨幅:-0.081% 胜率:41.372% 	False:0.16%
+1560 num:104 	2-涨幅:-0.083% 胜率:38.492% 	True:-0.221%
+1586 num:110 	3-涨幅:0.081% 胜率:56.763% 	False:-0.292%
+1794 num:91 	3-涨幅:0.147% 胜率:60.695% 	False:-0.824%
+1852 num:105 	3-涨幅:0.082% 胜率:60% 	True:0.156%
+1944 num:80 	2-涨幅:-0.081% 胜率:45.21% 	True:-0.123%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 629
+
+
+[9]:22 6 21 周二 19:41:06
+BTCUSDT_F:9 	p:66.667% e:-0.02%
+ETHUSDT_F:15 	p:73.333% e:0.17%
+XRPUSDT_F:0 	p:NaN% e:NaN%
+BNBUSDT_F:11 	p:90.909% e:0.245%
+SOLUSDT_F:15 	p:53.333% e:0.011%
+ADAUSDT_F:14 	p:71.429% e:0.447%
+DOGEUSDT_F:18 	p:44.444% e:-0.157%
+DOTUSDT_F:5 	p:40% e:0.027%
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 112
+
+
+[10]:22 6 21 周二 19:41:07
+End~ 运行耗时: 00:04:04.7613300
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 137
