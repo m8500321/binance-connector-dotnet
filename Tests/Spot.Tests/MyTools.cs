@@ -32,7 +32,7 @@ namespace Binance.Common.Tests
         static string apiKey = "Sud7YtqxuBnwKDJZ7zgnGlZuOxssZ5QzrtvhkL7CfHMfP0fWglYzMScttIDsJ42v";
         static string apiSecret = "QnU7QZwESqUnsuwYrs8KESVBXo4W8zgERMukgUhj9DR8phoY43WQZ0TjZgbbYbs9";
 
-        static public bool IsFuture = false;
+        // static public bool IsFuture = false;
         static public ILogger logger;
         //E:\projects\binance-connector-dotnet\datas
         private static readonly object LOCK = new object();
@@ -46,6 +46,7 @@ namespace Binance.Common.Tests
         {
             return (long)(dateTime.ToUniversalTime() - UTC_START).TotalMilliseconds;
         }
+        static int logCount = 0;
         static public void LogMsg(params string[] msg)
         {
             string output = "";
@@ -62,7 +63,7 @@ namespace Binance.Common.Tests
                 {
                     s = sr.ReadToEnd();
                 }
-                output = "\n\n" + DateTime.Now + "\n" + output;
+                output = "\n\n[" + (logCount++) + "]:" + DateTime.Now + "\n" + output;
                 if (s.Length > 100000)
                 {
                     using (StreamWriter sw = new StreamWriter(dataDir + "log.txt"))
@@ -118,15 +119,17 @@ namespace Binance.Common.Tests
                 var result = await market.KlineCandlestickData(tag, Interval.FIVE_MINUTE, limit: 1000, startTime: startTime);
                 karray = JArray.Parse(result);
             }
-            else if (type == "openInterestHist")
+            else
             {
-                var result = await market.OpenInterestHistData(tag, Interval.FIVE_MINUTE, limit: 500, startTime: startTime);
+                string typeAPI = "/futures/data/" + type;
+                var count = 500;
+                var msPerMin = 60 * 1000;
+                var intervalMin = 5;
+                var diffMS = intervalMin * msPerMin * count;
+                var result = await market.OpenInterestHistData(tag, Interval.FIVE_MINUTE, limit: count, startTime: startTime, endTime: startTime + diffMS, typeAPI: typeAPI);
                 karray = JArray.Parse(result);
             }
-
-
-            // var karray = JArray.Parse(result);
-            var fileName = symbol + (type == "kline" ? "" : type);
+            var fileName = symbol + (type == "kline" ? "" : "_" + type);
             using (StreamWriter sw = new StreamWriter(dataDir + fileName + ".txt", true))
             {
                 for (int i = 0; i < karray.Count; i++)
@@ -161,18 +164,14 @@ namespace Binance.Common.Tests
         static public async Task RequestData(string symbol, string type = "kline")
         {
             // request klines
-            // todo
-
-
-            被干掉了
-            File.Delete(dataDir + symbol + ".txt"); //删除指定文件;
+            var fileName = symbol + (type == "kline" ? "" : "_" + type);
+            File.Delete(dataDir + fileName + ".txt"); //删除指定文件;
             long startMS = MsFromUTC0(DateTime.UtcNow);
             // long startMS = 1644339900000;
             var maxCount = 1000;
             var msPerMin = 60 * 1000;
             var minPerDay = 60 * 24;
             var intervalMin = 5;
-            var diffMS = intervalMin * msPerMin * maxCount;
 
             var days = 365f;
             if (type == "kline")
@@ -184,7 +183,7 @@ namespace Binance.Common.Tests
                 days = 30;
                 maxCount = 500;
             }
-
+            var diffMS = intervalMin * msPerMin * maxCount;
             var iteCount = (minPerDay * days) / (intervalMin * maxCount);
             // 每天多少个n分钟*一年多少天
             for (int i = 0; i < iteCount; i++)
@@ -206,9 +205,9 @@ namespace Binance.Common.Tests
             }
         }
 
-        static public void Data2Serializable(string symbol)
+        static public string Text2Serializable(string symbol)
         {
-            symbol = symbol + (MyTools.IsFuture ? "_future" : "");
+            // symbol = symbol + (MyTools.IsFuture ? "_future" : "");
             StreamReader sr = new StreamReader(dataDir + symbol + ".txt");
             var sList = new KlineList();
             //判断文件中是否有字符
@@ -262,12 +261,17 @@ namespace Binance.Common.Tests
                         itemI.prevAvePriceList[idx] = sumPrice / sumVolume;
                         // itemI.prevMaxList[idx] = Math.Max(itemI.prevMaxList[idx], itemJ.maxPrice);
                         // itemI.prevMinList[idx] = Math.Min(itemI.prevMinList[idx], itemJ.minPrice);
-                        // itemI.prevAveCloseList[idx] = sumClose / j;
+                        itemI.prevAveCloseList[idx] = sumClose / j;
                     }
                 }
                 var aveVolume = sumVolume / MAX_LEN;
                 var curSumVolume = 0f;
                 var curSumPrice = 0f;
+                // for (int j = 1; j <= MAX_LEN; j++)
+                // {
+                //         itemI.prevVolumePriceList[idx] = curSumPrice / curSumVolume;
+
+                // }
                 for (int j = 1; j <= MAX_LEN; j++)
                 {
                     // 单位成交量的平均价格
@@ -309,6 +313,7 @@ namespace Binance.Common.Tests
             fileStream.Close();
             sr.Close();
             // sw.Close();
+            return "";
         }
 
         static public KlineList LoadFileData(string symbol)
@@ -317,7 +322,7 @@ namespace Binance.Common.Tests
             {
                 if (!klCache.ContainsKey(symbol))
                 {
-                    symbol = symbol + (MyTools.IsFuture ? "_future" : "");
+                    // symbol = symbol + (MyTools.IsFuture ? "_future" : "");
                     FileStream fileStream = new FileStream(dataDir + symbol + ".data", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                     BinaryFormatter bf = new BinaryFormatter();
                     var kList = bf.Deserialize(fileStream) as KlineList;

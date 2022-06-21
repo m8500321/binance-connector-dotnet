@@ -74,10 +74,12 @@ namespace Binance.Common.Tests
 
         // 5,10,20,40；包含自己
         // public List<float> prevAveVolumeList = new List<float>() { 0, 0, 0, 0 }; // 前几次平均成交量
-        public List<float> prevAvePriceList = new List<float>() { 0, 0, 0, 0 }; // 前几次平均单价
-        public List<float> prevVolumePriceList = new List<float>() { 0, 0, 0, 0 }; // 前面每单位量的价格
+        public List<float> prevAvePriceList = new List<float>() { 0, 0, 0, 0 }; // 前几次平均时间单价
+        // public List<float> prevSingleVolumePriceList = new List<float>() { 0, 0, 0, 0 }; // 前面单条单位量的价格
+        public List<float> prevVolumePriceList = new List<float>() { 0, 0, 0, 0 }; // 前面平均单位量的价格
+        public List<float> prevAveCloseList = new List<float>() { 0, 0, 0, 0 }; // 前几次平均收盘价
+
         public List<float> nextSumIncList = new List<float>() { 0, 0, 0, 0 }; // 后续上涨和，不包含自己
-        // public List<float> prevAveCloseList = new List<float>() { 0, 0, 0, 0 }; // 前几次平均收盘价
         // public List<float> prevMaxList = new List<float>() { 0, 0, 0, 0 }; // 前几次最高价
         // public List<float> prevMinList = new List<float>() { 999999, 999999, 999999, 999999 }; // 前几次最低价
         // public List<float> prevMaxList = new List<float>() { 0, 0, 0, 0 }; // 前几次最高价

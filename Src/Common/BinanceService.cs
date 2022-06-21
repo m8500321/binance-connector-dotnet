@@ -116,8 +116,9 @@ namespace Binance.Common
                     request.Headers.Add("X-MBX-APIKEY", this.apiKey);
                 }
 
-                Console.WriteLine($"httpClient.SendAsync:\n{request}\nrequest");
+                Console.WriteLine($"httpClient.SendAsync:\n{request}\n");
                 HttpResponseMessage response = await this.httpClient.SendAsync(request);
+                Console.WriteLine($"Response:\n{response}\n");
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -125,7 +126,6 @@ namespace Binance.Common
                     {
 
                         string jsonString = await responseContent.ReadAsStringAsync();
-                        Console.WriteLine($"HttpResponseMessage:\n{response}\nresponse");
 
                         if (typeof(T) == typeof(string))
                         {
@@ -155,6 +155,7 @@ namespace Binance.Common
                 {
                     using (HttpContent responseContent = response.Content)
                     {
+
                         BinanceHttpException httpException = null;
                         string contentString = await responseContent.ReadAsStringAsync();
                         int statusCode = (int)response.StatusCode;

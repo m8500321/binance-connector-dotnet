@@ -211,11 +211,10 @@ namespace Binance.Spot
             return result;
         }
 
-        public string openInterestHistData = "/futures/data/openInterestHist";
-        public async Task<string> OpenInterestHistData(string symbol, Interval interval, long? startTime = null, long? endTime = null, int? limit = null)
+        public async Task<string> OpenInterestHistData(string symbol, Interval interval, long? startTime = null, long? endTime = null, int? limit = null, string typeAPI = "")
         {
             var result = await this.SendPublicAsync<string>(
-                openInterestHistData,
+                typeAPI,
                 HttpMethod.Get,
                 query: new Dictionary<string, object>
                 {
