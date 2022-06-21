@@ -372,13 +372,11 @@ namespace Binance.Common.Tests
             // var a = new System.Diagnostics.CodeAnalysis.ObjectPool();
             var maxDiff = Math.Abs(r1) * percent + val;
             var curDiff = Math.Abs(r1 - r2);
-            var s = 1 - curDiff / maxDiff;
-            // s = (float)((s > 0 ? 1 : -1) * s * s);
-            if (s < -0f)
+            if (curDiff > maxDiff)
             {
                 return -99999f;
             }
-            return s;
+            return 1 - curDiff / maxDiff;
         }
 
     }

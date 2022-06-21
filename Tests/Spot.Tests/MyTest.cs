@@ -74,35 +74,35 @@ namespace Binance.Common.Tests
             });
             MyTools.logger = loggerFactory.CreateLogger("");
             var startDt = DateTime.Now;
-            MyTools.LogMsg("Start~");
+            MyTools.LogMsg("Start~~~~~~~~~~~~~~~~~~~~~~~~~~");
             var thisobj = new MyTest();
             var tasks = new List<Task<string>>();
-            foreach (var name in runSymbols)
-            {
-                // await MyTools.RequestData(name, "kline");
-                // // 大户账户数多空比
-                // await MyTools.RequestData(name, "topLongShortAccountRatio");
-                // // 大户持仓量多空比
-                // await MyTools.RequestData(name, "topLongShortPositionRatio");
-                // // 多空持仓人数比
-                // await MyTools.RequestData(name, "globalLongShortAccountRatio");
-                var t = Task<string>.Run(() =>
-                    {
+            // foreach (var name in runSymbols)
+            // {
+            //     // await MyTools.RequestData(name, "kline");
+            //     // // 大户账户数多空比
+            //     // await MyTools.RequestData(name, "topLongShortAccountRatio");
+            //     // // 大户持仓量多空比
+            //     // await MyTools.RequestData(name, "topLongShortPositionRatio");
+            //     // // 多空持仓人数比
+            //     // await MyTools.RequestData(name, "globalLongShortAccountRatio");
+            //     var t = Task<string>.Run(() =>
+            //         {
 
-                        // MyTools.Data2Readable(name);
-                        // MyTools.Text2Serializable(name);
+            //             // MyTools.Data2Readable(name);
+            //             // MyTools.Text2Serializable(name);
 
-                        // thisobj.AnalyseTime(name);
-                        // thisobj.AnalysePrevKline(name);
+            //             // thisobj.AnalyseTime(name);
+            //             // thisobj.AnalysePrevKline(name);
 
-                        // thisobj.AnalyseBigVolume(name);
-                        // thisobj.AnalyseTend(name);
-                        // thisobj.TestRandomInc(name);
-                        return thisobj.AnalyseCurveMatch2(name);
-                        return "";
-                    });
-                tasks.Add(t);
-            }
+            //             // thisobj.AnalyseBigVolume(name);
+            //             // thisobj.AnalyseTend(name);
+            //             // thisobj.TestRandomInc(name);
+            //             return thisobj.AnalyseCurveMatch2(name);
+            //             return "";
+            //         });
+            //     tasks.Add(t);
+            // }
             Task.WaitAll(tasks.ToArray());
             var output = "";
             foreach (var item in tasks)
@@ -111,30 +111,18 @@ namespace Binance.Common.Tests
             }
             MyTools.LogMsg(output);
 
-            // var websocket = new MarketDataWebSocket("btcusdt@kline_1m");
+            var websocket = new MarketDataWebSocket("btcusdt@kline_1m");
+            websocket.OnMessageReceived(
+                async (data) =>
+            {
+                data = data.Replace("\0", "");
+                MyTools.LogMsg(data);
 
-            // var onlyOneMessage = new TaskCompletionSource<string>();
+            }, CancellationToken.None);
+            await websocket.ConnectAsync(CancellationToken.None);
+            Console.Read();
 
-            // websocket.OnMessageReceived(
-            //     async (data) =>
-            // {
-            //     onlyOneMessage.SetResult(data);
-            //     MyTools.LogMsg(data);
-
-            // }, CancellationToken.None);
-
-            // await websocket.ConnectAsync(CancellationToken.None);
-
-            // string message = await onlyOneMessage.Task;
-
-            // // logger.LogInformation(message);
-            // MyTools.LogMsg(message);
-
-            // await websocket.DisconnectAsync(CancellationToken.None);
-
-            // var a = Console.Read();
-
-            MyTools.LogMsg($"End~ 运行耗时: {DateTime.Now - startDt}");
+            MyTools.LogMsg($"End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: {DateTime.Now - startDt}");
         }
 
 
@@ -400,18 +388,18 @@ namespace Binance.Common.Tests
             var matchArgs = new Dictionary<string, float>()
             {
                 {"prev_weight",4f},
-                {"prev_weight_down",1f},
+                // {"prev_weight_down",1f},
                 {"max_weight",3f},
-                {"max_weight_down",3f},
+                // {"max_weight_down",3f},
                 {"price_weight",3},
-                {"price_weight_down",1f},
+                // {"price_weight_down",1f},
                 {"close_weight",3f},
-                {"close_weight_down",1f},
+                // {"close_weight_down",1f},
                 {"volume_weight",2f},
 
                 {"need_weight",35f},
-                {"similar_range",0.15f},
-                {"similar_val",0.0004f},
+                {"similar_range",0.05f},
+                {"similar_val",0.0012f},
 
                 {"need_count",150},
             };
@@ -433,10 +421,11 @@ namespace Binance.Common.Tests
             }
             var thisKline = MyTools.LoadFileData(symbol).myKlines;
             var start = 1000;
-            var len = 1000;
+            var len = 5000;
             for (int i = start; i < start + len; i = i + 2)
             // for (int i = 100; i < allKlines.Count / 2; i++)
             {
+                List<int> iList = null;
                 // 被匹配
                 for (int j = 100; j < allKlines.Count; j++)
                 {
@@ -524,17 +513,18 @@ namespace Binance.Common.Tests
                     // sumValue = volumeRate0 + volumeRate1 + prevList.Sum() + maxValue1 + minValue1 + maxValue2 + minValue2 + aveList.Sum() + aveClose0 + aveClose1 + aveClose2 + aveClose3;
                     if (sumValue > 0)
                     {
-                        if (!cachePrev2.ContainsKey(i))
+                        if (iList == null)
                         {
-                            cachePrev2.Add(i, intPool.PopItem());
+                            iList = intPool.PopItem();
+                            cachePrev2.Add(i, iList);
                         }
-                        cachePrev2[i].Add(j);
-                        cachePrev2[i].Add((int)sumValue);
+                        iList.Add(j);
+                        iList.Add((int)sumValue);
                     }
                     // floatPool.PushItem(prevList);
                     // floatPool.PushItem(aveList);
                 }
-                if (cachePrev2.ContainsKey(i) && cachePrev2[i].Count < matchArgs["need_count"])
+                if (iList != null && iList.Count < matchArgs["need_count"])
                 {
                     // intPool.PushItem(cachePrev2[i]);
                     cachePrev2.Remove(i);
@@ -570,6 +560,7 @@ namespace Binance.Common.Tests
                     }
                     var weight = 1f;
                     weight = (float)targetList[i + 1] / aveWeight;
+                    // 三个增量和一个权重
                     for (int j = 0; j < 3; j++)
                     {
                         incList.Add(allKlines[itemIdx].nextSumIncList[j]);
@@ -582,6 +573,7 @@ namespace Binance.Common.Tests
                 var winList = floatPool.PopItem();
                 for (int idx = 0; idx < 3; idx++)
                 {
+                    // 1-3每个增量
                     var sumInc = 0f;
                     var incCount = 0f;
                     for (int i = 0; i < incList.Count; i = i + 4)
@@ -622,12 +614,12 @@ namespace Binance.Common.Tests
             // }
             foreach (var item in filterArgs)
             {
-                argStr += (item.Key + ":" + MyTools.CutDecim(item.Value, 3) + ", ");
+                argStr += (item.Key + ":" + MyTools.CutDecim(item.Value, 5) + ", ");
             }
-            var title = "\n优质数:" + usefulCount + "\t正确率:" + MyTools.ToPercent(rightCount / usefulCount) + "\t交易期望:" + MyTools.ToPercent(realSum / usefulCount) + "\n";
+            var title = "优质数:" + usefulCount + "\t正确率:" + MyTools.ToPercent(rightCount / usefulCount) + "\t交易期望:" + MyTools.ToPercent(realSum / usefulCount) + "\n";
 
-            MyTools.LogMsg(symbol, $"样本数:{len / 2} 总匹配量:{cachePrev2.Count} 百分比:{(float)cachePrev2.Count / len}\n", argStr, title, output);
-            return $"{symbol}:{usefulCount} \tp:{MyTools.ToPercent(rightCount / usefulCount)} e:{MyTools.ToPercent(realSum / usefulCount)}\n";
+            MyTools.LogMsg(symbol, $"样本数:{len / 2} 总匹配量:{cachePrev2.Count} 百分比:{(float)cachePrev2.Count / len}", argStr, title, output);
+            return $"{symbol}: \t{rightCount}:{usefulCount - rightCount}  {MyTools.ToPercent(rightCount / usefulCount)} \te:{MyTools.ToPercent(realSum / usefulCount)}\n";
         }
     }
 }
