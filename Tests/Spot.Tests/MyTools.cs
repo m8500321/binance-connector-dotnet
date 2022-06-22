@@ -29,8 +29,11 @@ namespace Binance.Common.Tests
     public class MyTools
     {
 
-        static string apiKey = "Sud7YtqxuBnwKDJZ7zgnGlZuOxssZ5QzrtvhkL7CfHMfP0fWglYzMScttIDsJ42v";
-        static string apiSecret = "QnU7QZwESqUnsuwYrs8KESVBXo4W8zgERMukgUhj9DR8phoY43WQZ0TjZgbbYbs9";
+        static string apiKey = "KV12suVvH4WM6JNb3bO7Ev1j6h2pVp2DCxNUJcEn7ACLxbv2Uj50i9zX01r1a8K2";
+        static string apiSecret = "rXDNV41PN9Lce56Kmd7lJFN5BFXhzXr0Vr4zeSlZR2SmGwj7QICfaFIcExOhnjqB";
+        static string FUTURE_BASE_URL = "https://fapi.binance.com";
+        // static string FUTURE_BASE_URL = "https://fapi.binance.us";
+        static string SPOT_BASE_URL = "https://api.binance.com";
 
         // static public bool IsFuture = false;
         static public ILogger logger;
@@ -64,11 +67,11 @@ namespace Binance.Common.Tests
                     s = sr.ReadToEnd();
                 }
                 output = "\n\n[" + (logCount++) + "]:" + DateTime.Now + "\n" + output;
-                if (s.Length > 100000)
+                if (s.Length > 200000)
                 {
                     using (StreamWriter sw = new StreamWriter(dataDir + "log.txt"))
                     {
-                        sw.Write(s.Substring(s.Length - 30000) + output);
+                        sw.Write(s.Substring(s.Length - 120000) + output);
                     }
                 }
                 else
@@ -126,7 +129,7 @@ namespace Binance.Common.Tests
                 var msPerMin = 60 * 1000;
                 var intervalMin = 5;
                 var diffMS = intervalMin * msPerMin * count;
-                var result = await market.OpenInterestHistData(tag, Interval.FIVE_MINUTE, limit: count, startTime: startTime, endTime: startTime + diffMS, typeAPI: typeAPI);
+                var result = await market.MyFutureData(tag, Interval.FIVE_MINUTE, limit: count, startTime: startTime, endTime: startTime + diffMS, typeAPI: typeAPI);
                 karray = JArray.Parse(result);
             }
             var fileName = symbol + (type == "kline" ? "" : "_" + type);
@@ -314,6 +317,64 @@ namespace Binance.Common.Tests
             sr.Close();
             // sw.Close();
             return "";
+        }
+
+        // 市价单
+        static public async Task<string> TradeMarkte(string symbol, Side side, OrderType orderType, decimal quantity)
+        {
+            HttpMessageHandler loggingHandler = new BinanceLoggingHandler(logger: MyTools.logger);
+            HttpClient httpClient = new HttpClient(handler: loggingHandler);
+            var spotAccountTrade = new SpotAccountTrade(httpClient, FUTURE_BASE_URL, apiKey, apiSecret);
+            return await spotAccountTrade.MyFutureNewOrder(symbol, side, orderType, quantity: quantity);
+            // Console.Read();
+        }
+
+        // 限价单
+        static public async Task<string> TradeLimit(string symbol, Side side, OrderType orderType, decimal quantity, decimal price)
+        {
+            HttpMessageHandler loggingHandler = new BinanceLoggingHandler(logger: MyTools.logger);
+            HttpClient httpClient = new HttpClient(handler: loggingHandler);
+            var spotAccountTrade = new SpotAccountTrade(httpClient, FUTURE_BASE_URL, apiKey, apiSecret);
+            return await spotAccountTrade.MyFutureNewOrder(symbol, side, orderType, quantity: quantity, price: price, timeInForce: TimeInForce.GTC);
+            // Console.Read();
+        }
+
+        // {
+        //   "e": "kline",     // 事件类型
+        //   "E": 123456789,   // 事件时间
+        //   "s": "BNBBTC",    // 交易对
+        //   "k": {
+        //     "t": 123400000, // 这根K线的起始时间
+        //     "T": 123460000, // 这根K线的结束时间
+        //     "s": "BNBBTC",  // 交易对
+        //     "i": "1m",      // K线间隔
+        //     "f": 100,       // 这根K线期间第一笔成交ID
+        //     "L": 200,       // 这根K线期间末一笔成交ID
+        //     "o": "0.0010",  // 这根K线期间第一笔成交价
+        //     "c": "0.0020",  // 这根K线期间末一笔成交价
+        //     "h": "0.0025",  // 这根K线期间最高成交价
+        //     "l": "0.0015",  // 这根K线期间最低成交价
+        //     "v": "1000",    // 这根K线期间成交量
+        //     "n": 100,       // 这根K线期间成交笔数
+        //     "x": false,     // 这根K线是否完结(是否已经开始下一根K线)
+        //     "q": "1.0000",  // 这根K线期间成交额
+        //     "V": "500",     // 主动买入的成交量
+        //     "Q": "0.500",   // 主动买入的成交额
+        //     "B": "123456"   // 忽略此参数
+        //   }
+        // }
+        static public async Task ListenSocket(string name)
+        {
+            var websocket = new MarketDataWebSocket(name);
+            websocket.OnMessageReceived(
+                async (data) =>
+            {
+                data = data.Replace("\0", "");
+                MyTools.LogMsg(data);
+
+            }, CancellationToken.None);
+            await websocket.ConnectAsync(CancellationToken.None);
+            Console.Read();
         }
 
         static public KlineList LoadFileData(string symbol)

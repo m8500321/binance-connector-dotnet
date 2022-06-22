@@ -211,7 +211,7 @@ namespace Binance.Spot
             return result;
         }
 
-        public async Task<string> OpenInterestHistData(string symbol, Interval interval, long? startTime = null, long? endTime = null, int? limit = null, string typeAPI = "")
+        public async Task<string> MyFutureData(string symbol, Interval interval, long? startTime = null, long? endTime = null, int? limit = null, string typeAPI = "")
         {
             var result = await this.SendPublicAsync<string>(
                 typeAPI,

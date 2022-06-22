@@ -122,6 +122,80 @@ namespace Binance.Spot
             return result;
         }
 
+
+        // 有效方式 (timeInForce):
+        // GTC - Good Till Cancel 成交为止
+        // IOC - Immediate or Cancel 无法立即成交(吃单)的部分就撤销
+        // FOK - Fill or Kill 无法全部立即成交就撤销
+        // GTX - Good Till Crossing 无法成为挂单方就撤销
+
+        // 订单种类 (orderTypes, type):
+        // LIMIT 限价单
+        // MARKET 市价单
+        // STOP 止损限价单
+        // STOP_MARKET 止损市价单
+        // TAKE_PROFIT 止盈限价单
+        // TAKE_PROFIT_MARKET 止盈市价单
+        // TRAILING_STOP_MARKET 跟踪止损单
+
+        // 条件价格触发类型 (workingType)
+
+        // MARK_PRICE
+        // CONTRACT_PRICE
+
+        // resp:{
+        //     "clientOrderId": "testOrder", // 用户自定义的订单号
+        //     "cumQty": "0",
+        //     "cumQuote": "0", // 成交金额
+        //     "executedQty": "0", // 成交量
+        //     "orderId": 22542179, // 系统订单号
+        //     "avgPrice": "0.00000",  // 平均成交价
+        //     "origQty": "10", // 原始委托数量
+        //     "price": "0", // 委托价格
+        //     "reduceOnly": false, // 仅减仓
+        //     "side": "SELL", // 买卖方向
+        //     "positionSide": "SHORT", // 持仓方向
+        //     "status": "NEW", // 订单状态
+        //     "stopPrice": "0", // 触发价，对`TRAILING_STOP_MARKET`无效
+        //     "closePosition": false,   // 是否条件全平仓
+        //     "symbol": "BTCUSDT", // 交易对
+        //     "timeInForce": "GTC", // 有效方法
+        //     "type": "TRAILING_STOP_MARKET", // 订单类型
+        //     "origType": "TRAILING_STOP_MARKET",  // 触发前订单类型
+        //     "activatePrice": "9020", // 跟踪止损激活价格, 仅`TRAILING_STOP_MARKET` 订单返回此字段
+        //     "priceRate": "0.3", // 跟踪止损回调比例, 仅`TRAILING_STOP_MARKET` 订单返回此字段
+        //     "updateTime": 1566818724722, // 更新时间
+        //     "workingType": "CONTRACT_PRICE", // 条件价格触发类型
+        //     "priceProtect": false            // 是否开启条件单触发保护
+        // }
+        private const string FUTURE_NEW_ORDER = "/fapi/v1/order";
+        // fapi/v1/leverage
+        public async Task<string> MyFutureNewOrder(string symbol, Side side, OrderType type, TimeInForce? timeInForce = null, decimal? quantity = null, decimal? quoteOrderQty = null, decimal? price = null, string newClientOrderId = null, decimal? stopPrice = null, decimal? trailingDelta = null, decimal? icebergQty = null, NewOrderResponseType? newOrderRespType = null, long? recvWindow = null)
+        {
+            var result = await this.SendSignedAsync<string>(
+                FUTURE_NEW_ORDER,
+                HttpMethod.Post,
+                query: new Dictionary<string, object>
+                {
+                    { "symbol", symbol },
+                    { "side", side },
+                    { "type", type },
+                    // { "timeInForce", timeInForce },
+                    { "quantity", quantity },
+                    // { "quoteOrderQty", quoteOrderQty },
+                    // { "price", price },
+                    // { "newClientOrderId", newClientOrderId },
+                    // { "stopPrice", stopPrice },
+                    // { "trailingDelta", trailingDelta },
+                    // { "icebergQty", icebergQty },
+                    // { "newOrderRespType", newOrderRespType },
+                    // { "recvWindow", recvWindow },
+                    { "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() },
+                });
+
+            return result;
+        }
+
         private const string CANCEL_ORDER = "/api/v3/order";
 
         /// <summary>

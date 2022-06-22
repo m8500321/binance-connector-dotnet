@@ -52,8 +52,9 @@ namespace Binance.Common.Tests
         // static public string dataDir = "";
         static private DateTime UTC_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         readonly int HOOUR8_MS = 8 * 60 * 60 * 1000;
-        // string apiKey = "Sud7YtqxuBnwKDJZ7zgnGlZuOxssZ5QzrtvhkL7CfHMfP0fWglYzMScttIDsJ42v";
-        // string apiSecret = "QnU7QZwESqUnsuwYrs8KESVBXo4W8zgERMukgUhj9DR8phoY43WQZ0TjZgbbYbs9";
+        static string apiKey = "KV12suVvH4WM6JNb3bO7Ev1j6h2pVp2DCxNUJcEn7ACLxbv2Uj50i9zX01r1a8K2";
+        static string apiSecret = "rXDNV41PN9Lce56Kmd7lJFN5BFXhzXr0Vr4zeSlZR2SmGwj7QICfaFIcExOhnjqB";
+
         // static List<string> symbols = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT" };
         static List<string> symbolAll = new List<string> { "BTCUSDT_F", "ETHUSDT_F", "XRPUSDT_F", "BNBUSDT_F", "SOLUSDT_F", "ADAUSDT_F", "DOGEUSDT_F", "DOTUSDT_F" };
         static List<string> runSymbols = new List<string> { "BTCUSDT_F", "ETHUSDT_F", "XRPUSDT_F", "BNBUSDT_F", "SOLUSDT_F", "ADAUSDT_F", "DOGEUSDT_F", "DOTUSDT_F" };
@@ -77,33 +78,50 @@ namespace Binance.Common.Tests
             MyTools.LogMsg("Start~~~~~~~~~~~~~~~~~~~~~~~~~~");
             var thisobj = new MyTest();
             var tasks = new List<Task<string>>();
-            // foreach (var name in runSymbols)
-            // {
-            //     // await MyTools.RequestData(name, "kline");
-            //     // // 大户账户数多空比
-            //     // await MyTools.RequestData(name, "topLongShortAccountRatio");
-            //     // // 大户持仓量多空比
-            //     // await MyTools.RequestData(name, "topLongShortPositionRatio");
-            //     // // 多空持仓人数比
-            //     // await MyTools.RequestData(name, "globalLongShortAccountRatio");
-            //     var t = Task<string>.Run(() =>
-            //         {
 
-            //             // MyTools.Data2Readable(name);
-            //             // MyTools.Text2Serializable(name);
+            await MyTools.TradeMarkte("BTCUSDT", Side.BUY, OrderType.MARKET, 30);
 
-            //             // thisobj.AnalyseTime(name);
-            //             // thisobj.AnalysePrevKline(name);
+            // HttpMessageHandler loggingHandler = new BinanceLoggingHandler(logger: MyTools.logger);
+            // Wallet wallet = new Wallet(
+            //     new HttpClient(handler: loggingHandler),
+            //     apiKey: apiKey,
+            //     apiSecret: apiSecret);
+            // var result = await wallet.FundingWallet();
+            // MyTools.LogMsg(result);
 
-            //             // thisobj.AnalyseBigVolume(name);
-            //             // thisobj.AnalyseTend(name);
-            //             // thisobj.TestRandomInc(name);
-            //             return thisobj.AnalyseCurveMatch2(name);
-            //             return "";
-            //         });
-            //     tasks.Add(t);
-            // }
-            Task.WaitAll(tasks.ToArray());
+
+
+
+
+
+            foreach (var name in runSymbols)
+            {
+                // await MyTools.RequestData(name, "kline");
+                // // 大户账户数多空比
+                // await MyTools.RequestData(name, "topLongShortAccountRatio");
+                // // 大户持仓量多空比
+                // await MyTools.RequestData(name, "topLongShortPositionRatio");
+                // // 多空持仓人数比
+                // await MyTools.RequestData(name, "globalLongShortAccountRatio");
+
+                // MyTools.LogMsg(name);
+                var t = Task<string>.Run(async () =>
+                    {
+                        // MyTools.Data2Readable(name);
+                        // MyTools.Text2Serializable(name);
+
+                        // thisobj.AnalyseTime(name);
+                        // thisobj.AnalysePrevKline(name);
+
+                        // thisobj.AnalyseBigVolume(name);
+                        // thisobj.AnalyseTend(name);
+                        // thisobj.TestRandomInc(name);
+                        // return thisobj.AnalyseCurveMatch2(name);
+                        return "";
+                    });
+                tasks.Add(t);
+            }
+            // Task.WaitAll(tasks.ToArray());
             var output = "";
             foreach (var item in tasks)
             {
@@ -111,16 +129,8 @@ namespace Binance.Common.Tests
             }
             MyTools.LogMsg(output);
 
-            var websocket = new MarketDataWebSocket("btcusdt@kline_1m");
-            websocket.OnMessageReceived(
-                async (data) =>
-            {
-                data = data.Replace("\0", "");
-                MyTools.LogMsg(data);
 
-            }, CancellationToken.None);
-            await websocket.ConnectAsync(CancellationToken.None);
-            Console.Read();
+
 
             MyTools.LogMsg($"End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: {DateTime.Now - startDt}");
         }
@@ -399,14 +409,14 @@ namespace Binance.Common.Tests
 
                 {"need_weight",35f},
                 {"similar_range",0.05f},
-                {"similar_val",0.0012f},
+                {"similar_val",0.001f},
 
                 {"need_count",150},
             };
             var filterArgs = new Dictionary<string, float>()
             {
-                {"RATE_DELTA", 0.04f},
-                {"E_DELTA", 0.06f * 0.01f}
+                {"RATE_DELTA", 0.01f},
+                {"E_DELTA", 0.07f * 0.01f}
             };
             var s_range = matchArgs["similar_range"];
             var s_val = matchArgs["similar_val"];
@@ -420,8 +430,8 @@ namespace Binance.Common.Tests
                 allKlines.AddRange(slist.myKlines);
             }
             var thisKline = MyTools.LoadFileData(symbol).myKlines;
-            var start = 1000;
-            var len = 5000;
+            var start = 10000;
+            var len = 1000;
             for (int i = start; i < start + len; i = i + 2)
             // for (int i = 100; i < allKlines.Count / 2; i++)
             {
@@ -608,10 +618,10 @@ namespace Binance.Common.Tests
 
             }
             var argStr = "";
-            // foreach (var item in matchArgs)
-            // {
-            //     argStr += (item.Key + ":" + MyTools.CutDecim(item.Value, 3) + ", ");
-            // }
+            foreach (var item in matchArgs)
+            {
+                argStr += (item.Key + ":" + MyTools.CutDecim(item.Value, 3) + ", ");
+            }
             foreach (var item in filterArgs)
             {
                 argStr += (item.Key + ":" + MyTools.CutDecim(item.Value, 5) + ", ");
@@ -619,7 +629,7 @@ namespace Binance.Common.Tests
             var title = "优质数:" + usefulCount + "\t正确率:" + MyTools.ToPercent(rightCount / usefulCount) + "\t交易期望:" + MyTools.ToPercent(realSum / usefulCount) + "\n";
 
             MyTools.LogMsg(symbol, $"样本数:{len / 2} 总匹配量:{cachePrev2.Count} 百分比:{(float)cachePrev2.Count / len}", argStr, title, output);
-            return $"{symbol}: \t{rightCount}:{usefulCount - rightCount}  {MyTools.ToPercent(rightCount / usefulCount)} \te:{MyTools.ToPercent(realSum / usefulCount)}\n";
+            return $"{symbol}:  \t{rightCount}:{usefulCount - rightCount}  {MyTools.ToPercent(rightCount / usefulCount)} \te:{MyTools.ToPercent(realSum / usefulCount)}\n";
         }
     }
 }
