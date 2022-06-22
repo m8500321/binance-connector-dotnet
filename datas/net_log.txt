@@ -1,0 +1,93 @@
+
+
+[0]:2022/6/23 0:10:29
+2022/6/23 0:10:29
+httpClient.SendAsync:
+Method: GET, RequestUri: 'https://fapi.binance.com/fapi/v1/allOrders?symbol=BTCUSDT&timestamp=1655914229199&signature=022d22f3575e121110e7eaa54fd9f84a92b8e6dc6eb3ecceb878ec9df481c72b', Version: 1.1, Content: <null>, Headers:
+{
+  X-MBX-APIKEY: KV12suVvH4WM6JNb3bO7Ev1j6h2pVp2DCxNUJcEn7ACLxbv2Uj50i9zX01r1a8K2
+}
+
+
+
+[1]:2022/6/23 0:10:29
+2022/6/23 0:10:29
+Response:
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.HttpConnectionResponseContent, Headers:
+{
+  Connection: keep-alive
+  Date: Wed, 22 Jun 2022 16:10:29 GMT
+  Server: Tengine
+  Vary: Accept-Encoding
+  X-MBX-USED-WEIGHT-1M: 5
+  x-response-time: 4ms
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+  Access-Control-Allow-Credentials: true
+  Access-Control-Allow-Headers: *,clienttype,Content-Type,lang,x-ui-request-trace,bnc-uuid
+  Content-Security-Policy: default-src 'self'
+  Cache-Control: no-store, must-revalidate, no-cache
+  Pragma: no-cache
+  Strict-Transport-Security: max-age=31536000; includeSubdomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  X-Cache: Miss from cloudfront
+  Via: 1.1 4d13b118cedf75df371701666cf78c30.cloudfront.net (CloudFront)
+  X-Amz-Cf-Pop: HKG62-C2
+  X-Amz-Cf-Id: FgIqAv9E_5TqqMKqVm5KClEwoITpyi-dy2h4_YbfQO4VbTyv1H9EYg==
+  Content-Type: application/json
+  Content-Length: 4507
+  Expires: 0
+}
+
+
+
+[0]:2022/6/23 0:12:29
+Request: ->>>
+Method: GET, RequestUri: 'https://fapi.binance.com/fapi/v1/allOrders?symbol=BTCUSDT&timestamp=1655914349734&signature=dee99938d9f3033d19a9ced0c45d50b40129bbcf8c1f2b9d3aefd2738dd43c2a', Version: 1.1, Content: <null>, Headers:
+{
+  X-MBX-APIKEY: KV12suVvH4WM6JNb3bO7Ev1j6h2pVp2DCxNUJcEn7ACLxbv2Uj50i9zX01r1a8K2
+}
+
+
+
+[1]:2022/6/23 0:12:30
+Response: <<<-
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.HttpConnectionResponseContent, Headers:
+{
+  Connection: keep-alive
+  Date: Wed, 22 Jun 2022 16:12:30 GMT
+  Server: Tengine
+  Vary: Accept-Encoding
+  X-MBX-USED-WEIGHT-1M: 5
+  x-response-time: 4ms
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+  Access-Control-Allow-Credentials: true
+  Access-Control-Allow-Headers: *,clienttype,Content-Type,lang,x-ui-request-trace,bnc-uuid
+  Content-Security-Policy: default-src 'self'
+  Cache-Control: no-store, must-revalidate, no-cache
+  Pragma: no-cache
+  Strict-Transport-Security: max-age=31536000; includeSubdomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  X-Cache: Miss from cloudfront
+  Via: 1.1 4d13b118cedf75df371701666cf78c30.cloudfront.net (CloudFront)
+  X-Amz-Cf-Pop: HKG62-C2
+  X-Amz-Cf-Id: S_0mOtbgLVZOaB2QaTnVXW6ZQv57vlgrAE0J3t0Juy1NLwXKVDRcCg==
+  Content-Type: application/json
+  Content-Length: 4507
+  Expires: 0
+}
+
+
+
+[0]:2022/6/23 0:15:29
+Request: ->>>
+Method: GET, RequestUri: 'https://fapi.binance.com/fapi/v1/allOrders?symbol=BTCUSDT&timestamp=1655914529490&signature=b9346199165f10543f20885e5730fa5caf73f3a5c6b4e932d69d8ef2b2867fa1', Version: 1.1, Content: <null>, Headers:
+{
+  X-MBX-APIKEY: KV12suVvH4WM6JNb3bO7Ev1j6h2pVp2DCxNUJcEn7ACLxbv2Uj50i9zX01r1a8K2
+}
+

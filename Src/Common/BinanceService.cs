@@ -2,7 +2,9 @@ namespace Binance.Common
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Globalization;
+    using System.IO;
     using System.Linq;
     using System.Net.Http;
     using System.Security.Cryptography;
@@ -16,13 +18,54 @@ namespace Binance.Common
     /// </summary>
     public abstract class BinanceService
     {
+        private const string V = "binance-connector-dotnet";
         private string apiKey;
         private string apiSecret;
         private string baseUrl;
         private HttpClient httpClient;
+        static int logCount = 0;
+        private static readonly object LOCK = new object();
+        static public string dataDir = "";
+
+        static public void LogMsg(params string[] msg)
+        {
+            string output = "\n\n[" + (logCount++) + "]:" + DateTime.Now + "\n";
+            foreach (var item in msg)
+            {
+                output += (item + "\n");
+            }
+            lock (LOCK)
+            {
+                var s = "";
+                using (StreamReader sr = new StreamReader(dataDir + "net_log.txt"))
+                {
+                    s = sr.ReadToEnd();
+                }
+                if (s.Length > 200000)
+                {
+                    using (StreamWriter sw = new StreamWriter(dataDir + "net_log.txt"))
+                    {
+                        sw.Write(s.Substring(s.Length - 120000) + output);
+                    }
+                }
+                else
+                {
+                    using (StreamWriter sw = new StreamWriter(dataDir + "net_log.txt", true))
+                    {
+                        sw.Write(output);
+                    }
+                }
+            }
+
+        }
 
         public BinanceService(HttpClient httpClient, string baseUrl, string apiKey, string apiSecret)
         {
+
+            var curDir = System.Environment.CurrentDirectory;
+            var idx = curDir.IndexOf("binance-connector-dotnet");
+            dataDir = curDir.Substring(0, idx).Replace("\\", "/") + "binance-connector-dotnet/datas/";
+
             this.httpClient = httpClient;
             this.baseUrl = baseUrl;
             this.apiKey = apiKey;
@@ -116,9 +159,9 @@ namespace Binance.Common
                     request.Headers.Add("X-MBX-APIKEY", this.apiKey);
                 }
 
-                Console.WriteLine($"httpClient.SendAsync:\n{request}\n");
+                LogMsg($"Request: ->>>\n{request}\n");
                 HttpResponseMessage response = await this.httpClient.SendAsync(request);
-                Console.WriteLine($"Response:\n{response}\n");
+                LogMsg($"Response: <<<-\n{response}\n");
 
                 if (response.IsSuccessStatusCode)
                 {

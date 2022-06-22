@@ -32,7 +32,7 @@ namespace Binance.Common.Tests
         static string apiKey = "KV12suVvH4WM6JNb3bO7Ev1j6h2pVp2DCxNUJcEn7ACLxbv2Uj50i9zX01r1a8K2";
         static string apiSecret = "rXDNV41PN9Lce56Kmd7lJFN5BFXhzXr0Vr4zeSlZR2SmGwj7QICfaFIcExOhnjqB";
         static string FUTURE_BASE_URL = "https://fapi.binance.com";
-        // static string FUTURE_BASE_URL = "https://fapi.binance.us";
+        static string TEST_FUTURE_BASE_URL = "https://testnet.binancefuture.com";
         static string SPOT_BASE_URL = "https://api.binance.com";
 
         // static public bool IsFuture = false;
@@ -52,7 +52,7 @@ namespace Binance.Common.Tests
         static int logCount = 0;
         static public void LogMsg(params string[] msg)
         {
-            string output = "";
+            string output = "\n\n[" + (logCount++) + "]:" + DateTime.Now + "\n";
             foreach (var item in msg)
             {
                 output += (item + "\n");
@@ -66,7 +66,6 @@ namespace Binance.Common.Tests
                 {
                     s = sr.ReadToEnd();
                 }
-                output = "\n\n[" + (logCount++) + "]:" + DateTime.Now + "\n" + output;
                 if (s.Length > 200000)
                 {
                     using (StreamWriter sw = new StreamWriter(dataDir + "log.txt"))
@@ -214,8 +213,6 @@ namespace Binance.Common.Tests
             StreamReader sr = new StreamReader(dataDir + symbol + ".txt");
             var sList = new KlineList();
             //判断文件中是否有字符
-            FileStream fileStream = new FileStream(dataDir + symbol + ".data", FileMode.Create);
-            BinaryFormatter bf = new BinaryFormatter();
             while (sr.Peek() != -1)
             {
                 var obj = new JsonKline(sr.ReadLine());
@@ -261,10 +258,10 @@ namespace Binance.Common.Tests
                     if (idx > -1)
                     {
                         // itemI.prevAveVolumeList[idx] = sumVolume / j;
-                        itemI.prevAvePriceList[idx] = sumPrice / sumVolume;
+                        // itemI.prevAvePriceList[idx] = sumPrice / sumVolume;
                         // itemI.prevMaxList[idx] = Math.Max(itemI.prevMaxList[idx], itemJ.maxPrice);
                         // itemI.prevMinList[idx] = Math.Min(itemI.prevMinList[idx], itemJ.minPrice);
-                        itemI.prevAveCloseList[idx] = sumClose / j;
+                        // itemI.prevAveCloseList[idx] = sumClose / j;
                     }
                 }
                 var aveVolume = sumVolume / MAX_LEN;
@@ -302,15 +299,21 @@ namespace Binance.Common.Tests
                     if (idx > -1)
                     {
                         itemI.prevVolumePriceList[idx] = curSumPrice / curSumVolume;
+                        itemI.prevVolumePriceRate[idx] = (itemI.closePrice - itemI.prevVolumePriceList[idx]) / itemI.closePrice;
                     }
                 }
                 for (int j = 0; j < 4; j++)
                 {
                     var prevVal = j > 0 ? itemI.nextSumIncList[j - 1] : 0;
                     itemI.nextSumIncList[j] = prevVal + sList.myKlines[i + j + 1].incPercent;
+                    itemI.prevClosePriceRate[j] = (itemI.closePrice - sList.myKlines[i - j - 1].closePrice) / itemI.closePrice;
+
                 }
 
             }
+
+            FileStream fileStream = new FileStream(dataDir + symbol + ".data", FileMode.Create);
+            BinaryFormatter bf = new BinaryFormatter();
             bf.Serialize(fileStream, sList);
             fileStream.Flush();
             fileStream.Close();
@@ -319,8 +322,17 @@ namespace Binance.Common.Tests
             return "";
         }
 
+        // 查询订单
+        static public async Task<string> QueryOrder(string symbol)
+        {
+            HttpMessageHandler loggingHandler = new BinanceLoggingHandler(logger: MyTools.logger);
+            HttpClient httpClient = new HttpClient(handler: loggingHandler);
+            var spotAccountTrade = new SpotAccountTrade(httpClient, FUTURE_BASE_URL, apiKey, apiSecret);
+            return await spotAccountTrade.MyFutureQueryOrder(symbol);
+            // Console.Read();
+        }
         // 市价单
-        static public async Task<string> TradeMarkte(string symbol, Side side, OrderType orderType, decimal quantity)
+        static public async Task<string> MarketTrade(string symbol, Side side, OrderType orderType, decimal quantity)
         {
             HttpMessageHandler loggingHandler = new BinanceLoggingHandler(logger: MyTools.logger);
             HttpClient httpClient = new HttpClient(handler: loggingHandler);
@@ -330,7 +342,7 @@ namespace Binance.Common.Tests
         }
 
         // 限价单
-        static public async Task<string> TradeLimit(string symbol, Side side, OrderType orderType, decimal quantity, decimal price)
+        static public async Task<string> LimitTrade(string symbol, Side side, OrderType orderType, decimal quantity, decimal price)
         {
             HttpMessageHandler loggingHandler = new BinanceLoggingHandler(logger: MyTools.logger);
             HttpClient httpClient = new HttpClient(handler: loggingHandler);
@@ -384,11 +396,10 @@ namespace Binance.Common.Tests
                 if (!klCache.ContainsKey(symbol))
                 {
                     // symbol = symbol + (MyTools.IsFuture ? "_future" : "");
-                    FileStream fileStream = new FileStream(dataDir + symbol + ".data", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                    FileStream fileStream = new FileStream(dataDir + symbol + ".data", FileMode.Open, FileAccess.Read);
                     BinaryFormatter bf = new BinaryFormatter();
                     var kList = bf.Deserialize(fileStream) as KlineList;
                     klCache.Add(symbol, kList);
-                    fileStream.Flush();
                     fileStream.Close();
                 }
             }
