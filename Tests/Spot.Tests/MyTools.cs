@@ -85,7 +85,7 @@ namespace Binance.Common.Tests
         }
 
 
-        static public async Task FetchMarketData(long startTime, string symbol, string type = "kline", int limit = 500)
+        static public async Task<JArray> FetchMarketData(long startTime, string symbol, string type = "kline", int limit = 500, bool writeFile = true)
         {
 
             var url = "https://api.binance.com";
@@ -130,37 +130,23 @@ namespace Binance.Common.Tests
                 var result = await market.MyFutureData(tag, Interval.FIVE_MINUTE, limit: limit, startTime: startTime, endTime: startTime + diffMS, typeAPI: typeAPI);
                 karray = JArray.Parse(result);
             }
-            var fileName = symbol + (type == "kline" ? "" : "_" + type);
-            using (StreamWriter sw = new StreamWriter(dataDir + fileName + ".txt", true))
+            if (writeFile)
             {
-                for (int i = karray.Count - 1; i >= 0; i--)
+
+                var fileName = symbol + (type == "kline" ? "" : "_" + type);
+                using (StreamWriter sw = new StreamWriter(dataDir + fileName + ".txt", true))
                 {
-                    var item = karray[i];
-                    sw.WriteLine(item.ToString().Replace("\r\n", "").Replace(" ", ""));
+                    for (int i = karray.Count - 1; i >= 0; i--)
+                    {
+                        var item = karray[i];
+                        sw.WriteLine(item.ToString().Replace("\r\n", "").Replace(" ", ""));
+                    }
                 }
             }
+            return karray;
         }
 
-        static void MergeIntoText(string symbol,JArray array)
-        {
 
-            // todo
-
-
-            // var fileName = symbol + (type == "kline" ? "" : "_" + type);
-            using (StreamReader sr = new StreamReader(dataDir + symbol + ".txt"))
-            {
-                
-            }
-            using (StreamWriter sw = new StreamWriter(dataDir + symbol + ".txt", true))
-            {
-                for (int i = array.Count - 1; i >= 0; i--)
-                {
-                    var item = array[i];
-                    sw.WriteLine(item.ToString().Replace("\r\n", "").Replace(" ", ""));
-                }
-            }
-        }
 
 
         // // 转化成可读内容
@@ -184,7 +170,7 @@ namespace Binance.Common.Tests
         //     sw.Close();
         // }
 
-        static public async Task RequestAllData(string symbol, string type = "kline")
+        static public async Task RequestLongData(string symbol, string type = "kline")
         {
             // request klines
             var fileName = symbol + (type == "kline" ? "" : "_" + type);
@@ -222,6 +208,7 @@ namespace Binance.Common.Tests
                 {
                     LogMsg("Error!", e.ToString());
                     startMS += diffMS;
+                    i--;
                 }
                 var waitTm = symbol.EndsWith("_F") ? 100 : 30;
                 Thread.Sleep(waitTm);
@@ -417,11 +404,11 @@ namespace Binance.Common.Tests
             Console.Read();
         }
 
-        static public KlineList LoadFileData(string symbol)
+        static public KlineList LoadFileData(string symbol, bool reload = false)
         {
             lock (klCache)
             {
-                if (!klCache.ContainsKey(symbol))
+                if (!klCache.ContainsKey(symbol) || reload)
                 {
                     // symbol = symbol + (MyTools.IsFuture ? "_future" : "");
                     FileStream fileStream = new FileStream(dataDir + symbol + ".data", FileMode.Open, FileAccess.Read);

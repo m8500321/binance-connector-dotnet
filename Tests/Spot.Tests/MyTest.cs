@@ -55,6 +55,7 @@ namespace Binance.Common.Tests
         static string apiKey = "KV12suVvH4WM6JNb3bO7Ev1j6h2pVp2DCxNUJcEn7ACLxbv2Uj50i9zX01r1a8K2";
         static string apiSecret = "rXDNV41PN9Lce56Kmd7lJFN5BFXhzXr0Vr4zeSlZR2SmGwj7QICfaFIcExOhnjqB";
 
+        // public static List<string> symbolAll = new List<string> { "BTCUSDT_F" };
         public static List<string> symbolAll = new List<string> { "BTCUSDT_F", "ETHUSDT_F", "XRPUSDT_F", "BNBUSDT_F", "SOLUSDT_F", "ADAUSDT_F", "DOGEUSDT_F", "DOTUSDT_F" };
         static List<string> runSymbols = new List<string> { "BTCUSDT_F", "ETHUSDT_F", "XRPUSDT_F", "BNBUSDT_F", "SOLUSDT_F", "ADAUSDT_F", "DOGEUSDT_F", "DOTUSDT_F" };
 
@@ -96,13 +97,13 @@ namespace Binance.Common.Tests
 
 
 
-            await MyOrderMgr.StartRobot();
+            // await MyTradeMgr.StartRobot();
             // await MyOrderMgr.UpdateMyOrders(runSymbols);
 
             foreach (var name in runSymbols)
             {
                 // await MyTools.QueryOrder(name);
-                // await MyTools.RequestData(name, "kline");
+                // await MyTools.RequestLongData(name, "kline");
                 // // 大户账户数多空比
                 // await MyTools.RequestData(name, "topLongShortAccountRatio");
                 // // 大户持仓量多空比
@@ -116,7 +117,7 @@ namespace Binance.Common.Tests
                 var t = Task<string>.Run(async () =>
                     {
                         // MyTools.Data2Readable(name);
-                        // MyTools.Text2Serializable(name);
+                        MyTools.Text2Serializable(name);
 
                         // thisobj.AnalyseTime(name);
                         // thisobj.AnalysePrevKline(name);
@@ -441,7 +442,6 @@ namespace Binance.Common.Tests
             var allKlineArray = allKlines.ToArray();
             var thisKline = MyTools.LoadFileData(symbol).myKlines;
             var thisKlineArray = thisKline.ToArray();
-
             var start = 1000;
             var len = 1000;
             for (int i = start; i < start + len; i = i + 2)

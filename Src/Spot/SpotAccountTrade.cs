@@ -201,7 +201,7 @@ namespace Binance.Spot
         private const string FUTURE_OPEN_ORDER = "/fapi/v1/openOrders"; // 挂单
         private const string FUTURE_QUERY_ORDER = "/fapi/v1/allOrders"; // 订单
         private const string FUTURE_QUERY_TRADES = "/fapi/v1/userTrades"; // 历史成交
-        public async Task<string> MyFutureQueryOrder(string symbol, int limit = 10)
+        public async Task<string> MyFutureQueryOrder(string symbol, int limit = 50)
         {
             var result = await this.SendSignedAsync<string>(
                 FUTURE_QUERY_ORDER,
