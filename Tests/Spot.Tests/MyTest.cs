@@ -52,8 +52,8 @@ namespace Binance.Common.Tests
         // static public string dataDir = "";
         static private DateTime UTC_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         readonly int HOOUR8_MS = 8 * 60 * 60 * 1000;
-        static string apiKey = "KV12suVvH4WM6JNb3bO7Ev1j6h2pVp2DCxNUJcEn7ACLxbv2Uj50i9zX01r1a8K2";
-        static string apiSecret = "rXDNV41PN9Lce56Kmd7lJFN5BFXhzXr0Vr4zeSlZR2SmGwj7QICfaFIcExOhnjqB";
+        static string apiKey = "KV112suVvH4WM6JNb3bO7Ev1j6h2pVp2DCxNUJcEn7ACLxbv2Uj50i9zX01r1a8K2";
+        static string apiSecret = "rX1DNV41PN9Lce56Kmd7lJFN5BFXhzXr0Vr4zeSlZR2SmGwj7QICfaFIcExOhnjqB";
 
         static List<string> symbolAll = new List<string> { "BTCUSDT_F", "ETHUSDT_F", "XRPUSDT_F", "BNBUSDT_F", "SOLUSDT_F", "ADAUSDT_F", "DOGEUSDT_F", "DOTUSDT_F" };
         static List<string> runSymbols = new List<string> { "BTCUSDT_F", "ETHUSDT_F", "XRPUSDT_F", "BNBUSDT_F", "SOLUSDT_F", "ADAUSDT_F", "DOGEUSDT_F", "DOTUSDT_F" };
