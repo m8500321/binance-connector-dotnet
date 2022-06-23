@@ -169,6 +169,7 @@ namespace Binance.Common
                     {
 
                         string jsonString = await responseContent.ReadAsStringAsync();
+                        LogMsg($"Response content: <<<-\n{jsonString}\n");
 
                         if (typeof(T) == typeof(string))
                         {
@@ -201,6 +202,7 @@ namespace Binance.Common
 
                         BinanceHttpException httpException = null;
                         string contentString = await responseContent.ReadAsStringAsync();
+                        LogMsg($"Response content: <<<-\n{contentString}\n");
                         int statusCode = (int)response.StatusCode;
                         if (400 <= statusCode && statusCode < 500)
                         {

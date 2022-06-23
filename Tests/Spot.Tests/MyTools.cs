@@ -85,7 +85,7 @@ namespace Binance.Common.Tests
         }
 
 
-        static public async Task KlineCandlestickData_Response(long startTime, string symbol, string type = "kline")
+        static public async Task FetchMarketData(long startTime, string symbol, string type = "kline", int limit = 500)
         {
 
             var url = "https://api.binance.com";
@@ -94,8 +94,6 @@ namespace Binance.Common.Tests
                 url = "https://fapi.binance.com";
             }
             Market market = new Market(baseUrl: url, apiKey: apiKey, apiSecret: apiSecret);
-
-
             market.TEST_CONNECTIVITY = "/api/v3/ping";
             market.CHECK_SERVER_TIME = "/api/v3/time";
             market.EXCHANGE_INFORMATION = "/api/v3/exchangeInfo";
@@ -118,29 +116,52 @@ namespace Binance.Common.Tests
             JArray karray = null;
             if (type == "kline")
             {
-                var result = await market.KlineCandlestickData(tag, Interval.FIVE_MINUTE, limit: 1000, startTime: startTime);
+                var result = await market.KlineCandlestickData(tag, Interval.FIVE_MINUTE, limit: limit, startTime: startTime);
+                // var result = await market.KlineCandlestickData(tag, Interval.ONE_MINUTE, limit: 5);
                 karray = JArray.Parse(result);
             }
             else
             {
                 string typeAPI = "/futures/data/" + type;
-                var count = 500;
+                // var count = 500;
                 var msPerMin = 60 * 1000;
                 var intervalMin = 5;
-                var diffMS = intervalMin * msPerMin * count;
-                var result = await market.MyFutureData(tag, Interval.FIVE_MINUTE, limit: count, startTime: startTime, endTime: startTime + diffMS, typeAPI: typeAPI);
+                var diffMS = intervalMin * msPerMin * limit;
+                var result = await market.MyFutureData(tag, Interval.FIVE_MINUTE, limit: limit, startTime: startTime, endTime: startTime + diffMS, typeAPI: typeAPI);
                 karray = JArray.Parse(result);
             }
             var fileName = symbol + (type == "kline" ? "" : "_" + type);
             using (StreamWriter sw = new StreamWriter(dataDir + fileName + ".txt", true))
             {
-                for (int i = 0; i < karray.Count; i++)
+                for (int i = karray.Count - 1; i >= 0; i--)
                 {
-                    var item = karray[karray.Count - i - 1];
+                    var item = karray[i];
                     sw.WriteLine(item.ToString().Replace("\r\n", "").Replace(" ", ""));
                 }
             }
         }
+
+        static void MergeIntoText(string symbol,JArray array)
+        {
+
+            // todo
+
+
+            // var fileName = symbol + (type == "kline" ? "" : "_" + type);
+            using (StreamReader sr = new StreamReader(dataDir + symbol + ".txt"))
+            {
+                
+            }
+            using (StreamWriter sw = new StreamWriter(dataDir + symbol + ".txt", true))
+            {
+                for (int i = array.Count - 1; i >= 0; i--)
+                {
+                    var item = array[i];
+                    sw.WriteLine(item.ToString().Replace("\r\n", "").Replace(" ", ""));
+                }
+            }
+        }
+
 
         // // 转化成可读内容
         // // [1644546000000,"42886.02000000","42902.96000000","42817.93000000","42897.75000000","141.19340000",1644546299999,"6049947.10973040",3257,"66.40442000","2845337.65305600","0"]
@@ -163,7 +184,7 @@ namespace Binance.Common.Tests
         //     sw.Close();
         // }
 
-        static public async Task RequestData(string symbol, string type = "kline")
+        static public async Task RequestAllData(string symbol, string type = "kline")
         {
             // request klines
             var fileName = symbol + (type == "kline" ? "" : "_" + type);
@@ -195,7 +216,7 @@ namespace Binance.Common.Tests
                 // LogMsg(UTC_START.AddMilliseconds(startMS).ToString());
                 try
                 {
-                    await KlineCandlestickData_Response(startMS, symbol, type);
+                    await FetchMarketData(startMS, symbol, type, type == "kline" ? 1000 : 500);
                 }
                 catch (Exception e)
                 {
@@ -325,6 +346,7 @@ namespace Binance.Common.Tests
         // 查询订单
         static public async Task<string> QueryOrder(string symbol)
         {
+            symbol = symbol.Replace("_F", "");
             HttpMessageHandler loggingHandler = new BinanceLoggingHandler(logger: MyTools.logger);
             HttpClient httpClient = new HttpClient(handler: loggingHandler);
             var spotAccountTrade = new SpotAccountTrade(httpClient, FUTURE_BASE_URL, apiKey, apiSecret);
@@ -332,22 +354,28 @@ namespace Binance.Common.Tests
             // Console.Read();
         }
         // 市价单
-        static public async Task<string> MarketTrade(string symbol, Side side, OrderType orderType, decimal quantity)
+        static public async Task<string> MarketTrade(string symbol, bool isOpen, Side side, decimal quantity)
         {
+            symbol = symbol.Replace("_F", "");
             HttpMessageHandler loggingHandler = new BinanceLoggingHandler(logger: MyTools.logger);
             HttpClient httpClient = new HttpClient(handler: loggingHandler);
             var spotAccountTrade = new SpotAccountTrade(httpClient, FUTURE_BASE_URL, apiKey, apiSecret);
-            return await spotAccountTrade.MyFutureNewOrder(symbol, side, orderType, quantity: quantity);
+            var myID = isOpen ? "OPEN_" : "CLOSE_";
+            myID += (DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() % 10000000);
+            return await spotAccountTrade.MyFutureNewOrder(symbol, side, OrderType.MARKET, quantity: quantity, newClientOrderId: myID, reduceOnly: !isOpen);
             // Console.Read();
         }
 
         // 限价单
-        static public async Task<string> LimitTrade(string symbol, Side side, OrderType orderType, decimal quantity, decimal price)
+        static public async Task<string> LimitTrade(string symbol, bool isOpen, Side side, decimal quantity, decimal price)
         {
+            symbol = symbol.Replace("_F", "");
             HttpMessageHandler loggingHandler = new BinanceLoggingHandler(logger: MyTools.logger);
             HttpClient httpClient = new HttpClient(handler: loggingHandler);
             var spotAccountTrade = new SpotAccountTrade(httpClient, FUTURE_BASE_URL, apiKey, apiSecret);
-            return await spotAccountTrade.MyFutureNewOrder(symbol, side, orderType, quantity: quantity, price: price, timeInForce: TimeInForce.GTC);
+            var myID = isOpen ? "OPEN_" : "CLOSE_";
+            myID += (DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() % 10000000);
+            return await spotAccountTrade.MyFutureNewOrder(symbol, side, OrderType.LIMIT, quantity: quantity, price: price, timeInForce: TimeInForce.GTC, newClientOrderId: myID, reduceOnly: !isOpen);
             // Console.Read();
         }
 

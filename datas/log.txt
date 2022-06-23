@@ -1,509 +1,4 @@
-:"0","storage":"0","isLegalMoney":false,"trading":false,"networkList":[{"network":"ETH","coin":"INS","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":false,"withdrawEnable":false,"depositDesc":"Sorry, but this asset has been delisted. We cannot process deposits for this asset.","withdrawDesc":"The withdrawal has been permanently suspended as the contract had been frozen. Please reach out to project team for assistance.","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"52","withdrawMin":"104","withdrawMax":"9999999999.99999999","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"POND","depositAllEnable":true,"withdrawAllEnable":true,"name":"Marlin","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"BSC","coin":"POND","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"The network you have selected is BSC. Please ensure that the withdrawal address supports the Binance Smart Chain network. You will lose your assets if the chosen platform does not support retrievals.","name":"BNB Smart Chain (BEP20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"10","withdrawMin":"20","withdrawMax":"10000000000","minConfirm":15,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5},{"network":"ETH","coin":"POND","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"820","withdrawMin":"1640","withdrawMax":"9900000000","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"JPY","depositAllEnable":false,"withdrawAllEnable":false,"name":"Japanese Yen","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":true,"trading":false,"networkList":[{"network":"FIAT_MONEY","coin":"JPY","withdrawIntegerMultiple":"0","isDefault":true,"depositEnable":false,"withdrawEnable":false,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"","name":"FIAT","resetAddressStatus":false,"addressRegex":"","addressRule":"","memoRegex":"","withdrawFee":"0","withdrawMin":"0","withdrawMax":"9999999999.99999999","minConfirm":0,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"LINA","depositAllEnable":true,"withdrawAllEnable":true,"name":"Linear","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"BSC","coin":"LINA","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"The name of this asset is Linear. Please ensure you are depositing Linear (LINA) tokens under the contract address ending in 4b878.","specialWithdrawTips":"The network you have selected is BSC. Please ensure that the withdrawal address supports the Binance Smart Chain network. You will lose your assets if the chosen platform does not support retrievals.","name":"BNB Smart Chain (BEP20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"12","withdrawMin":"24","withdrawMax":"10000000000","minConfirm":15,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5},{"network":"ETH","coin":"LINA","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"The name of this asset is Linear. Please ensure you are depositing Linear (LINA) tokens under the contract address ending in 11937.","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"1552","withdrawMin":"3104","withdrawMax":"9999999999.99999999","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"XLM","depositAllEnable":true,"withdrawAllEnable":true,"name":"Stellar Lumens","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"BSC","coin":"XLM","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"The network you have selected is BSC. Please ensure that the withdrawal address supports the Binance Smart Chain network. You will lose your assets if the chosen platform does not support retrievals.","name":"BNB Smart Chain (BEP20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"0.96","withdrawMin":"1.92","withdrawMax":"10000000000","minConfirm":15,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5},{"network":"XLM","coin":"XLM","withdrawIntegerMultiple":"0.0000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"Please enter both MEMO and Address data, which are required to deposit XLM to your Binance account.","name":"Stellar Lumens","resetAddressStatus":false,"addressRegex":"^G[A-D]{1}[A-Z2-7]{54}$","addressRule":"","memoRegex":"^[0-9A-Za-z-]{1,28}$","withdrawFee":"0.02","withdrawMin":"40","withdrawMax":"10000000000","minConfirm":1,"unLockConfirm":0,"sameAddress":true,"estimatedArrivalTime":5}]},{"coin":"LINK","depositAllEnable":true,"withdrawAllEnable":true,"name":"ChainLink","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"BSC","coin":"LINK","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"The network you have selected is BSC. Please ensure that the withdrawal address supports the Binance Smart Chain network. You will lose your assets if the chosen platform does not support retrievals.","name":"BNB Smart Chain (BEP20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"0.016","withdrawMin":"0.032","withdrawMax":"9999999999.99999999","minConfirm":15,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5},{"network":"BNB","coin":"LINK","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"Both a MEMO and an Address are required to successfully deposit your LINK BEP2 tokens to Binance.","specialWithdrawTips":"","name":"BNB Beacon Chain (BEP2)","resetAddressStatus":false,"addressRegex":"^(bnb1)[0-9a-z]{38}$","addressRule":"","memoRegex":"^[0-9A-Za-z\\-_]{1,120}$","withdrawFee":"0.002","withdrawMin":"0.01","withdrawMax":"10000000000","minConfirm":1,"unLockConfirm":0,"sameAddress":true,"estimatedArrivalTime":5},{"network":"ETH","coin":"LINK","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"1.3","withdrawMin":"2.6","withdrawMax":"10000000000","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"QTUM","depositAllEnable":true,"withdrawAllEnable":true,"name":"Qtum","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"QTUM","coin":"QTUM","withdrawIntegerMultiple":"0.000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","name":"Qtum","resetAddressStatus":false,"addressRegex":"^[Q|M][A-Za-z0-9]{33}$","addressRule":"","memoRegex":"","withdrawFee":"0.01","withdrawMin":"0.02","withdrawMax":"10000000000","minConfirm":24,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":15}]},{"coin":"FILDOWN","depositAllEnable":false,"withdrawAllEnable":false,"name":"FILDOWN","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":false,"networkList":[{"network":"ETF","coin":"FILDOWN","withdrawIntegerMultiple":"0","isDefault":true,"depositEnable":false,"withdrawEnable":false,"depositDesc":"Not support deposit","withdrawDesc":"Not support withdrawal","specialTips":"","name":"ETF","resetAddressStatus":false,"addressRegex":"","addressRule":"","memoRegex":"","withdrawFee":"0","withdrawMin":"0","withdrawMax":"9999999999.99999999","minConfirm":0,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"SUPER","depositAllEnable":true,"withdrawAllEnable":true,"name":"SuperFarm","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"BSC","coin":"SUPER","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"The network you have selected is BSC. Please ensure that the withdrawal address supports the Binance Smart Chain network. You will lose your assets if the chosen platform does not support retrievals.","name":"BNB Smart Chain (BEP20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"0.78","withdrawMin":"1.56","withdrawMax":"10000000000","minConfirm":15,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5},{"network":"ETH","coin":"SUPER","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"95","withdrawMin":"190","withdrawMax":"10000000000","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"UFT","depositAllEnable":true,"withdrawAllEnable":true,"name":"UniLend","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"BSC","coin":"UFT","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"The network you have selected is BSC. Please ensure that the withdrawal address supports the Binance Smart Chain network. You will lose your assets if the chosen platform does not support retrievals.","name":"BNB Smart Chain (BEP20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"0.72","withdrawMin":"1.44","withdrawMax":"9999999999.99999999","minConfirm":15,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5},{"network":"ETH","coin":"UFT","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"59","withdrawMin":"118","withdrawMax":"9900000000","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"POLS","depositAllEnable":true,"withdrawAllEnable":true,"name":"Polkastarter","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"BSC","coin":"POLS","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"The network you have selected is BSC. Please ensure that the withdrawal address supports the Binance Smart Chain network. You will lose your assets if the chosen platform does not support retrievals.","name":"BNB Smart Chain (BEP20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"0.23","withdrawMin":"0.46","withdrawMax":"10000000000","minConfirm":15,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5},{"network":"ETH","coin":"POLS","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"19","withdrawMin":"38","withdrawMax":"10000000000","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"KSM","depositAllEnable":true,"withdrawAllEnable":true,"name":"Kusama","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"BSC","coin":"KSM","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"The network you have selected is BSC. Please ensure that the withdrawal address supports the Binance Smart Chain network. You will lose your assets if the chosen platform does not support retrievals.","name":"BNB Smart Chain (BEP20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"0.002","withdrawMin":"0.004","withdrawMax":"10000000000","minConfirm":15,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5},{"network":"KSM","coin":"KSM","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"Please note that we currently do not support deposits for staking rewards.","name":"Kusama","resetAddressStatus":false,"addressRegex":"^[0-9a-z-A-Z]{44,50}$","addressRule":"","memoRegex":"","withdrawFee":"0.01","withdrawMin":"1.01","withdrawMax":"50000","depositDust":"0.001","minConfirm":3,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"LUN","depositAllEnable":false,"withdrawAllEnable":false,"name":"Lunyr","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":false,"networkList":[{"network":"ETH","coin":"LUN","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":false,"withdrawEnable":false,"depositDesc":"Sorry, we do not support deposits for this asset.","withdrawDesc":"We have disabled withdrawals as our systems are currently undergoing maintenance.","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"0","withdrawMin":"3.08","withdrawMax":"10000000000","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"FIL","depositAllEnable":true,"withdrawAllEnable":true,"name":"Filecoin","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"BSC","coin":"FIL","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"The network you have selected is BSC. Please ensure that the withdrawal address supports the Binance Smart Chain network. You will lose your assets if the chosen platform does not support retrievals.","name":"BNB Smart Chain (BEP20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"0.019","withdrawMin":"0.038","withdrawMax":"10000000000","minConfirm":15,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5},{"network":"FIL","coin":"FIL","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"","name":"Filecoin","resetAddressStatus":false,"addressRegex":"^[a-z0-9]{41}$|[a-z0-9]{86}$","addressRule":"","memoRegex":"","withdrawFee":"0.001","withdrawMin":"0.01","withdrawMax":"10000000000","minConfirm":60,"unLockConfirm":910,"sameAddress":false,"estimatedArrivalTime":40},{"network":"BNB","coin":"FIL","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"Both a MEMO and an Address are required to successfully deposit your BEP2 tokens to Binance.","name":"BNB Beacon Chain (BEP2)","resetAddressStatus":false,"addressRegex":"^(bnb1)[0-9a-z]{38}$","addressRule":"","memoRegex":"^[0-9A-Za-z\\-_]{1,120}$","withdrawFee":"0.019","withdrawMin":"0.038","withdrawMax":"10000000000","minConfirm":1,"unLockConfirm":0,"sameAddress":true,"estimatedArrivalTime":5},{"network":"ETH","coin":"FIL","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":false,"depositDesc":"","withdrawDesc":"We have disabled withdrawals as our systems are currently undergoing maintenance.","specialTips":"This deposit address supports ERC20 BFIL tokens. Please ensure you are depositing ERC20 BFIL tokens under the contract address ending in 822B7.","specialWithdrawTips":"The network you have selected is ERC20-BFIL. Please ensure that the withdrawal address supports the ERC20-BFIL. You will potentially lose your assets if the chosen platform does not support refund of wrongfully deposited assets.","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"1.53","withdrawMin":"3.06","withdrawMax":"10000000000","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"POLY","depositAllEnable":true,"withdrawAllEnable":true,"name":"Polymath","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"ETH","coin":"POLY","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"47","withdrawMin":"94","withdrawMax":"10000000000","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"STMX","depositAllEnable":true,"withdrawAllEnable":true,"name":"StormX","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"ETH","coin":"STMX","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"1317","withdrawMin":"2634","withdrawMax":"10000000000","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"RNDR","depositAllEnable":true,"withdrawAllEnable":true,"name":"Render Token","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"ETH","coin":"RNDR","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"20","withdrawMin":"40","withdrawMax":"10000000000","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"BAL","depositAllEnable":true,"withdrawAllEnable":true,"name":"Balancer","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"BSC","coin":"BAL","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"The network you have selected is BSC. Please ensure that the withdrawal address supports the Binance Smart Chain network. You will lose your assets if the chosen platform does not support retrievals.","name":"BNB Smart Chain (BEP20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"0.024","withdrawMin":"0.048","withdrawMax":"9999999999.99999999","minConfirm":15,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5},{"network":"ETH","coin":"BAL","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"1.94","withdrawMin":"3.88","withdrawMax":"9999999999.99999999","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"FIO","depositAllEnable":true,"withdrawAllEnable":true,"name":"FIO Protocol","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"FIO","coin":"FIO","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","name":"FIO Protocol","resetAddressStatus":false,"addressRegex":"^(FIO)[a-z-A-Z0-9]{50}$","addressRule":"","memoRegex":"","withdrawFee":"5","withdrawMin":"10","withdrawMax":"10000000000","minConfirm":50,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":10}]},{"coin":"GALA","depositAllEnable":true,"withdrawAllEnable":true,"name":"Gala","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"BSC","coin":"GALA","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"The network you have selected is BSC. Please ensure that the withdrawal address supports the Binance Smart Chain network. You will lose your assets if the chosen platform does not support retrievals.","name":"BNB Smart Chain (BEP20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"1.96","withdrawMin":"3.92","withdrawMax":"9999999","depositDust":"0.00000001","minConfirm":15,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5},{"network":"ETH","coin":"GALA","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"160","withdrawMin":"320","withdrawMax":"9999999","depositDust":"0.00000001","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"VIB","depositAllEnable":true,"withdrawAllEnable":true,"name":"Viberate","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"ETH","coin":"VIB","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"762","withdrawMin":"1524","withdrawMax":"9999999999.99999999","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"FIS","depositAllEnable":true,"withdrawAllEnable":true,"name":"Stafi","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"BSC","coin":"FIS","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"The network you have selected is BSC. Please ensure that the withdrawal address supports the Binance Smart Chain network. You will lose your assets if the chosen platform does not support retrievals.","name":"BNB Smart Chain (BEP20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"0.34","withdrawMin":"0.68","withdrawMax":"10000000000","minConfirm":15,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5},{"network":"ETH","coin":"FIS","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"27","withdrawMin":"54","withdrawMax":"9900000000","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"BAR","depositAllEnable":true,"withdrawAllEnable":true,"name":"FC Barcelona Fan Token BAR","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"CHZ","coin":"BAR","withdrawIntegerMultiple":"1","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"Only CHZ network withdrawals supported. Withdrawing to an address that is not a CHZ network address will result the LOSS of your funds.","name":"Chiliz Chain (CHZ)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"0","withdrawMin":"1","withdrawMax":"9999999","minConfirm":15,"unLockConfirm":30,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"RAD","depositAllEnable":true,"withdrawAllEnable":true,"name":"Radicle","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"ETH","coin":"RAD","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"5.91","withdrawMin":"11","withdrawMax":"10000000000","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"BAT","depositAllEnable":true,"withdrawAllEnable":true,"name":"Basic Attention Token","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"BSC","coin":"BAT","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"The name of this asset is Basic Attention Token. Please ensure you are depositing Basic Attention Token (BAT) tokens under the contract address ending in 9766e.","specialWithdrawTips":"The network you have selected is BSC. Please ensure that the withdrawal address supports the Binance Smart Chain network. You will lose your assets if the chosen platform does not support retrievals.","name":"BNB Smart Chain (BEP20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"0.3","withdrawMin":"0.6","withdrawMax":"10000000000","minConfirm":15,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5},{"network":"BNB","coin":"BAT","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"The name of this asset is Basic Attention Token (BAT). Both a MEMO and an Address are required to successfully deposit your BEP2 tokens to Binance.","name":"BNB Beacon Chain (BEP2)","resetAddressStatus":false,"addressRegex":"^(bnb1)[0-9a-z]{38}$","addressRule":"","memoRegex":"^[0-9A-Za-z\\-_]{1,120}$","withdrawFee":"0.3","withdrawMin":"0.6","withdrawMax":"10000000000","minConfirm":1,"unLockConfirm":0,"sameAddress":true,"estimatedArrivalTime":5},{"network":"ETH","coin":"BAT","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"The name of this asset is Basic Attention Token. Please ensure you are depositing Basic Attention Token (BAT) tokens under the contract address ending in 887ef.","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"24","withdrawMin":"48","withdrawMax":"10000000000","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"VRAB","depositAllEnable":true,"withdrawAllEnable":true,"name":"Verasity","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":false,"networkList":[{"network":"BNB","coin":"VRAB","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"Please enter both MEMO and Address data, which are required to deposit VRAB BEP2 tokens to your Binance account.","name":"BNB Beacon Chain (BEP2)","resetAddressStatus":false,"addressRegex":"^(bnb1)[0-9a-z]{38}$","addressRule":"","memoRegex":"^[0-9A-Za-z\\-_]{1,120}$","withdrawFee":"100","withdrawMin":"200","withdrawMax":"9999999999.99999999","minConfirm":1,"unLockConfirm":0,"sameAddress":true,"estimatedArrivalTime":5},{"network":"ETH","coin":"VRAB","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":false,"withdrawEnable":true,"depositDesc":"Sorry, we do not support deposits for this asset.","withdrawDesc":"","specialTips":"","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"300","withdrawMin":"600","withdrawMax":"10000000000","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"AKRO","depositAllEnable":true,"withdrawAllEnable":true,"name":"Akropolis","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"ETH","coin":"AKRO","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"1889","withdrawMin":"3778","withdrawMax":"10000000000","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"NZD","depositAllEnable":false,"withdrawAllEnable":false,"name":"New Zealand Dollar","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":true,"trading":false,"networkList":[{"network":"FIAT_MONEY","coin":"NZD","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":false,"withdrawEnable":false,"depositDesc":"We have disabled deposits as our systems are currently undergoing maintenance.","withdrawDesc":"We have disabled withdrawals as our systems are currently undergoing maintenance.","specialTips":"","specialWithdrawTips":"","name":"FIAT","resetAddressStatus":false,"addressRegex":"","addressRule":"","memoRegex":"","withdrawFee":"0","withdrawMin":"0","withdrawMax":"9999999999.99999999","minConfirm":0,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"MOVR","depositAllEnable":true,"withdrawAllEnable":true,"name":"Moonriver","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"MOVR","coin":"MOVR","withdrawIntegerMultiple":"0.00001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"","name":"Moonriver","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"0.003","withdrawMin":"0.006","withdrawMax":"9999999","minConfirm":30,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":10}]},{"coin":"XMR","depositAllEnable":true,"withdrawAllEnable":true,"name":"Monero","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"XMR","coin":"XMR","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","name":"Monero","resetAddressStatus":false,"addressRegex":"^[48][a-zA-Z|\\d]{94}([a-zA-Z|\\d]{11})?$","addressRule":"","memoRegex":"","withdrawFee":"0.0001","withdrawMin":"0.0002","withdrawMax":"10000000000","minConfirm":3,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":15}]},{"coin":"1INCHDOWN","depositAllEnable":false,"withdrawAllEnable":false,"name":"1INCHDOWN","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":false,"networkList":[{"network":"ETF","coin":"1INCHDOWN","withdrawIntegerMultiple":"0","isDefault":true,"depositEnable":false,"withdrawEnable":false,"depositDesc":"Not support deposit","withdrawDesc":"Not support withdrawal","specialTips":"","name":"ETF","resetAddressStatus":false,"addressRegex":"","addressRule":"","memoRegex":"","withdrawFee":"0","withdrawMin":"0","withdrawMax":"9999999999.99999999","minConfirm":0,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]},{"coin":"COTI","depositAllEnable":true,"withdrawAllEnable":true,"name":"COTI","free":"0","locked":"0","freeze":"0","withdrawing":"0","ipoing":"0","ipoable":"0","storage":"0","isLegalMoney":false,"trading":true,"networkList":[{"network":"BSC","coin":"COTI","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","specialWithdrawTips":"The network you have selected is BSC. Please ensure that the withdrawal address supports the Binance Smart Chain network. You will lose your assets if the chosen platform does not support retrievals.","name":"BNB Smart Chain (BEP20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"1.2","withdrawMin":"2.4","withdrawMax":"10000000000","minConfirm":15,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5},{"network":"BNB","coin":"COTI","withdrawIntegerMultiple":"0.00000001","isDefault":false,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"Please enter both MEMO and Address data, which are required to deposit COTI BEP2 tokens to your Binance account.","name":"BNB Beacon Chain (BEP2)","resetAddressStatus":false,"addressRegex":"^(bnb1)[0-9a-z]{38}$","addressRule":"","memoRegex":"^[0-9A-Za-z\\-_]{1,120}$","withdrawFee":"1.2","withdrawMin":"2.4","withdrawMax":"10000000000","minConfirm":1,"unLockConfirm":0,"sameAddress":true,"estimatedArrivalTime":5},{"network":"ETH","coin":"COTI","withdrawIntegerMultiple":"0.00000001","isDefault":true,"depositEnable":true,"withdrawEnable":true,"depositDesc":"","withdrawDesc":"","specialTips":"","name":"Ethereum (ERC20)","resetAddressStatus":false,"addressRegex":"^(0x)[0-9A-Fa-f]{40}$","addressRule":"","memoRegex":"","withdrawFee":"98","withdrawMin":"196","withdrawMax":"10000000000","minConfirm":12,"unLockConfirm":0,"sameAddress":false,"estimatedArrivalTime":5}]}]
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 108
-
-
-[2]:22 6 22 周三 19:20:52
-
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 144
-
-
-[3]:22 6 22 周三 19:20:55
-End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:04.2129445
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 149
-
-
-[0]:22 6 22 周三 19:27:02
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 81
-
-
-[1]:22 6 22 周三 19:27:02
-[{"asset":"USDT","free":"682.834798","locked":"0","freeze":"0","withdrawing":"0","btcValuation":"0"}]
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 112
-
-
-[2]:22 6 22 周三 19:27:02
-
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 148
-
-
-[3]:22 6 22 周三 19:27:04
-End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:02.5694388
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 153
-
-
-[0]:22 6 22 周三 19:27:42
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 81
-
-
-[0]:22 6 22 周三 19:33:29
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:22 6 22 周三 19:37:37
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:22 6 22 周三 19:39:42
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:22 6 22 周三 19:49:32
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:22 6 22 周三 19:49:57
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 20:58:44
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 21:06:13
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 21:09:25
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 21:11:09
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[1]:2022/6/22 21:11:10
-[{"asset":"USDT","free":"682.834798","locked":"0","freeze":"0","withdrawing":"0","btcValuation":"0"}]
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 96
-
-
-[2]:2022/6/22 21:11:10
-
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 136
-
-
-[3]:2022/6/22 21:11:10
-End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:01.2871375
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 141
-
-
-[0]:2022/6/22 21:13:20
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 21:14:19
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 21:15:24
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 21:18:08
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 21:19:59
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 21:22:37
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 21:23:41
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[1]:2022/6/22 21:23:41
-
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
-
-
-[2]:2022/6/22 21:23:41
-End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:00.6829868
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 148
-
-
-[0]:2022/6/22 21:26:11
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 21:26:25
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[1]:2022/6/22 21:26:26
-
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
-
-
-[2]:2022/6/22 21:26:26
-End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:00.6714142
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 148
-
-
-[0]:2022/6/22 21:57:53
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 21:58:29
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 22:00:08
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[1]:2022/6/22 22:02:50
-
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 154
-
-
-[2]:2022/6/22 22:02:50
-End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:02:42.8491467
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 159
-
-
-[0]:2022/6/22 22:19:51
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 22:24:37
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 22:36:35
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 22:39:57
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 22:49:04
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[1]:2022/6/22 22:49:07
-
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 139
-
-
-[2]:2022/6/22 22:49:07
-End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:03.4830348
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 144
-
-
-[0]:2022/6/22 22:49:29
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 22:50:13
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 22:54:10
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 78
-
-
-[0]:2022/6/22 22:56:04
-Start~~~~~~~~~~~~~~~~~~~~~~~~~~
-   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 79
-
-
-[1]:2022/6/22 22:56:09
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 120
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 44
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.KlineCandlestickData_Response(Int64 startTime, String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 122
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-
-
-[2]:2022/6/22 22:56:15
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 120
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 44
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.KlineCandlestickData_Response(Int64 startTime, String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 122
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-
-
-[3]:2022/6/22 22:56:30
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 120
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 44
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.KlineCandlestickData_Response(Int64 startTime, String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 122
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-
-
-[4]:2022/6/22 22:56:35
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 120
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 44
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.KlineCandlestickData_Response(Int64 startTime, String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 122
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-
-
-[5]:2022/6/22 22:56:44
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 120
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 44
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.KlineCandlestickData_Response(Int64 startTime, String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 122
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-
-
-[6]:2022/6/22 22:56:46
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 120
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 44
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.KlineCandlestickData_Response(Int64 startTime, String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 122
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-
-
-[7]:2022/6/22 22:57:08
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 120
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 44
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.KlineCandlestickData_Response(Int64 startTime, String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 122
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-
-
-[8]:2022/6/22 22:57:11
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 120
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 44
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.KlineCandlestickData_Response(Int64 startTime, String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 122
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-
-
-[9]:2022/6/22 22:57:14
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 120
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 44
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.KlineCandlestickData_Response(Int64 startTime, String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 122
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-
-
-[10]:2022/6/22 22:57:22
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 120
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 44
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.KlineCandlestickData_Response(Int64 startTime, String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 122
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-
-
-[11]:2022/6/22 22:57:28
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 120
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 44
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.KlineCandlestickData_Response(Int64 startTime, String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 122
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
-   at Binance.Common.Tests.MyTools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
+Tools.RequestData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 199
 
 
 [12]:2022/6/22 22:57:37
@@ -1606,3 +1101,1140 @@ Start~~~~~~~~~~~~~~~~~~~~~~~~~~
 [0]:2022/6/23 0:15:29
 Start~~~~~~~~~~~~~~~~~~~~~~~~~~
    at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[0]:22 6 23 周四 10:08:01
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 10:08:04
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[2]:22 6 23 周四 10:08:04
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:02.7099168
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 10:11:13
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[0]:22 6 23 周四 10:16:05
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[0]:22 6 23 周四 10:17:50
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[0]:22 6 23 周四 10:21:46
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[0]:22 6 23 周四 10:23:39
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 10:23:43
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[2]:22 6 23 周四 10:23:43
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:03.6849876
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 10:36:29
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[0]:22 6 23 周四 10:37:13
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 10:37:17
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[2]:22 6 23 周四 10:37:17
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:03.8345544
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 11:25:01
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 11:25:05
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[2]:22 6 23 周四 11:25:05
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:03.5826852
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 11:25:22
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 11:25:26
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[2]:22 6 23 周四 11:25:26
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:03.9494224
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 11:26:32
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 11:26:35
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[2]:22 6 23 周四 11:26:36
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:03.6971036
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 11:26:53
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[0]:22 6 23 周四 11:27:49
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[0]:22 6 23 周四 13:16:41
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 13:16:45
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[2]:22 6 23 周四 13:16:45
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:04.3190207
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 13:18:42
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 13:18:45
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[2]:22 6 23 周四 13:18:45
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:03.7915879
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 13:21:06
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[0]:22 6 23 周四 13:21:31
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 13:21:35
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[2]:22 6 23 周四 13:21:35
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:03.9105836
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 13:23:43
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 13:23:46
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[2]:22 6 23 周四 13:23:46
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:03.7958477
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 13:26:05
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[0]:22 6 23 周四 13:34:45
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 13:34:55
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[2]:22 6 23 周四 13:34:55
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:10.1416202
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 13:35:23
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[0]:22 6 23 周四 13:35:45
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 13:35:48
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[2]:22 6 23 周四 13:35:48
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:03.7076348
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 13:37:28
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 13:57:26
+DOTUSDT_F
+样本数:5000 总匹配量:10 百分比:0.001
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0, need_count:100, RATE_DELTA:0.02, E_DELTA:0.0007, 
+优质数:2	正确率:100%	交易期望:0.161%
+
+1258 num:50 	2-涨幅:0.08% 胜率:67.37% 	True:0.245%
+1258 num:50 	3-涨幅:0.09% 胜率:66.396% 	True:0.076%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 645
+
+
+[2]:22 6 23 周四 13:57:28
+ETHUSDT_F
+样本数:5000 总匹配量:66 百分比:0.0066
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0, need_count:100, RATE_DELTA:0.02, E_DELTA:0.0007, 
+优质数:9	正确率:44.444%	交易期望:0.197%
+
+1764 num:83 	3-涨幅:-0.073% 胜率:40.264% 	True:-0.309%
+1860 num:52 	2-涨幅:-0.07% 胜率:30.463% 	False:0.12%
+1860 num:52 	3-涨幅:-0.088% 胜率:43.86% 	False:0.107%
+3018 num:50 	2-涨幅:-0.123% 胜率:44.983% 	False:0.135%
+3018 num:50 	3-涨幅:-0.17% 胜率:40.134% 	False:0.167%
+3262 num:82 	2-涨幅:0.1% 胜率:59.362% 	True:0.86%
+3262 num:82 	3-涨幅:0.098% 胜率:54.733% 	True:1.082%
+3818 num:52 	2-涨幅:0.071% 胜率:64.869% 	False:-0.042%
+8710 num:73 	2-涨幅:-0.087% 胜率:45.411% 	True:-0.087%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 645
+
+
+[3]:22 6 23 周四 13:57:28
+XRPUSDT_F
+样本数:5000 总匹配量:53 百分比:0.0053
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0, need_count:100, RATE_DELTA:0.02, E_DELTA:0.0007, 
+优质数:6	正确率:83.333%	交易期望:0.188%
+
+8702 num:54 	3-涨幅:0.072% 胜率:66.154% 	False:-0.034%
+10334 num:56 	3-涨幅:0.085% 胜率:70.728% 	True:0.037%
+10374 num:52 	3-涨幅:0.084% 胜率:74.715% 	True:0.181%
+10708 num:51 	3-涨幅:0.075% 胜率:67.182% 	True:0.143%
+10756 num:64 	2-涨幅:-0.076% 胜率:40.05% 	True:-0.659%
+10756 num:64 	3-涨幅:-0.085% 胜率:37.046% 	True:-0.144%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 645
+
+
+[4]:22 6 23 周四 13:57:31
+SOLUSDT_F
+样本数:5000 总匹配量:12 百分比:0.0012
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0, need_count:100, RATE_DELTA:0.02, E_DELTA:0.0007, 
+优质数:3	正确率:100%	交易期望:0.559%
+
+7772 num:52 	2-涨幅:0.072% 胜率:65.102% 	True:0.297%
+7772 num:52 	3-涨幅:0.092% 胜率:62.285% 	True:1.095%
+9358 num:56 	3-涨幅:-0.073% 胜率:43.304% 	True:-0.285%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 645
+
+
+[5]:22 6 23 周四 13:57:36
+DOGEUSDT_F
+样本数:5000 总匹配量:56 百分比:0.0056
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0, need_count:100, RATE_DELTA:0.02, E_DELTA:0.0007, 
+优质数:6	正确率:66.667%	交易期望:0.841%
+
+2308 num:73 	1-涨幅:-0.075% 胜率:40.248% 	True:-2.144%
+2308 num:73 	2-涨幅:-0.108% 胜率:46.11% 	True:-2.792%
+8468 num:56 	3-涨幅:0.07% 胜率:68.499% 	False:-0.142%
+8772 num:101 	2-涨幅:-0.078% 胜率:42.219% 	True:-0.241%
+10148 num:77 	3-涨幅:0.095% 胜率:55.128% 	True:0.175%
+10516 num:67 	3-涨幅:-0.105% 胜率:34.574% 	False:0.161%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 645
+
+
+[6]:22 6 23 周四 13:57:39
+BNBUSDT_F
+样本数:5000 总匹配量:173 百分比:0.0173
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0, need_count:100, RATE_DELTA:0.02, E_DELTA:0.0007, 
+优质数:12	正确率:58.333%	交易期望:0.418%
+
+1494 num:74 	3-涨幅:0.071% 胜率:63.929% 	True:0.577%
+1510 num:60 	3-涨幅:-0.08% 胜率:35.926% 	True:-0.536%
+1874 num:78 	2-涨幅:0.079% 胜率:55.703% 	True:1.538%
+2134 num:58 	3-涨幅:-0.089% 胜率:34.113% 	False:0.033%
+3588 num:72 	2-涨幅:-0.1% 胜率:46.73% 	False:0.111%
+3618 num:50 	3-涨幅:0.087% 胜率:69.318% 	True:0.695%
+3730 num:59 	3-涨幅:0.097% 胜率:61.505% 	True:1.911%
+3986 num:60 	2-涨幅:-0.089% 胜率:36.415% 	False:0.091%
+3986 num:60 	3-涨幅:-0.092% 胜率:35.014% 	False:0.013%
+5310 num:88 	3-涨幅:0.074% 胜率:52.117% 	True:0.053%
+8890 num:53 	3-涨幅:-0.109% 胜率:35.942% 	False:0.482%
+8912 num:71 	3-涨幅:-0.078% 胜率:47.892% 	True:-0.43%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 645
+
+
+[7]:22 6 23 周四 13:57:42
+ADAUSDT_F
+样本数:5000 总匹配量:26 百分比:0.0026
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0, need_count:100, RATE_DELTA:0.02, E_DELTA:0.0007, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 645
+
+
+[8]:22 6 23 周四 13:57:42
+BTCUSDT_F
+样本数:5000 总匹配量:908 百分比:0.0908
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0, need_count:100, RATE_DELTA:0.02, E_DELTA:0.0007, 
+优质数:48	正确率:56.25%	交易期望:0.207%
+
+1266 num:65 	3-涨幅:0.079% 胜率:62.547% 	False:-0.252%
+1394 num:96 	2-涨幅:0.079% 胜率:56.507% 	False:-0.07%
+1394 num:96 	3-涨幅:0.083% 胜率:57.449% 	False:-0.033%
+1700 num:53 	3-涨幅:0.079% 胜率:64.856% 	True:0.308%
+1824 num:56 	3-涨幅:-0.077% 胜率:42.55% 	True:-0.097%
+2082 num:52 	3-涨幅:0.077% 胜率:68.285% 	True:0.544%
+2246 num:63 	2-涨幅:-0.072% 胜率:30.396% 	True:-0.071%
+2246 num:63 	3-涨幅:-0.095% 胜率:30.907% 	True:-0.034%
+2264 num:65 	3-涨幅:0.087% 胜率:62.172% 	True:0.255%
+2278 num:64 	3-涨幅:-0.077% 胜率:38.077% 	True:-0.229%
+2356 num:90 	3-涨幅:-0.072% 胜率:38.114% 	False:0.055%
+2394 num:56 	3-涨幅:0.109% 胜率:61.679% 	True:0.354%
+2438 num:52 	3-涨幅:-0.099% 胜率:34.633% 	False:0.028%
+2472 num:55 	3-涨幅:-0.096% 胜率:31.976% 	True:-0.064%
+2494 num:54 	3-涨幅:0.11% 胜率:60.547% 	True:0.226%
+2600 num:52 	3-涨幅:0.075% 胜率:56.997% 	False:-0.266%
+2670 num:56 	3-涨幅:0.074% 胜率:62.407% 	False:-0.005%
+3200 num:56 	3-涨幅:0.071% 胜率:58.499% 	True:0.141%
+3386 num:62 	3-涨幅:0.091% 胜率:64.237% 	True:0.335%
+3442 num:57 	2-涨幅:0.086% 胜率:63.328% 	False:-0.069%
+3442 num:57 	3-涨幅:0.099% 胜率:67.334% 	False:-0.224%
+3488 num:73 	3-涨幅:-0.102% 胜率:40.223% 	True:-0.125%
+3594 num:105 	3-涨幅:0.076% 胜率:60.124% 	False:-0.182%
+3606 num:67 	2-涨幅:0.079% 胜率:64.355% 	True:0.007%
+3654 num:75 	3-涨幅:0.073% 胜率:56.229% 	False:-0.046%
+4194 num:59 	3-涨幅:-0.07% 胜率:43.892% 	False:0.055%
+4244 num:58 	3-涨幅:-0.083% 胜率:43.6% 	False:0.242%
+4326 num:52 	3-涨幅:-0.09% 胜率:33.388% 	True:-0.133%
+4338 num:63 	3-涨幅:0.145% 胜率:62.918% 	True:0.087%
+4700 num:101 	3-涨幅:-0.094% 胜率:36.859% 	True:-0.229%
+4882 num:87 	3-涨幅:-0.081% 胜率:45.061% 	False:0.046%
+4994 num:53 	2-涨幅:0.072% 胜率:54.46% 	True:0.154%
+4994 num:53 	3-涨幅:0.077% 胜率:59.937% 	False:-0.025%
+5214 num:50 	3-涨幅:-0.095% 胜率:32.399% 	True:-0.085%
+5256 num:57 	3-涨幅:0.071% 胜率:66.109% 	True:0.152%
+5472 num:61 	3-涨幅:-0.078% 胜率:44.371% 	False:0.179%
+6244 num:51 	2-涨幅:-0.081% 胜率:40.681% 	True:-0.389%
+6244 num:51 	3-涨幅:-0.128% 胜率:40.032% 	True:-0.6%
+6294 num:58 	2-涨幅:0.071% 胜率:52.807% 	False:-0.189%
+6294 num:58 	3-涨幅:0.089% 胜率:55.842% 	False:-0.084%
+6614 num:51 	3-涨幅:0.075% 胜率:61.244% 	False:-0.044%
+6658 num:78 	3-涨幅:-0.072% 胜率:44.136% 	True:-0.464%
+7722 num:60 	3-涨幅:-0.071% 胜率:41.841% 	False:0.013%
+9244 num:54 	1-涨幅:-0.108% 胜率:37.327% 	True:-1.643%
+9244 num:54 	2-涨幅:-0.165% 胜率:38.095% 	True:-2.655%
+9244 num:54 	3-涨幅:-0.147% 胜率:31.336% 	True:-2.651%
+10940 num:50 	3-涨幅:-0.089% 胜率:39.094% 	True:-0.195%
+10976 num:77 	3-涨幅:0.076% 胜率:53.135% 	False:-0.193%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 645
+
+
+[9]:22 6 23 周四 13:57:42
+BTCUSDT_F:  	27:21  56.25% 	e:0.207%
+ETHUSDT_F:  	4:5  44.444% 	e:0.197%
+XRPUSDT_F:  	5:1  83.333% 	e:0.188%
+BNBUSDT_F:  	7:5  58.333% 	e:0.418%
+SOLUSDT_F:  	3:0  100% 	e:0.559%
+ADAUSDT_F:  	0:0  NaN% 	e:NaN%
+DOGEUSDT_F:  	4:2  66.667% 	e:0.841%
+DOTUSDT_F:  	2:0  100% 	e:0.161%
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[10]:22 6 23 周四 13:57:42
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:20:14.4506456
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 14:32:47
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 14:35:03
+XRPUSDT_F
+样本数:500 总匹配量:1 百分比:0.001
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 645
+
+
+[2]:22 6 23 周四 14:35:04
+DOGEUSDT_F
+样本数:500 总匹配量:56 百分比:0.056
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:7	正确率:71.429%	交易期望:0.17%
+
+1074 num:76 	2-涨幅:0.11% 胜率:65.265% 	False:-0.457%
+1246 num:202 	3-涨幅:-0.071% 胜率:44.079% 	True:-0.636%
+1640 num:124 	3-涨幅:0.077% 胜率:65.004% 	True:0.202%
+1700 num:148 	3-涨幅:-0.086% 胜率:45.107% 	False:0.268%
+1728 num:184 	3-涨幅:0.08% 胜率:57.951% 	True:0.045%
+1740 num:76 	2-涨幅:0.117% 胜率:52.345% 	True:0.59%
+1966 num:94 	3-涨幅:-0.093% 胜率:42.373% 	True:-0.442%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 645
+
+
+[3]:22 6 23 周四 14:35:05
+DOTUSDT_F
+样本数:500 总匹配量:87 百分比:0.087
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:8	正确率:75%	交易期望:0.227%
+
+1002 num:151 	2-涨幅:-0.085% 胜率:40.369% 	False:0.019%
+1002 num:151 	3-涨幅:-0.083% 胜率:41.753% 	True:-0.116%
+1120 num:101 	3-涨幅:-0.093% 胜率:46.934% 	True:-0.536%
+1128 num:79 	3-涨幅:0.072% 胜率:55.093% 	True:0.21%
+1178 num:108 	3-涨幅:0.085% 胜率:61.383% 	True:0.48%
+1180 num:80 	3-涨幅:0.074% 胜率:54.505% 	True:0.422%
+1304 num:86 	3-涨幅:0.097% 胜率:61.708% 	False:-0.215%
+1490 num:93 	3-涨幅:0.07% 胜率:60.557% 	True:0.287%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 645
+
+
+[4]:22 6 23 周四 14:35:05
+SOLUSDT_F
+样本数:500 总匹配量:100 百分比:0.1
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:13	正确率:30.769%	交易期望:-0.023%
+
+1138 num:91 	2-涨幅:0.077% 胜率:57.264% 	False:-0.819%
+1138 num:91 	3-涨幅:0.097% 胜率:59.34% 	False:-0.712%
+1560 num:218 	3-涨幅:-0.071% 胜率:42.627% 	False:0.429%
+1688 num:76 	1-涨幅:-0.122% 胜率:30.208% 	False:0.377%
+1688 num:76 	2-涨幅:-0.16% 胜率:32.523% 	False:0.32%
+1688 num:76 	3-涨幅:-0.071% 胜率:41.782% 	False:0.852%
+1690 num:184 	3-涨幅:0.089% 胜率:56.403% 	True:1.224%
+1770 num:143 	3-涨幅:-0.117% 胜率:42.428% 	True:-1.176%
+1914 num:84 	2-涨幅:0.079% 胜率:58.94% 	False:-0.091%
+1942 num:82 	1-涨幅:0.077% 胜率:72.69% 	False:-0.014%
+1944 num:172 	2-涨幅:-0.108% 胜率:46.89% 	True:-0.517%
+1944 num:172 	3-涨幅:-0.122% 胜率:45.335% 	True:-0.51%
+1952 num:154 	1-涨幅:-0.071% 胜率:43.493% 	False:0.114%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 645
+
+
+[5]:22 6 23 周四 14:35:06
+ADAUSDT_F
+样本数:500 总匹配量:93 百分比:0.093
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:16	正确率:75%	交易期望:0.247%
+
+1018 num:98 	2-涨幅:-0.086% 胜率:40.984% 	True:-0.013%
+1040 num:161 	3-涨幅:-0.114% 胜率:45.31% 	True:-0.134%
+1132 num:82 	1-涨幅:0.074% 胜率:58.458% 	True:0.2%
+1132 num:82 	2-涨幅:0.161% 胜率:66.166% 	True:0.606%
+1132 num:82 	3-涨幅:0.205% 胜率:62.062% 	True:0.494%
+1146 num:119 	2-涨幅:0.094% 胜率:60.918% 	False:-0.432%
+1250 num:80 	3-涨幅:0.088% 胜率:56.481% 	True:0.409%
+1264 num:128 	3-涨幅:-0.09% 胜率:43.721% 	True:-0.041%
+1490 num:89 	3-涨幅:0.072% 胜率:56.493% 	False:-0.237%
+1558 num:76 	2-涨幅:0.103% 胜率:60.337% 	True:0.745%
+1558 num:76 	3-涨幅:0.13% 胜率:59.888% 	True:1.016%
+1852 num:82 	2-涨幅:-0.074% 胜率:47.432% 	True:-0.089%
+1910 num:99 	3-涨幅:-0.075% 胜率:46.043% 	True:-0.583%
+1914 num:119 	2-涨幅:0.094% 胜率:61.935% 	False:-0.18%
+1914 num:119 	3-涨幅:0.111% 胜率:56.78% 	False:-0.135%
+1930 num:180 	2-涨幅:-0.097% 胜率:48.192% 	True:-0.608%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 645
+
+
+[6]:22 6 23 周四 14:35:07
+BNBUSDT_F
+样本数:500 总匹配量:206 百分比:0.206
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:8	正确率:37.5%	交易期望:0.146%
+
+1122 num:78 	3-涨幅:-0.075% 胜率:46.129% 	True:-0.957%
+1262 num:102 	3-涨幅:0.085% 胜率:63.891% 	False:-0.31%
+1486 num:124 	3-涨幅:0.076% 胜率:58.499% 	True:0.883%
+1554 num:136 	2-涨幅:-0.071% 胜率:35.858% 	False:0.013%
+1572 num:79 	2-涨幅:-0.087% 胜率:34.076% 	False:0.115%
+1572 num:79 	3-涨幅:-0.092% 胜率:43.541% 	False:0.282%
+1630 num:99 	1-涨幅:-0.083% 胜率:40.744% 	True:-0.084%
+1756 num:283 	3-涨幅:-0.072% 胜率:48.743% 	False:0.039%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 645
+
+
+[7]:22 6 23 周四 14:35:08
+ETHUSDT_F
+样本数:500 总匹配量:268 百分比:0.268
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:28	正确率:85.714%	交易期望:0.335%
+
+1018 num:104 	2-涨幅:0.078% 胜率:58.147% 	True:0.414%
+1020 num:148 	2-涨幅:-0.082% 胜率:38.908% 	True:-0.495%
+1020 num:148 	3-涨幅:-0.083% 胜率:36.322% 	True:-0.438%
+1030 num:98 	2-涨幅:0.073% 胜率:59.228% 	True:0.501%
+1062 num:112 	3-涨幅:0.084% 胜率:63.099% 	True:0.261%
+1078 num:78 	1-涨幅:-0.076% 胜率:45.955% 	True:-0.2%
+1078 num:78 	2-涨幅:-0.12% 胜率:43.82% 	True:-0.184%
+1078 num:78 	3-涨幅:-0.119% 胜率:47.303% 	False:0.08%
+1082 num:82 	1-涨幅:0.086% 胜率:59.711% 	False:-0.097%
+1082 num:82 	3-涨幅:0.133% 胜率:65.083% 	True:0.125%
+1124 num:98 	2-涨幅:-0.081% 胜率:44.534% 	True:-0.377%
+1124 num:98 	3-涨幅:-0.115% 胜率:38.799% 	True:-0.281%
+1204 num:276 	3-涨幅:-0.088% 胜率:44.028% 	True:-0.357%
+1208 num:76 	2-涨幅:-0.08% 胜率:44.759% 	True:-0.555%
+1208 num:76 	3-涨幅:-0.102% 胜率:42.767% 	True:-0.848%
+1386 num:77 	1-涨幅:-0.079% 胜率:46.171% 	True:-0.056%
+1386 num:77 	3-涨幅:-0.112% 胜率:47.046% 	True:-0.47%
+1402 num:94 	3-涨幅:0.07% 胜率:52.507% 	True:0.091%
+1436 num:96 	3-涨幅:0.074% 胜率:62.321% 	True:0.102%
+1470 num:223 	3-涨幅:0.071% 胜率:52.721% 	True:1.52%
+1534 num:131 	3-涨幅:0.075% 胜率:57.922% 	True:0.495%
+1636 num:100 	2-涨幅:0.097% 胜率:58.887% 	False:-0.197%
+1636 num:100 	3-涨幅:0.101% 胜率:61.877% 	True:0.106%
+1732 num:124 	3-涨幅:0.082% 胜率:53.754% 	True:1.047%
+1792 num:77 	3-涨幅:0.097% 胜率:63.959% 	True:0.317%
+1834 num:141 	2-涨幅:0.075% 胜率:57.473% 	True:0.045%
+1874 num:160 	3-涨幅:0.116% 胜率:58.82% 	True:0.582%
+1894 num:135 	3-涨幅:0.093% 胜率:62.675% 	False:-0.109%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 645
+
+
+[8]:22 6 23 周四 14:35:09
+BTCUSDT_F
+样本数:500 总匹配量:420 百分比:0.42
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:5	正确率:80%	交易期望:0.273%
+
+1078 num:159 	2-涨幅:-0.108% 胜率:45.533% 	True:-0.504%
+1202 num:187 	3-涨幅:0.081% 胜率:57.408% 	True:0.188%
+1392 num:110 	3-涨幅:0.077% 胜率:60.113% 	True:0.324%
+1412 num:145 	3-涨幅:-0.087% 胜率:46.102% 	True:-0.464%
+1438 num:153 	3-涨幅:-0.092% 胜率:40.487% 	False:0.117%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 645
+
+
+[9]:22 6 23 周四 14:35:09
+BTCUSDT_F:  	4:1  80% 	e:0.273%
+ETHUSDT_F:  	24:4  85.714% 	e:0.335%
+XRPUSDT_F:  	0:0  NaN% 	e:NaN%
+BNBUSDT_F:  	3:5  37.5% 	e:0.146%
+SOLUSDT_F:  	4:9  30.769% 	e:-0.023%
+ADAUSDT_F:  	12:4  75% 	e:0.247%
+DOGEUSDT_F:  	5:2  71.429% 	e:0.17%
+DOTUSDT_F:  	6:2  75% 	e:0.227%
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[10]:22 6 23 周四 14:35:09
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:02:22.3527667
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 14:45:09
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 14:47:23
+XRPUSDT_F
+样本数:500 总匹配量:1 百分比:0.001
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[2]:22 6 23 周四 14:47:25
+DOGEUSDT_F
+样本数:500 总匹配量:56 百分比:0.056
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:3	正确率:33.333%	交易期望:-0.094%
+
+1074 num:76 	2-涨幅:0.11% 胜率:65.265% 	False:-0.457%
+1700 num:148 	3-涨幅:-0.086% 胜率:45.107% 	False:0.268%
+1966 num:94 	3-涨幅:-0.093% 胜率:42.373% 	True:-0.442%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[3]:22 6 23 周四 14:47:26
+DOTUSDT_F
+样本数:500 总匹配量:87 百分比:0.087
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:3	正确率:66.667%	交易期望:0.313%
+
+1002 num:151 	2-涨幅:-0.085% 胜率:40.369% 	False:0.019%
+1120 num:101 	3-涨幅:-0.093% 胜率:46.934% 	True:-0.536%
+1180 num:80 	3-涨幅:0.074% 胜率:54.505% 	True:0.422%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[4]:22 6 23 周四 14:47:27
+ADAUSDT_F
+样本数:500 总匹配量:93 百分比:0.093
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:9	正确率:77.778%	交易期望:0.231%
+
+1018 num:98 	2-涨幅:-0.086% 胜率:40.984% 	True:-0.013%
+1040 num:161 	3-涨幅:-0.114% 胜率:45.31% 	True:-0.134%
+1132 num:82 	3-涨幅:0.205% 胜率:62.062% 	True:0.494%
+1264 num:128 	3-涨幅:-0.09% 胜率:43.721% 	True:-0.041%
+1558 num:76 	3-涨幅:0.13% 胜率:59.888% 	True:1.016%
+1852 num:82 	2-涨幅:-0.074% 胜率:47.432% 	True:-0.089%
+1914 num:119 	2-涨幅:0.094% 胜率:61.935% 	False:-0.18%
+1914 num:119 	3-涨幅:0.111% 胜率:56.78% 	False:-0.135%
+1930 num:180 	2-涨幅:-0.097% 胜率:48.192% 	True:-0.608%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[5]:22 6 23 周四 14:47:27
+SOLUSDT_F
+样本数:500 总匹配量:100 百分比:0.1
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:4	正确率:75%	交易期望:0.705%
+
+1690 num:184 	3-涨幅:0.089% 胜率:56.403% 	True:1.224%
+1770 num:143 	3-涨幅:-0.117% 胜率:42.428% 	True:-1.176%
+1914 num:84 	2-涨幅:0.079% 胜率:58.94% 	False:-0.091%
+1944 num:172 	3-涨幅:-0.122% 胜率:45.335% 	True:-0.51%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[6]:22 6 23 周四 14:47:28
+BNBUSDT_F
+样本数:500 总匹配量:206 百分比:0.206
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:2	正确率:50%	交易期望:0.384%
+
+1486 num:124 	3-涨幅:0.076% 胜率:58.499% 	True:0.883%
+1572 num:79 	2-涨幅:-0.087% 胜率:34.076% 	False:0.115%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[7]:22 6 23 周四 14:47:29
+ETHUSDT_F
+样本数:500 总匹配量:268 百分比:0.268
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:11	正确率:90.909%	交易期望:0.475%
+
+1020 num:148 	2-涨幅:-0.082% 胜率:38.908% 	True:-0.495%
+1020 num:148 	3-涨幅:-0.083% 胜率:36.322% 	True:-0.438%
+1030 num:98 	2-涨幅:0.073% 胜率:59.228% 	True:0.501%
+1078 num:78 	2-涨幅:-0.12% 胜率:43.82% 	True:-0.184%
+1124 num:98 	3-涨幅:-0.115% 胜率:38.799% 	True:-0.281%
+1208 num:76 	3-涨幅:-0.102% 胜率:42.767% 	True:-0.848%
+1386 num:77 	3-涨幅:-0.112% 胜率:47.046% 	True:-0.47%
+1436 num:96 	3-涨幅:0.074% 胜率:62.321% 	True:0.102%
+1470 num:223 	3-涨幅:0.071% 胜率:52.721% 	True:1.52%
+1534 num:131 	3-涨幅:0.075% 胜率:57.922% 	True:0.495%
+1894 num:135 	3-涨幅:0.093% 胜率:62.675% 	False:-0.109%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[8]:22 6 23 周四 14:47:30
+BTCUSDT_F
+样本数:500 总匹配量:420 百分比:0.42
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:3	正确率:66.667%	交易期望:0.284%
+
+1078 num:159 	2-涨幅:-0.108% 胜率:45.533% 	True:-0.504%
+1412 num:145 	3-涨幅:-0.087% 胜率:46.102% 	True:-0.464%
+1438 num:153 	3-涨幅:-0.092% 胜率:40.487% 	False:0.117%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[9]:22 6 23 周四 14:47:30
+BTCUSDT_F:  	2:1  66.667% 	e:0.284%
+ETHUSDT_F:  	10:1  90.909% 	e:0.475%
+XRPUSDT_F:  	0:0  NaN% 	e:NaN%
+BNBUSDT_F:  	1:1  50% 	e:0.384%
+SOLUSDT_F:  	3:1  75% 	e:0.705%
+ADAUSDT_F:  	7:2  77.778% 	e:0.231%
+DOGEUSDT_F:  	1:2  33.333% 	e:-0.094%
+DOTUSDT_F:  	2:1  66.667% 	e:0.313%
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[10]:22 6 23 周四 14:47:30
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:02:21.3340078
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 14:49:25
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 14:51:40
+XRPUSDT_F
+样本数:500 总匹配量:1 百分比:0.001
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[2]:22 6 23 周四 14:51:42
+SOLUSDT_F
+样本数:500 总匹配量:100 百分比:0.1
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:7	正确率:42.857%	交易期望:0.331%
+
+1688 num:76 	1-涨幅:-0.122% 胜率:30.208% 	False:0.377%
+1690 num:184 	3-涨幅:0.089% 胜率:56.403% 	True:1.224%
+1770 num:143 	3-涨幅:-0.117% 胜率:42.428% 	True:-1.176%
+1914 num:84 	2-涨幅:0.079% 胜率:58.94% 	False:-0.091%
+1942 num:82 	1-涨幅:0.077% 胜率:72.69% 	False:-0.014%
+1944 num:172 	3-涨幅:-0.122% 胜率:45.335% 	True:-0.51%
+1952 num:154 	1-涨幅:-0.071% 胜率:43.493% 	False:0.114%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[3]:22 6 23 周四 14:51:42
+ADAUSDT_F
+样本数:500 总匹配量:93 百分比:0.093
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:10	正确率:80%	交易期望:0.228%
+
+1018 num:98 	2-涨幅:-0.086% 胜率:40.984% 	True:-0.013%
+1040 num:161 	3-涨幅:-0.114% 胜率:45.31% 	True:-0.134%
+1132 num:82 	1-涨幅:0.074% 胜率:58.458% 	True:0.2%
+1132 num:82 	3-涨幅:0.205% 胜率:62.062% 	True:0.494%
+1264 num:128 	3-涨幅:-0.09% 胜率:43.721% 	True:-0.041%
+1558 num:76 	3-涨幅:0.13% 胜率:59.888% 	True:1.016%
+1852 num:82 	2-涨幅:-0.074% 胜率:47.432% 	True:-0.089%
+1914 num:119 	2-涨幅:0.094% 胜率:61.935% 	False:-0.18%
+1914 num:119 	3-涨幅:0.111% 胜率:56.78% 	False:-0.135%
+1930 num:180 	2-涨幅:-0.097% 胜率:48.192% 	True:-0.608%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[4]:22 6 23 周四 14:51:42
+DOTUSDT_F
+样本数:500 总匹配量:87 百分比:0.087
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:3	正确率:66.667%	交易期望:0.313%
+
+1002 num:151 	2-涨幅:-0.085% 胜率:40.369% 	False:0.019%
+1120 num:101 	3-涨幅:-0.093% 胜率:46.934% 	True:-0.536%
+1180 num:80 	3-涨幅:0.074% 胜率:54.505% 	True:0.422%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[5]:22 6 23 周四 14:51:43
+DOGEUSDT_F
+样本数:500 总匹配量:56 百分比:0.056
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:3	正确率:33.333%	交易期望:-0.094%
+
+1074 num:76 	2-涨幅:0.11% 胜率:65.265% 	False:-0.457%
+1700 num:148 	3-涨幅:-0.086% 胜率:45.107% 	False:0.268%
+1966 num:94 	3-涨幅:-0.093% 胜率:42.373% 	True:-0.442%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[6]:22 6 23 周四 14:51:45
+ETHUSDT_F
+样本数:500 总匹配量:268 百分比:0.268
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:14	正确率:85.714%	交易期望:0.385%
+
+1020 num:148 	2-涨幅:-0.082% 胜率:38.908% 	True:-0.495%
+1020 num:148 	3-涨幅:-0.083% 胜率:36.322% 	True:-0.438%
+1030 num:98 	2-涨幅:0.073% 胜率:59.228% 	True:0.501%
+1078 num:78 	1-涨幅:-0.076% 胜率:45.955% 	True:-0.2%
+1078 num:78 	2-涨幅:-0.12% 胜率:43.82% 	True:-0.184%
+1082 num:82 	1-涨幅:0.086% 胜率:59.711% 	False:-0.097%
+1124 num:98 	3-涨幅:-0.115% 胜率:38.799% 	True:-0.281%
+1208 num:76 	3-涨幅:-0.102% 胜率:42.767% 	True:-0.848%
+1386 num:77 	1-涨幅:-0.079% 胜率:46.171% 	True:-0.056%
+1386 num:77 	3-涨幅:-0.112% 胜率:47.046% 	True:-0.47%
+1436 num:96 	3-涨幅:0.074% 胜率:62.321% 	True:0.102%
+1470 num:223 	3-涨幅:0.071% 胜率:52.721% 	True:1.52%
+1534 num:131 	3-涨幅:0.075% 胜率:57.922% 	True:0.495%
+1894 num:135 	3-涨幅:0.093% 胜率:62.675% 	False:-0.109%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[7]:22 6 23 周四 14:51:46
+BNBUSDT_F
+样本数:500 总匹配量:206 百分比:0.206
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:3	正确率:66.667%	交易期望:0.284%
+
+1486 num:124 	3-涨幅:0.076% 胜率:58.499% 	True:0.883%
+1572 num:79 	2-涨幅:-0.087% 胜率:34.076% 	False:0.115%
+1630 num:99 	1-涨幅:-0.083% 胜率:40.744% 	True:-0.084%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[8]:22 6 23 周四 14:51:47
+BTCUSDT_F
+样本数:500 总匹配量:420 百分比:0.42
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:3	正确率:66.667%	交易期望:0.284%
+
+1078 num:159 	2-涨幅:-0.108% 胜率:45.533% 	True:-0.504%
+1412 num:145 	3-涨幅:-0.087% 胜率:46.102% 	True:-0.464%
+1438 num:153 	3-涨幅:-0.092% 胜率:40.487% 	False:0.117%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[9]:22 6 23 周四 14:51:47
+BTCUSDT_F:  	2:1  66.667% 	e:0.284%
+ETHUSDT_F:  	12:2  85.714% 	e:0.385%
+XRPUSDT_F:  	0:0  NaN% 	e:NaN%
+BNBUSDT_F:  	2:1  66.667% 	e:0.284%
+SOLUSDT_F:  	3:4  42.857% 	e:0.331%
+ADAUSDT_F:  	8:2  80% 	e:0.228%
+DOGEUSDT_F:  	1:2  33.333% 	e:-0.094%
+DOTUSDT_F:  	2:1  66.667% 	e:0.313%
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[10]:22 6 23 周四 14:51:49
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:02:23.4108818
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 14:54:29
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 14:56:28
+XRPUSDT_F
+样本数:500 总匹配量:1 百分比:0.001
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[2]:22 6 23 周四 14:56:30
+DOGEUSDT_F
+样本数:500 总匹配量:56 百分比:0.056
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:7	正确率:71.429%	交易期望:0.17%
+
+1074 num:76 	2-涨幅:0.11% 胜率:65.265% 	False:-0.457%
+1246 num:202 	3-涨幅:-0.071% 胜率:44.079% 	True:-0.636%
+1640 num:124 	3-涨幅:0.077% 胜率:65.004% 	True:0.202%
+1700 num:148 	3-涨幅:-0.086% 胜率:45.107% 	False:0.268%
+1728 num:184 	3-涨幅:0.08% 胜率:57.951% 	True:0.045%
+1740 num:76 	2-涨幅:0.117% 胜率:52.345% 	True:0.59%
+1966 num:94 	3-涨幅:-0.093% 胜率:42.373% 	True:-0.442%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[3]:22 6 23 周四 14:56:31
+ADAUSDT_F
+样本数:500 总匹配量:93 百分比:0.093
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:12	正确率:66.667%	交易期望:0.198%
+
+1018 num:98 	2-涨幅:-0.086% 胜率:40.984% 	True:-0.013%
+1132 num:82 	1-涨幅:0.074% 胜率:58.458% 	True:0.2%
+1132 num:82 	2-涨幅:0.161% 胜率:66.166% 	True:0.606%
+1132 num:82 	3-涨幅:0.205% 胜率:62.062% 	True:0.494%
+1146 num:119 	2-涨幅:0.094% 胜率:60.918% 	False:-0.432%
+1250 num:80 	3-涨幅:0.088% 胜率:56.481% 	True:0.409%
+1264 num:128 	3-涨幅:-0.09% 胜率:43.721% 	True:-0.041%
+1490 num:89 	3-涨幅:0.072% 胜率:56.493% 	False:-0.237%
+1558 num:76 	3-涨幅:0.13% 胜率:59.888% 	True:1.016%
+1910 num:99 	3-涨幅:-0.075% 胜率:46.043% 	True:-0.583%
+1914 num:119 	2-涨幅:0.094% 胜率:61.935% 	False:-0.18%
+1914 num:119 	3-涨幅:0.111% 胜率:56.78% 	False:-0.135%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[4]:22 6 23 周四 14:56:31
+SOLUSDT_F
+样本数:500 总匹配量:100 百分比:0.1
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:12	正确率:33.333%	交易期望:0.043%
+
+1138 num:91 	3-涨幅:0.097% 胜率:59.34% 	False:-0.712%
+1560 num:218 	3-涨幅:-0.071% 胜率:42.627% 	False:0.429%
+1688 num:76 	1-涨幅:-0.122% 胜率:30.208% 	False:0.377%
+1688 num:76 	2-涨幅:-0.16% 胜率:32.523% 	False:0.32%
+1688 num:76 	3-涨幅:-0.071% 胜率:41.782% 	False:0.852%
+1690 num:184 	3-涨幅:0.089% 胜率:56.403% 	True:1.224%
+1770 num:143 	3-涨幅:-0.117% 胜率:42.428% 	True:-1.176%
+1914 num:84 	2-涨幅:0.079% 胜率:58.94% 	False:-0.091%
+1942 num:82 	1-涨幅:0.077% 胜率:72.69% 	False:-0.014%
+1944 num:172 	2-涨幅:-0.108% 胜率:46.89% 	True:-0.517%
+1944 num:172 	3-涨幅:-0.122% 胜率:45.335% 	True:-0.51%
+1952 num:154 	1-涨幅:-0.071% 胜率:43.493% 	False:0.114%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[5]:22 6 23 周四 14:56:31
+DOTUSDT_F
+样本数:500 总匹配量:87 百分比:0.087
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:7	正确率:71.429%	交易期望:0.183%
+
+1002 num:151 	2-涨幅:-0.085% 胜率:40.369% 	False:0.019%
+1002 num:151 	3-涨幅:-0.083% 胜率:41.753% 	True:-0.116%
+1128 num:79 	3-涨幅:0.072% 胜率:55.093% 	True:0.21%
+1178 num:108 	3-涨幅:0.085% 胜率:61.383% 	True:0.48%
+1180 num:80 	3-涨幅:0.074% 胜率:54.505% 	True:0.422%
+1304 num:86 	3-涨幅:0.097% 胜率:61.708% 	False:-0.215%
+1490 num:93 	3-涨幅:0.07% 胜率:60.557% 	True:0.287%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[6]:22 6 23 周四 14:56:32
+BNBUSDT_F
+样本数:500 总匹配量:206 百分比:0.206
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:7	正确率:42.857%	交易期望:0.168%
+
+1122 num:78 	3-涨幅:-0.075% 胜率:46.129% 	True:-0.957%
+1262 num:102 	3-涨幅:0.085% 胜率:63.891% 	False:-0.31%
+1486 num:124 	3-涨幅:0.076% 胜率:58.499% 	True:0.883%
+1572 num:79 	2-涨幅:-0.087% 胜率:34.076% 	False:0.115%
+1572 num:79 	3-涨幅:-0.092% 胜率:43.541% 	False:0.282%
+1630 num:99 	1-涨幅:-0.083% 胜率:40.744% 	True:-0.084%
+1756 num:283 	3-涨幅:-0.072% 胜率:48.743% 	False:0.039%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[7]:22 6 23 周四 14:56:32
+ETHUSDT_F
+样本数:500 总匹配量:268 百分比:0.268
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:25	正确率:84%	交易期望:0.336%
+
+1020 num:148 	2-涨幅:-0.082% 胜率:38.908% 	True:-0.495%
+1020 num:148 	3-涨幅:-0.083% 胜率:36.322% 	True:-0.438%
+1030 num:98 	2-涨幅:0.073% 胜率:59.228% 	True:0.501%
+1062 num:112 	3-涨幅:0.084% 胜率:63.099% 	True:0.261%
+1078 num:78 	1-涨幅:-0.076% 胜率:45.955% 	True:-0.2%
+1078 num:78 	2-涨幅:-0.12% 胜率:43.82% 	True:-0.184%
+1078 num:78 	3-涨幅:-0.119% 胜率:47.303% 	False:0.08%
+1082 num:82 	1-涨幅:0.086% 胜率:59.711% 	False:-0.097%
+1082 num:82 	3-涨幅:0.133% 胜率:65.083% 	True:0.125%
+1124 num:98 	2-涨幅:-0.081% 胜率:44.534% 	True:-0.377%
+1124 num:98 	3-涨幅:-0.115% 胜率:38.799% 	True:-0.281%
+1204 num:276 	3-涨幅:-0.088% 胜率:44.028% 	True:-0.357%
+1208 num:76 	2-涨幅:-0.08% 胜率:44.759% 	True:-0.555%
+1208 num:76 	3-涨幅:-0.102% 胜率:42.767% 	True:-0.848%
+1386 num:77 	1-涨幅:-0.079% 胜率:46.171% 	True:-0.056%
+1436 num:96 	3-涨幅:0.074% 胜率:62.321% 	True:0.102%
+1470 num:223 	3-涨幅:0.071% 胜率:52.721% 	True:1.52%
+1534 num:131 	3-涨幅:0.075% 胜率:57.922% 	True:0.495%
+1636 num:100 	2-涨幅:0.097% 胜率:58.887% 	False:-0.197%
+1636 num:100 	3-涨幅:0.101% 胜率:61.877% 	True:0.106%
+1732 num:124 	3-涨幅:0.082% 胜率:53.754% 	True:1.047%
+1792 num:77 	3-涨幅:0.097% 胜率:63.959% 	True:0.317%
+1834 num:141 	2-涨幅:0.075% 胜率:57.473% 	True:0.045%
+1874 num:160 	3-涨幅:0.116% 胜率:58.82% 	True:0.582%
+1894 num:135 	3-涨幅:0.093% 胜率:62.675% 	False:-0.109%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[8]:22 6 23 周四 14:56:34
+BTCUSDT_F
+样本数:500 总匹配量:420 百分比:0.42
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.01, E_DELTA:0.0007, 
+优质数:3	正确率:100%	交易期望:0.339%
+
+1078 num:159 	2-涨幅:-0.108% 胜率:45.533% 	True:-0.504%
+1202 num:187 	3-涨幅:0.081% 胜率:57.408% 	True:0.188%
+1392 num:110 	3-涨幅:0.077% 胜率:60.113% 	True:0.324%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[9]:22 6 23 周四 14:56:34
+BTCUSDT_F:  	3:0  100% 	e:0.339%
+ETHUSDT_F:  	21:4  84% 	e:0.336%
+XRPUSDT_F:  	0:0  NaN% 	e:NaN%
+BNBUSDT_F:  	3:4  42.857% 	e:0.168%
+SOLUSDT_F:  	4:8  33.333% 	e:0.043%
+ADAUSDT_F:  	8:4  66.667% 	e:0.198%
+DOGEUSDT_F:  	5:2  71.429% 	e:0.17%
+DOTUSDT_F:  	5:2  71.429% 	e:0.183%
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 138
+
+
+[10]:22 6 23 周四 14:56:36
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:02:06.8104481
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[0]:22 6 23 周四 15:07:20
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[0]:22 6 23 周四 15:09:04
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[0]:22 6 23 周四 15:10:59
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[0]:22 6 23 周四 15:12:33
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[0]:22 6 23 周四 15:28:57
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 73
+
+
+[1]:22 6 23 周四 15:28:57
+22 6 23 周四 15:28:57
+   at Binance.Common.Tests.MyOrderMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyOrderMgr.cs:line 36
+
+
+[2]:22 6 23 周四 15:28:58
+22 6 23 周四 15:28:58
+   at Binance.Common.Tests.MyOrderMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyOrderMgr.cs:line 36
+
+
+[3]:22 6 23 周四 15:28:59
+22 6 23 周四 15:28:59
+   at Binance.Common.Tests.MyOrderMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyOrderMgr.cs:line 36
+
+
+[4]:22 6 23 周四 15:29:00
+22 6 23 周四 15:29:00
+   at Binance.Common.Tests.MyOrderMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyOrderMgr.cs:line 36
+
+
+[5]:22 6 23 周四 15:29:02
+22 6 23 周四 15:29:02
+   at Binance.Common.Tests.MyOrderMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyOrderMgr.cs:line 36
+
+
+[6]:22 6 23 周四 15:29:03
+22 6 23 周四 15:29:03
+   at Binance.Common.Tests.MyOrderMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyOrderMgr.cs:line 36
+
+
+[7]:22 6 23 周四 15:29:04
+22 6 23 周四 15:29:04
+   at Binance.Common.Tests.MyOrderMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyOrderMgr.cs:line 36
+
+
+[8]:22 6 23 周四 15:29:05
+22 6 23 周四 15:29:05
+   at Binance.Common.Tests.MyOrderMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyOrderMgr.cs:line 36
+
+
+[9]:22 6 23 周四 15:29:06
+22 6 23 周四 15:29:06
+   at Binance.Common.Tests.MyOrderMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyOrderMgr.cs:line 36

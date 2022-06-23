@@ -52,10 +52,10 @@ namespace Binance.Common.Tests
         // static public string dataDir = "";
         static private DateTime UTC_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         readonly int HOOUR8_MS = 8 * 60 * 60 * 1000;
-        static string apiKey = "KV112suVvH4WM6JNb3bO7Ev1j6h2pVp2DCxNUJcEn7ACLxbv2Uj50i9zX01r1a8K2";
-        static string apiSecret = "rX1DNV41PN9Lce56Kmd7lJFN5BFXhzXr0Vr4zeSlZR2SmGwj7QICfaFIcExOhnjqB";
+        static string apiKey = "KV12suVvH4WM6JNb3bO7Ev1j6h2pVp2DCxNUJcEn7ACLxbv2Uj50i9zX01r1a8K2";
+        static string apiSecret = "rXDNV41PN9Lce56Kmd7lJFN5BFXhzXr0Vr4zeSlZR2SmGwj7QICfaFIcExOhnjqB";
 
-        static List<string> symbolAll = new List<string> { "BTCUSDT_F", "ETHUSDT_F", "XRPUSDT_F", "BNBUSDT_F", "SOLUSDT_F", "ADAUSDT_F", "DOGEUSDT_F", "DOTUSDT_F" };
+        public static List<string> symbolAll = new List<string> { "BTCUSDT_F", "ETHUSDT_F", "XRPUSDT_F", "BNBUSDT_F", "SOLUSDT_F", "ADAUSDT_F", "DOGEUSDT_F", "DOTUSDT_F" };
         static List<string> runSymbols = new List<string> { "BTCUSDT_F", "ETHUSDT_F", "XRPUSDT_F", "BNBUSDT_F", "SOLUSDT_F", "ADAUSDT_F", "DOGEUSDT_F", "DOTUSDT_F" };
 
         static public async Task Main(string[] args)
@@ -74,17 +74,17 @@ namespace Binance.Common.Tests
             var thisobj = new MyTest();
             var tasks = new List<Task<string>>();
 
-            await MyTools.QueryOrder("BTCUSDT");
-            // await MyTools.MarketTrade("BTCUSDT", Side.BUY, OrderType.MARKET, 0.002m);
+            // await MyTools.QueryOrder("BTCUSDT");
+            // await MyTools.MarketTrade("BTCUSDT", false, Side.SELL, 0.001m);
             // await MyTools.QueryOrder("BTCUSDT");
             // Thread.Sleep(10 * 1000);
-            // await MyTools.MarketTrade("BTCUSDT", Side.SELL, OrderType.MARKET, 0.001m);
+            // await MyTools.MarketTrade("BTCUSDT", false,Side.SELL, 0.001m);
             // await MyTools.QueryOrder("BTCUSDT");
             // Thread.Sleep(10 * 1000);
-            // await MyTools.MarketTrade("BTCUSDT", Side.SELL, OrderType.MARKET, 0.001m);
+            // await MyTools.MarketTrade("BTCUSDT", false,Side.SELL, 0.001m);
             // await MyTools.QueryOrder("BTCUSDT");
 
-            Thread.Sleep(100 * 1000);
+            // Thread.Sleep(100 * 1000);
 
             // HttpMessageHandler loggingHandler = new BinanceLoggingHandler(logger: MyTools.logger);
             // Wallet wallet = new Wallet(
@@ -96,11 +96,12 @@ namespace Binance.Common.Tests
 
 
 
-
-
+            await MyOrderMgr.StartRobot();
+            // await MyOrderMgr.UpdateMyOrders(runSymbols);
 
             foreach (var name in runSymbols)
             {
+                // await MyTools.QueryOrder(name);
                 // await MyTools.RequestData(name, "kline");
                 // // 大户账户数多空比
                 // await MyTools.RequestData(name, "topLongShortAccountRatio");
@@ -594,6 +595,8 @@ namespace Binance.Common.Tests
                 var eList = floatPool.PopItem();
                 // 每阶段胜率
                 var winList = floatPool.PopItem();
+                var eLast = 0f;
+                var rateLast = 0f;
                 for (int idx = 0; idx < 3; idx++)
                 {
                     // 1-3每个增量
@@ -609,21 +612,27 @@ namespace Binance.Common.Tests
                     }
                     var eInc = sumInc / itemCount;
                     var winRate = incCount / itemCount;
-                    if ((eInc > filterArgs["E_DELTA"] && winRate > 0.5 + filterArgs["RATE_DELTA"]) || (eInc < -filterArgs["E_DELTA"] && winRate < 0.5 - filterArgs["RATE_DELTA"]))
+                    if (idx == 0 || (eLast * eInc > 0 && (rateLast - 0.5) * (winRate - 0.5) > 0))
                     {
-                        var nextInc = thisKlineArray[kvItem.Key].nextSumIncList[idx];
-                        output += $"{kvItem.Key} num:{itemCount} \t{idx + 1}-涨幅:{MyTools.ToPercent(eInc)} 胜率:{MyTools.ToPercent(winRate)} \t{nextInc * eInc > 0}:{MyTools.ToPercent(nextInc)}\n";
-                        usefulCount++;
-                        if (nextInc * eInc > 0)
+                        // 和前一条相同
+                        if ((eInc > filterArgs["E_DELTA"] && winRate > 0.5 + filterArgs["RATE_DELTA"]) || (eInc < -filterArgs["E_DELTA"] && winRate < 0.5 - filterArgs["RATE_DELTA"]))
                         {
-                            rightCount++;
-                            realSum += Math.Abs(nextInc);
-                        }
-                        else
-                        {
-                            realSum -= Math.Abs(nextInc);
+                            var nextInc = thisKlineArray[kvItem.Key].nextSumIncList[idx];
+                            output += $"{kvItem.Key} num:{itemCount} \t{idx + 1}-涨幅:{MyTools.ToPercent(eInc)} 胜率:{MyTools.ToPercent(winRate)} \t{nextInc * eInc > 0}:{MyTools.ToPercent(nextInc)}\n";
+                            usefulCount++;
+                            if (nextInc * eInc > 0)
+                            {
+                                rightCount++;
+                                realSum += Math.Abs(nextInc);
+                            }
+                            else
+                            {
+                                realSum -= Math.Abs(nextInc);
+                            }
                         }
                     }
+                    eLast = eInc;
+                    rateLast = winRate;
                 }
                 floatPool.PushItem(incList);
                 floatPool.PushItem(eList);

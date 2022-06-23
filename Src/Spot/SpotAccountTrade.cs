@@ -170,7 +170,7 @@ namespace Binance.Spot
         // }
         private const string FUTURE_NEW_ORDER = "/fapi/v1/order";
         // fapi/v1/leverage 调整杠杆
-        public async Task<string> MyFutureNewOrder(string symbol, Side side, OrderType type, TimeInForce? timeInForce = null, decimal? quantity = null, decimal? quoteOrderQty = null, decimal? price = null, string newClientOrderId = null, decimal? stopPrice = null, decimal? trailingDelta = null, decimal? icebergQty = null, NewOrderResponseType? newOrderRespType = null, long? recvWindow = null)
+        public async Task<string> MyFutureNewOrder(string symbol, Side side, OrderType type, TimeInForce? timeInForce = null, decimal? quantity = null, decimal? quoteOrderQty = null, decimal? price = null, string newClientOrderId = null, decimal? stopPrice = null, decimal? trailingDelta = null, decimal? icebergQty = null, NewOrderResponseType? newOrderRespType = null, long? recvWindow = null, bool? reduceOnly = null)
         {
             var result = await this.SendSignedAsync<string>(
                 FUTURE_NEW_ORDER,
@@ -184,7 +184,8 @@ namespace Binance.Spot
                     { "quantity", quantity },
                     // { "quoteOrderQty", quoteOrderQty },
                     // { "price", price },
-                    // { "newClientOrderId", newClientOrderId },
+                    { "newClientOrderId", newClientOrderId },
+                    { "reduceOnly", reduceOnly },
                     // { "stopPrice", stopPrice },
                     // { "trailingDelta", trailingDelta },
                     // { "icebergQty", icebergQty },
@@ -198,8 +199,9 @@ namespace Binance.Spot
 
         // 查询订单
         private const string FUTURE_OPEN_ORDER = "/fapi/v1/openOrders"; // 挂单
-        private const string FUTURE_QUERY_ORDER = "/fapi/v1/allOrders";
-        public async Task<string> MyFutureQueryOrder(string symbol)
+        private const string FUTURE_QUERY_ORDER = "/fapi/v1/allOrders"; // 订单
+        private const string FUTURE_QUERY_TRADES = "/fapi/v1/userTrades"; // 历史成交
+        public async Task<string> MyFutureQueryOrder(string symbol, int limit = 10)
         {
             var result = await this.SendSignedAsync<string>(
                 FUTURE_QUERY_ORDER,
@@ -207,6 +209,7 @@ namespace Binance.Spot
                 query: new Dictionary<string, object>
                 {
                     { "symbol", symbol },
+                    { "limit", limit },
                     { "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() },
                 });
 
