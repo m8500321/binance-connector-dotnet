@@ -117,7 +117,7 @@ namespace Binance.Common.Tests
                 var t = Task<string>.Run(async () =>
                     {
                         // MyTools.Data2Readable(name);
-                        MyTools.Text2Serializable(name);
+                        // MyTools.Text2Serializable(name);
 
                         // thisobj.AnalyseTime(name);
                         // thisobj.AnalysePrevKline(name);
@@ -125,7 +125,7 @@ namespace Binance.Common.Tests
                         // thisobj.AnalyseBigVolume(name);
                         // thisobj.AnalyseTend(name);
                         // thisobj.TestRandomInc(name);
-                        // return thisobj.AnalyseCurveMatch2(name);
+                        return thisobj.AnalyseCurveMatch2(name);
                         return "";
                     });
                 tasks.Add(t);
