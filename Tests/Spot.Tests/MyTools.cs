@@ -50,12 +50,12 @@ namespace Binance.Common.Tests
             return (long)(dateTime.ToUniversalTime() - UTC_START).TotalMilliseconds;
         }
         static int logCount = 0;
-        static public void LogMsg(params string[] msg)
+        static public void LogMsg(params object[] msg)
         {
             string output = "\n\n[" + (logCount++) + "]:" + DateTime.Now + "\n";
             foreach (var item in msg)
             {
-                output += (item + "\n");
+                output += (item.ToString() + "\n");
             }
             output += new StackTrace(new StackFrame(1, true)).ToString();
             logger.LogInformation(output);
@@ -340,6 +340,7 @@ namespace Binance.Common.Tests
             return await spotAccountTrade.MyFutureQueryOrder(symbol);
             // Console.Read();
         }
+
         // 市价单
         static public async Task<string> MarketTrade(string symbol, bool isOpen, Side side, decimal quantity)
         {

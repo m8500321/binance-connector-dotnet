@@ -97,7 +97,7 @@ namespace Binance.Common.Tests
 
 
 
-            // await MyTradeMgr.StartRobot();
+            await MyTradeMgr.StartRobot();
             // await MyOrderMgr.UpdateMyOrders(runSymbols);
 
             foreach (var name in runSymbols)
@@ -125,7 +125,7 @@ namespace Binance.Common.Tests
                         // thisobj.AnalyseBigVolume(name);
                         // thisobj.AnalyseTend(name);
                         // thisobj.TestRandomInc(name);
-                        return thisobj.AnalyseCurveMatch2(name);
+                        // return thisobj.AnalyseCurveMatch2(name);
                         return "";
                     });
                 tasks.Add(t);
@@ -424,8 +424,8 @@ namespace Binance.Common.Tests
             };
             var filterArgs = new Dictionary<string, float>()
             {
-                {"RATE_DELTA", 0.01f},
-                {"E_DELTA", 0.07f * 0.01f}
+                {"RATE_DELTA", 5f * 0.01f},
+                {"E_DELTA", 0.05f * 0.01f}
             };
             var s_range = matchArgs["similar_range"];
             var s_val = matchArgs["similar_val"];
@@ -630,6 +630,10 @@ namespace Binance.Common.Tests
                                 realSum -= Math.Abs(nextInc);
                             }
                         }
+                    }
+                    else
+                    {
+                        continue;
                     }
                     eLast = eInc;
                     rateLast = winRate;

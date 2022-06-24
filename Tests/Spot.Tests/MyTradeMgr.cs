@@ -34,6 +34,8 @@ namespace Binance.Common.Tests
             // 检查数据时间戳
 
             // 补齐到最新
+            MyTools.LogMsg("StartRobot");
+
             foreach (var symbol in MyTest.symbolAll)
             {
                 await MergeLatestData(symbol);
@@ -43,30 +45,43 @@ namespace Binance.Common.Tests
             // foreach (var symbol in MyTest.symbolAll)
             // {
             // }
+            MyTools.LogMsg("init done");
+
             while (true)
             {
-                // todo 4:50
-                UpdateMyOrders(MyTest.symbolAll);
-                // todo 5:00-5:20
-                foreach (var symbol in MyTest.symbolAll)
+                var nowDt = DateTime.UtcNow;
+                // if (nowDt.Second > 50)
+                // {
+                //     MyTools.LogMsg(nowDt.Minute, nowDt.Second);
+                // }
+                if (nowDt.Second > 50 && nowDt.Second < 55 && nowDt.Minute % 5 == 4)
                 {
-                    var hasNew = await MergeLatestData(symbol);
-                    if (hasNew)
-                    {
-                        if (ActiveOrders.Instance.orders[symbol] != null)
-                        {
-                            // todo 已有订单
+                    UpdateMyOrders(MyTest.symbolAll);
+                }
+                if (nowDt.Second > 0 && nowDt.Second < 10 && nowDt.Minute % 5 == 0)
+                {
 
-                        }
-                        else
+                    foreach (var symbol in MyTest.symbolAll)
+                    {
+                        var hasNew = await MergeLatestData(symbol);
+                        if (hasNew)
                         {
-                            MyTools.Text2Serializable(symbol);
-                            MyTools.LoadFileData(symbol, true);
-                            var tend = CheckTradeNum(symbol);
-                            MyTools.LogMsg(symbol, tend.ToString());
-                            if (Math.Abs(tend) > 0.0001) ;
+                            if (ActiveOrders.Instance.orders[symbol] != null)
                             {
-                                await MyTools.MarketTrade(symbol.Replace("_F", ""), false, (tend > 0 ? Side.BUY : Side.SELL), 0.001m);
+                                // todo 已有订单
+
+                            }
+                            else
+                            {
+                                MyTools.Text2Serializable(symbol);
+                                MyTools.LoadFileData(symbol, true);
+                                var tend = CheckTradeNum(symbol);
+                                MyTools.LogMsg(symbol, tend.ToString());
+                                if (Math.Abs(tend) > 0.0001) ;
+                                {
+                                    await MyTools.MarketTrade(symbol.Replace("_F", ""), false, (tend > 0 ? Side.BUY : Side.SELL), 0.001m);
+                                    UpdateMyOrders(new List<string> { symbol });
+                                }
                             }
                         }
                     }
@@ -315,21 +330,21 @@ namespace Binance.Common.Tests
                 eLast = eInc;
                 rateLast = winRate;
             }
-            floatPool.PushItem(incList);
-            floatPool.PushItem(eList);
-            floatPool.PushItem(winList);
+            // floatPool.PushItem(incList);
+            // floatPool.PushItem(eList);
+            // floatPool.PushItem(winList);
 
+            // // }
+            // var argStr = "";
+            // foreach (var item in matchArgs)
+            // {
+            //     argStr += (item.Key + ":" + MyTools.CutDecim(item.Value, 3) + ", ");
             // }
-            var argStr = "";
-            foreach (var item in matchArgs)
-            {
-                argStr += (item.Key + ":" + MyTools.CutDecim(item.Value, 3) + ", ");
-            }
-            foreach (var item in filterArgs)
-            {
-                argStr += (item.Key + ":" + MyTools.CutDecim(item.Value, 5) + ", ");
-            }
-            var title = "优质数:" + usefulCount + "\t正确率:" + MyTools.ToPercent(rightCount / usefulCount) + "\t交易期望:" + MyTools.ToPercent(realSum / usefulCount) + "\n";
+            // foreach (var item in filterArgs)
+            // {
+            //     argStr += (item.Key + ":" + MyTools.CutDecim(item.Value, 5) + ", ");
+            // }
+            // var title = "优质数:" + usefulCount + "\t正确率:" + MyTools.ToPercent(rightCount / usefulCount) + "\t交易期望:" + MyTools.ToPercent(realSum / usefulCount) + "\n";
 
             // MyTools.LogMsg(symbol, $"样本数:{len / 2} 总匹配量:{cachePrev2.Count} 百分比:{(float)cachePrev2.Count / len}", argStr, title, output);
 

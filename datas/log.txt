@@ -1,622 +1,4 @@
-ientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
 
-
-[193]:22/6/23 周四 22:54:39
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[194]:22/6/23 周四 22:54:45
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[195]:22/6/23 周四 22:54:50
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[196]:22/6/23 周四 22:54:58
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[197]:22/6/23 周四 22:55:02
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[198]:22/6/23 周四 22:55:05
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[199]:22/6/23 周四 22:55:12
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[200]:22/6/23 周四 22:55:14
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[201]:22/6/23 周四 22:55:15
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[202]:22/6/23 周四 22:55:24
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[203]:22/6/23 周四 22:55:30
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[204]:22/6/23 周四 22:55:32
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[205]:22/6/23 周四 22:55:33
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[206]:22/6/23 周四 22:55:41
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[207]:22/6/23 周四 22:55:49
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[208]:22/6/23 周四 22:55:50
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[209]:22/6/23 周四 22:55:59
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[210]:22/6/23 周四 22:56:03
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[211]:22/6/23 周四 22:56:20
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[212]:22/6/23 周四 22:56:25
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[213]:22/6/23 周四 22:56:39
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[214]:22/6/23 周四 22:56:44
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[215]:22/6/23 周四 22:56:47
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[216]:22/6/23 周四 22:56:49
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[217]:22/6/23 周四 22:56:51
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
-   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
-   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
-   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 163
-   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 87
-   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
-   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean writeFile) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 205
-
-
-[218]:22/6/23 周四 22:56:59
-Error!
-System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
- ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
    at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
    at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
    at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
@@ -1664,3 +1046,942 @@ DOTUSDT_F:  	6:2  75% 	e:0.068%
 [10]:22/6/23 周四 23:38:52
 End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:01:37.9732388
    at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 144
+
+
+[0]:22 6 24 周五 9:31:04
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 74
+
+
+[1]:22 6 24 周五 9:32:47
+SOLUSDT_F
+样本数:500 总匹配量:19 百分比:0.019
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0004, 
+优质数:8	正确率:87.5%	交易期望:0.277%
+
+1166 num:93 	3-涨幅:-0.079% 胜率:36.744% 	False:1.694%
+1276 num:76 	3-涨幅:0.046% 胜率:56.167% 	True:1%
+1410 num:83 	1-涨幅:-0.05% 胜率:44.689% 	True:-0.057%
+1854 num:107 	1-涨幅:-0.054% 胜率:33.525% 	True:-0.576%
+1854 num:107 	3-涨幅:-0.054% 胜率:40.263% 	True:-0.574%
+1946 num:80 	1-涨幅:-0.111% 胜率:32.43% 	True:-0.288%
+1946 num:80 	2-涨幅:-0.118% 胜率:27.912% 	True:-0.579%
+1946 num:80 	3-涨幅:-0.099% 胜率:35.442% 	True:-0.832%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[2]:22 6 24 周五 9:32:48
+ADAUSDT_F
+样本数:500 总匹配量:58 百分比:0.058
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0004, 
+优质数:8	正确率:75%	交易期望:0.32%
+
+1022 num:87 	2-涨幅:0.044% 胜率:62.069% 	True:0.441%
+1022 num:87 	3-涨幅:0.085% 胜率:57.044% 	True:1.589%
+1134 num:112 	3-涨幅:-0.081% 胜率:44.024% 	False:0.295%
+1136 num:154 	3-涨幅:0.041% 胜率:57.189% 	True:0.047%
+1188 num:128 	3-涨幅:-0.045% 胜率:44.642% 	False:0.71%
+1204 num:176 	2-涨幅:0.067% 胜率:55.037% 	True:0.352%
+1224 num:93 	1-涨幅:-0.046% 胜率:44.031% 	True:-0.126%
+1352 num:105 	3-涨幅:-0.066% 胜率:44.241% 	True:-1.01%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[3]:22 6 24 周五 9:32:48
+ETHUSDT_F
+样本数:500 总匹配量:39 百分比:0.039
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0004, 
+优质数:9	正确率:100%	交易期望:0.342%
+
+1026 num:87 	3-涨幅:-0.046% 胜率:40.326% 	True:-0.181%
+1042 num:172 	1-涨幅:-0.046% 胜率:37.139% 	True:-0.01%
+1742 num:75 	1-涨幅:-0.067% 胜率:39.495% 	True:-0.384%
+1742 num:75 	2-涨幅:-0.095% 胜率:44.202% 	True:-0.225%
+1786 num:241 	2-涨幅:-0.062% 胜率:40.117% 	True:-0.67%
+1786 num:241 	3-涨幅:-0.062% 胜率:42.605% 	True:-0.557%
+1808 num:82 	3-涨幅:0.072% 胜率:60.331% 	True:0.444%
+1812 num:84 	2-涨幅:-0.058% 胜率:41.152% 	True:-0.229%
+1812 num:84 	3-涨幅:-0.109% 胜率:40.329% 	True:-0.378%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[4]:22 6 24 周五 9:32:48
+DOTUSDT_F
+样本数:500 总匹配量:61 百分比:0.061
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0004, 
+优质数:12	正确率:58.333%	交易期望:0.04%
+
+1032 num:90 	1-涨幅:-0.066% 胜率:39.002% 	True:-0.412%
+1100 num:141 	2-涨幅:-0.057% 胜率:43.83% 	False:0.965%
+1100 num:141 	3-涨幅:-0.059% 胜率:44.012% 	False:0.237%
+1134 num:84 	1-涨幅:-0.078% 胜率:38.048% 	True:-0.98%
+1134 num:84 	3-涨幅:-0.125% 胜率:43.625% 	True:-0.256%
+1402 num:105 	2-涨幅:0.052% 胜率:57.576% 	False:-0.026%
+1458 num:118 	1-涨幅:0.05% 胜率:62.378% 	True:0.238%
+1458 num:118 	2-涨幅:0.116% 胜率:65.09% 	False:-0.225%
+1458 num:118 	3-涨幅:0.117% 胜率:65.925% 	True:0.174%
+1476 num:81 	3-涨幅:-0.126% 胜率:34.512% 	True:-0.046%
+1504 num:106 	3-涨幅:0.103% 胜率:55.244% 	True:0.249%
+1682 num:76 	1-涨幅:0.043% 胜率:65.132% 	False:-0.426%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[5]:22 6 24 周五 9:32:49
+DOGEUSDT_F
+样本数:500 总匹配量:196 百分比:0.196
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0004, 
+优质数:36	正确率:61.111%	交易期望:0.126%
+
+1014 num:408 	3-涨幅:0.047% 胜率:60.887% 	True:0.188%
+1020 num:276 	3-涨幅:0.043% 胜率:60.323% 	False:-0.357%
+1064 num:259 	2-涨幅:-0.049% 胜率:44.36% 	True:-0.577%
+1086 num:95 	3-涨幅:-0.043% 胜率:33.805% 	True:-0.165%
+1092 num:135 	1-涨幅:-0.084% 胜率:27.256% 	True:-0.319%
+1092 num:135 	2-涨幅:-0.094% 胜率:34.35% 	True:-0.481%
+1092 num:135 	3-涨幅:-0.075% 胜率:33.79% 	True:-0.743%
+1096 num:87 	1-涨幅:-0.061% 胜率:32.91% 	False:0.205%
+1096 num:87 	2-涨幅:-0.087% 胜率:34.277% 	False:0.512%
+1096 num:87 	3-涨幅:-0.111% 胜率:36.035% 	False:0.814%
+1098 num:198 	2-涨幅:-0.054% 胜率:40.301% 	False:0.149%
+1098 num:198 	3-涨幅:-0.075% 胜率:37.979% 	False:0.039%
+1132 num:115 	1-涨幅:0.075% 胜率:59.505% 	False:-0.016%
+1186 num:92 	3-涨幅:0.041% 胜率:59.928% 	True:0.215%
+1242 num:296 	3-涨幅:-0.052% 胜率:43.677% 	True:-0.732%
+1258 num:76 	1-涨幅:0.047% 胜率:58.746% 	False:-0.173%
+1258 num:76 	3-涨幅:0.051% 胜率:57.426% 	False:-0.019%
+1260 num:215 	1-涨幅:0.056% 胜率:64.639% 	True:0.289%
+1260 num:215 	3-涨幅:0.086% 胜率:63.612% 	True:0.702%
+1274 num:109 	2-涨幅:0.041% 胜率:64.115% 	True:0.573%
+1300 num:104 	3-涨幅:-0.063% 胜率:43.526% 	False:0.161%
+1328 num:101 	2-涨幅:-0.06% 胜率:40.944% 	False:0.401%
+1328 num:101 	3-涨幅:-0.082% 胜率:35.536% 	False:0.227%
+1416 num:158 	3-涨幅:-0.058% 胜率:35.102% 	True:-0.103%
+1506 num:81 	2-涨幅:-0.07% 胜率:40.618% 	True:-0.053%
+1506 num:81 	3-涨幅:-0.106% 胜率:40.299% 	True:-0.143%
+1524 num:116 	2-涨幅:-0.057% 胜率:36.736% 	False:0.129%
+1524 num:116 	3-涨幅:-0.064% 胜率:37.383% 	True:-0.046%
+1566 num:134 	1-涨幅:-0.044% 胜率:41.667% 	False:0.112%
+1566 num:134 	2-涨幅:-0.051% 胜率:43.813% 	True:-0.186%
+1594 num:176 	1-涨幅:-0.053% 胜率:36.715% 	True:-0.237%
+1594 num:176 	2-涨幅:-0.066% 胜率:35.347% 	True:-0.57%
+1594 num:176 	3-涨幅:-0.06% 胜率:42.143% 	True:-0.269%
+1674 num:77 	1-涨幅:-0.046% 胜率:33.37% 	True:-0.273%
+1674 num:77 	2-涨幅:-0.048% 胜率:37.805% 	True:-0.422%
+1674 num:77 	3-涨幅:-0.093% 胜率:40.355% 	True:-0.582%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[6]:22 6 24 周五 9:32:50
+BNBUSDT_F
+样本数:500 总匹配量:146 百分比:0.146
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0004, 
+优质数:37	正确率:81.081%	交易期望:0.182%
+
+1006 num:189 	1-涨幅:0.051% 胜率:63.426% 	True:0.184%
+1006 num:189 	2-涨幅:0.07% 胜率:60.244% 	True:0.249%
+1006 num:189 	3-涨幅:0.079% 胜率:59.372% 	True:0.44%
+1008 num:272 	2-涨幅:-0.056% 胜率:42.458% 	False:0.222%
+1008 num:272 	3-涨幅:-0.075% 胜率:39.73% 	True:-0.038%
+1090 num:266 	3-涨幅:0.063% 胜率:57.985% 	True:0.095%
+1134 num:87 	1-涨幅:-0.056% 胜率:39.259% 	True:-0.149%
+1190 num:77 	3-涨幅:-0.097% 胜率:42.969% 	True:-0.262%
+1230 num:191 	2-涨幅:-0.04% 胜率:43.001% 	True:-0.037%
+1230 num:191 	3-涨幅:-0.077% 胜率:36.527% 	True:-0.117%
+1492 num:82 	3-涨幅:-0.056% 胜率:44.877% 	True:-0.223%
+1508 num:120 	1-涨幅:-0.058% 胜率:38.804% 	False:0.177%
+1508 num:120 	2-涨幅:-0.072% 胜率:37.342% 	False:0.254%
+1508 num:120 	3-涨幅:-0.117% 胜率:35.349% 	True:-0.009%
+1510 num:86 	2-涨幅:-0.052% 胜率:44.197% 	True:-0.641%
+1520 num:80 	1-涨幅:0.042% 胜率:64.012% 	True:0.152%
+1520 num:80 	2-涨幅:0.059% 胜率:62.771% 	True:0.405%
+1520 num:80 	3-涨幅:0.085% 胜率:64.323% 	True:0.5%
+1538 num:130 	1-涨幅:-0.061% 胜率:33.881% 	False:0.168%
+1538 num:130 	2-涨幅:-0.064% 胜率:32.996% 	True:-0.073%
+1538 num:130 	3-涨幅:-0.051% 胜率:44.564% 	False:0.414%
+1554 num:75 	2-涨幅:-0.072% 胜率:37.808% 	True:-0.105%
+1554 num:75 	3-涨幅:-0.087% 胜率:36.13% 	True:-0.051%
+1556 num:90 	3-涨幅:0.133% 胜率:65.306% 	True:0.136%
+1606 num:110 	3-涨幅:-0.069% 胜率:35.634% 	True:-0.31%
+1682 num:101 	3-涨幅:0.055% 胜率:55.614% 	True:0.087%
+1694 num:120 	3-涨幅:0.042% 胜率:55.563% 	False:-0.131%
+1730 num:88 	1-涨幅:0.046% 胜率:59.091% 	True:0.093%
+1738 num:83 	2-涨幅:0.045% 胜率:57.288% 	True:0.284%
+1746 num:137 	3-涨幅:0.04% 胜率:55.41% 	True:0.226%
+1760 num:171 	3-涨幅:-0.053% 胜率:40.473% 	True:-0.194%
+1782 num:493 	2-涨幅:-0.045% 胜率:42.387% 	True:-0.905%
+1782 num:493 	3-涨幅:-0.058% 胜率:43.283% 	True:-0.97%
+1786 num:86 	2-涨幅:-0.147% 胜率:39.282% 	True:-0.62%
+1786 num:86 	3-涨幅:-0.19% 胜率:36.205% 	True:-0.439%
+1792 num:108 	2-涨幅:0.063% 胜率:57.692% 	False:-0.02%
+1792 num:108 	3-涨幅:0.061% 胜率:62.26% 	True:0.12%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[7]:22 6 24 周五 9:32:51
+BTCUSDT_F
+样本数:500 总匹配量:340 百分比:0.34
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0004, 
+优质数:42	正确率:52.381%	交易期望:0.035%
+
+1002 num:195 	3-涨幅:0.047% 胜率:58.344% 	True:0.014%
+1004 num:125 	2-涨幅:-0.057% 胜率:42.748% 	True:-0.219%
+1004 num:125 	3-涨幅:-0.044% 胜率:41.152% 	True:-0.182%
+1006 num:176 	3-涨幅:-0.058% 胜率:38.971% 	False:0.358%
+1070 num:93 	2-涨幅:0.041% 胜率:55.402% 	False:-0.151%
+1120 num:101 	3-涨幅:0.061% 胜率:65.112% 	False:-0.116%
+1220 num:83 	3-涨幅:-0.127% 胜率:40.711% 	False:0.379%
+1238 num:187 	3-涨幅:0.053% 胜率:57.988% 	False:-0.122%
+1316 num:89 	2-涨幅:0.051% 胜率:56.645% 	False:-0.339%
+1338 num:158 	1-涨幅:-0.046% 胜率:44.77% 	False:0.135%
+1342 num:101 	3-涨幅:0.054% 胜率:59.233% 	False:-0.793%
+1358 num:101 	2-涨幅:-0.07% 胜率:43.75% 	True:-0.201%
+1358 num:101 	3-涨幅:-0.058% 胜率:41.721% 	True:-0.097%
+1408 num:277 	3-涨幅:-0.074% 胜率:38.384% 	False:0.104%
+1410 num:269 	2-涨幅:0.045% 胜率:58.532% 	True:0.001%
+1456 num:76 	1-涨幅:0.045% 胜率:60.998% 	False:-0.14%
+1458 num:114 	3-涨幅:0.052% 胜率:61.862% 	True:0.214%
+1488 num:455 	2-涨幅:0.048% 胜率:56.994% 	True:0.599%
+1488 num:455 	3-涨幅:0.059% 胜率:56.696% 	True:0.814%
+1558 num:122 	3-涨幅:0.1% 胜率:58.051% 	False:-0.58%
+1586 num:210 	1-涨幅:-0.052% 胜率:42.657% 	False:0.04%
+1600 num:138 	2-涨幅:0.075% 胜率:56.25% 	False:-0.392%
+1630 num:354 	3-涨幅:-0.053% 胜率:41.643% 	True:-0.022%
+1640 num:113 	2-涨幅:-0.063% 胜率:39.49% 	True:-0.093%
+1640 num:113 	3-涨幅:-0.077% 胜率:39.413% 	True:-0.035%
+1656 num:134 	3-涨幅:0.047% 胜率:56.859% 	True:0.34%
+1666 num:107 	1-涨幅:0.049% 胜率:57.586% 	True:0.01%
+1676 num:77 	1-涨幅:-0.054% 胜率:41.804% 	True:-0.161%
+1676 num:77 	3-涨幅:-0.047% 胜率:44.554% 	False:0.011%
+1710 num:286 	1-涨幅:0.041% 胜率:60.177% 	False:-0.224%
+1796 num:242 	2-涨幅:0.045% 胜率:56.719% 	True:0.847%
+1796 num:242 	3-涨幅:0.057% 胜率:58.527% 	True:0.802%
+1802 num:80 	3-涨幅:-0.041% 胜率:42.204% 	True:-0.179%
+1836 num:156 	2-涨幅:-0.053% 胜率:44.111% 	True:-0.178%
+1848 num:134 	2-涨幅:0.042% 胜率:61.826% 	False:-0.424%
+1866 num:222 	2-涨幅:-0.067% 胜率:40.394% 	False:0.094%
+1866 num:222 	3-涨幅:-0.086% 胜率:40.317% 	False:0.219%
+1870 num:252 	3-涨幅:-0.045% 胜率:42.415% 	True:-0.203%
+1894 num:197 	2-涨幅:0.049% 胜率:61.004% 	True:0.402%
+1894 num:197 	3-涨幅:0.042% 胜率:59.476% 	True:0.556%
+1902 num:370 	3-涨幅:-0.042% 胜率:44.045% 	False:0.064%
+1956 num:172 	2-涨幅:0.059% 胜率:56.432% 	False:-0.011%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[8]:22 6 24 周五 9:32:51
+XRPUSDT_F
+样本数:500 总匹配量:70 百分比:0.07
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0004, 
+优质数:4	正确率:75%	交易期望:0.212%
+
+1030 num:79 	2-涨幅:-0.073% 胜率:40.415% 	True:-0.278%
+1030 num:79 	3-涨幅:-0.077% 胜率:43.212% 	True:-0.316%
+1296 num:103 	3-涨幅:0.087% 胜率:57.531% 	True:0.283%
+1386 num:154 	2-涨幅:-0.05% 胜率:44.941% 	False:0.027%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[9]:22 6 24 周五 9:32:51
+BTCUSDT_F:  	22:20  52.381% 	e:0.035%
+ETHUSDT_F:  	9:0  100% 	e:0.342%
+XRPUSDT_F:  	3:1  75% 	e:0.212%
+BNBUSDT_F:  	30:7  81.081% 	e:0.182%
+SOLUSDT_F:  	7:1  87.5% 	e:0.277%
+ADAUSDT_F:  	6:2  75% 	e:0.32%
+DOGEUSDT_F:  	22:14  61.111% 	e:0.126%
+DOTUSDT_F:  	7:5  58.333% 	e:0.04%
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 139
+
+
+[10]:22 6 24 周五 9:32:53
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:01:48.9237922
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 144
+
+
+[0]:22 6 24 周五 9:34:47
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 74
+
+
+[1]:22 6 24 周五 9:36:38
+ADAUSDT_F
+样本数:500 总匹配量:58 百分比:0.058
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0005, 
+优质数:4	正确率:75%	交易期望:0.664%
+
+1022 num:87 	3-涨幅:0.085% 胜率:57.044% 	True:1.589%
+1134 num:112 	3-涨幅:-0.081% 胜率:44.024% 	False:0.295%
+1204 num:176 	2-涨幅:0.067% 胜率:55.037% 	True:0.352%
+1352 num:105 	3-涨幅:-0.066% 胜率:44.241% 	True:-1.01%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[2]:22 6 24 周五 9:36:39
+SOLUSDT_F
+样本数:500 总匹配量:19 百分比:0.019
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0005, 
+优质数:7	正确率:85.714%	交易期望:0.173%
+
+1166 num:93 	3-涨幅:-0.079% 胜率:36.744% 	False:1.694%
+1410 num:83 	1-涨幅:-0.05% 胜率:44.689% 	True:-0.057%
+1854 num:107 	1-涨幅:-0.054% 胜率:33.525% 	True:-0.576%
+1854 num:107 	3-涨幅:-0.054% 胜率:40.263% 	True:-0.574%
+1946 num:80 	1-涨幅:-0.111% 胜率:32.43% 	True:-0.288%
+1946 num:80 	2-涨幅:-0.118% 胜率:27.912% 	True:-0.579%
+1946 num:80 	3-涨幅:-0.099% 胜率:35.442% 	True:-0.832%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[3]:22 6 24 周五 9:36:39
+DOTUSDT_F
+样本数:500 总匹配量:61 百分比:0.061
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0005, 
+优质数:10	正确率:60%	交易期望:0.067%
+
+1032 num:90 	1-涨幅:-0.066% 胜率:39.002% 	True:-0.412%
+1100 num:141 	2-涨幅:-0.057% 胜率:43.83% 	False:0.965%
+1100 num:141 	3-涨幅:-0.059% 胜率:44.012% 	False:0.237%
+1134 num:84 	1-涨幅:-0.078% 胜率:38.048% 	True:-0.98%
+1134 num:84 	3-涨幅:-0.125% 胜率:43.625% 	True:-0.256%
+1402 num:105 	2-涨幅:0.052% 胜率:57.576% 	False:-0.026%
+1458 num:118 	2-涨幅:0.116% 胜率:65.09% 	False:-0.225%
+1458 num:118 	3-涨幅:0.117% 胜率:65.925% 	True:0.174%
+1476 num:81 	3-涨幅:-0.126% 胜率:34.512% 	True:-0.046%
+1504 num:106 	3-涨幅:0.103% 胜率:55.244% 	True:0.249%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[4]:22 6 24 周五 9:36:39
+ETHUSDT_F
+样本数:500 总匹配量:39 百分比:0.039
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0005, 
+优质数:7	正确率:100%	交易期望:0.412%
+
+1742 num:75 	1-涨幅:-0.067% 胜率:39.495% 	True:-0.384%
+1742 num:75 	2-涨幅:-0.095% 胜率:44.202% 	True:-0.225%
+1786 num:241 	2-涨幅:-0.062% 胜率:40.117% 	True:-0.67%
+1786 num:241 	3-涨幅:-0.062% 胜率:42.605% 	True:-0.557%
+1808 num:82 	3-涨幅:0.072% 胜率:60.331% 	True:0.444%
+1812 num:84 	2-涨幅:-0.058% 胜率:41.152% 	True:-0.229%
+1812 num:84 	3-涨幅:-0.109% 胜率:40.329% 	True:-0.378%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[5]:22 6 24 周五 9:36:40
+XRPUSDT_F
+样本数:500 总匹配量:70 百分比:0.07
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0005, 
+优质数:4	正确率:75%	交易期望:0.212%
+
+1030 num:79 	2-涨幅:-0.073% 胜率:40.415% 	True:-0.278%
+1030 num:79 	3-涨幅:-0.077% 胜率:43.212% 	True:-0.316%
+1296 num:103 	3-涨幅:0.087% 胜率:57.531% 	True:0.283%
+1386 num:154 	2-涨幅:-0.05% 胜率:44.941% 	False:0.027%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[6]:22 6 24 周五 9:36:41
+BNBUSDT_F
+样本数:500 总匹配量:146 百分比:0.146
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0005, 
+优质数:30	正确率:80%	交易期望:0.172%
+
+1006 num:189 	1-涨幅:0.051% 胜率:63.426% 	True:0.184%
+1006 num:189 	2-涨幅:0.07% 胜率:60.244% 	True:0.249%
+1006 num:189 	3-涨幅:0.079% 胜率:59.372% 	True:0.44%
+1008 num:272 	2-涨幅:-0.056% 胜率:42.458% 	False:0.222%
+1008 num:272 	3-涨幅:-0.075% 胜率:39.73% 	True:-0.038%
+1090 num:266 	3-涨幅:0.063% 胜率:57.985% 	True:0.095%
+1134 num:87 	1-涨幅:-0.056% 胜率:39.259% 	True:-0.149%
+1190 num:77 	3-涨幅:-0.097% 胜率:42.969% 	True:-0.262%
+1230 num:191 	3-涨幅:-0.077% 胜率:36.527% 	True:-0.117%
+1492 num:82 	3-涨幅:-0.056% 胜率:44.877% 	True:-0.223%
+1508 num:120 	1-涨幅:-0.058% 胜率:38.804% 	False:0.177%
+1508 num:120 	2-涨幅:-0.072% 胜率:37.342% 	False:0.254%
+1508 num:120 	3-涨幅:-0.117% 胜率:35.349% 	True:-0.009%
+1510 num:86 	2-涨幅:-0.052% 胜率:44.197% 	True:-0.641%
+1520 num:80 	2-涨幅:0.059% 胜率:62.771% 	True:0.405%
+1520 num:80 	3-涨幅:0.085% 胜率:64.323% 	True:0.5%
+1538 num:130 	1-涨幅:-0.061% 胜率:33.881% 	False:0.168%
+1538 num:130 	2-涨幅:-0.064% 胜率:32.996% 	True:-0.073%
+1538 num:130 	3-涨幅:-0.051% 胜率:44.564% 	False:0.414%
+1554 num:75 	2-涨幅:-0.072% 胜率:37.808% 	True:-0.105%
+1554 num:75 	3-涨幅:-0.087% 胜率:36.13% 	True:-0.051%
+1556 num:90 	3-涨幅:0.133% 胜率:65.306% 	True:0.136%
+1606 num:110 	3-涨幅:-0.069% 胜率:35.634% 	True:-0.31%
+1682 num:101 	3-涨幅:0.055% 胜率:55.614% 	True:0.087%
+1760 num:171 	3-涨幅:-0.053% 胜率:40.473% 	True:-0.194%
+1782 num:493 	3-涨幅:-0.058% 胜率:43.283% 	True:-0.97%
+1786 num:86 	2-涨幅:-0.147% 胜率:39.282% 	True:-0.62%
+1786 num:86 	3-涨幅:-0.19% 胜率:36.205% 	True:-0.439%
+1792 num:108 	2-涨幅:0.063% 胜率:57.692% 	False:-0.02%
+1792 num:108 	3-涨幅:0.061% 胜率:62.26% 	True:0.12%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[7]:22 6 24 周五 9:36:42
+BTCUSDT_F
+样本数:500 总匹配量:340 百分比:0.34
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0005, 
+优质数:24	正确率:45.833%	交易期望:-0.03%
+
+1004 num:125 	2-涨幅:-0.057% 胜率:42.748% 	True:-0.219%
+1006 num:176 	3-涨幅:-0.058% 胜率:38.971% 	False:0.358%
+1120 num:101 	3-涨幅:0.061% 胜率:65.112% 	False:-0.116%
+1220 num:83 	3-涨幅:-0.127% 胜率:40.711% 	False:0.379%
+1238 num:187 	3-涨幅:0.053% 胜率:57.988% 	False:-0.122%
+1316 num:89 	2-涨幅:0.051% 胜率:56.645% 	False:-0.339%
+1342 num:101 	3-涨幅:0.054% 胜率:59.233% 	False:-0.793%
+1358 num:101 	2-涨幅:-0.07% 胜率:43.75% 	True:-0.201%
+1358 num:101 	3-涨幅:-0.058% 胜率:41.721% 	True:-0.097%
+1408 num:277 	3-涨幅:-0.074% 胜率:38.384% 	False:0.104%
+1458 num:114 	3-涨幅:0.052% 胜率:61.862% 	True:0.214%
+1488 num:455 	3-涨幅:0.059% 胜率:56.696% 	True:0.814%
+1558 num:122 	3-涨幅:0.1% 胜率:58.051% 	False:-0.58%
+1586 num:210 	1-涨幅:-0.052% 胜率:42.657% 	False:0.04%
+1600 num:138 	2-涨幅:0.075% 胜率:56.25% 	False:-0.392%
+1630 num:354 	3-涨幅:-0.053% 胜率:41.643% 	True:-0.022%
+1640 num:113 	2-涨幅:-0.063% 胜率:39.49% 	True:-0.093%
+1640 num:113 	3-涨幅:-0.077% 胜率:39.413% 	True:-0.035%
+1676 num:77 	1-涨幅:-0.054% 胜率:41.804% 	True:-0.161%
+1796 num:242 	3-涨幅:0.057% 胜率:58.527% 	True:0.802%
+1836 num:156 	2-涨幅:-0.053% 胜率:44.111% 	True:-0.178%
+1866 num:222 	2-涨幅:-0.067% 胜率:40.394% 	False:0.094%
+1866 num:222 	3-涨幅:-0.086% 胜率:40.317% 	False:0.219%
+1956 num:172 	2-涨幅:0.059% 胜率:56.432% 	False:-0.011%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[8]:22 6 24 周五 9:36:42
+DOGEUSDT_F
+样本数:500 总匹配量:196 百分比:0.196
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0005, 
+优质数:26	正确率:57.692%	交易期望:0.107%
+
+1092 num:135 	1-涨幅:-0.084% 胜率:27.256% 	True:-0.319%
+1092 num:135 	2-涨幅:-0.094% 胜率:34.35% 	True:-0.481%
+1092 num:135 	3-涨幅:-0.075% 胜率:33.79% 	True:-0.743%
+1096 num:87 	1-涨幅:-0.061% 胜率:32.91% 	False:0.205%
+1096 num:87 	2-涨幅:-0.087% 胜率:34.277% 	False:0.512%
+1096 num:87 	3-涨幅:-0.111% 胜率:36.035% 	False:0.814%
+1098 num:198 	2-涨幅:-0.054% 胜率:40.301% 	False:0.149%
+1098 num:198 	3-涨幅:-0.075% 胜率:37.979% 	False:0.039%
+1132 num:115 	1-涨幅:0.075% 胜率:59.505% 	False:-0.016%
+1242 num:296 	3-涨幅:-0.052% 胜率:43.677% 	True:-0.732%
+1258 num:76 	3-涨幅:0.051% 胜率:57.426% 	False:-0.019%
+1260 num:215 	1-涨幅:0.056% 胜率:64.639% 	True:0.289%
+1260 num:215 	3-涨幅:0.086% 胜率:63.612% 	True:0.702%
+1300 num:104 	3-涨幅:-0.063% 胜率:43.526% 	False:0.161%
+1328 num:101 	2-涨幅:-0.06% 胜率:40.944% 	False:0.401%
+1328 num:101 	3-涨幅:-0.082% 胜率:35.536% 	False:0.227%
+1416 num:158 	3-涨幅:-0.058% 胜率:35.102% 	True:-0.103%
+1506 num:81 	2-涨幅:-0.07% 胜率:40.618% 	True:-0.053%
+1506 num:81 	3-涨幅:-0.106% 胜率:40.299% 	True:-0.143%
+1524 num:116 	2-涨幅:-0.057% 胜率:36.736% 	False:0.129%
+1524 num:116 	3-涨幅:-0.064% 胜率:37.383% 	True:-0.046%
+1566 num:134 	2-涨幅:-0.051% 胜率:43.813% 	True:-0.186%
+1594 num:176 	1-涨幅:-0.053% 胜率:36.715% 	True:-0.237%
+1594 num:176 	2-涨幅:-0.066% 胜率:35.347% 	True:-0.57%
+1594 num:176 	3-涨幅:-0.06% 胜率:42.143% 	True:-0.269%
+1674 num:77 	3-涨幅:-0.093% 胜率:40.355% 	True:-0.582%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 653
+
+
+[9]:22 6 24 周五 9:36:42
+BTCUSDT_F:  	11:13  45.833% 	e:-0.03%
+ETHUSDT_F:  	7:0  100% 	e:0.412%
+XRPUSDT_F:  	3:1  75% 	e:0.212%
+BNBUSDT_F:  	24:6  80% 	e:0.172%
+SOLUSDT_F:  	6:1  85.714% 	e:0.173%
+ADAUSDT_F:  	3:1  75% 	e:0.664%
+DOGEUSDT_F:  	15:11  57.692% 	e:0.107%
+DOTUSDT_F:  	6:4  60% 	e:0.067%
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 139
+
+
+[10]:22 6 24 周五 9:37:07
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:02:20.1124985
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 144
+
+
+[0]:22 6 24 周五 9:46:30
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 74
+
+
+[1]:22 6 24 周五 9:48:18
+ADAUSDT_F
+样本数:500 总匹配量:58 百分比:0.058
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0003, 
+优质数:5	正确率:80%	交易期望:0.099%
+
+1022 num:87 	1-涨幅:0.034% 胜率:57.931% 	True:0.31%
+1204 num:176 	2-涨幅:0.034% 胜率:55.037% 	True:0.176%
+1224 num:93 	1-涨幅:-0.046% 胜率:44.031% 	True:-0.126%
+1292 num:155 	1-涨幅:0.038% 胜率:61.066% 	True:0.05%
+1326 num:128 	1-涨幅:-0.031% 胜率:43.045% 	False:0.168%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 657
+
+
+[2]:22 6 24 周五 9:48:19
+SOLUSDT_F
+样本数:500 总匹配量:19 百分比:0.019
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0003, 
+优质数:6	正确率:83.333%	交易期望:0.194%
+
+1166 num:93 	1-涨幅:-0.038% 胜率:40.186% 	False:0.322%
+1410 num:83 	1-涨幅:-0.05% 胜率:44.689% 	True:-0.057%
+1854 num:107 	1-涨幅:-0.054% 胜率:33.525% 	True:-0.576%
+1946 num:80 	1-涨幅:-0.111% 胜率:32.43% 	True:-0.288%
+1946 num:80 	2-涨幅:-0.059% 胜率:27.912% 	True:-0.29%
+1946 num:80 	3-涨幅:-0.033% 胜率:35.442% 	True:-0.277%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 657
+
+
+[3]:22 6 24 周五 9:48:20
+XRPUSDT_F
+样本数:500 总匹配量:70 百分比:0.07
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0003, 
+优质数:3	正确率:66.667%	交易期望:0.179%
+
+1030 num:79 	2-涨幅:-0.036% 胜率:40.415% 	True:-0.139%
+1132 num:170 	1-涨幅:-0.03% 胜率:43.305% 	False:0.044%
+1296 num:103 	1-涨幅:0.037% 胜率:56.79% 	True:0.442%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 657
+
+
+[4]:22 6 24 周五 9:48:20
+ETHUSDT_F
+样本数:500 总匹配量:39 百分比:0.039
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0003, 
+优质数:7	正确率:85.714%	交易期望:0.158%
+
+1042 num:172 	1-涨幅:-0.046% 胜率:37.139% 	True:-0.01%
+1742 num:75 	1-涨幅:-0.067% 胜率:39.495% 	True:-0.384%
+1742 num:75 	2-涨幅:-0.048% 胜率:44.202% 	True:-0.113%
+1786 num:241 	2-涨幅:-0.031% 胜率:40.117% 	True:-0.335%
+1794 num:81 	1-涨幅:0.035% 胜率:58.123% 	False:-0.063%
+1812 num:84 	1-涨幅:-0.035% 胜率:39.198% 	True:-0.205%
+1812 num:84 	3-涨幅:-0.036% 胜率:40.329% 	True:-0.126%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 657
+
+
+[5]:22 6 24 周五 9:48:20
+DOTUSDT_F
+样本数:500 总匹配量:61 百分比:0.061
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0003, 
+优质数:12	正确率:66.667%	交易期望:0.096%
+
+1032 num:90 	1-涨幅:-0.066% 胜率:39.002% 	True:-0.412%
+1082 num:276 	1-涨幅:0.035% 胜率:58.138% 	False:-0.246%
+1098 num:76 	1-涨幅:0.038% 胜率:56.527% 	False:-0.11%
+1106 num:124 	1-涨幅:-0.036% 胜率:43.423% 	True:-0.249%
+1134 num:84 	1-涨幅:-0.078% 胜率:38.048% 	True:-0.98%
+1134 num:84 	3-涨幅:-0.042% 胜率:43.625% 	True:-0.085%
+1396 num:181 	1-涨幅:0.034% 胜率:59.896% 	True:0.012%
+1458 num:118 	1-涨幅:0.05% 胜率:62.378% 	True:0.238%
+1458 num:118 	2-涨幅:0.058% 胜率:65.09% 	False:-0.113%
+1458 num:118 	3-涨幅:0.039% 胜率:65.925% 	True:0.058%
+1476 num:81 	3-涨幅:-0.042% 胜率:34.512% 	True:-0.015%
+1682 num:76 	1-涨幅:0.043% 胜率:65.132% 	False:-0.426%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 657
+
+
+[6]:22 6 24 周五 9:48:21
+BNBUSDT_F
+样本数:500 总匹配量:146 百分比:0.146
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0003, 
+优质数:20	正确率:65%	交易期望:0.027%
+
+1006 num:189 	1-涨幅:0.051% 胜率:63.426% 	True:0.184%
+1006 num:189 	2-涨幅:0.035% 胜率:60.244% 	True:0.124%
+1008 num:272 	1-涨幅:-0.034% 胜率:42.298% 	False:0.191%
+1078 num:308 	1-涨幅:-0.033% 胜率:40.42% 	False:0.187%
+1090 num:266 	1-涨幅:0.039% 胜率:58.435% 	True:0.199%
+1134 num:87 	1-涨幅:-0.056% 胜率:39.259% 	True:-0.149%
+1508 num:120 	1-涨幅:-0.058% 胜率:38.804% 	False:0.177%
+1508 num:120 	2-涨幅:-0.036% 胜率:37.342% 	False:0.127%
+1508 num:120 	3-涨幅:-0.039% 胜率:35.349% 	True:-0.003%
+1510 num:86 	1-涨幅:-0.034% 胜率:40.232% 	True:-0.262%
+1520 num:80 	1-涨幅:0.042% 胜率:64.012% 	True:0.152%
+1538 num:130 	1-涨幅:-0.061% 胜率:33.881% 	False:0.168%
+1538 num:130 	2-涨幅:-0.032% 胜率:32.996% 	True:-0.037%
+1554 num:75 	2-涨幅:-0.036% 胜率:37.808% 	True:-0.052%
+1730 num:88 	1-涨幅:0.046% 胜率:59.091% 	True:0.093%
+1756 num:306 	1-涨幅:-0.039% 胜率:42.439% 	True:-0.523%
+1786 num:86 	2-涨幅:-0.074% 胜率:39.282% 	True:-0.31%
+1786 num:86 	3-涨幅:-0.063% 胜率:36.205% 	True:-0.146%
+1792 num:108 	1-涨幅:0.034% 胜率:59.135% 	False:-0.842%
+1792 num:108 	2-涨幅:0.032% 胜率:57.692% 	False:-0.01%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 657
+
+
+[7]:22 6 24 周五 9:48:21
+DOGEUSDT_F
+样本数:500 总匹配量:196 百分比:0.196
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0003, 
+优质数:20	正确率:50%	交易期望:-0.004%
+
+1004 num:110 	1-涨幅:-0.037% 胜率:44.181% 	False:0.453%
+1092 num:135 	1-涨幅:-0.084% 胜率:27.256% 	True:-0.319%
+1092 num:135 	2-涨幅:-0.047% 胜率:34.35% 	True:-0.241%
+1096 num:87 	1-涨幅:-0.061% 胜率:32.91% 	False:0.205%
+1096 num:87 	2-涨幅:-0.043% 胜率:34.277% 	False:0.256%
+1096 num:87 	3-涨幅:-0.037% 胜率:36.035% 	False:0.271%
+1132 num:115 	1-涨幅:0.075% 胜率:59.505% 	False:-0.016%
+1144 num:108 	1-涨幅:-0.032% 胜率:36.746% 	False:0.041%
+1258 num:76 	1-涨幅:0.047% 胜率:58.746% 	False:-0.173%
+1260 num:215 	1-涨幅:0.056% 胜率:64.639% 	True:0.289%
+1300 num:104 	1-涨幅:-0.031% 胜率:44.463% 	False:0.107%
+1506 num:81 	1-涨幅:-0.032% 胜率:41.365% 	True:-0.014%
+1506 num:81 	2-涨幅:-0.035% 胜率:40.618% 	True:-0.027%
+1506 num:81 	3-涨幅:-0.035% 胜率:40.299% 	True:-0.048%
+1524 num:116 	1-涨幅:-0.038% 胜率:42.056% 	False:0.37%
+1566 num:134 	1-涨幅:-0.044% 胜率:41.667% 	False:0.112%
+1594 num:176 	1-涨幅:-0.053% 胜率:36.715% 	True:-0.237%
+1594 num:176 	2-涨幅:-0.033% 胜率:35.347% 	True:-0.285%
+1674 num:77 	1-涨幅:-0.046% 胜率:33.37% 	True:-0.273%
+1674 num:77 	3-涨幅:-0.031% 胜率:40.355% 	True:-0.194%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 657
+
+
+[8]:22 6 24 周五 9:48:22
+BTCUSDT_F
+样本数:500 总匹配量:340 百分比:0.34
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0003, 
+优质数:16	正确率:56.25%	交易期望:0.022%
+
+1004 num:125 	1-涨幅:-0.033% 胜率:42.887% 	True:-0.212%
+1220 num:83 	3-涨幅:-0.042% 胜率:40.711% 	False:0.126%
+1338 num:158 	1-涨幅:-0.046% 胜率:44.77% 	False:0.135%
+1358 num:101 	1-涨幅:-0.039% 胜率:34.74% 	True:-0.028%
+1358 num:101 	2-涨幅:-0.035% 胜率:43.75% 	True:-0.1%
+1382 num:82 	1-涨幅:-0.036% 胜率:37.728% 	True:-0.39%
+1456 num:76 	1-涨幅:0.045% 胜率:60.998% 	False:-0.14%
+1586 num:210 	1-涨幅:-0.052% 胜率:42.657% 	False:0.04%
+1600 num:138 	2-涨幅:0.037% 胜率:56.25% 	False:-0.196%
+1640 num:113 	2-涨幅:-0.031% 胜率:39.49% 	True:-0.047%
+1666 num:107 	1-涨幅:0.049% 胜率:57.586% 	True:0.01%
+1676 num:77 	1-涨幅:-0.054% 胜率:41.804% 	True:-0.161%
+1710 num:286 	1-涨幅:0.041% 胜率:60.177% 	False:-0.224%
+1796 num:242 	1-涨幅:0.035% 胜率:58.595% 	True:0.221%
+1866 num:222 	2-涨幅:-0.034% 胜率:40.394% 	False:0.047%
+1894 num:197 	1-涨幅:0.038% 胜率:60.087% 	True:0.099%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 657
+
+
+[9]:22 6 24 周五 9:48:22
+BTCUSDT_F:  	9:7  56.25% 	e:0.022%
+ETHUSDT_F:  	6:1  85.714% 	e:0.158%
+XRPUSDT_F:  	2:1  66.667% 	e:0.179%
+BNBUSDT_F:  	13:7  65% 	e:0.027%
+SOLUSDT_F:  	5:1  83.333% 	e:0.194%
+ADAUSDT_F:  	4:1  80% 	e:0.099%
+DOGEUSDT_F:  	10:10  50% 	e:-0.004%
+DOTUSDT_F:  	8:4  66.667% 	e:0.096%\
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 139
+
+
+[10]:22 6 24 周五 9:48:24
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:01:53.6712033
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 144
+
+
+[0]:22 6 24 周五 13:23:07
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 74
+
+
+[1]:22 6 24 周五 13:24:59
+ADAUSDT_F
+样本数:500 总匹配量:58 百分比:0.058
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0005, 
+优质数:4	正确率:100%	交易期望:0.771%
+
+1022 num:87 	3-涨幅:0.085% 胜率:57.044% 	True:1.589%
+1204 num:176 	2-涨幅:0.067% 胜率:55.037% 	True:0.352%
+1280 num:107 	3-涨幅:-0.086% 胜率:44.844% 	True:-0.132%
+1352 num:105 	3-涨幅:-0.066% 胜率:44.241% 	True:-1.01%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 657
+
+
+[2]:22 6 24 周五 13:25:00
+ETHUSDT_F
+样本数:500 总匹配量:39 百分比:0.039
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0005, 
+优质数:8	正确率:100%	交易期望:0.465%
+
+1686 num:76 	3-涨幅:-0.062% 胜率:35.196% 	True:-0.836%
+1742 num:75 	1-涨幅:-0.067% 胜率:39.495% 	True:-0.384%
+1742 num:75 	2-涨幅:-0.095% 胜率:44.202% 	True:-0.225%
+1786 num:241 	2-涨幅:-0.062% 胜率:40.117% 	True:-0.67%
+1786 num:241 	3-涨幅:-0.062% 胜率:42.605% 	True:-0.557%
+1808 num:82 	3-涨幅:0.072% 胜率:60.331% 	True:0.444%
+1812 num:84 	2-涨幅:-0.058% 胜率:41.152% 	True:-0.229%
+1812 num:84 	3-涨幅:-0.109% 胜率:40.329% 	True:-0.378%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 657
+
+
+[3]:22 6 24 周五 13:25:01
+XRPUSDT_F
+样本数:500 总匹配量:70 百分比:0.07
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0005, 
+优质数:4	正确率:75%	交易期望:0.212%
+
+1030 num:79 	2-涨幅:-0.073% 胜率:40.415% 	True:-0.278%
+1030 num:79 	3-涨幅:-0.077% 胜率:43.212% 	True:-0.316%
+1296 num:103 	3-涨幅:0.087% 胜率:57.531% 	True:0.283%
+1386 num:154 	2-涨幅:-0.05% 胜率:44.941% 	False:0.027%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 657
+
+
+[4]:22 6 24 周五 13:25:01
+DOGEUSDT_F
+样本数:500 总匹配量:196 百分比:0.196
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0005, 
+优质数:26	正确率:57.692%	交易期望:0.111%
+
+1092 num:135 	1-涨幅:-0.084% 胜率:27.256% 	True:-0.319%
+1092 num:135 	2-涨幅:-0.094% 胜率:34.35% 	True:-0.481%
+1092 num:135 	3-涨幅:-0.075% 胜率:33.79% 	True:-0.743%
+1096 num:87 	1-涨幅:-0.061% 胜率:32.91% 	False:0.205%
+1096 num:87 	2-涨幅:-0.087% 胜率:34.277% 	False:0.512%
+1096 num:87 	3-涨幅:-0.111% 胜率:36.035% 	False:0.814%
+1098 num:198 	2-涨幅:-0.054% 胜率:40.301% 	False:0.149%
+1098 num:198 	3-涨幅:-0.075% 胜率:37.979% 	False:0.039%
+1132 num:115 	1-涨幅:0.075% 胜率:59.505% 	False:-0.016%
+1258 num:76 	3-涨幅:0.051% 胜率:57.426% 	False:-0.019%
+1260 num:215 	1-涨幅:0.056% 胜率:64.639% 	True:0.289%
+1260 num:215 	3-涨幅:0.086% 胜率:63.612% 	True:0.702%
+1300 num:104 	3-涨幅:-0.063% 胜率:43.526% 	False:0.161%
+1328 num:101 	2-涨幅:-0.06% 胜率:40.944% 	False:0.401%
+1328 num:101 	3-涨幅:-0.082% 胜率:35.536% 	False:0.227%
+1416 num:158 	3-涨幅:-0.058% 胜率:35.102% 	True:-0.103%
+1506 num:81 	2-涨幅:-0.07% 胜率:40.618% 	True:-0.053%
+1506 num:81 	3-涨幅:-0.106% 胜率:40.299% 	True:-0.143%
+1524 num:116 	2-涨幅:-0.057% 胜率:36.736% 	False:0.129%
+1524 num:116 	3-涨幅:-0.064% 胜率:37.383% 	True:-0.046%
+1540 num:112 	3-涨幅:-0.058% 胜率:44.444% 	True:-0.844%
+1566 num:134 	2-涨幅:-0.051% 胜率:43.813% 	True:-0.186%
+1594 num:176 	1-涨幅:-0.053% 胜率:36.715% 	True:-0.237%
+1594 num:176 	2-涨幅:-0.066% 胜率:35.347% 	True:-0.57%
+1594 num:176 	3-涨幅:-0.06% 胜率:42.143% 	True:-0.269%
+1674 num:77 	3-涨幅:-0.093% 胜率:40.355% 	True:-0.582%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 657
+
+
+[5]:22 6 24 周五 13:25:01
+SOLUSDT_F
+样本数:500 总匹配量:19 百分比:0.019
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0005, 
+优质数:7	正确率:85.714%	交易期望:0.173%
+
+1166 num:93 	3-涨幅:-0.079% 胜率:36.744% 	False:1.694%
+1410 num:83 	1-涨幅:-0.05% 胜率:44.689% 	True:-0.057%
+1854 num:107 	1-涨幅:-0.054% 胜率:33.525% 	True:-0.576%
+1854 num:107 	3-涨幅:-0.054% 胜率:40.263% 	True:-0.574%
+1946 num:80 	1-涨幅:-0.111% 胜率:32.43% 	True:-0.288%
+1946 num:80 	2-涨幅:-0.118% 胜率:27.912% 	True:-0.579%
+1946 num:80 	3-涨幅:-0.099% 胜率:35.442% 	True:-0.832%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 657
+
+
+[6]:22 6 24 周五 13:25:02
+BNBUSDT_F
+样本数:500 总匹配量:146 百分比:0.146
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0005, 
+优质数:28	正确率:78.571%	交易期望:0.17%
+
+1006 num:189 	1-涨幅:0.051% 胜率:63.426% 	True:0.184%
+1006 num:189 	2-涨幅:0.07% 胜率:60.244% 	True:0.249%
+1006 num:189 	3-涨幅:0.079% 胜率:59.372% 	True:0.44%
+1008 num:272 	2-涨幅:-0.056% 胜率:42.458% 	False:0.222%
+1008 num:272 	3-涨幅:-0.075% 胜率:39.73% 	True:-0.038%
+1090 num:266 	3-涨幅:0.063% 胜率:57.985% 	True:0.095%
+1134 num:87 	1-涨幅:-0.056% 胜率:39.259% 	True:-0.149%
+1230 num:191 	3-涨幅:-0.077% 胜率:36.527% 	True:-0.117%
+1492 num:82 	3-涨幅:-0.056% 胜率:44.877% 	True:-0.223%
+1508 num:120 	1-涨幅:-0.058% 胜率:38.804% 	False:0.177%
+1508 num:120 	2-涨幅:-0.072% 胜率:37.342% 	False:0.254%
+1508 num:120 	3-涨幅:-0.117% 胜率:35.349% 	True:-0.009%
+1510 num:86 	2-涨幅:-0.052% 胜率:44.197% 	True:-0.641%
+1520 num:80 	2-涨幅:0.059% 胜率:62.771% 	True:0.405%
+1520 num:80 	3-涨幅:0.085% 胜率:64.323% 	True:0.5%
+1538 num:130 	1-涨幅:-0.061% 胜率:33.881% 	False:0.168%
+1538 num:130 	2-涨幅:-0.064% 胜率:32.996% 	True:-0.073%
+1538 num:130 	3-涨幅:-0.051% 胜率:44.564% 	False:0.414%
+1554 num:75 	2-涨幅:-0.072% 胜率:37.808% 	True:-0.105%
+1554 num:75 	3-涨幅:-0.087% 胜率:36.13% 	True:-0.051%
+1606 num:110 	3-涨幅:-0.069% 胜率:35.634% 	True:-0.31%
+1682 num:101 	3-涨幅:0.055% 胜率:55.614% 	True:0.087%
+1760 num:171 	3-涨幅:-0.053% 胜率:40.473% 	True:-0.194%
+1782 num:493 	3-涨幅:-0.058% 胜率:43.283% 	True:-0.97%
+1786 num:86 	2-涨幅:-0.147% 胜率:39.282% 	True:-0.62%
+1786 num:86 	3-涨幅:-0.19% 胜率:36.205% 	True:-0.439%
+1792 num:108 	2-涨幅:0.063% 胜率:57.692% 	False:-0.02%
+1792 num:108 	3-涨幅:0.061% 胜率:62.26% 	True:0.12%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 657
+
+
+[7]:22 6 24 周五 13:25:03
+DOTUSDT_F
+样本数:500 总匹配量:61 百分比:0.061
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0005, 
+优质数:10	正确率:60%	交易期望:0.122%
+
+1032 num:90 	1-涨幅:-0.066% 胜率:39.002% 	True:-0.412%
+1098 num:76 	3-涨幅:0.082% 胜率:58.683% 	True:0.8%
+1100 num:141 	2-涨幅:-0.057% 胜率:43.83% 	False:0.965%
+1100 num:141 	3-涨幅:-0.059% 胜率:44.012% 	False:0.237%
+1134 num:84 	1-涨幅:-0.078% 胜率:38.048% 	True:-0.98%
+1134 num:84 	3-涨幅:-0.125% 胜率:43.625% 	True:-0.256%
+1402 num:105 	2-涨幅:0.052% 胜率:57.576% 	False:-0.026%
+1458 num:118 	2-涨幅:0.116% 胜率:65.09% 	False:-0.225%
+1458 num:118 	3-涨幅:0.117% 胜率:65.925% 	True:0.174%
+1476 num:81 	3-涨幅:-0.126% 胜率:34.512% 	True:-0.046%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 657
+
+
+[8]:22 6 24 周五 13:25:05
+BTCUSDT_F
+样本数:500 总匹配量:340 百分比:0.34
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.001, need_count:150, RATE_DELTA:0.05, E_DELTA:0.0005, 
+优质数:20	正确率:60%	交易期望:0.092%
+
+1004 num:125 	2-涨幅:-0.057% 胜率:42.748% 	True:-0.219%
+1006 num:176 	3-涨幅:-0.058% 胜率:38.971% 	False:0.358%
+1220 num:83 	3-涨幅:-0.127% 胜率:40.711% 	False:0.379%
+1316 num:89 	2-涨幅:0.051% 胜率:56.645% 	False:-0.339%
+1358 num:101 	2-涨幅:-0.07% 胜率:43.75% 	True:-0.201%
+1358 num:101 	3-涨幅:-0.058% 胜率:41.721% 	True:-0.097%
+1458 num:114 	3-涨幅:0.052% 胜率:61.862% 	True:0.214%
+1488 num:455 	3-涨幅:0.059% 胜率:56.696% 	True:0.814%
+1516 num:97 	3-涨幅:0.056% 胜率:58.609% 	True:0.844%
+1586 num:210 	1-涨幅:-0.052% 胜率:42.657% 	False:0.04%
+1600 num:138 	2-涨幅:0.075% 胜率:56.25% 	False:-0.392%
+1630 num:354 	3-涨幅:-0.053% 胜率:41.643% 	True:-0.022%
+1640 num:113 	2-涨幅:-0.063% 胜率:39.49% 	True:-0.093%
+1640 num:113 	3-涨幅:-0.077% 胜率:39.413% 	True:-0.035%
+1676 num:77 	1-涨幅:-0.054% 胜率:41.804% 	True:-0.161%
+1796 num:242 	3-涨幅:0.057% 胜率:58.527% 	True:0.802%
+1836 num:156 	2-涨幅:-0.053% 胜率:44.111% 	True:-0.178%
+1866 num:222 	2-涨幅:-0.067% 胜率:40.394% 	False:0.094%
+1866 num:222 	3-涨幅:-0.086% 胜率:40.317% 	False:0.219%
+1956 num:172 	2-涨幅:0.059% 胜率:56.432% 	False:-0.011%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch2(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 657
+
+
+[9]:22 6 24 周五 13:25:05
+BTCUSDT_F:  	12:8  60% 	e:0.092%
+ETHUSDT_F:  	8:0  100% 	e:0.465%
+XRPUSDT_F:  	3:1  75% 	e:0.212%
+BNBUSDT_F:  	22:6  78.571% 	e:0.17%
+SOLUSDT_F:  	6:1  85.714% 	e:0.173%
+ADAUSDT_F:  	4:0  100% 	e:0.771%
+DOGEUSDT_F:  	15:11  57.692% 	e:0.111%
+DOTUSDT_F:  	6:4  60% 	e:0.122%
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 139
+
+
+[10]:22 6 24 周五 13:25:07
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:01:59.7000930
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 144
+
+
+[0]:22 6 24 周五 13:29:33
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 74
+
+
+[1]:22 6 24 周五 13:29:33
+111
+   at Binance.Common.Tests.MyTradeMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTradeMgr.cs:line 37
+
+
+[2]:22 6 24 周五 13:30:08
+222
+   at Binance.Common.Tests.MyTradeMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTradeMgr.cs:line 48
+
+
+[3]:22 6 24 周五 13:30:51
+30
+51
+   at Binance.Common.Tests.MyTradeMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTradeMgr.cs:line 55
+
+
+[4]:22 6 24 周五 13:30:52
+30
+52
+   at Binance.Common.Tests.MyTradeMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTradeMgr.cs:line 55
+
+
+[5]:22 6 24 周五 13:30:53
+30
+53
+   at Binance.Common.Tests.MyTradeMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTradeMgr.cs:line 55
+
+
+[6]:22 6 24 周五 13:30:54
+30
+54
+   at Binance.Common.Tests.MyTradeMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTradeMgr.cs:line 55
+
+
+[7]:22 6 24 周五 13:30:55
+30
+55
+   at Binance.Common.Tests.MyTradeMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTradeMgr.cs:line 55
+
+
+[8]:22 6 24 周五 13:30:56
+30
+56
+   at Binance.Common.Tests.MyTradeMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTradeMgr.cs:line 55
+
+
+[9]:22 6 24 周五 13:30:57
+30
+57
+   at Binance.Common.Tests.MyTradeMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTradeMgr.cs:line 55
+
+
+[10]:22 6 24 周五 13:30:58
+30
+58
+   at Binance.Common.Tests.MyTradeMgr.StartRobot() in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTradeMgr.cs:line 55
