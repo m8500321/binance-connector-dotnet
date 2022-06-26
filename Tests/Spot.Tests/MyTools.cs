@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
 
 namespace Binance.Common.Tests
 {
@@ -61,63 +62,61 @@ namespace Binance.Common.Tests
             logger.LogInformation(output);
             lock (LOCK)
             {
-                var s = "";
+                var curStr = "";
                 using (StreamReader sr = new StreamReader(dataDir + "log.txt"))
                 {
-                    s = sr.ReadToEnd();
+                    curStr = sr.ReadToEnd();
                 }
-                if (s.Length > 200000)
+                if (curStr.Length > 1000000)
                 {
-                    using (StreamWriter sw = new StreamWriter(dataDir + "log.txt"))
+                    var newFile = "log__" + DateTime.Now.ToString("MM-dd__HH-mm-ss");
+                    using (StreamWriter sw = new StreamWriter(dataDir + "backup/" + newFile + ".txt"))
                     {
-                        sw.Write(s.Substring(s.Length - 120000) + output);
+                        sw.Write(curStr);
                     }
                 }
-                else
+                using (StreamWriter sw = new StreamWriter(dataDir + "log.txt", curStr.Length <= 1000000))
                 {
-                    using (StreamWriter sw = new StreamWriter(dataDir + "log.txt", true))
-                    {
-                        sw.Write(output);
-                    }
+                    sw.Write(output);
                 }
             }
 
         }
 
 
-        static public async Task<JArray> FetchMarketData(long startTime, string symbol, string type = "kline", int limit = 500, bool writeFile = true)
+        static public async Task<JArray> FetchMarketData(long startTime, string symbol, string type = "kline", int limit = 500, bool isFuture = true)
         {
 
             var url = "https://api.binance.com";
-            if (symbol.EndsWith("_F")) ;
+            if (isFuture)
             {
                 url = "https://fapi.binance.com";
             }
             Market market = new Market(baseUrl: url, apiKey: apiKey, apiSecret: apiSecret);
-            market.TEST_CONNECTIVITY = "/api/v3/ping";
-            market.CHECK_SERVER_TIME = "/api/v3/time";
-            market.EXCHANGE_INFORMATION = "/api/v3/exchangeInfo";
-            market.ORDER_BOOK = "/api/v3/depth";
-            market.RECENT_TRADES_LIST = "/api/v3/trades";
-            market.OLD_TRADE_LOOKUP = "/api/v3/historicalTrades";
-            market.COMPRESSED_AGGREGATE_TRADES_LIST = "/api/v3/aggTrades";
-            market.KLINE_CANDLESTICK_DATA = "/api/v3/klines";
-            market.CURRENT_AVERAGE_PRICE = "/api/v3/avgPrice";
-            market.TWENTY_FOUR_HR_TICKER_PRICE_CHANGE_STATISTICS = "/api/v3/ticker/24hr";
-            market.SYMBOL_PRICE_TICKER = "/api/v3/ticker/price";
-            market.SYMBOL_ORDER_BOOK_TICKER = "/api/v3/ticker/bookTicker";
+            // market.TEST_CONNECTIVITY = "/api/v3/ping";
+            // market.CHECK_SERVER_TIME = "/api/v3/time";
+            // market.EXCHANGE_INFORMATION = "/api/v3/exchangeInfo";
+            // market.ORDER_BOOK = "/api/v3/depth";
+            // market.RECENT_TRADES_LIST = "/api/v3/trades";
+            // market.OLD_TRADE_LOOKUP = "/api/v3/historicalTrades";
+            // market.COMPRESSED_AGGREGATE_TRADES_LIST = "/api/v3/aggTrades";
+            // market.KLINE_CANDLESTICK_DATA = "/api/v3/klines";
+            // market.CURRENT_AVERAGE_PRICE = "/api/v3/avgPrice";
+            // market.TWENTY_FOUR_HR_TICKER_PRICE_CHANGE_STATISTICS = "/api/v3/ticker/24hr";
+            // market.SYMBOL_PRICE_TICKER = "/api/v3/ticker/price";
+            // market.SYMBOL_ORDER_BOOK_TICKER = "/api/v3/ticker/bookTicker";
 
-            if (symbol.EndsWith("_F")) ;
+            if (isFuture)
             {
                 market.KLINE_CANDLESTICK_DATA = "/fapi/v1/klines";
             }
-            var tag = symbol.Replace("_F", "");
+            // var tag = symbol.Replace("_F", "");
 
             JArray karray = null;
             if (type == "kline")
             {
-                var result = await market.KlineCandlestickData(tag, Interval.FIVE_MINUTE, limit: limit, startTime: startTime);
-                // var result = await market.KlineCandlestickData(tag, Interval.ONE_MINUTE, limit: 5);
+                var result = await market.KlineCandlestickData(symbol, Interval.FIVE_MINUTE, limit: limit, startTime: startTime);
+                // var result = await market.KlineCandlestickData(symbol, Interval.ONE_MINUTE, limit: 5);
                 karray = JArray.Parse(result);
             }
             else
@@ -127,22 +126,10 @@ namespace Binance.Common.Tests
                 var msPerMin = 60 * 1000;
                 var intervalMin = 5;
                 var diffMS = intervalMin * msPerMin * limit;
-                var result = await market.MyFutureData(tag, Interval.FIVE_MINUTE, limit: limit, startTime: startTime, endTime: startTime + diffMS, typeAPI: typeAPI);
+                var result = await market.MyFutureData(symbol, Interval.FIVE_MINUTE, limit: limit, startTime: startTime, endTime: startTime + diffMS, typeAPI: typeAPI);
                 karray = JArray.Parse(result);
             }
-            if (writeFile)
-            {
 
-                var fileName = symbol + (type == "kline" ? "" : "_" + type);
-                using (StreamWriter sw = new StreamWriter(dataDir + fileName + ".txt", true))
-                {
-                    for (int i = karray.Count - 1; i >= 0; i--)
-                    {
-                        var item = karray[i];
-                        sw.WriteLine(item.ToString().Replace("\r\n", "").Replace(" ", ""));
-                    }
-                }
-            }
             return karray;
         }
 
@@ -170,12 +157,12 @@ namespace Binance.Common.Tests
         //     sw.Close();
         // }
 
-        static public async Task RequestLongData(string symbol, string type = "kline")
+        static public async Task RequestLongData(string symbol, string type, bool isFuture)
         {
             // request klines
-            var fileName = symbol + (type == "kline" ? "" : "_" + type);
-            File.Delete(dataDir + fileName + ".txt"); //删除指定文件;
-            long startMS = MsFromUTC0(DateTime.UtcNow);
+            long curMS = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+            // long startMS = MsFromUTC0(DateTime.UtcNow);
+            var symbolStart = (long)ExchangeInfo.Instance.symbols[symbol]["onboardDate"];
             // long startMS = 1644339900000;
             var maxCount = 1000;
             var msPerMin = 60 * 1000;
@@ -185,34 +172,52 @@ namespace Binance.Common.Tests
             var days = 365f;
             if (type == "kline")
             {
-                days = 365 * 1.5f;
+                days = 30 * 24f;
             }
             else
             {
                 days = 30;
                 maxCount = 500;
             }
+            long reqStart = curMS - (long)days * minPerDay * msPerMin;
+            reqStart = Math.Max(reqStart, symbolStart);
             var diffMS = intervalMin * msPerMin * maxCount;
-            var iteCount = (minPerDay * days) / (intervalMin * maxCount);
-            // 每天多少个n分钟*一年多少天
-            for (int i = 0; i < iteCount; i++)
+            var strList = new List<string>();
+            var sb = new StringBuilder(100000);
+            while (reqStart + intervalMin * msPerMin < curMS)
             {
-                // 5分钟*每分钟多少秒*每次多少条
-                startMS -= diffMS;
-                // LogMsg(UTC_START.AddMilliseconds(startMS).ToString());
                 try
                 {
-                    await FetchMarketData(startMS, symbol, type, type == "kline" ? 1000 : 500);
+                    var karray = await FetchMarketData(reqStart, symbol, type, type == "kline" ? 1000 : 500, isFuture);
+                    for (int j = 0; j < karray.Count; j++)
+                    {
+                        var item = karray[j];
+                        sb.Append(item.ToString().Replace("\r\n", "").Replace(" ", "").Trim() + "\n");
+                    }
+                    if (karray.Count > 0)
+                    {
+                        var lastJ = karray[karray.Count - 1];
+                        reqStart = (long)lastJ[0] + 100;
+                    }
+                    else
+                    {
+                        reqStart += diffMS;
+                    }
+                    Thread.Sleep(100);
                 }
                 catch (Exception e)
                 {
                     LogMsg("Error!", e.ToString());
-                    startMS += diffMS;
-                    i--;
                 }
-                var waitTm = symbol.EndsWith("_F") ? 100 : 30;
-                Thread.Sleep(waitTm);
             }
+            // sb.Remove(sb.Length - 1, 1);
+            var fileName = symbol + (type == "kline" ? "" : "_" + type);
+            File.Delete(dataDir + fileName + ".txt"); //删除指定文件;
+            using (StreamWriter sw = new StreamWriter(dataDir + fileName + ".txt", true))
+            {
+                sw.Write(sb);
+            }
+            MyTools.Text2Serializable(symbol);
         }
 
         static public string Text2Serializable(string symbol)
@@ -227,7 +232,7 @@ namespace Binance.Common.Tests
                 var myobj = new MyKline(obj);
                 sList.myKlines.Add(myobj);
             }
-            sList.myKlines.Reverse();
+            // sList.myKlines.Reverse();
             var MAX_LEN = 40;
             for (int i = MAX_LEN; i < sList.myKlines.Count - MAX_LEN; i++)
             {
@@ -307,14 +312,14 @@ namespace Binance.Common.Tests
                     if (idx > -1)
                     {
                         itemI.prevVolumePriceList[idx] = curSumPrice / curSumVolume;
-                        itemI.prevVolumePriceRate[idx] = (itemI.closePrice - itemI.prevVolumePriceList[idx]) / itemI.closePrice;
+                        itemI.prevVolumePriceRate[idx] = (itemI.closePrice - itemI.prevVolumePriceList[idx]) / itemI.prevVolumePriceList[idx];
                     }
                 }
                 for (int j = 0; j < 4; j++)
                 {
                     var prevVal = j > 0 ? itemI.nextSumIncList[j - 1] : 0;
                     itemI.nextSumIncList[j] = prevVal + sList.myKlines[i + j + 1].incPercent;
-                    itemI.prevClosePriceRate[j] = (itemI.closePrice - sList.myKlines[i - j - 1].closePrice) / itemI.closePrice;
+                    itemI.prevClosePriceRate[j] = (itemI.closePrice - sList.myKlines[i - j - 1].closePrice) / sList.myKlines[i - j - 1].closePrice;
 
                 }
 
@@ -330,21 +335,32 @@ namespace Binance.Common.Tests
             return "";
         }
 
-        // 查询订单
-        static public async Task<string> QueryOrder(string symbol)
+        // 获取交易信息
+        static public async Task<string> GetExchangeInfo()
         {
-            symbol = symbol.Replace("_F", "");
+            // symbol = symbol.Replace("_F", "");
             HttpMessageHandler loggingHandler = new BinanceLoggingHandler(logger: MyTools.logger);
             HttpClient httpClient = new HttpClient(handler: loggingHandler);
             var spotAccountTrade = new SpotAccountTrade(httpClient, FUTURE_BASE_URL, apiKey, apiSecret);
-            return await spotAccountTrade.MyFutureQueryOrder(symbol);
+            return await spotAccountTrade.MyFutureExchangeInfo();
+            // Console.Read();
+        }
+
+        // 查询订单
+        static public async Task<string> CheckAccountInfo()
+        {
+            // symbol = symbol.Replace("_F", "");
+            HttpMessageHandler loggingHandler = new BinanceLoggingHandler(logger: MyTools.logger);
+            HttpClient httpClient = new HttpClient(handler: loggingHandler);
+            var spotAccountTrade = new SpotAccountTrade(httpClient, FUTURE_BASE_URL, apiKey, apiSecret);
+            return await spotAccountTrade.MyFutureAccountInfo();
             // Console.Read();
         }
 
         // 市价单
         static public async Task<string> MarketTrade(string symbol, bool isOpen, Side side, decimal quantity)
         {
-            symbol = symbol.Replace("_F", "");
+            // symbol = symbol.Replace("_F", "");
             HttpMessageHandler loggingHandler = new BinanceLoggingHandler(logger: MyTools.logger);
             HttpClient httpClient = new HttpClient(handler: loggingHandler);
             var spotAccountTrade = new SpotAccountTrade(httpClient, FUTURE_BASE_URL, apiKey, apiSecret);
@@ -357,7 +373,7 @@ namespace Binance.Common.Tests
         // 限价单
         static public async Task<string> LimitTrade(string symbol, bool isOpen, Side side, decimal quantity, decimal price)
         {
-            symbol = symbol.Replace("_F", "");
+            // symbol = symbol.Replace("_F", "");
             HttpMessageHandler loggingHandler = new BinanceLoggingHandler(logger: MyTools.logger);
             HttpClient httpClient = new HttpClient(handler: loggingHandler);
             var spotAccountTrade = new SpotAccountTrade(httpClient, FUTURE_BASE_URL, apiKey, apiSecret);
@@ -452,7 +468,7 @@ namespace Binance.Common.Tests
 
         static public float SimilarValue(float a1, float a2, float b1, float b2, float percent = 0.1f, float val = 0.001f, float extraRange = 1f)
         {
-            return SimilarRate((a1 - a2) / a1, (b1 - b2) / b1, percent, val, extraRange);
+            return SimilarRate((a1 - a2) / a2, (b1 - b2) / b2, percent, val, extraRange);
         }
 
         static public float SimilarRate(float r1, float r2, float percent = 0.1f, float val = 0.001f, float extraRange = 1f)

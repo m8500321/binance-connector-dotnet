@@ -36,24 +36,22 @@ namespace Binance.Common
             }
             lock (LOCK)
             {
-                var s = "";
+                var curStr = "";
                 using (StreamReader sr = new StreamReader(dataDir + "net_log.txt"))
                 {
-                    s = sr.ReadToEnd();
+                    curStr = sr.ReadToEnd();
                 }
-                if (s.Length > 200000)
+                if (curStr.Length > 10000000)
                 {
-                    using (StreamWriter sw = new StreamWriter(dataDir + "net_log.txt"))
+                    var newFile = "net_log__" + DateTime.Now.ToString("MM-dd__HH-mm-ss");
+                    using (StreamWriter sw = new StreamWriter(dataDir + "backup/" + newFile + ".txt"))
                     {
-                        sw.Write(s.Substring(s.Length - 120000) + output);
+                        sw.Write(curStr);
                     }
                 }
-                else
+                using (StreamWriter sw = new StreamWriter(dataDir + "net_log.txt", curStr.Length <= 10000000))
                 {
-                    using (StreamWriter sw = new StreamWriter(dataDir + "net_log.txt", true))
-                    {
-                        sw.Write(output);
-                    }
+                    sw.Write(output);
                 }
             }
 

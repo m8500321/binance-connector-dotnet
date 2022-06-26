@@ -22,22 +22,6 @@ msbuild.err
 msbuild.wrn
 
 .ionide/
-.vs/ProjectEvaluation/binance-connector-dotnet.projects.v2
-.vs/ProjectEvaluation/binance-connector-dotnet.metadata.v2
-.vs/binance-connector-dotnet/v17/TestStore/0/testlog.manifest
-.vs/binance-connector-dotnet/v17/TestStore/0/036.testlog
-.vs/binance-connector-dotnet/v17/.suo
-.vs/binance-connector-dotnet/v17/.futdcache.v1
-.vs/binance-connector-dotnet/FileContentIndex/read.lock
-.vs/binance-connector-dotnet/FileContentIndex/da79e83d-ef93-4772-8ff9-702165e851ff.vsidx
-.vs/binance-connector-dotnet/FileContentIndex/baeb958d-70c0-4c20-b1ff-f0a28218ca62.vsidx
-.vs/binance-connector-dotnet/FileContentIndex/96a5644c-6553-4510-a967-6c7255e7f5f3.vsidx
-.vs/binance-connector-dotnet/FileContentIndex/155d9508-292b-465d-a416-b74b41657637.vsidx
-.vs/binance-connector-dotnet/DesignTimeBuild/.dtbcache.v2
-.vs/binance-connector-dotnet/v17/TestStore/0/009.testlog
-.vs/binance-connector-dotnet/v17/TestStore/0/042.testlog
-.vs/binance-connector-dotnet/FileContentIndex/fdf8060e-fb18-4a0c-91e8-c447a9585c84.vsidx
-.vs/binance-connector-dotnet/FileContentIndex/ed935791-1c14-46c6-a5d1-926318ad3a03.vsidx
-.vs/binance-connector-dotnet/FileContentIndex/5f517f23-228e-42ce-ad35-9568969b9606.vsidx
-.vs/binance-connector-dotnet/FileContentIndex/54ad99cf-37b7-433a-bbaa-f245d31b8b60.vsidx
-.vs/binance-connector-dotnet/FileContentIndex/412fb844-7d31-467d-96c1-09893a4cd5a3.vsidx
+.vs/*
+datas/backup/*
+

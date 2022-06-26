@@ -201,15 +201,28 @@ namespace Binance.Spot
         private const string FUTURE_OPEN_ORDER = "/fapi/v1/openOrders"; // 挂单
         private const string FUTURE_QUERY_ORDER = "/fapi/v1/allOrders"; // 订单
         private const string FUTURE_QUERY_TRADES = "/fapi/v1/userTrades"; // 历史成交
-        public async Task<string> MyFutureQueryOrder(string symbol, int limit = 50)
+        private const string FUTURE_ACCOUNT_INFO = "/fapi/v2/account"; // 账户信息
+        public async Task<string> MyFutureAccountInfo()
         {
             var result = await this.SendSignedAsync<string>(
-                FUTURE_QUERY_ORDER,
+                FUTURE_ACCOUNT_INFO,
                 HttpMethod.Get,
                 query: new Dictionary<string, object>
                 {
-                    { "symbol", symbol },
-                    { "limit", limit },
+                    { "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() },
+                });
+
+            return result;
+        }
+
+        private const string FUTURE_EXCHANGE_INFO = "/fapi/v1/exchangeInfo"; // 交易信息
+        public async Task<string> MyFutureExchangeInfo()
+        {
+            var result = await this.SendSignedAsync<string>(
+                FUTURE_EXCHANGE_INFO,
+                HttpMethod.Get,
+                query: new Dictionary<string, object>
+                {
                     { "timestamp", DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() },
                 });
 
