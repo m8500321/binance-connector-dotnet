@@ -37,9 +37,9 @@ namespace Binance.Common.Tests
 
             // 补齐到最新
             MyTools.LogMsg("StartRobot");
-            var sb = new List<string> { "SOLUSDT" };
-            foreach (var symbol in sb)
-            // foreach (var symbol in MyTest.symbolAll)
+            // var sb = new List<string> { "SOLUSDT" };
+            // foreach (var symbol in sb)
+            foreach (var symbol in MyTest.symbolAll)
             {
                 await MergeLatestData(symbol, true);
                 MyTools.Text2Serializable(symbol);

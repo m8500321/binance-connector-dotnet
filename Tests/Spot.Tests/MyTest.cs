@@ -57,8 +57,8 @@ namespace Binance.Common.Tests
 
         // public static List<string> symbolAll = new List<string> { "BTCUSDT" };
         public static List<string> symbolAll = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT", "SOLUSDT", "ADAUSDT", "DOGEUSDT", "DOTUSDT" };
-        // static List<string> runSymbols = new List<string> { "SOLUSDT" };
-        static List<string> runSymbols = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT", "SOLUSDT", "ADAUSDT", "DOGEUSDT", "DOTUSDT" };
+        static List<string> runSymbols = new List<string> { "SOLUSDT", "ADAUSDT", "DOGEUSDT", "DOTUSDT"};
+        // static List<string> runSymbols = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT", "SOLUSDT", "ADAUSDT", "DOGEUSDT", "DOTUSDT" };
 
         static public async Task Main(string[] args)
         {
@@ -417,21 +417,22 @@ namespace Binance.Common.Tests
                 {"volume_weight",2f},
 
                 {"need_weight",35f},
-                {"similar_range",10*0.01f},
-                {"similar_val",0.5f*0.001f},
+                {"similar_range",5*0.01f},
+                {"similar_val",0.05f*0.01f},
 
                 {"need_count",150},
             };
             var filterArgs = new Dictionary<string, float>()
             {
-                {"RATE_DELTA", 5f * 0.01f},
-                {"E_DELTA", 0.04f * 0.01f}
+                {"RATE_DELTA", 8f * 0.01f},
+                {"E_DELTA", 0.02f * 0.01f}
             };
             var s_range = matchArgs["similar_range"];
             var s_val = matchArgs["similar_val"];
             var prev_weight = matchArgs["prev_weight"];
             var price_weight = matchArgs["price_weight"];
             var need_count = matchArgs["need_count"];
+            var volume_weight = matchArgs["volume_weight"];
             // var symbolAll = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT" };
             List<MyKline> allKlines = new List<MyKline>();
             foreach (var s in symbolAll)
@@ -443,8 +444,8 @@ namespace Binance.Common.Tests
             var thisKline = MyTools.LoadFileData(symbol).myKlines;
             var thisKlineArray = thisKline.ToArray();
             var countAll = 0;
-            var start = 18000;
-            var len = 500;
+            var start = 180000;
+            var len = 1000;
             for (int i = start; i < start + len; i++)
             // for (int i = 50; i < len; i++)
             {
@@ -488,7 +489,7 @@ namespace Binance.Common.Tests
                     }
                     // var volumeRate0 = 0f;
                     // var volumeRate1 = 0f;
-                    // volumeRate0 = (matchArgs["volume_weight"]) * MyTools.SimilarValue(itemI.volume, itemI.prevAveVolumeList[2], itemJ.volume, itemJ.prevAveVolumeList[2], s_range, s_val, 2f);
+                    // sumValue = volume_weight * MyTools.SimilarValue(itemI.volume, itemI.prevAveVolumeList[2], itemJ.volume, itemJ.prevAveVolumeList[2], s_range, s_val, 2f);
                     // volumeRate1 = (matchArgs["volume_weight"]) * MyTools.SimilarValue(itemI.prevAveVolumeList[1], itemI.prevAveVolumeList[2], itemJ.prevAveVolumeList[1], itemJ.prevAveVolumeList[2], s_range, s_val, 2f);
 
                     // var minValue1 = 0f;
