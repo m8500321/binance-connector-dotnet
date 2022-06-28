@@ -56,8 +56,8 @@ namespace Binance.Common.Tests
         static string apiSecret = "rXDNV41PN9Lce56Kmd7lJFN5BFXhzXr0Vr4zeSlZR2SmGwj7QICfaFIcExOhnjqB";
 
         // public static List<string> symbolAll = new List<string> { "BTCUSDT" };
-        public static List<string> symbolAll = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT", "SOLUSDT", "ADAUSDT", "DOGEUSDT", "DOTUSDT" };
-        static List<string> runSymbols = new List<string> { "SOLUSDT", "ADAUSDT", "DOGEUSDT", "DOTUSDT"};
+        public static List<string> symbolAll = new List<string> { "BTCUSDT", "SOLUSDT", "ADAUSDT", "DOGEUSDT", "DOTUSDT" };
+        static List<string> runSymbols = new List<string> { "SOLUSDT", "ADAUSDT", "DOGEUSDT", "DOTUSDT" };
         // static List<string> runSymbols = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT", "SOLUSDT", "ADAUSDT", "DOGEUSDT", "DOTUSDT" };
 
         static public async Task Main(string[] args)
@@ -113,7 +113,10 @@ namespace Binance.Common.Tests
 
                 // MyTools.LogMsg(name);
                 // thisobj.AnalyseCurveMatch2(name);
-                // MyTools.Text2Serializable(name);
+                // 序列化
+                MyTools.Text2Serializable(name);
+
+                // thisobj.AnalyseCurveMatch2(name);
 
                 var t = Task<string>.Run(async () =>
                     {
@@ -125,12 +128,12 @@ namespace Binance.Common.Tests
                         // thisobj.AnalyseBigVolume(name);
                         // thisobj.AnalyseTend(name);
                         // thisobj.TestRandomInc(name);
-                        return thisobj.AnalyseCurveMatch2(name);
+                        // return thisobj.AnalyseCurveMatch2(name);
                         return "";
                     });
                 tasks.Add(t);
             }
-            // Task.WaitAll(tasks.ToArray());
+            Task.WaitAll(tasks.ToArray());
             var output = "";
             foreach (var item in tasks)
             {
@@ -417,15 +420,15 @@ namespace Binance.Common.Tests
                 {"volume_weight",2f},
 
                 {"need_weight",35f},
-                {"similar_range",5*0.01f},
-                {"similar_val",0.05f*0.01f},
+                {"similar_range",10*0.01f},
+                {"similar_val",0.1f*0.01f},
 
                 {"need_count",150},
             };
             var filterArgs = new Dictionary<string, float>()
             {
-                {"RATE_DELTA", 8f * 0.01f},
-                {"E_DELTA", 0.02f * 0.01f}
+                {"RATE_DELTA", 7f * 0.01f},
+                {"E_DELTA", 0.03f * 0.01f}
             };
             var s_range = matchArgs["similar_range"];
             var s_val = matchArgs["similar_val"];

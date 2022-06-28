@@ -471,8 +471,7 @@ namespace Binance.Common.Tests
             return SimilarRate((a1 - a2) / a2, (b1 - b2) / b2, percent, val, extraRange);
         }
 
-        static public float  
-        SimilarRate(float r1, float r2, float percent = 0.1f, float val = 0.001f, float extraRange = 1f)
+        static public float SimilarRate(float r1, float r2, float percent = 0.1f, float val = 0.001f, float extraRange = 1f)
         {
             // var a = new System.Diagnostics.CodeAnalysis.ObjectPool();
             var maxDiff = Math.Abs(r1) * percent + val;
