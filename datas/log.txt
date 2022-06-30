@@ -12013,3 +12013,627 @@ DOTUSDT:  	12:12  50% 	e:-0.072%
 [10]:22/6/29 周三 0:31:45
 End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:03:47.1873718
    at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 147
+
+
+[0]:22 6 29 周三 9:30:37
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[1]:22 6 29 周三 9:30:59
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[2]:22 6 29 周三 9:30:59
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:21.9223194
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 148
+
+
+[0]:22 6 29 周三 9:31:11
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[1]:22 6 29 周三 9:31:42
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[2]:22 6 29 周三 9:31:42
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:30.6644313
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 148
+
+
+[0]:22 6 29 周三 9:36:21
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[0]:22 6 29 周三 9:37:17
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[0]:22 6 29 周三 9:38:42
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[0]:22 6 29 周三 10:08:51
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[0]:22 6 29 周三 10:09:18
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[1]:22 6 29 周三 11:19:07
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[2]:22 6 29 周三 11:19:07
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 01:09:49.6077015
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 148
+
+
+[0]:22 6 29 周三 18:17:17
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[1]:22 6 29 周三 18:23:58
+Error!
+Binance.Common.BinanceClientException: Exception of type 'Binance.Common.BinanceClientException' was thrown.
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 231
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[2]:22 6 29 周三 18:23:58
+Error!
+Binance.Common.BinanceClientException: Exception of type 'Binance.Common.BinanceClientException' was thrown.
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 231
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[3]:22 6 29 周三 18:23:58
+Error!
+Binance.Common.BinanceClientException: Exception of type 'Binance.Common.BinanceClientException' was thrown.
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 231
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[4]:22 6 29 周三 18:23:59
+Error!
+Binance.Common.BinanceClientException: Exception of type 'Binance.Common.BinanceClientException' was thrown.
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 231
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[5]:22 6 29 周三 18:23:59
+Error!
+Binance.Common.BinanceClientException: Exception of type 'Binance.Common.BinanceClientException' was thrown.
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 231
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[6]:22 6 29 周三 18:26:59
+Error!
+Binance.Common.BinanceClientException: Exception of type 'Binance.Common.BinanceClientException' was thrown.
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 231
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[0]:22 6 29 周三 18:31:23
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[0]:22 6 29 周三 18:32:54
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[1]:22 6 29 周三 18:36:02
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[2]:22 6 29 周三 18:36:02
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:03:07.8663691
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 148
+
+
+[0]:22 6 29 周三 18:39:01
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[0]:22 6 29 周三 19:48:08
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[0]:22 6 29 周三 19:49:23
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[0]:22 6 29 周三 19:51:48
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[0]:22 6 29 周三 19:52:32
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[0]:22 6 29 周三 19:58:29
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[1]:22 6 29 周三 20:05:27
+SOLUSDT
+样本数:5000 总匹配量:4 eFail/rateFail:4/4
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.0005, need_count:150, RATE_DELTA:0.1, E_DELTA:0.0004, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[2]:22 6 29 周三 20:06:38
+DOTUSDT
+样本数:5000 总匹配量:0 eFail/rateFail:0/0
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.0005, need_count:150, RATE_DELTA:0.1, E_DELTA:0.0004, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[3]:22 6 29 周三 20:06:53
+XRPUSDT
+样本数:5000 总匹配量:2695 eFail/rateFail:2695/1521
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.0005, need_count:150, RATE_DELTA:0.1, E_DELTA:0.0004, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[4]:22 6 29 周三 20:07:11
+ETHUSDT
+样本数:5000 总匹配量:2651 eFail/rateFail:2651/2605
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.0005, need_count:150, RATE_DELTA:0.1, E_DELTA:0.0004, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[5]:22 6 29 周三 20:07:17
+BNBUSDT
+样本数:5000 总匹配量:3586 eFail/rateFail:3586/3543
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.0005, need_count:150, RATE_DELTA:0.1, E_DELTA:0.0004, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[6]:22 6 29 周三 20:08:00
+DOGEUSDT
+样本数:5000 总匹配量:78 eFail/rateFail:78/72
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.0005, need_count:150, RATE_DELTA:0.1, E_DELTA:0.0004, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[7]:22 6 29 周三 20:08:23
+BTCUSDT
+样本数:5000 总匹配量:4016 eFail/rateFail:4016/3977
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.0005, need_count:150, RATE_DELTA:0.1, E_DELTA:0.0004, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[8]:22 6 29 周三 20:09:18
+ADAUSDT
+样本数:5000 总匹配量:485 eFail/rateFail:485/455
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.05, similar_val:0.0005, need_count:150, RATE_DELTA:0.1, E_DELTA:0.0004, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[9]:22 6 29 周三 20:09:18
+BTCUSDT:  	0:0  NaN% 	e:NaN%
+ETHUSDT:  	0:0  NaN% 	e:NaN%
+XRPUSDT:  	0:0  NaN% 	e:NaN%
+BNBUSDT:  	0:0  NaN% 	e:NaN%
+SOLUSDT:  	0:0  NaN% 	e:NaN%
+ADAUSDT:  	0:0  NaN% 	e:NaN%
+DOGEUSDT:  	0:0  NaN% 	e:NaN%
+DOTUSDT:  	0:0  NaN% 	e:NaN%
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[10]:22 6 29 周三 20:09:20
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:10:51.3497751
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 148
+
+
+[0]:22 6 29 周三 20:09:59
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[0]:22 6 29 周三 20:10:37
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[1]:22 6 29 周三 20:12:45
+DOGEUSDT
+样本数:1000 总匹配量:51 eFail/rateFail:51/48
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.08, E_DELTA:0.0002, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[2]:22 6 29 周三 20:13:10
+DOTUSDT
+样本数:1000 总匹配量:0 eFail/rateFail:0/0
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.08, E_DELTA:0.0002, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[3]:22 6 29 周三 20:13:10
+SOLUSDT
+样本数:1000 总匹配量:9 eFail/rateFail:9/8
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.08, E_DELTA:0.0002, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[4]:22 6 29 周三 20:13:19
+XRPUSDT
+样本数:1000 总匹配量:966 eFail/rateFail:961/379
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.08, E_DELTA:0.0002, 
+优质数:2	正确率:0%	交易期望:-0.012%
+
+900343 num:84 	1-e涨幅:-0.02% e涨率:33.254% 	False:0.024%
+900572 num:111 	1-e涨幅:-0.021% e涨率:28.405% 	False:0%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[5]:22 6 29 周三 20:13:34
+ADAUSDT
+样本数:1000 总匹配量:57 eFail/rateFail:57/48
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.08, E_DELTA:0.0002, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[6]:22 6 29 周三 20:13:36
+BTCUSDT
+样本数:1000 总匹配量:999 eFail/rateFail:999/996
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.08, E_DELTA:0.0002, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[7]:22 6 29 周三 20:13:40
+BNBUSDT
+样本数:1000 总匹配量:968 eFail/rateFail:968/942
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.08, E_DELTA:0.0002, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[8]:22 6 29 周三 20:13:44
+ETHUSDT
+样本数:1000 总匹配量:912 eFail/rateFail:910/887
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.08, E_DELTA:0.0002, 
+优质数:1	正确率:0%	交易期望:-0.243%
+
+900955 num:95 	1-e涨幅:-0.028% e涨率:31.441% 	False:0.243%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[9]:22 6 29 周三 20:13:44
+BTCUSDT:  	0:0  NaN% 	e:NaN%
+ETHUSDT:  	0:1  0% 	e:-0.243%
+XRPUSDT:  	0:2  0% 	e:-0.012%
+BNBUSDT:  	0:0  NaN% 	e:NaN%
+SOLUSDT:  	0:0  NaN% 	e:NaN%
+ADAUSDT:  	0:0  NaN% 	e:NaN%
+DOGEUSDT:  	0:0  NaN% 	e:NaN%
+DOTUSDT:  	0:0  NaN% 	e:NaN%
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[10]:22 6 29 周三 20:13:46
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:03:09.2388002
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 148
+
+
+[0]:22 6 30 周四 9:19:06
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[1]:22 6 30 周四 9:21:11
+DOGEUSDT
+样本数:1000 总匹配量:51 eFail/rateFail:153/144
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.08, E_DELTA:0.0002, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[2]:22 6 30 周四 9:21:13
+SOLUSDT
+样本数:1000 总匹配量:9 eFail/rateFail:27/24
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.08, E_DELTA:0.0002, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[3]:22 6 30 周四 9:21:34
+DOTUSDT
+样本数:1000 总匹配量:0 eFail/rateFail:0/0
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.08, E_DELTA:0.0002, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[4]:22 6 30 周四 9:21:55
+ETHUSDT
+样本数:1000 总匹配量:912 eFail/rateFail:2730/2661
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.08, E_DELTA:0.0002, 
+优质数:3	正确率:0%	交易期望:-0.243%
+
+900955 num:95 	1-e涨幅:-0.028% e涨率:31.441% 	False:0.243%
+900955 num:95 	2-e涨幅:-0.028% e涨率:31.441% 	False:0.243%
+900955 num:95 	3-e涨幅:-0.028% e涨率:31.441% 	False:0.243%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[5]:22 6 30 周四 9:22:00
+BTCUSDT
+样本数:1000 总匹配量:999 eFail/rateFail:2997/2988
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.08, E_DELTA:0.0002, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[6]:22 6 30 周四 9:22:00
+XRPUSDT
+样本数:1000 总匹配量:966 eFail/rateFail:2883/1137
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.08, E_DELTA:0.0002, 
+优质数:6	正确率:0%	交易期望:-0.012%
+
+900343 num:84 	1-e涨幅:-0.02% e涨率:33.254% 	False:0.024%
+900343 num:84 	2-e涨幅:-0.02% e涨率:33.254% 	False:0.024%
+900343 num:84 	3-e涨幅:-0.02% e涨率:33.254% 	False:0.024%
+900572 num:111 	1-e涨幅:-0.021% e涨率:28.405% 	False:0%
+900572 num:111 	2-e涨幅:-0.021% e涨率:28.405% 	False:0%
+900572 num:111 	3-e涨幅:-0.021% e涨率:28.405% 	False:0%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[7]:22 6 30 周四 9:22:00
+BNBUSDT
+样本数:1000 总匹配量:968 eFail/rateFail:2902/2824
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.08, E_DELTA:0.0002, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[8]:22 6 30 周四 9:22:01
+ADAUSDT
+样本数:1000 总匹配量:57 eFail/rateFail:171/144
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.08, E_DELTA:0.0002, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[9]:22 6 30 周四 9:22:01
+BTCUSDT:  	0:0  NaN% 	e:NaN%
+ETHUSDT:  	0:3  0% 	e:-0.243%
+XRPUSDT:  	0:6  0% 	e:-0.012%
+BNBUSDT:  	0:0  NaN% 	e:NaN%
+SOLUSDT:  	0:0  NaN% 	e:NaN%
+ADAUSDT:  	0:0  NaN% 	e:NaN%
+DOGEUSDT:  	0:0  NaN% 	e:NaN%
+DOTUSDT:  	0:0  NaN% 	e:NaN%
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[10]:22 6 30 周四 9:22:09
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:03:02.7758784
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 148
+
+
+[0]:22 6 30 周四 9:23:29
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[1]:22 6 30 周四 9:25:32
+SOLUSDT
+样本数:1000 总匹配量:9 eFail/rateFail:9/7
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.05, E_DELTA:0.00015, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[2]:22 6 30 周四 9:25:58
+DOTUSDT
+样本数:1000 总匹配量:0 eFail/rateFail:0/0
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.05, E_DELTA:0.00015, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[3]:22 6 30 周四 9:26:07
+ADAUSDT
+样本数:1000 总匹配量:57 eFail/rateFail:55/39
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.05, E_DELTA:0.00015, 
+优质数:2	正确率:50%	交易期望:-0.053%
+
+900874 num:95 	1-e涨幅:-0.016% e涨率:43.35% 	True:-0.027%
+900875 num:85 	1-e涨幅:-0.019% e涨率:41.642% 	False:0.133%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[4]:22 6 30 周四 9:26:09
+ETHUSDT
+样本数:1000 总匹配量:912 eFail/rateFail:904/765
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.05, E_DELTA:0.00015, 
+优质数:6	正确率:33.333%	交易期望:-0.06%
+
+900230 num:75 	1-e涨幅:-0.018% e涨率:38.733% 	True:-0.072%
+900647 num:76 	1-e涨幅:0.018% e涨率:63.148% 	False:-0.175%
+900700 num:127 	1-e涨幅:-0.016% e涨率:42.794% 	False:0.001%
+900717 num:115 	1-e涨幅:0.016% e涨率:57.929% 	False:-0.029%
+900888 num:86 	1-e涨幅:0.017% e涨率:57.696% 	True:0.018%
+900955 num:95 	1-e涨幅:-0.028% e涨率:31.441% 	False:0.243%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[5]:22 6 30 周四 9:26:16
+DOGEUSDT
+样本数:1000 总匹配量:51 eFail/rateFail:50/35
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.05, E_DELTA:0.00015, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[6]:22 6 30 周四 9:26:18
+XRPUSDT
+样本数:1000 总匹配量:966 eFail/rateFail:953/170
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.05, E_DELTA:0.00015, 
+优质数:6	正确率:16.667%	交易期望:-0.036%
+
+900343 num:84 	1-e涨幅:-0.02% e涨率:33.254% 	False:0.024%
+900348 num:94 	1-e涨幅:-0.017% e涨率:39.47% 	False:0.048%
+900388 num:80 	1-e涨幅:0.026% e涨率:55.048% 	True:0.06%
+900443 num:99 	1-e涨幅:-0.015% e涨率:36.487% 	False:0.012%
+900572 num:111 	1-e涨幅:-0.021% e涨率:28.405% 	False:0%
+900672 num:111 	1-e涨幅:-0.023% e涨率:43.962% 	False:0.194%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[7]:22 6 30 周四 9:26:23
+BTCUSDT
+样本数:1000 总匹配量:999 eFail/rateFail:999/961
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.05, E_DELTA:0.00015, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[8]:22 6 30 周四 9:26:32
+BNBUSDT
+样本数:1000 总匹配量:968 eFail/rateFail:968/826
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.05, E_DELTA:0.00015, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[9]:22 6 30 周四 9:26:32
+BTCUSDT:  	0:0  NaN% 	e:NaN%
+ETHUSDT:  	2:4  33.333% 	e:-0.06%
+XRPUSDT:  	1:5  16.667% 	e:-0.036%
+BNBUSDT:  	0:0  NaN% 	e:NaN%
+SOLUSDT:  	0:0  NaN% 	e:NaN%
+ADAUSDT:  	1:1  50% 	e:-0.053%
+DOGEUSDT:  	0:0  NaN% 	e:NaN%
+DOTUSDT:  	0:0  NaN% 	e:NaN%
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[10]:22 6 30 周四 9:27:41
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:04:11.7181779
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 148
