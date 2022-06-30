@@ -12637,3 +12637,729 @@ DOTUSDT:  	0:0  NaN% 	e:NaN%
 [10]:22 6 30 周四 9:27:41
 End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:04:11.7181779
    at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 148
+
+
+[0]:22/6/30 周四 16:00:53
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[1]:22/6/30 周四 16:18:23
+Error!
+System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+ ---> System.TimeoutException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: 由于线程退出或应用程序请求，已中止 I/O 操作。.
+ ---> System.Net.Sockets.SocketException (995): 由于线程退出或应用程序请求，已中止 I/O 操作。
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.ReadAsync(Memory`1 destination)
+   at System.Net.Http.HttpConnection.RawConnectionStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](TIOAdapter adapter, Memory`1 buffer)
+   at System.Net.Http.HttpConnection.FillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean async, Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[2]:22/6/30 周四 16:19:54
+Error!
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean async, Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[3]:22/6/30 周四 16:20:52
+Error!
+System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[4]:22/6/30 周四 16:25:22
+Error!
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean async, Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[5]:22/6/30 周四 16:27:32
+Error!
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean async, Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[6]:22/6/30 周四 16:32:12
+Error!
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean async, Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[7]:22/6/30 周四 16:33:32
+Error!
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean async, Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[8]:22/6/30 周四 16:40:12
+Error!
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean async, Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[9]:22/6/30 周四 16:40:32
+Error!
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean async, Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[10]:22/6/30 周四 16:45:43
+Error!
+System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+ ---> System.TimeoutException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: 由于线程退出或应用程序请求，已中止 I/O 操作。.
+ ---> System.Net.Sockets.SocketException (995): 由于线程退出或应用程序请求，已中止 I/O 操作。
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.ReadAsync(Memory`1 destination)
+   at System.Net.Http.HttpConnection.RawConnectionStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](TIOAdapter adapter, Memory`1 buffer)
+   at System.Net.Http.HttpConnection.FillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean async, Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[11]:22/6/30 周四 16:48:15
+Error!
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean async, Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[12]:22/6/30 周四 16:49:02
+Error!
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean async, Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[13]:22/6/30 周四 16:49:32
+Error!
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean async, Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[14]:22/6/30 周四 16:56:03
+Error!
+System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+ ---> System.TimeoutException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: 由于线程退出或应用程序请求，已中止 I/O 操作。.
+ ---> System.Net.Sockets.SocketException (995): 由于线程退出或应用程序请求，已中止 I/O 操作。
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.ReadAsync(Memory`1 destination)
+   at System.Net.Http.HttpConnection.RawConnectionStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](TIOAdapter adapter, Memory`1 buffer)
+   at System.Net.Http.HttpConnection.FillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean async, Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[15]:22/6/30 周四 16:57:05
+Error!
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean async, Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[16]:22/6/30 周四 17:00:32
+Error!
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean async, Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[17]:22/6/30 周四 17:02:53
+Error!
+System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+ ---> System.TimeoutException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: 由于线程退出或应用程序请求，已中止 I/O 操作。.
+ ---> System.Net.Sockets.SocketException (995): 由于线程退出或应用程序请求，已中止 I/O 操作。
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.ReadAsync(Memory`1 destination)
+   at System.Net.Http.HttpConnection.RawConnectionStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.RawConnectionStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|182_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Boolean async, Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Binance.Common.BinanceService.SendAsync[T](String requestUri, HttpMethod httpMethod, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 161
+   at Binance.Common.BinanceService.SendPublicAsync[T](String requestUri, HttpMethod httpMethod, Dictionary`2 query, Object content) in E:\projects\binance-connector-dotnet\Src\Common\BinanceService.cs:line 85
+   at Binance.Spot.Market.KlineCandlestickData(String symbol, Interval interval, Nullable`1 startTime, Nullable`1 endTime, Nullable`1 limit) in E:\projects\binance-connector-dotnet\Src\Spot\Market.cs:line 199
+   at Binance.Common.Tests.MyTools.FetchMarketData(Int64 startTime, String symbol, String type, Int32 limit, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 119
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+   at Binance.Common.Tests.MyTools.RequestLongData(String symbol, String type, Boolean isFuture, Int32 intervalMin) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTools.cs:line 193
+
+
+[18]:22/6/30 周四 17:04:39
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[19]:22/6/30 周四 17:04:39
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 01:03:46.2327777
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 148
+
+
+[0]:22/6/30 周四 17:27:12
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[1]:22/6/30 周四 17:27:49
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[2]:22/6/30 周四 17:27:49
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:00:37.6131469
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 148
+
+
+[0]:22/6/30 周四 17:35:45
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[0]:22/6/30 周四 17:36:17
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[0]:22/6/30 周四 17:38:37
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[1]:22/6/30 周四 17:40:11
+DOTUSDT
+样本数:1000 总匹配量:0 eFail/rateFail:0/0
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.05, E_DELTA:0.00015, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[2]:22/6/30 周四 17:40:55
+BTCUSDT
+样本数:1000 总匹配量:252 eFail/rateFail:251/196
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.05, E_DELTA:0.00015, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[3]:22/6/30 周四 17:41:04
+BNBUSDT
+样本数:1000 总匹配量:266 eFail/rateFail:265/182
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.05, E_DELTA:0.00015, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[4]:22/6/30 周四 17:41:06
+ETHUSDT
+样本数:1000 总匹配量:270 eFail/rateFail:269/202
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.05, E_DELTA:0.00015, 
+优质数:1	正确率:100%	交易期望:0.036%
+
+700590 num:104 	1-e涨幅:0.018% e涨率:63.325% 	True:0.036%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[5]:22/6/30 周四 17:41:07
+XRPUSDT
+样本数:1000 总匹配量:156 eFail/rateFail:153/78
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.05, E_DELTA:0.00015, 
+优质数:3	正确率:33.333%	交易期望:-0.017%
+
+700159 num:86 	1-e涨幅:-0.016% e涨率:41.685% 	False:0.017%
+700419 num:119 	1-e涨幅:0.021% e涨率:55.525% 	True:0.051%
+700485 num:75 	1-e涨幅:-0.016% e涨率:41.56% 	False:0.084%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[6]:22/6/30 周四 17:41:07
+SOLUSDT
+样本数:1000 总匹配量:0 eFail/rateFail:0/0
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.05, E_DELTA:0.00015, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[7]:22/6/30 周四 17:41:12
+ADAUSDT
+样本数:1000 总匹配量:1 eFail/rateFail:1/1
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.05, E_DELTA:0.00015, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[8]:22/6/30 周四 17:41:17
+DOGEUSDT
+样本数:1000 总匹配量:1 eFail/rateFail:1/0
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.05, E_DELTA:0.00015, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[9]:22/6/30 周四 17:41:17
+BTCUSDT:  	0:0  NaN% 	e:NaN%
+ETHUSDT:  	1:0  100% 	e:0.036%
+XRPUSDT:  	1:2  33.333% 	e:-0.017%
+BNBUSDT:  	0:0  NaN% 	e:NaN%
+SOLUSDT:  	0:0  NaN% 	e:NaN%
+ADAUSDT:  	0:0  NaN% 	e:NaN%
+DOGEUSDT:  	0:0  NaN% 	e:NaN%
+DOTUSDT:  	0:0  NaN% 	e:NaN%
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[10]:22/6/30 周四 17:41:17
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:02:39.8247529
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 148
+
+
+[0]:22/6/30 周四 21:08:52
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 75
+
+
+[1]:22/6/30 周四 21:11:15
+BNBUSDT
+样本数:1000 总匹配量:266 eFail/rateFail:193/231
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.07, E_DELTA:5E-05, 
+优质数:20	正确率:45%	交易期望:-0.003%
+
+700080 num:79 	1-e涨幅:-0.008% e涨率:40.637% 	True:-0.003%
+700081 num:98 	1-e涨幅:-0.009% e涨率:39.698% 	True:-0.016%
+700091 num:89 	1-e涨幅:0.009% e涨率:58.076% 	False:-0.011%
+700288 num:82 	1-e涨幅:-0.01% e涨率:39.382% 	False:0.053%
+700311 num:82 	1-e涨幅:0.008% e涨率:57.967% 	True:0.016%
+700321 num:114 	1-e涨幅:0.007% e涨率:58.063% 	True:0.067%
+700333 num:207 	1-e涨幅:-0.007% e涨率:40.917% 	False:0%
+700334 num:252 	1-e涨幅:-0.005% e涨率:42.287% 	False:0.005%
+700335 num:268 	1-e涨幅:-0.006% e涨率:42.626% 	False:0.122%
+700342 num:91 	1-e涨幅:-0.011% e涨率:42.09% 	True:-0.04%
+700359 num:147 	1-e涨幅:0.008% e涨率:58.898% 	False:-0.016%
+700419 num:125 	1-e涨幅:-0.007% e涨率:42.615% 	True:-0.053%
+700460 num:99 	1-e涨幅:0.01% e涨率:57.82% 	True:0.029%
+700475 num:88 	1-e涨幅:0.009% e涨率:57.493% 	True:0.021%
+700479 num:97 	1-e涨幅:-0.006% e涨率:41.278% 	False:0.011%
+700481 num:110 	1-e涨幅:-0.008% e涨率:42.64% 	True:-0.029%
+700492 num:127 	1-e涨幅:-0.005% e涨率:42.118% 	False:0%
+700495 num:128 	1-e涨幅:-0.008% e涨率:40.091% 	False:0.008%
+700497 num:131 	1-e涨幅:0.007% e涨率:57.494% 	False:-0.056%
+700524 num:87 	1-e涨幅:-0.011% e涨率:42.238% 	False:0.042%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[2]:22/6/30 周四 21:11:29
+SOLUSDT
+样本数:1000 总匹配量:0 eFail/rateFail:0/0
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.07, E_DELTA:5E-05, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[3]:22/6/30 周四 21:11:34
+BTCUSDT
+样本数:1000 总匹配量:252 eFail/rateFail:197/226
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.07, E_DELTA:5E-05, 
+优质数:15	正确率:66.667%	交易期望:0.004%
+
+700048 num:119 	1-e涨幅:-0.007% e涨率:39.927% 	True:-0.053%
+700050 num:131 	1-e涨幅:-0.01% e涨率:35.442% 	True:-0.021%
+700051 num:152 	1-e涨幅:-0.013% e涨率:39.404% 	False:0.051%
+700053 num:145 	1-e涨幅:-0.009% e涨率:42.292% 	True:-0.103%
+700626 num:166 	1-e涨幅:0.011% e涨率:58.056% 	True:0%
+700636 num:78 	1-e涨幅:0.007% e涨率:62.254% 	False:-0.012%
+700638 num:111 	1-e涨幅:0.008% e涨率:60.387% 	False:-0.08%
+700642 num:110 	1-e涨幅:0.013% e涨率:58.175% 	True:0.011%
+700715 num:143 	1-e涨幅:0.008% e涨率:57.334% 	False:-0.108%
+700817 num:95 	1-e涨幅:-0.006% e涨率:37.093% 	True:-0.064%
+700840 num:134 	1-e涨幅:0.009% e涨率:57.115% 	False:-0.092%
+700870 num:86 	1-e涨幅:0.011% e涨率:58.166% 	True:0.056%
+700879 num:116 	1-e涨幅:-0.007% e涨率:37.18% 	True:-0.012%
+700897 num:317 	1-e涨幅:-0.009% e涨率:41.821% 	True:-0.041%
+700936 num:253 	1-e涨幅:0.006% e涨率:58.09% 	True:0.047%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[4]:22/6/30 周四 21:11:40
+ADAUSDT
+样本数:1000 总匹配量:1 eFail/rateFail:0/1
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.07, E_DELTA:5E-05, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[5]:22/6/30 周四 21:11:42
+ETHUSDT
+样本数:1000 总匹配量:270 eFail/rateFail:188/247
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.07, E_DELTA:5E-05, 
+优质数:19	正确率:57.895%	交易期望:0.002%
+
+700029 num:79 	1-e涨幅:0.006% e涨率:57.552% 	True:0.018%
+700059 num:111 	1-e涨幅:0.007% e涨率:58.867% 	False:-0.045%
+700078 num:87 	1-e涨幅:0.006% e涨率:59.235% 	True:0.01%
+700090 num:160 	1-e涨幅:-0.006% e涨率:39.036% 	True:-0.044%
+700124 num:115 	1-e涨幅:0.006% e涨率:59.554% 	False:-0.119%
+700184 num:75 	1-e涨幅:0.014% e涨率:65.805% 	True:0.033%
+700214 num:76 	1-e涨幅:-0.009% e涨率:36.752% 	False:0.014%
+700215 num:80 	1-e涨幅:0.011% e涨率:57.968% 	False:-0.001%
+700330 num:110 	1-e涨幅:0.009% e涨率:60.662% 	True:0.004%
+700331 num:120 	1-e涨幅:0.005% e涨率:59.648% 	False:-0.004%
+700335 num:87 	1-e涨幅:-0.013% e涨率:39.762% 	True:-0.053%
+700341 num:84 	1-e涨幅:-0.007% e涨率:38.376% 	True:-0.019%
+700401 num:88 	1-e涨幅:-0.01% e涨率:36.671% 	False:0.013%
+700506 num:85 	1-e涨幅:-0.01% e涨率:40.473% 	False:0.034%
+700539 num:180 	1-e涨幅:0.008% e涨率:57.733% 	True:0.05%
+700571 num:77 	1-e涨幅:0.015% e涨率:60.241% 	False:-0.012%
+700572 num:104 	1-e涨幅:0.014% e涨率:59.456% 	True:0.007%
+700573 num:90 	1-e涨幅:0.013% e涨率:62.356% 	True:0.008%
+700590 num:104 	1-e涨幅:0.018% e涨率:63.325% 	True:0.036%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[6]:22/6/30 周四 21:11:48
+XRPUSDT
+样本数:1000 总匹配量:156 eFail/rateFail:90/101
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.07, E_DELTA:5E-05, 
+优质数:26	正确率:34.615%	交易期望:0.001%
+
+700092 num:123 	1-e涨幅:-0.006% e涨率:42.014% 	False:0.017%
+700093 num:116 	1-e涨幅:-0.007% e涨率:41.813% 	False:0.017%
+700118 num:104 	1-e涨幅:-0.006% e涨率:40.875% 	False:0.101%
+700132 num:79 	1-e涨幅:-0.009% e涨率:41.425% 	True:-0.05%
+700159 num:86 	1-e涨幅:-0.016% e涨率:41.685% 	False:0.017%
+700165 num:103 	1-e涨幅:-0.005% e涨率:41.018% 	False:0.017%
+700166 num:97 	1-e涨幅:-0.007% e涨率:37.353% 	True:-0.084%
+700186 num:78 	1-e涨幅:-0.007% e涨率:36.96% 	False:0%
+700187 num:81 	1-e涨幅:-0.007% e涨率:38.69% 	False:0.017%
+700188 num:89 	1-e涨幅:-0.008% e涨率:36.022% 	True:-0.05%
+700190 num:105 	1-e涨幅:-0.007% e涨率:37.15% 	True:-0.017%
+700302 num:89 	1-e涨幅:-0.009% e涨率:38.395% 	False:0.034%
+700303 num:86 	1-e涨幅:-0.009% e涨率:36.09% 	False:0.034%
+700343 num:78 	1-e涨幅:-0.011% e涨率:38.112% 	False:0.017%
+700420 num:91 	1-e涨幅:-0.007% e涨率:38.149% 	True:-0.034%
+700426 num:96 	1-e涨幅:-0.01% e涨率:40.918% 	False:0.068%
+700484 num:89 	1-e涨幅:-0.007% e涨率:40.922% 	False:0.034%
+700485 num:75 	1-e涨幅:-0.016% e涨率:41.56% 	False:0.084%
+700498 num:91 	1-e涨幅:-0.011% e涨率:38.587% 	False:0.017%
+700533 num:142 	1-e涨幅:-0.006% e涨率:41.466% 	False:0%
+700534 num:181 	1-e涨幅:-0.005% e涨率:38.308% 	False:0%
+700536 num:202 	1-e涨幅:-0.009% e涨率:36.856% 	True:-0.034%
+700544 num:81 	1-e涨幅:-0.01% e涨率:41.022% 	True:-0.101%
+700548 num:77 	1-e涨幅:0.008% e涨率:57.217% 	False:-0.017%
+700574 num:150 	1-e涨幅:-0.005% e涨率:42.311% 	True:-0.017%
+700576 num:75 	1-e涨幅:-0.006% e涨率:38.012% 	True:-0.118%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[7]:22/6/30 周四 21:11:48
+DOTUSDT
+样本数:1000 总匹配量:0 eFail/rateFail:0/0
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.07, E_DELTA:5E-05, 
+优质数:0	正确率:NaN%	交易期望:NaN%
+
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[8]:22/6/30 周四 21:11:52
+DOGEUSDT
+样本数:1000 总匹配量:1 eFail/rateFail:0/0
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.07, similar_val:0.0005, need_count:150, RATE_DELTA:0.07, E_DELTA:5E-05, 
+优质数:1	正确率:0%	交易期望:-0.071%
+
+700649 num:81 	1-e涨幅:0.009% e涨率:60.016% 	False:-0.071%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 442
+
+
+[9]:22/6/30 周四 21:11:52
+BTCUSDT:  	10:5  66.667% 	e:0.004%
+ETHUSDT:  	11:8  57.895% 	e:0.002%
+XRPUSDT:  	9:17  34.615% 	e:0.001%
+BNBUSDT:  	9:11  45% 	e:-0.003%
+SOLUSDT:  	0:0  NaN% 	e:NaN%
+ADAUSDT:  	0:0  NaN% 	e:NaN%
+DOGEUSDT:  	0:1  0% 	e:-0.071%
+DOTUSDT:  	0:0  NaN% 	e:NaN%
+
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 143
+
+
+[10]:22/6/30 周四 21:11:54
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:03:02.5221311
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 148

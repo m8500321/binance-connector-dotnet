@@ -176,8 +176,8 @@ namespace Binance.Common.Tests
             };
             var filterArgs = new Dictionary<string, float>()
             {
-                {"RATE_DELTA", 5f * 0.01f},
-                {"E_DELTA", 0.015f * 0.01f}
+                {"RATE_DELTA", 7f * 0.01f},
+                {"E_DELTA", 0.005f * 0.01f}
             };
             var s_range = matchArgs["similar_range"];
             var s_val = matchArgs["similar_val"];
@@ -197,7 +197,7 @@ namespace Binance.Common.Tests
             var allKlineArray = allKlines.ToArray();
             var thisKlineArray = thisKline.ToArray();
             var countAll = 0;
-            var start = 900000;
+            var start = 700000;
             var len = 1000;
             // var prevCloseFail = 0;
             // var prevVolumeFail = 0;
@@ -223,26 +223,24 @@ namespace Binance.Common.Tests
                     var sumValue = 0f;
                     var closeJ = itemJ.closePrice;
                     // var prevList = floatPool.PopItem();
-                    // for (int idx = 0; idx < 3; idx++)
-                    // {
-                    //     // 往前2条
-                    //     // sumValue += (prev_weight) * MyTools.SimilarRate(itemI.prevClosePriceRate[idx], itemJ.prevClosePriceRate[idx], s_range, s_val);
+                    for (int idx = 0; idx < 3; idx++)
+                    {
+                        // 往前2条
+                        // sumValue += (prev_weight) * MyTools.SimilarRate(itemI.prevClosePriceRate[idx], itemJ.prevClosePriceRate[idx], s_range, s_val);
 
-                    //     // var itemIPrev = thisKlineArray[i - idx - 1];
-                    //     // var itemJPrev = allKlineArray[j - idx - 1];
-                    //     // sumValue += (prev_weight) * MyTools.SimilarValue(closeI, itemIPrev.closePrice, closeJ, itemJPrev.closePrice, s_range, s_val);
+                        var itemIPrev = thisKlineArray[i - idx - 1];
+                        var itemJPrev = allKlineArray[j - idx - 1];
+                        // sumValue += (prev_weight) * MyTools.SimilarValue(closeI, itemIPrev.closePrice, closeJ, itemJPrev.closePrice, s_range, s_val);
 
-                    //     // var itemIPrev = thisKlineArray[i - idx];
-                    //     // var itemJPrev = allKlineArray[j - idx];
-                    //     // sumValue += (prev_weight) * MyTools.SimilarValue(closeI, itemIPrev.perVolumePrice, closeJ, itemJPrev.perVolumePrice, s_range, s_val);
-                    //     // sumValue += (prev_weight) * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, s_range, s_val);
+                        sumValue += (prev_weight) * MyTools.SimilarValue(closeI, itemIPrev.perVolumePrice, closeJ, itemJPrev.perVolumePrice, s_range, s_val);
+                        // sumValue += (prev_weight) * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, s_range, s_val);
 
-                    //     if (sumValue < 0)
-                    //     {
-                    //         // prevCloseFail++;
-                    //         goto loopend;
-                    //     }
-                    // }
+                        if (sumValue < 0)
+                        {
+                            // prevCloseFail++;
+                            goto loopend;
+                        }
+                    }
                     // var volumeRate0 = 0f;
                     // var volumeRate1 = 0f;
                     // sumValue = volume_weight * MyTools.SimilarValue(itemI.volume, itemI.prevAveVolumeList[2], itemJ.volume, itemJ.prevAveVolumeList[2], s_range, s_val, 2f);
@@ -266,7 +264,9 @@ namespace Binance.Common.Tests
                     // }
 
                     // 5 10 20 40
-                    for (int idx = 0; idx < 9; idx++)
+                    var preIList = itemI.prevClosePriceList;
+                    var preJList = itemJ.prevClosePriceList;
+                    for (int idx = 3; idx < 9; idx++)
                     {
                         // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevAvePriceList[idx], closeJ, itemJ.prevAvePriceList[idx], s_range, s_val);
 
@@ -274,7 +274,7 @@ namespace Binance.Common.Tests
 
                         // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevVolumePriceList[idx], closeJ, itemJ.prevVolumePriceList[idx], s_range, s_val);
                         // sumValue += price_weight * MyTools.SimilarRate(itemI.prevVolumePriceRate[idx], itemJ.prevVolumePriceRate[idx], s_range, s_val);
-                        sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevClosePriceList[idx], closeJ, itemJ.prevClosePriceList[idx], s_range, s_val);
+                        sumValue += price_weight * MyTools.SimilarValue(closeI, preIList[idx], closeJ, preJList[idx], s_range, s_val);
                         if (sumValue < 0)
                         {
                             // prevVolumeFail++;

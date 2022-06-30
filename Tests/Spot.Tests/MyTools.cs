@@ -170,10 +170,10 @@ namespace Binance.Common.Tests
             var minPerDay = 60 * 24;
             // var intervalMin = 5;
 
-            var days = 365f;
+            var days = 0f;
             if (type == "kline")
             {
-                days = 30 * 24f;
+                days = 30 * 18f;
             }
             else
             {
@@ -205,7 +205,7 @@ namespace Binance.Common.Tests
                     {
                         reqStart += diffMS;
                     }
-                    Thread.Sleep(100);
+                    // Thread.Sleep(100);
                 }
                 catch (Exception e)
                 {
