@@ -84,7 +84,7 @@ namespace Binance.Common.Tests
         }
 
 
-        static public async Task<JArray> FetchMarketData(long startTime, string symbol, string type = "kline", int limit = 500, bool isFuture = true)
+        static public async Task<JArray> FetchMarketData(long startTime, string symbol, string type = "kline", int limit = 500, bool isFuture = true, int intervalMin = 5)
         {
 
             var url = "https://api.binance.com";
@@ -113,9 +113,10 @@ namespace Binance.Common.Tests
             // var tag = symbol.Replace("_F", "");
 
             JArray karray = null;
+            var typeInterval = intervalMin == 5 ? Interval.FIVE_MINUTE : Interval.ONE_MINUTE;
             if (type == "kline")
             {
-                var result = await market.KlineCandlestickData(symbol, Interval.FIVE_MINUTE, limit: limit, startTime: startTime);
+                var result = await market.KlineCandlestickData(symbol, typeInterval, limit: limit, startTime: startTime);
                 // var result = await market.KlineCandlestickData(symbol, Interval.ONE_MINUTE, limit: 5);
                 karray = JArray.Parse(result);
             }
@@ -124,9 +125,9 @@ namespace Binance.Common.Tests
                 string typeAPI = "/futures/data/" + type;
                 // var count = 500;
                 var msPerMin = 60 * 1000;
-                var intervalMin = 5;
+                // var intervalMin = 5;
                 var diffMS = intervalMin * msPerMin * limit;
-                var result = await market.MyFutureData(symbol, Interval.FIVE_MINUTE, limit: limit, startTime: startTime, endTime: startTime + diffMS, typeAPI: typeAPI);
+                var result = await market.MyFutureData(symbol, typeInterval, limit: limit, startTime: startTime, endTime: startTime + diffMS, typeAPI: typeAPI);
                 karray = JArray.Parse(result);
             }
 
@@ -157,7 +158,7 @@ namespace Binance.Common.Tests
         //     sw.Close();
         // }
 
-        static public async Task RequestLongData(string symbol, string type, bool isFuture)
+        static public async Task RequestLongData(string symbol, string type, bool isFuture, int intervalMin = 5)
         {
             // request klines
             long curMS = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
@@ -167,7 +168,7 @@ namespace Binance.Common.Tests
             var maxCount = 1000;
             var msPerMin = 60 * 1000;
             var minPerDay = 60 * 24;
-            var intervalMin = 5;
+            // var intervalMin = 5;
 
             var days = 365f;
             if (type == "kline")
@@ -188,7 +189,8 @@ namespace Binance.Common.Tests
             {
                 try
                 {
-                    var karray = await FetchMarketData(reqStart, symbol, type, type == "kline" ? 1000 : 500, isFuture);
+                    var reqCount = type == "kline" ? 1000 : 500;
+                    var karray = await FetchMarketData(reqStart, symbol, type, reqCount, isFuture, intervalMin);
                     for (int j = 0; j < karray.Count; j++)
                     {
                         var item = karray[j];
@@ -217,7 +219,7 @@ namespace Binance.Common.Tests
             {
                 sw.Write(sb);
             }
-            MyTools.Text2Serializable(symbol);
+            // MyTools.Text2Serializable(symbol);
         }
 
         static public string Text2Serializable(string symbol)
@@ -232,95 +234,37 @@ namespace Binance.Common.Tests
                 var myobj = new MyKline(obj);
                 sList.myKlines.Add(myobj);
             }
-            // sList.myKlines.Reverse();
-            var MAX_LEN = 40;
-            for (int i = MAX_LEN; i < sList.myKlines.Count - MAX_LEN; i++)
+            var lines = sList.myKlines;
+            // var MAX_LEN = 9;
+            var PrevList = new List<float>();
+            var powList = new List<int>() { 1, 2, 4, 8, 16, 32, 64, 128, 256, 512 };
+            var startIdx = 1000;
+            var sumVolume = 0f;
+            var sumClose = 0f;
+            for (int i = 1; i <= 512; i++)
             {
-                var itemI = sList.myKlines[i];
-                var sumClose = 0f;
-                var sumPrice = 0f;
-                var sumVolume = 0f;
-                // var sumVolume = 0f;
-                for (int j = 1; j <= MAX_LEN; j++)
+                // sumVolume += (lines[startIdx - i].volumePrice / lines[startIdx - i].volume);
+                sumClose += lines[startIdx - i].closePrice;
+                var powIdx = powList.IndexOf(i);
+                if (powIdx > -1)
                 {
-                    // 前面40条的平均价格
-                    var itemJ = sList.myKlines[i - j + 1];
-                    sumClose += itemJ.closePrice;
-                    sumPrice += itemJ.volumePrice;
-                    sumVolume += itemJ.volume;
-                    var idx = -1;
-                    if (j == MAX_LEN / 8)
-                    {
-                        idx = 0;
-                    }
-                    else if (j == MAX_LEN / 4)
-                    {
-                        idx = 1;
-
-                    }
-                    else if (j == MAX_LEN / 2)
-                    {
-                        idx = 2;
-
-                    }
-                    else if (j == MAX_LEN)
-                    {
-                        idx = 3;
-
-                    }
-                    if (idx > -1)
-                    {
-                        // itemI.prevAveVolumeList[idx] = sumVolume / j;
-                        // itemI.prevAvePriceList[idx] = sumPrice / sumVolume;
-                        // itemI.prevMaxList[idx] = Math.Max(itemI.prevMaxList[idx], itemJ.maxPrice);
-                        // itemI.prevMinList[idx] = Math.Min(itemI.prevMinList[idx], itemJ.minPrice);
-                        // itemI.prevAveCloseList[idx] = sumClose / j;
-                    }
+                    // lines[startIdx].prevVolumePriceList[powIdx] = sumVolume / i;
+                    lines[startIdx].prevClosePriceList[powIdx] = sumClose / i;
                 }
-                var aveVolume = sumVolume / MAX_LEN;
-                var curSumVolume = 0f;
-                var curSumPrice = 0f;
-                // for (int j = 1; j <= MAX_LEN; j++)
-                // {
-                //         itemI.prevVolumePriceList[idx] = curSumPrice / curSumVolume;
+            }
 
-                // }
-                for (int j = 1; j <= MAX_LEN; j++)
-                {
-                    // 单位成交量的平均价格
-                    var itemJ = sList.myKlines[i - j + 1];
-                    curSumPrice += itemJ.volumePrice;
-                    curSumVolume += itemJ.volume;
-                    var rate = curSumVolume / sumVolume;
-                    var idx = -1;
-                    if (rate >= 1)
-                    {
-                        idx = 3;
-                    }
-                    else if (rate >= 1 / 2f)
-                    {
-                        idx = 2;
-                    }
-                    else if (rate >= 1 / 4f)
-                    {
-                        idx = 1;
-                    }
-                    else if (rate >= 1 / 8f)
-                    {
-                        idx = 0;
-                    }
-                    if (idx > -1)
-                    {
-                        itemI.prevVolumePriceList[idx] = curSumPrice / curSumVolume;
-                        itemI.prevVolumePriceRate[idx] = (itemI.closePrice - itemI.prevVolumePriceList[idx]) / itemI.prevVolumePriceList[idx];
-                    }
-                }
-                for (int j = 0; j < 4; j++)
-                {
-                    var prevVal = j > 0 ? itemI.nextSumIncList[j - 1] : 0;
-                    itemI.nextSumIncList[j] = prevVal + sList.myKlines[i + j + 1].incPercent;
-                    itemI.prevClosePriceRate[j] = (itemI.closePrice - sList.myKlines[i - j - 1].closePrice) / sList.myKlines[i - j - 1].closePrice;
+            for (int i = startIdx + 1; i < lines.Count; i++)
+            {
 
+                var currentItem = lines[i];
+                var lastItem = lines[i - 1];
+                for (int idx = 0; idx < lastItem.prevClosePriceList.Length; idx++)
+                {
+                    var count = powList[idx];
+                    var lastEnd = lines[i - count];
+                    // var lastVolume = lastItem.prevVolumePriceList[idx];
+                    var lastClose = lastItem.prevClosePriceList[idx];
+                    currentItem.prevClosePriceList[idx] = (lastClose * count - lastEnd.closePrice + currentItem.closePrice) / count;
                 }
 
             }

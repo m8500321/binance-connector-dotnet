@@ -102,8 +102,7 @@ namespace Binance.Common.Tests
 
             foreach (var name in runSymbols)
             {
-                // await MyTools.QueryOrder(name);
-                // await MyTools.RequestLongData(name, "kline",true);
+                // await MyTools.RequestLongData(name, "kline", true, 1);
                 // // 大户账户数多空比
                 // await MyTools.RequestData(name, "topLongShortAccountRatio");
                 // // 大户持仓量多空比
@@ -115,6 +114,7 @@ namespace Binance.Common.Tests
                 // thisobj.AnalyseCurveMatch2(name);
                 // 序列化
                 // MyTools.Text2Serializable(name);
+                // thisobj.CheckKlineOK(name, 5);
 
                 // thisobj.AnalyseCurveMatch2(name);
 
@@ -128,7 +128,8 @@ namespace Binance.Common.Tests
                         // thisobj.AnalyseBigVolume(name);
                         // thisobj.AnalyseTend(name);
                         // thisobj.TestRandomInc(name);
-                        return thisobj.AnalyseCurveMatch2(name);
+                        // return thisobj.AnalyseCurveMatch2(name);
+                        return thisobj.AnalyseCurveMatch3(name);
                         return "";
                     });
                 tasks.Add(t);
@@ -148,6 +149,299 @@ namespace Binance.Common.Tests
         }
 
 
+        // 精准匹配
+        public string AnalyseCurveMatch3(string symbol)
+        {
+            Dictionary<int, List<int>> cachePrev2 = new Dictionary<int, List<int>>();
+            var floatPool = new ListPool<float>();
+            var intPool = new ListPool<int>();
+
+            var matchArgs = new Dictionary<string, float>()
+            {
+                {"prev_weight",4f},
+                // {"prev_weight_down",1f},
+                {"max_weight",3f},
+                // {"max_weight_down",3f},
+                {"price_weight",3},
+                // {"price_weight_down",1f},
+                {"close_weight",3f},
+                // {"close_weight_down",1f},
+                {"volume_weight",2f},
+
+                {"need_weight",35f},
+                {"similar_range",7*0.01f},
+                {"similar_val",0.05f*0.01f},
+
+                {"need_count",150},
+            };
+            var filterArgs = new Dictionary<string, float>()
+            {
+                {"RATE_DELTA", 5f * 0.01f},
+                {"E_DELTA", 0.015f * 0.01f}
+            };
+            var s_range = matchArgs["similar_range"];
+            var s_val = matchArgs["similar_val"];
+            var prev_weight = matchArgs["prev_weight"];
+            var price_weight = matchArgs["price_weight"];
+            var need_count = matchArgs["need_count"];
+            var volume_weight = matchArgs["volume_weight"];
+            // var symbolAll = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT" };
+            List<MyKline> allKlines = new List<MyKline>();
+            // foreach (var s in symbolAll)
+            // {
+            //     var slist = MyTools.LoadFileData(s);
+            //     allKlines.AddRange(slist.myKlines);
+            // }
+            var thisKline = MyTools.LoadFileData(symbol).myKlines;
+            allKlines = thisKline;
+            var allKlineArray = allKlines.ToArray();
+            var thisKlineArray = thisKline.ToArray();
+            var countAll = 0;
+            var start = 900000;
+            var len = 1000;
+            // var prevCloseFail = 0;
+            // var prevVolumeFail = 0;
+            for (int i = start; i < start + len; i++)
+            // for (int i = 50; i < len; i++)
+            {
+                countAll++;
+                List<int> iList = null;
+                // 被匹配
+                var itemI = thisKlineArray[i];
+                var closeI = itemI.closePrice;
+                for (int j = 1000; j < allKlineArray.Length; j++)
+                {
+                    // 匹配项
+                    // 相似度*权重
+
+                    // var prevValue = 0f;
+                    var itemJ = allKlineArray[j];
+                    if (itemJ.openTime >= itemI.openTime)
+                    {
+                        continue;
+                    }
+                    var sumValue = 0f;
+                    var closeJ = itemJ.closePrice;
+                    // var prevList = floatPool.PopItem();
+                    // for (int idx = 0; idx < 3; idx++)
+                    // {
+                    //     // 往前2条
+                    //     // sumValue += (prev_weight) * MyTools.SimilarRate(itemI.prevClosePriceRate[idx], itemJ.prevClosePriceRate[idx], s_range, s_val);
+
+                    //     // var itemIPrev = thisKlineArray[i - idx - 1];
+                    //     // var itemJPrev = allKlineArray[j - idx - 1];
+                    //     // sumValue += (prev_weight) * MyTools.SimilarValue(closeI, itemIPrev.closePrice, closeJ, itemJPrev.closePrice, s_range, s_val);
+
+                    //     // var itemIPrev = thisKlineArray[i - idx];
+                    //     // var itemJPrev = allKlineArray[j - idx];
+                    //     // sumValue += (prev_weight) * MyTools.SimilarValue(closeI, itemIPrev.perVolumePrice, closeJ, itemJPrev.perVolumePrice, s_range, s_val);
+                    //     // sumValue += (prev_weight) * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, s_range, s_val);
+
+                    //     if (sumValue < 0)
+                    //     {
+                    //         // prevCloseFail++;
+                    //         goto loopend;
+                    //     }
+                    // }
+                    // var volumeRate0 = 0f;
+                    // var volumeRate1 = 0f;
+                    // sumValue = volume_weight * MyTools.SimilarValue(itemI.volume, itemI.prevAveVolumeList[2], itemJ.volume, itemJ.prevAveVolumeList[2], s_range, s_val, 2f);
+                    // volumeRate1 = (matchArgs["volume_weight"]) * MyTools.SimilarValue(itemI.prevAveVolumeList[1], itemI.prevAveVolumeList[2], itemJ.prevAveVolumeList[1], itemJ.prevAveVolumeList[2], s_range, s_val, 2f);
+
+                    // var minValue1 = 0f;
+                    // var maxValue1 = 0f;
+                    // var minValue2 = 0f;
+                    // var maxValue2 = 0f;
+                    // minValue1 = (args["max_weight"]) * MyTools.SimilarValue(closeI, itemI.prevMinList[1], closeJ, itemJ.prevMinList[1], s_range, s_val);
+                    // maxValue1 = (args["max_weight"]) * MyTools.SimilarValue(closeI, itemI.prevMaxList[1], closeJ, itemJ.prevMaxList[1], s_range, s_val);
+                    // minValue2 = (args["max_weight"]) * MyTools.SimilarValue(closeI, itemI.prevMinList[0], closeJ, itemJ.prevMinList[0], s_range, s_val);
+                    // maxValue2 = (args["max_weight"]) * MyTools.SimilarValue(closeI, itemI.prevMaxList[0], closeJ, itemJ.prevMaxList[0], s_range, s_val);
+                    // var aveList = floatPool.PopItem();
+                    // var lastidx = 0;
+                    // for (int idx = 0; idx < 4; idx++)
+                    // {
+                    //     // 加权逐条
+                    //     lastidx -= idx * 5;
+                    //     aveList.Add(args["price_weight"] * MyTools.SimilarValue(closeI, thisKlineArray[i - idx * 5].prevAvePriceList[i], closeJ, klineArray[j - idx * 5].prevAvePriceList[i], s_range, s_val));
+                    // }
+
+                    // 5 10 20 40
+                    for (int idx = 0; idx < 9; idx++)
+                    {
+                        // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevAvePriceList[idx], closeJ, itemJ.prevAvePriceList[idx], s_range, s_val);
+
+                        // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevAveCloseList[idx], closeJ, itemJ.prevAveCloseList[idx], s_range, s_val);
+
+                        // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevVolumePriceList[idx], closeJ, itemJ.prevVolumePriceList[idx], s_range, s_val);
+                        // sumValue += price_weight * MyTools.SimilarRate(itemI.prevVolumePriceRate[idx], itemJ.prevVolumePriceRate[idx], s_range, s_val);
+                        sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevClosePriceList[idx], closeJ, itemJ.prevClosePriceList[idx], s_range, s_val);
+                        if (sumValue < 0)
+                        {
+                            // prevVolumeFail++;
+                            goto loopend;
+                        }
+                    }
+
+                    // for (int idx = 0; idx < 4; idx++)
+                    // {
+                    // // 每5条比较
+                    //     aveList.Add(args["price_weight"] * MyTools.SimilarValue(closeI, thisKlineArray[i - idx * 5].prevAvePriceList[0], closeJ, klineArray[j - idx * 5].prevAvePriceList[0], s_range, s_val));
+                    // }
+
+                    // for (int idx = 0; idx < 4; idx++)
+                    // {
+                    //     // 交易量尺度的比较
+                    //     aveList.Add(args["price_weight"] * MyTools.SimilarValue(closeI, itemI.prevVolumePriceList[idx], closeJ, itemJ.prevVolumePriceList[idx], s_range, s_val));
+                    // }
+
+                    // var aveClose3 = 0f;
+                    // var aveClose2 = 0f;
+                    // var aveClose1 = 0f;
+                    // var aveClose0 = 0f;
+                    // aveClose3 = (args["close_weight"]) * MyTools.SimilarValue(closeI, itemI.prevAveCloseList[3], closeJ, itemJ.prevAveCloseList[3], s_range, s_val);
+                    // aveClose2 = (args["close_weight"]) * MyTools.SimilarValue(closeI, itemI.prevAveCloseList[2], closeJ, itemJ.prevAveCloseList[2], s_range, s_val);
+                    // aveClose1 = (args["close_weight"]) * MyTools.SimilarValue(closeI, itemI.prevAveCloseList[1], closeJ, itemJ.prevAveCloseList[1], s_range, s_val);
+                    // aveClose0 = (args["close_weight"]) * MyTools.SimilarValue(closeI, itemI.prevAveCloseList[0], closeJ, itemJ.prevAveCloseList[0], s_range, s_val);
+
+                    // sumValue = volumeRate0 + volumeRate1 + prevList.Sum() + maxValue1 + minValue1 + maxValue2 + minValue2 + aveList.Sum() + aveClose0 + aveClose1 + aveClose2 + aveClose3;
+                    if (sumValue > 0)
+                    {
+                        if (iList == null)
+                        {
+                            iList = intPool.PopItem();
+                            cachePrev2.Add(i, iList);
+                        }
+                        iList.Add(j);
+                        iList.Add((int)sumValue);
+                    }
+// floatPool.PushItem(prevList);
+// floatPool.PushItem(aveList);
+loopend:;
+                }
+                if (iList != null && iList.Count < need_count)
+                {
+                    // intPool.PushItem(cachePrev2[i]);
+                    cachePrev2.Remove(i);
+                }
+            }
+            // MyTools.LogMsg(symbol, $"总匹配量:{cachePrev2.Count}");
+            string output = "";
+            var usefulCount = 0f;
+            var rightCount = 0f;
+            var realSum = 0f;
+
+            // var RATE_DELTA = 0.02f;
+            // var E_DELTA = 0.06f * 0.01;
+            var NEXT_MAX = 1;
+            var eFail = 0;
+            var rateFail = 0;
+            foreach (var kvItem in cachePrev2)
+            {
+                // 1-3的涨幅
+                var incList = floatPool.PopItem();
+                var targetList = kvItem.Value;
+                var totalWeight = 0f;
+                for (int i = 0; i < targetList.Count; i = i + 2)
+                {
+                    totalWeight += (float)targetList[i + 1];
+                }
+                var itemCount = targetList.Count / 2;
+                var aveWeight = totalWeight / itemCount;
+                for (int i = 0; i < targetList.Count; i = i + 2)
+                {
+                    var itemIdx = targetList[i];
+                    if (allKlineArray.Length <= itemIdx + NEXT_MAX)
+                    {
+                        continue;
+                    }
+                    var weight = 1f;
+                    weight = (float)targetList[i + 1] / aveWeight;
+                    // 三个增量和一个权重
+                    for (int j = 0; j < NEXT_MAX; j++)
+                    {
+                        // incList.Add(allKlineArray[itemIdx].nextSumIncList[j]);
+                        incList.Add(allKlineArray[itemIdx + 1].incPercent);
+                    }
+                    incList.Add(weight);
+                }
+                // // 每个阶段期望
+                // var eList = floatPool.PopItem();
+                // // 每阶段胜率
+                // var winList = floatPool.PopItem();
+                var eLast = 0f;
+                var rateLast = 0f;
+                for (int idx = 0; idx < NEXT_MAX; idx++)
+                {
+                    // 1-3每个增量
+                    var idxSumInc = 0f;
+                    var incCount = 0f;
+                    // var thisNextInc = thisKlineArray[kvItem.Key].nextSumIncList[idx];
+                    var thisNextInc = thisKlineArray[kvItem.Key + 1].incPercent;
+                    for (int i = 0; i < incList.Count; i = i + (NEXT_MAX + 1))
+                    {
+                        if (incList[i + idx] > 0)
+                        {
+                            incCount += incList[i + NEXT_MAX];
+                        }
+                        idxSumInc += incList[i + idx] * incList[i + NEXT_MAX];
+                    }
+                    var eInc = (idxSumInc / itemCount);
+                    var incRate = incCount / itemCount - 0.5f;
+                    if (idx == 0 || (eLast * eInc > 0 && rateLast * incRate > 0))
+                    {
+                        // 和前一条相同
+                        if ((eInc > filterArgs["E_DELTA"] && incRate > filterArgs["RATE_DELTA"]) || (eInc < -filterArgs["E_DELTA"] && incRate < -filterArgs["RATE_DELTA"]))
+                        {
+                            output += $"{kvItem.Key} num:{itemCount} \t{idx + 1}-e涨幅:{MyTools.ToPercent(eInc)} e涨率:{MyTools.ToPercent(incRate + 0.5f)} \t{thisNextInc * eInc > 0}:{MyTools.ToPercent(thisNextInc)}\n";
+                            usefulCount++;
+                            if (thisNextInc * eInc > 0)
+                            {
+                                rightCount++;
+                                realSum += Math.Abs(thisNextInc);
+                            }
+                            else
+                            {
+                                realSum -= Math.Abs(thisNextInc);
+                            }
+                        }
+                        else
+                        {
+                            if (Math.Abs(eInc) < filterArgs["E_DELTA"])
+                            {
+                                eFail++;
+                            }
+                            if (Math.Abs(incRate) < filterArgs["RATE_DELTA"])
+                            {
+                                rateFail++;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    eLast = eInc;
+                    rateLast = incRate;
+                }
+                floatPool.PushItem(incList);
+                // floatPool.PushItem(eList);
+                // floatPool.PushItem(winList);
+
+            }
+            var argStr = "";
+            foreach (var item in matchArgs)
+            {
+                argStr += (item.Key + ":" + MyTools.CutDecim(item.Value, 5) + ", ");
+            }
+            foreach (var item in filterArgs)
+            {
+                argStr += (item.Key + ":" + MyTools.CutDecim(item.Value, 5) + ", ");
+            }
+            var title = "优质数:" + usefulCount + "\t正确率:" + MyTools.ToPercent(rightCount / usefulCount) + "\t交易期望:" + MyTools.ToPercent(realSum / usefulCount) + "\n";
+
+            MyTools.LogMsg(symbol, $"样本数:{countAll} 总匹配量:{cachePrev2.Count} eFail/rateFail:{eFail}/{rateFail}", argStr, title, output);
+            return $"{symbol}:  \t{rightCount}:{usefulCount - rightCount}  {MyTools.ToPercent(rightCount / usefulCount)} \te:{MyTools.ToPercent(realSum / usefulCount)}\n";
+        }
 
         public void AnalyseTime(string symbol)
         {
@@ -348,6 +642,19 @@ namespace Binance.Common.Tests
             }
             MyTools.LogMsg(symbol, output);
         }
+        public void CheckKlineOK(string symbol, int intervalMin)
+        {
+            var msPerMin = 60 * 1000;
+            var slist = MyTools.LoadFileData(symbol);
+            var kList = slist.myKlines;
+            for (int i = 0; i < kList.Count - 1; i++)
+            {
+                if (kList[i].openTime + intervalMin * msPerMin != kList[i + 1].openTime)
+                {
+                    MyTools.LogMsg(symbol, i);
+                }
+            }
+        }
 
         // 70-25% 100-13% ；100 0.04 60% - 6%
         public void TestRandomInc(string symbol)
@@ -449,7 +756,7 @@ namespace Binance.Common.Tests
             var thisKlineArray = thisKline.ToArray();
             var countAll = 0;
             var start = 180000;
-            var len = 5000;
+            var len = 1000;
             // var prevCloseFail = 0;
             // var prevVolumeFail = 0;
             for (int i = start; i < start + len; i++)
@@ -477,7 +784,7 @@ namespace Binance.Common.Tests
                     for (int idx = 0; idx < 3; idx++)
                     {
                         // 往前2条
-                        sumValue += (prev_weight) * MyTools.SimilarRate(itemI.prevClosePriceRate[idx], itemJ.prevClosePriceRate[idx], s_range, s_val);
+                        // sumValue += (prev_weight) * MyTools.SimilarRate(itemI.prevClosePriceRate[idx], itemJ.prevClosePriceRate[idx], s_range, s_val);
 
                         // var itemIPrev = thisKlineArray[i - idx - 1];
                         // var itemJPrev = allKlineArray[j - idx - 1];
@@ -524,7 +831,7 @@ namespace Binance.Common.Tests
                         // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevAveCloseList[idx], closeJ, itemJ.prevAveCloseList[idx], s_range, s_val);
 
                         // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevVolumePriceList[idx], closeJ, itemJ.prevVolumePriceList[idx], s_range, s_val);
-                        sumValue += price_weight * MyTools.SimilarRate(itemI.prevVolumePriceRate[idx], itemJ.prevVolumePriceRate[idx], s_range, s_val);
+                        // sumValue += price_weight * MyTools.SimilarRate(itemI.prevVolumePriceRate[idx], itemJ.prevVolumePriceRate[idx], s_range, s_val);
                         if (sumValue < 0)
                         {
                             // prevVolumeFail++;
@@ -609,7 +916,7 @@ loopend:;
                     // 三个增量和一个权重
                     for (int j = 0; j < NEXT_MAX; j++)
                     {
-                        incList.Add(allKlineArray[itemIdx].nextSumIncList[j]);
+                        // incList.Add(allKlineArray[itemIdx].nextSumIncList[j]);
                     }
                     incList.Add(weight);
                 }
@@ -624,7 +931,8 @@ loopend:;
                     // 1-3每个增量
                     var idxSumInc = 0f;
                     var incCount = 0f;
-                    var thisNextInc = thisKlineArray[kvItem.Key].nextSumIncList[idx];
+                    var thisNextInc = 0;
+                    // var thisNextInc = thisKlineArray[kvItem.Key].nextSumIncList[idx];
                     for (int i = 0; i < incList.Count; i = i + (NEXT_MAX + 1))
                     {
                         if (incList[i + idx] > 0)
