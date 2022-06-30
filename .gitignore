@@ -25,3 +25,4 @@ msbuild.wrn
 .vs/*
 datas/backup/*
 
+*.data
