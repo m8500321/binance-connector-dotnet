@@ -74,7 +74,11 @@ namespace Binance.Common.Tests
 
         // 1 2 4 8 16 32 64 128 256,9条
         // public float[] prevVolumePriceList = new float[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // 前面平均单位量的价格
-        public float[] prevClosePriceList = new float[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // 平均收盘价，不包含自己
+        // [NonSerialized]
+        // public float[] prev100VolumePriceList = new float[10]; // 往前100条的平均价格
+        public float[] prevClosePriceList = new float[10]; // 平均收盘价，不包含自己
+        // public float[] sumIncList = new float[10] {0f }; // 累积涨幅，包含自己
+        public float[] equalDiffList = new float[10]; // 等差数列，交易量均值，包含自己
         // 5,10,20,40；包含自己
         // public List<float> prevAveVolumeList = new List<float>() { 0, 0, 0, 0 }; // 前几次平均成交量
         // public float[] prevAvePriceList = new float[] { 0, 0, 0, 0 }; // 前几次平均时间单价

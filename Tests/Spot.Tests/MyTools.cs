@@ -239,7 +239,6 @@ namespace Binance.Common.Tests
             var PrevList = new List<float>();
             var powList = new List<int>() { 1, 2, 4, 8, 16, 32, 64, 128, 256, 512 };
             var startIdx = 1000;
-            var sumVolume = 0f;
             var sumClose = 0f;
             for (int i = 1; i <= 512; i++)
             {
@@ -252,10 +251,8 @@ namespace Binance.Common.Tests
                     lines[startIdx].prevClosePriceList[powIdx] = sumClose / i;
                 }
             }
-
             for (int i = startIdx + 1; i < lines.Count; i++)
             {
-
                 var currentItem = lines[i];
                 var lastItem = lines[i - 1];
                 for (int idx = 0; idx < lastItem.prevClosePriceList.Length; idx++)
@@ -265,6 +262,26 @@ namespace Binance.Common.Tests
                     // var lastVolume = lastItem.prevVolumePriceList[idx];
                     var lastClose = lastItem.prevClosePriceList[idx];
                     currentItem.prevClosePriceList[idx] = (lastClose * count - lastEnd.closePrice + currentItem.closePrice) / count;
+                    // currentItem.sumIncList[idx] = (currentItem.closePrice - lastEnd.closePrice) / lastEnd.closePrice;
+                }
+            }
+            var DIFF_COUNT = 10;
+            for (int i = startIdx; i < lines.Count; i++)
+            {
+                var currentItem = lines[i];
+                var currentIdxStart = i;
+                for (int idx = 0; idx < DIFF_COUNT; idx++)
+                {
+                    var sumPrice = 0f;
+                    var sumVol = 0f;
+                    for (int j = 0; j < idx + 1; j++)
+                    {
+                        var currentIdxItem = lines[currentIdxStart];
+                        sumPrice += currentIdxItem.volumePrice;
+                        sumVol += currentIdxItem.volume;
+                        currentIdxStart -= 1;
+                    }
+                    currentItem.equalDiffList[idx] = sumPrice / sumVol;
                 }
 
             }
@@ -418,7 +435,7 @@ namespace Binance.Common.Tests
         static public float SimilarRate(float r1, float r2, float percent = 0.1f, float val = 0.001f, float extraRange = 1f)
         {
             // var a = new System.Diagnostics.CodeAnalysis.ObjectPool();
-            var maxDiff = Math.Abs(r1) * percent + val;
+            var maxDiff = (Math.Abs(r1) * percent + val)*extraRange;
             var curDiff = Math.Abs(r1 - r2);
             if (curDiff > maxDiff)
             {
