@@ -18115,3 +18115,303 @@ prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, ne
 [10]:22/7/4 周一 0:30:03
 End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:01:42.7639194
    at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 192
+
+
+[0]:22/7/4 周一 9:22:57
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 76
+
+
+[1]:22/7/4 周一 9:24:19
+0/0 right:NaN% e:NaN%
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 187
+
+
+[2]:22/7/4 周一 9:24:19
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:01:22.0965636
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 192
+
+
+[0]:22/7/4 周一 9:27:22
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 76
+
+
+[1]:22/7/4 周一 9:38:47
+BTCUSDT
+样本数:10001 总匹配量:2299 eFail/rateFail:547/2237 s_val:0.00059999997 s_range:0.04
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.04, similar_val:0.0006, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:62	正确率:45.161%	交易期望:-0.012%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 511
+
+
+[2]:22/7/4 周一 9:39:40
+BTCUSDT
+样本数:10001 总匹配量:2388 eFail/rateFail:393/2240 s_val:0.00059999997 s_range:0.04
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.04, similar_val:0.0006, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:139	正确率:53.957%	交易期望:0.006%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 511
+
+
+[3]:22/7/4 周一 9:39:41
+BTCUSDT
+样本数:10001 总匹配量:6174 eFail/rateFail:1625/6055 s_val:0.00059999997 s_range:0.04
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.04, similar_val:0.0006, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:113	正确率:53.982%	交易期望:0.007%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 511
+
+
+[4]:22/7/4 周一 9:39:44
+BTCUSDT
+样本数:10001 总匹配量:7148 eFail/rateFail:1880/7015 s_val:0.00059999997 s_range:0.04
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.04, similar_val:0.0006, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:129	正确率:58.14%	交易期望:0.007%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 511
+
+
+[5]:22/7/4 周一 9:39:55
+BTCUSDT
+样本数:10001 总匹配量:6687 eFail/rateFail:1747/6555 s_val:0.00059999997 s_range:0.04
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.04, similar_val:0.0006, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:126	正确率:50%	交易期望:-0.001%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 511
+
+
+[6]:22/7/4 周一 9:40:06
+BTCUSDT
+样本数:10001 总匹配量:5254 eFail/rateFail:1227/5091 s_val:0.00059999997 s_range:0.04
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.04, similar_val:0.0006, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:156	正确率:58.333%	交易期望:0.006%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 511
+
+
+[7]:22/7/4 周一 9:40:23
+BTCUSDT
+样本数:10001 总匹配量:6356 eFail/rateFail:1611/6180 s_val:0.00059999997 s_range:0.04
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.04, similar_val:0.0006, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:168	正确率:58.929%	交易期望:0.005%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 511
+
+
+[8]:22/7/4 周一 9:40:23
+BTCUSDT
+样本数:10001 总匹配量:6239 eFail/rateFail:1767/6093 s_val:0.00059999997 s_range:0.04
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.04, similar_val:0.0006, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:140	正确率:55.714%	交易期望:0%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 511
+
+
+[9]:22/7/4 周一 9:40:26
+650000:  	75:54  58.14% 	e:0.007%  s_val:0.00059999997 s_range:0.04
+660001:  	61:52  53.982% 	e:0.007%  s_val:0.00059999997 s_range:0.04
+670002:  	63:63  50% 	e:-0.001%  s_val:0.00059999997 s_range:0.04
+680003:  	28:34  45.161% 	e:-0.012%  s_val:0.00059999997 s_range:0.04
+690004:  	75:64  53.957% 	e:0.006%  s_val:0.00059999997 s_range:0.04
+700005:  	91:65  58.333% 	e:0.006%  s_val:0.00059999997 s_range:0.04
+710006:  	99:69  58.929% 	e:0.005%  s_val:0.00059999997 s_range:0.04
+720007:  	78:62  55.714% 	e:0%  s_val:0.00059999997 s_range:0.04
+570/463 right:55.179% e:0.003%
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 187
+
+
+[10]:22/7/4 周一 9:40:26
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:13:03.7355184
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 192
+
+
+[0]:22/7/4 周一 9:45:11
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 76
+
+
+[1]:22/7/4 周一 9:47:53
+ADAUSDT
+样本数:2001 总匹配量:113 eFail/rateFail:17/102 s_val:0.0006 s_range:0.04
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.04, similar_val:0.0006, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:8	正确率:50%	交易期望:0.031%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
+
+
+[2]:22/7/4 周一 9:48:13
+BTCUSDT
+样本数:2001 总匹配量:1178 eFail/rateFail:270/1150 s_val:0.0006 s_range:0.04
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.04, similar_val:0.0006, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:27	正确率:62.963%	交易期望:0.013%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
+
+
+[3]:22/7/4 周一 9:48:59
+XRPUSDT
+样本数:2001 总匹配量:548 eFail/rateFail:95/463 s_val:0.0006 s_range:0.04
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.04, similar_val:0.0006, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:72	正确率:37.5%	交易期望:-0.004%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
+
+
+[4]:22/7/4 周一 9:49:03
+SOLUSDT
+样本数:2001 总匹配量:24 eFail/rateFail:2/21 s_val:0.0006 s_range:0.04
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.04, similar_val:0.0006, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:3	正确率:33.333%	交易期望:0.048%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
+
+
+[5]:22/7/4 周一 9:49:17
+BNBUSDT
+样本数:2001 总匹配量:821 eFail/rateFail:150/786 s_val:0.0006 s_range:0.04
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.04, similar_val:0.0006, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:33	正确率:54.545%	交易期望:-0%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
+
+
+[6]:22/7/4 周一 9:49:18
+DOTUSDT
+样本数:2001 总匹配量:9 eFail/rateFail:0/7 s_val:0.0006 s_range:0.04
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.04, similar_val:0.0006, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:2	正确率:0%	交易期望:-0.067%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
+
+
+[7]:22/7/4 周一 9:49:25
+DOGEUSDT
+样本数:2001 总匹配量:374 eFail/rateFail:44/343 s_val:0.0006 s_range:0.04
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.04, similar_val:0.0006, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:29	正确率:41.379%	交易期望:-0.01%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
+
+
+[8]:22/7/4 周一 9:49:29
+ETHUSDT
+样本数:2001 总匹配量:702 eFail/rateFail:127/673 s_val:0.0006 s_range:0.04
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, similar_range:0.04, similar_val:0.0006, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:27	正确率:59.259%	交易期望:0.009%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
+
+
+[9]:22/7/4 周一 9:49:33
+700000:  	17:10  62.963% 	e:0.013%  s_val:0.0006 s_range:0.04
+700000:  	16:11  59.259% 	e:0.009%  s_val:0.0006 s_range:0.04
+700000:  	27:45  37.5% 	e:-0.004%  s_val:0.0006 s_range:0.04
+700000:  	18:15  54.545% 	e:-0%  s_val:0.0006 s_range:0.04
+700000:  	1:2  33.333% 	e:0.048%  s_val:0.0006 s_range:0.04
+700000:  	4:4  50% 	e:0.031%  s_val:0.0006 s_range:0.04
+700000:  	12:17  41.379% 	e:-0.01%  s_val:0.0006 s_range:0.04
+700000:  	0:2  0% 	e:-0.067%  s_val:0.0006 s_range:0.04
+95/106 right:47.264% e:0.001%
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 189
+
+
+[10]:22/7/4 周一 9:49:33
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:04:21.9603663
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 194
+
+
+[0]:22/7/4 周一 10:03:19
+Start~~~~~~~~~~~~~~~~~~~~~~~~~~
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 76
+
+
+[1]:22/7/4 周一 10:06:18
+XRPUSDT
+样本数:2001 总匹配量:1532 eFail/rateFail:452/1486 s_val:0.001 s_range:0.05
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:45	正确率:60%	交易期望:0.028%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
+
+
+[2]:22/7/4 周一 10:06:20
+SOLUSDT
+样本数:2001 总匹配量:1028 eFail/rateFail:120/988 s_val:0.001 s_range:0.05
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:38	正确率:39.474%	交易期望:-0.007%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
+
+
+[3]:22/7/4 周一 10:06:30
+BNBUSDT
+样本数:2001 总匹配量:1571 eFail/rateFail:602/1551 s_val:0.001 s_range:0.05
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:20	正确率:50%	交易期望:-0.005%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
+
+
+[4]:22/7/4 周一 10:06:33
+ETHUSDT
+样本数:2001 总匹配量:1595 eFail/rateFail:532/1577 s_val:0.001 s_range:0.05
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:18	正确率:72.222%	交易期望:0.019%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
+
+
+[5]:22/7/4 周一 10:06:39
+BTCUSDT
+样本数:2001 总匹配量:1736 eFail/rateFail:797/1719 s_val:0.001 s_range:0.05
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:16	正确率:25%	交易期望:-0.048%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
+
+
+[6]:22/7/4 周一 10:07:31
+DOTUSDT
+样本数:2001 总匹配量:930 eFail/rateFail:107/895 s_val:0.001 s_range:0.05
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:35	正确率:42.857%	交易期望:-0.006%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
+
+
+[7]:22/7/4 周一 10:07:31
+ADAUSDT
+样本数:2001 总匹配量:1108 eFail/rateFail:192/1060 s_val:0.001 s_range:0.05
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:45	正确率:51.111%	交易期望:-0.007%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
+
+
+[8]:22/7/4 周一 10:07:38
+DOGEUSDT
+样本数:2001 总匹配量:1500 eFail/rateFail:333/1467 s_val:0.001 s_range:0.05
+prev_weight:4, max_weight:3, price_weight:3, close_weight:3, volume_weight:2, need_weight:35, need_count:100, RATE_DELTA:0.1, E_DELTA:1E-05, 
+优质数:32	正确率:56.25%	交易期望:0.034%
+
+   at Binance.Common.Tests.MyTest.AnalyseCurveMatch3(String symbol, Int32 start, Single s_range, Single s_val) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 513
+
+
+[9]:22/7/4 周一 10:07:40
+BTCUSDT 700000:  	4:12  25% 	e:-0.048%  s_val:0.001 s_range:0.05
+ETHUSDT 700000:  	13:5  72.222% 	e:0.019%  s_val:0.001 s_range:0.05
+XRPUSDT 700000:  	27:18  60% 	e:0.028%  s_val:0.001 s_range:0.05
+BNBUSDT 700000:  	10:10  50% 	e:-0.005%  s_val:0.001 s_range:0.05
+SOLUSDT 700000:  	15:23  39.474% 	e:-0.007%  s_val:0.001 s_range:0.05
+ADAUSDT 700000:  	23:22  51.111% 	e:-0.007%  s_val:0.001 s_range:0.05
+DOGEUSDT 700000:  	18:14  56.25% 	e:0.034%  s_val:0.001 s_range:0.05
+DOTUSDT 700000:  	15:20  42.857% 	e:-0.006%  s_val:0.001 s_range:0.05
+125/124 right:50.201% e:0.004%
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 189
+
+
+[10]:22/7/4 周一 10:07:40
+End!!!!!!!!!!!!!!!!!!!!!!!!! 运行耗时: 00:04:20.6264598
+   at Binance.Common.Tests.MyTest.Main(String[] args) in E:\projects\binance-connector-dotnet\Tests\Spot.Tests\MyTest.cs:line 194

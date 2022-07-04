@@ -75,7 +75,7 @@ namespace Binance.Common.Tests
             var startDt = DateTime.Now;
             MyTools.LogMsg("Start~~~~~~~~~~~~~~~~~~~~~~~~~~");
             var thisobj = new MyTest();
-            var tasks = new List<Task<string>>();
+            var tasks = new List<Task<JObject>>();
 
             // await MyTools.QueryOrder("BTCUSDT");
             // await MyTools.MarketTrade("BTCUSDT", false, Side.SELL, 0.001m);
@@ -119,55 +119,57 @@ namespace Binance.Common.Tests
 
                 // thisobj.AnalyseCurveMatch2(name);
 
-                var t = Task<string>.Run(async () =>
-                    {
-                        // MyTools.Data2Readable(name);
+                // var t = Task<JObject>.Run(async () =>
+                //     {
 
-                        // thisobj.AnalyseTime(name);
-                        // thisobj.AnalysePrevKline(name);
+                //         // MyTools.Data2Readable(name);
 
-                        // thisobj.AnalyseBigVolume(name);
-                        // thisobj.AnalyseTend(name);
-                        // thisobj.TestRandomInc(name);
-                        // return thisobj.AnalyseCurveMatch2(name);
-                        // return thisobj.AnalyseCurveMatch3(name);
-                        return "";
-                    });
-                tasks.Add(t);
+                //         // thisobj.AnalyseTime(name);
+                //         // thisobj.AnalysePrevKline(name);
+
+                //         // thisobj.AnalyseBigVolume(name);
+                //         // thisobj.AnalyseTend(name);
+                //         // thisobj.TestRandomInc(name);
+                //         // return thisobj.AnalyseCurveMatch2(name);
+                //         return thisobj.AnalyseCurveMatch3(name);
+                //     });
+                // tasks.Add(t);
             }
-            Task.WaitAll(tasks.ToArray());
-            var output = "";
-            foreach (var item in tasks)
-            {
-                output += item.Result;
-            }
+            // var output = "";
+            // foreach (var item in tasks)
+            // {
+            //     output += item.Result;
+            // }
 
             var tasks2 = new List<Task<JObject>>();
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 8; i++)
             {
-                for (int range = 4; range < 6; range++)
+                for (int range = 4; range < 5; range++)
                 {
-                    for (int val = 5; val < 6; val++)
+                    for (int val = 6; val < 7; val++)
                     {
                         var s_range = range * 0.01f;
                         var s_val = val * 0.0001f;
-                        var start = 700000 + i * 2001;
+                        var start = 700000 + i * 3001;
                         var t = Task<JObject>.Run(async () =>
                             {
-                                return thisobj.AnalyseCurveMatch3("BTCUSDT", start, s_range, s_val);
+                                // public JObject AnalyseCurveMatch3(string symbol, int start = 700000, float s_range = 0.04f, float s_val = 0.0006f)
+
+                                return thisobj.AnalyseCurveMatch3("BTCUSDT", start: start, s_range: s_range, s_val: s_val);
                             });
                         tasks2.Add(t);
 
                     }
                 }
             }
-            Task.WaitAll(tasks2.ToArray());
 
 
-            // var output = "";
+            var output = "";
             var sumRight = 0f;
             var sumwrong = 0f;
             var e = 0f;
+            tasks2.AddRange(tasks);
+            Task.WaitAll(tasks2.ToArray());
             foreach (var item in tasks2)
             {
                 var jObj = (JObject)item.Result;
@@ -194,7 +196,7 @@ namespace Binance.Common.Tests
 
 
         // 精准匹配
-        public JObject AnalyseCurveMatch3(string symbol, int start = 700000, float s_range = 0.05f, float s_val = 0.0005f)
+        public JObject AnalyseCurveMatch3(string symbol, int start = 700000, float s_range = 0.04f, float s_val = 0.0006f,float rate_delta = 0.1f,float e_delta = 0.00001f)
         {
             Dictionary<int, List<int>> cachePrev2 = new Dictionary<int, List<int>>();
             var floatPool = new ListPool<float>();
@@ -213,8 +215,8 @@ namespace Binance.Common.Tests
                 {"volume_weight",2f},
 
                 {"need_weight",35f},
-                {"similar_range",4*0.01f},
-                {"similar_val",0.06f*0.01f},
+                // {"similar_range",4*0.01f},
+                // {"similar_val",0.06f*0.01f},
 
                 {"need_count",100},
             };
@@ -229,6 +231,8 @@ namespace Binance.Common.Tests
             var price_weight = matchArgs["price_weight"];
             var need_count = matchArgs["need_count"];
             var volume_weight = matchArgs["volume_weight"];
+            // var rate_delta = filterArgs["RATE_DELTA"];
+            // var e_delta = filterArgs["E_DELTA"];
             // var symbolAll = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT" };
             List<MyKline> allKlines = new List<MyKline>();
             // foreach (var s in symbolAll)
@@ -459,7 +463,7 @@ loopend:;
                 // if ((eLast * eInc > 0 && rateLast * incRate > 0))
                 // {
                 // 和前一条相同
-                if ((eInc > filterArgs["E_DELTA"] && incRate > filterArgs["RATE_DELTA"]) || (eInc < -filterArgs["E_DELTA"] && incRate < -filterArgs["RATE_DELTA"]))
+                if ((eInc > e_delta && incRate > rate_delta) || (eInc < -e_delta && incRate < -rate_delta))
                 {
                     output += $"{kvItem.Key} num:{itemCount} \t{1}-e涨幅:{MyTools.ToPercent(eInc)} e涨率:{MyTools.ToPercent(incRate + 0.5f)} \t{thisNextInc * eInc > 0}:{MyTools.ToPercent(thisNextInc)}\n";
                     usefulCount++;
@@ -475,11 +479,11 @@ loopend:;
                 }
                 else
                 {
-                    if (Math.Abs(eInc) < filterArgs["E_DELTA"])
+                    if (Math.Abs(eInc) < e_delta)
                     {
                         eFail++;
                     }
-                    if (Math.Abs(incRate) < filterArgs["RATE_DELTA"])
+                    if (Math.Abs(incRate) < rate_delta)
                     {
                         rateFail++;
                     }
@@ -511,7 +515,7 @@ loopend:;
             MyTools.LogMsg(symbol, $"样本数:{countAll} 总匹配量:{cachePrev2.Count} eFail/rateFail:{eFail}/{rateFail} s_val:{s_val} s_range:{s_range}", argStr, title);
             // MyTools.LogMsg(symbol, $"样本数:{countAll} 总匹配量:{cachePrev2.Count} eFail/rateFail:{eFail}/{rateFail}", argStr, title, output);
 
-            var rtStr = $"{start}:  \t{rightCount}:{usefulCount - rightCount}  {MyTools.ToPercent(rightCount / usefulCount)} \te:{MyTools.ToPercent(realSum / usefulCount)}  s_val:{s_val} s_range:{s_range}\n";
+            var rtStr = $"{symbol} {start}:  \t{rightCount}:{usefulCount - rightCount}  {MyTools.ToPercent(rightCount / usefulCount)} \te:{MyTools.ToPercent(realSum / usefulCount)}  s_val:{s_val} s_range:{s_range}\n";
             JObject rt = new JObject();
             rt.Add("log", rtStr);
             rt.Add("rightCount", rightCount);
