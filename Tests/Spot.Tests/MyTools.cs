@@ -67,7 +67,8 @@ namespace Binance.Common.Tests
                 {
                     curStr = sr.ReadToEnd();
                 }
-                if (curStr.Length > 1000000)
+                var overLength = curStr.Length > 1000000;
+                if (overLength)
                 {
                     var newFile = "log__" + DateTime.Now.ToString("MM-dd__HH-mm-ss");
                     using (StreamWriter sw = new StreamWriter(dataDir + "backup/" + newFile + ".txt"))
@@ -75,9 +76,10 @@ namespace Binance.Common.Tests
                         sw.Write(curStr);
                     }
                 }
-                using (StreamWriter sw = new StreamWriter(dataDir + "log.txt", curStr.Length <= 1000000))
+                using (StreamWriter sw = new StreamWriter(dataDir + "log.txt", !overLength))
                 {
-                    sw.Write(output);
+                    var start = overLength ? curStr.Substring(200000) + "\n" : "";
+                    sw.Write(start + output);
                 }
             }
 
@@ -274,14 +276,17 @@ namespace Binance.Common.Tests
                 {
                     var sumPrice = 0f;
                     var sumVol = 0f;
+                    var sumAve = 0f;
                     for (int j = 0; j < idx + 1; j++)
                     {
                         var currentIdxItem = lines[currentIdxStart];
                         sumPrice += currentIdxItem.volumePrice;
                         sumVol += currentIdxItem.volume;
+                        sumAve += (currentIdxItem.openPrice + currentIdxItem.closePrice) / 2;
                         currentIdxStart -= 1;
                     }
-                    currentItem.equalDiffList[idx] = sumPrice / sumVol;
+                    currentItem.equalVolumeList[idx] = sumPrice / sumVol;
+                    currentItem.equalAveList[idx] = sumAve / (idx + 1);
                 }
 
             }
@@ -435,7 +440,7 @@ namespace Binance.Common.Tests
         static public float SimilarRate(float r1, float r2, float percent = 0.1f, float val = 0.001f, float extraRange = 1f)
         {
             // var a = new System.Diagnostics.CodeAnalysis.ObjectPool();
-            var maxDiff = (Math.Abs(r1) * percent + val)*extraRange;
+            var maxDiff = (Math.Abs(r1) * percent + val) * extraRange;
             var curDiff = Math.Abs(r1 - r2);
             if (curDiff > maxDiff)
             {

@@ -58,8 +58,8 @@ namespace Binance.Common.Tests
         // public static List<string> symbolAll = new List<string> { "BTCUSDT" };
         public static List<string> symbolAll = new List<string> { "BTCUSDT", "SOLUSDT", "ADAUSDT", "DOGEUSDT", "DOTUSDT" };
         // static List<string> runSymbols = new List<string> { "BTCUSDT" };
-        // static List<string> runSymbols = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT" };
-        static List<string> runSymbols = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT", "SOLUSDT", "ADAUSDT", "DOGEUSDT", "DOTUSDT" };
+        static List<string> runSymbols = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT" };
+        // static List<string> runSymbols = new List<string> { "BTCUSDT", "ETHUSDT", "XRPUSDT", "BNBUSDT", "SOLUSDT", "ADAUSDT", "DOGEUSDT", "DOTUSDT" };
 
         static public async Task Main(string[] args)
         {
@@ -101,66 +101,67 @@ namespace Binance.Common.Tests
 
             // await MyTradeMgr.StartRobot();
 
-            foreach (var name in runSymbols)
-            {
-                // await MyTools.RequestLongData(name, "kline", true, 1);
-                // // 大户账户数多空比
-                // await MyTools.RequestData(name, "topLongShortAccountRatio");
-                // // 大户持仓量多空比
-                // await MyTools.RequestData(name, "topLongShortPositionRatio");
-                // // 多空持仓人数比
-                // await MyTools.RequestData(name, "globalLongShortAccountRatio");
-
-                // MyTools.LogMsg(name);
-                // thisobj.AnalyseCurveMatch2(name);
-                // 序列化
-                // MyTools.Text2Serializable(name);
-                // thisobj.CheckKlineOK(name, 5);
-
-                // thisobj.AnalyseCurveMatch2(name);
-
-                // var t = Task<JObject>.Run(async () =>
-                //     {
-
-                //         // MyTools.Data2Readable(name);
-
-                //         // thisobj.AnalyseTime(name);
-                //         // thisobj.AnalysePrevKline(name);
-
-                //         // thisobj.AnalyseBigVolume(name);
-                //         // thisobj.AnalyseTend(name);
-                //         // thisobj.TestRandomInc(name);
-                //         // return thisobj.AnalyseCurveMatch2(name);
-                //         return thisobj.AnalyseCurveMatch3(name);
-                //     });
-                // tasks.Add(t);
-            }
-            // var output = "";
-            // foreach (var item in tasks)
+            // foreach (var name in runSymbols)
             // {
-            //     output += item.Result;
+            //     // await MyTools.RequestLongData(name, "kline", true, 1);
+            //     // // 大户账户数多空比
+            //     // await MyTools.RequestData(name, "topLongShortAccountRatio");
+            //     // // 大户持仓量多空比
+            //     // await MyTools.RequestData(name, "topLongShortPositionRatio");
+            //     // // 多空持仓人数比
+            //     // await MyTools.RequestData(name, "globalLongShortAccountRatio");
+
+            //     // MyTools.LogMsg(name);
+            //     // thisobj.AnalyseCurveMatch2(name);
+            //     // 序列化
+            //     MyTools.Text2Serializable(name);
+            //     // thisobj.CheckKlineOK(name, 5);
+
+            //     // thisobj.AnalyseCurveMatch2(name);
+
+            //     // var t = Task<JObject>.Run(async () =>
+            //     //     {
+
+            //     //         // MyTools.Data2Readable(name);
+
+            //     //         // thisobj.AnalyseTime(name);
+            //     //         // thisobj.AnalysePrevKline(name);
+
+            //     //         // thisobj.AnalyseBigVolume(name);
+            //     //         // thisobj.AnalyseTend(name);
+            //     //         // thisobj.TestRandomInc(name);
+            //     //         // return thisobj.AnalyseCurveMatch2(name);
+            //     //         return thisobj.AnalyseCurveMatch3(name);
+            //     //     });
+            //     // tasks.Add(t);
             // }
 
             var tasks2 = new List<Task<JObject>>();
-            for (int i = 0; i < 8; i++)
+            var len = 2001;
+            for (int round = 0; round < 10; round++)
             {
-                for (int range = 4; range < 5; range++)
-                {
-                    for (int val = 6; val < 7; val++)
+                var start = 660000 + round * len;
+                // for (int range = 1; range < 10; range++)
+                // {
+                //     var s_range = range * 0.03f + 0.54f;
+                var s_range = 0.5f;
+                // for (int val = 1; val < 6; val++)
+                // {
+                //     var s_val = val * 0.0003f;
+                var s_val = 0.001f;
+
+                // for (int down = 1; down < 6; down++)
+                // {
+                //     var weightDown = 0.02f * down;
+                var t = Task<JObject>.Run(async () =>
                     {
-                        var s_range = range * 0.01f;
-                        var s_val = val * 0.0001f;
-                        var start = 700000 + i * 3001;
-                        var t = Task<JObject>.Run(async () =>
-                            {
-                                // public JObject AnalyseCurveMatch3(string symbol, int start = 700000, float s_range = 0.04f, float s_val = 0.0006f)
+                        return thisobj.AnalyseCurveMatch3("BTCUSDT", start: start, s_range: s_range, s_val: s_val, rate_delta: 0.01f, e_delta: 0.000001f, len = len, weightDown: 0);
+                    });
+                tasks2.Add(t);
+                // }
 
-                                return thisobj.AnalyseCurveMatch3("BTCUSDT", start: start, s_range: s_range, s_val: s_val);
-                            });
-                        tasks2.Add(t);
-
-                    }
-                }
+                // }
+                // }
             }
 
 
@@ -196,7 +197,7 @@ namespace Binance.Common.Tests
 
 
         // 精准匹配
-        public JObject AnalyseCurveMatch3(string symbol, int start = 700000, float s_range = 0.04f, float s_val = 0.0006f,float rate_delta = 0.1f,float e_delta = 0.00001f)
+        public JObject AnalyseCurveMatch3(string symbol, int start = 700000, float s_range = 0.04f, float s_val = 0.0006f, float rate_delta = 0.1f, float e_delta = 0.00001f, int len = 2000, float weightPow = 1f, float weightDown = 0.05f)
         {
             Dictionary<int, List<int>> cachePrev2 = new Dictionary<int, List<int>>();
             var floatPool = new ListPool<float>();
@@ -245,7 +246,7 @@ namespace Binance.Common.Tests
             var allKlineArray = allKlines.ToArray();
             var thisKlineArray = thisKline.ToArray();
             var countAll = 0;
-            var len = 2001;
+            // var len = 2001;
             // var prevCloseFail = 0;
             // var prevVolumeFail = 0;
             for (int i = start; i < start + len; i++)
@@ -313,7 +314,7 @@ namespace Binance.Common.Tests
                     //     aveList.Add(args["price_weight"] * MyTools.SimilarValue(closeI, thisKlineArray[i - idx * 5].prevAvePriceList[i], closeJ, klineArray[j - idx * 5].prevAvePriceList[i], s_range, s_val));
                     // }
 
-                    sumValue += (prev_weight) * MyTools.SimilarRate(itemI.incPercent, itemJ.incPercent, s_range, s_val);
+                    // sumValue += (prev_weight) * MyTools.SimilarRate(itemI.incPercent, itemJ.incPercent, s_range, s_val);
                     // // 1 2 4 8 16 32 64 128 256
                     // // 1 2 3 4 5 6 7
                     // for (int idx = 0; idx < 7; idx++)
@@ -339,7 +340,8 @@ namespace Binance.Common.Tests
                         // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevClosePriceList[idx], closeJ, itemJ.prevClosePriceList[idx], s_range, s_val);
                         // sumValue += price_weight * MyTools.SimilarRate(itemI.sumIncList[idx], itemJ.sumIncList[idx], s_range, s_val);
                         // sumValue += price_weight * MyTools.SimilarValue(itemI.equalDiffList[idx], itemI.equalDiffList[idx + 1], itemJ.equalDiffList[idx], itemJ.equalDiffList[idx + 1], s_range, s_val, 1 + idx * 0.1f);
-                        sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.equalDiffList[idx], closeJ, itemJ.equalDiffList[idx], s_range, s_val);
+                        sumValue += price_weight * (1 - idx * weightDown) * MyTools.SimilarValue(closeI, itemI.equalVolumeList[idx], closeJ, itemJ.equalVolumeList[idx], s_range, s_val);
+                        // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.equalAveList[idx], closeJ, itemJ.equalAveList[idx], s_range, s_val);
                         if (sumValue < 0)
                         {
                             // prevVolumeFail++;
@@ -409,6 +411,7 @@ loopend:;
             var NEXT_MAX = 1;
             var eFail = 0;
             var rateFail = 0;
+            var sumItemCount = 0f;
             foreach (var kvItem in cachePrev2)
             {
                 // 1-3的涨幅
@@ -430,6 +433,7 @@ loopend:;
                     }
                     var weight = 1f;
                     weight = (float)targetList[i + 1] / aveWeight;
+                    // weight = MathF.Pow(weight, 2);
                     incList.Add(allKlineArray[itemIdx + 1].incPercent);
                     // incList.Add(allKlineArray[itemIdx + 1].incPercent + allKlineArray[itemIdx + 2].incPercent);
                     incList.Add(weight);
@@ -470,6 +474,8 @@ loopend:;
                     if (thisNextInc * eInc > 0)
                     {
                         rightCount++;
+                        sumItemCount += itemCount;
+
                         realSum += Math.Abs(thisNextInc);
                     }
                     else
@@ -512,10 +518,10 @@ loopend:;
             }
             var title = "优质数:" + usefulCount + "\t正确率:" + MyTools.ToPercent(rightCount / usefulCount) + "\t交易期望:" + MyTools.ToPercent(realSum / usefulCount) + "\n";
 
-            MyTools.LogMsg(symbol, $"样本数:{countAll} 总匹配量:{cachePrev2.Count} eFail/rateFail:{eFail}/{rateFail} s_val:{s_val} s_range:{s_range}", argStr, title);
+            MyTools.LogMsg(symbol, $"样本数:{countAll} 总匹配量:{cachePrev2.Count} eFail/rateFail:{eFail}/{rateFail}", argStr, title);
             // MyTools.LogMsg(symbol, $"样本数:{countAll} 总匹配量:{cachePrev2.Count} eFail/rateFail:{eFail}/{rateFail}", argStr, title, output);
 
-            var rtStr = $"{symbol} {start}:  \t{rightCount}:{usefulCount - rightCount}  {MyTools.ToPercent(rightCount / usefulCount)} \te:{MyTools.ToPercent(realSum / usefulCount)}  s_val:{s_val} s_range:{s_range}\n";
+            var rtStr = $"{symbol} {start}:  \t{rightCount}:{usefulCount - rightCount}  {MyTools.ToPercent(rightCount / usefulCount)} \te:{MyTools.ToPercent(realSum / usefulCount)}  s_range:{s_range} s_val:{s_val} aveMatchCount:{(int)(sumItemCount / rightCount)}\n";
             JObject rt = new JObject();
             rt.Add("log", rtStr);
             rt.Add("rightCount", rightCount);
