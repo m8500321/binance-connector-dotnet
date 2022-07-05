@@ -136,30 +136,31 @@ namespace Binance.Common.Tests
             //     // tasks.Add(t);
             // }
 
+            // math数控制在1000-5000
             var tasks2 = new List<Task<JObject>>();
-            var len = 3001;
-            for (int round = 0; round < 2; round++)
+            var len = 3000;
+            for (int round = 0; round < 1; round++)
             {
                 var start = 660000 + round * len;
                 // for (int range = 1; range < 6; range++)
                 // {
-                //     var s_range = range * 0.05f + 0.2f;
-                var s_range = 0.3f;
+                //     var s_range = range * 0.02f + 0.03f;
+                var s_range = 0.10f;
                 // for (int val = 1; val < 6; val++)
                 // {
-                //     var s_val = val * 0.0002f + 0.0002f;
+                //     var s_val = val * 0.00015f + 0.00015f;
                 var s_val = 0.0006f;
 
-                // for (int down = 0; down < 5; down++)
-                // {
-                //     var weightPow = 0.3f * down + 1;
-                var weightPow = 1f;
-                var t = Task<JObject>.Run(async () =>
-                    {
-                        return thisobj.AnalyseCurveMatch3("BTCUSDT", start: start, s_range: s_range, s_val: s_val, rate_delta: 0.00f, inc_delta: 0.000000f, len = len, weightPow: weightPow);
-                    });
-                tasks2.Add(t);
-                // }
+                for (int pow = 1; pow < 6; pow++)
+                {
+                    var weightPow = pow + 11;
+                    // var weightPow = 1f;
+                    var t = Task<JObject>.Run(async () =>
+                        {
+                            return thisobj.AnalyseCurveMatch3("BTCUSDT", start: start, s_range: s_range, s_val: s_val, rate_delta: 0.005f, inc_delta: 0.000002f, len: len, weightPow: weightPow);
+                        });
+                    tasks2.Add(t);
+                }
 
                 // }
                 // }
@@ -220,7 +221,7 @@ namespace Binance.Common.Tests
                 // {"similar_range",4*0.01f},
                 // {"similar_val",0.06f*0.01f},
 
-                {"need_count",8000},
+                {"need_count",100},
             };
             var filterArgs = new Dictionary<string, float>()
             {
@@ -272,27 +273,27 @@ namespace Binance.Common.Tests
                     var sumValue = 0f;
                     var closeJ = itemJ.closePrice;
                     // var prevList = floatPool.PopItem();
-                    // for (int idx = 0; idx < 3; idx++)
-                    // {
-                    //     // 往前2条
-                    //     // sumValue += (prev_weight) * MyTools.SimilarRate(itemI.prevClosePriceRate[idx], itemJ.prevClosePriceRate[idx], s_range, s_val);
+                    for (int idx = 0; idx < weightPow; idx++)
+                    {
+                        // 往前2条
+                        // sumValue += (prev_weight) * MyTools.SimilarRate(itemI.prevClosePriceRate[idx], itemJ.prevClosePriceRate[idx], s_range, s_val);
 
-                    //     // var itemIPrev = thisKlineArray[i - idx - 1];
-                    //     // var itemJPrev = allKlineArray[j - idx - 1];
-                    //     // sumValue += (prev_weight) * MyTools.SimilarValue(closeI, itemIPrev.closePrice, closeJ, itemJPrev.closePrice, s_range, s_val);
+                        // var itemIPrev = thisKlineArray[i - idx - 1];
+                        // var itemJPrev = allKlineArray[j - idx - 1];
+                        var itemIPrev = thisKlineArray[i - idx];
+                        var itemJPrev = allKlineArray[j - idx];
+                        sumValue += (prev_weight) * MyTools.SimilarValue(closeI, itemIPrev.perVolumePrice, closeJ, itemJPrev.perVolumePrice, s_range, s_val);
 
-                    //     // var itemIPrev = thisKlineArray[i - idx];
-                    //     // var itemJPrev = allKlineArray[j - idx];
-                    //     // sumValue += (prev_weight) * MyTools.SimilarValue(closeI, itemIPrev.perVolumePrice, closeJ, itemJPrev.perVolumePrice, s_range, s_val);
-                    //     // sumValue += (prev_weight) * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, s_range, s_val);
-                    //     // sumValue += (prev_weight) * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, s_range, s_val);
+                        // sumValue += (prev_weight) * MyTools.SimilarValue(closeI, itemIPrev.perVolumePrice, closeJ, itemJPrev.perVolumePrice, s_range, s_val);
+                        // sumValue += (prev_weight) * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, s_range, s_val);
+                        // sumValue += (prev_weight) * MyTools.SimilarRate(itemIPrev.incPercent, itemJPrev.incPercent, s_range, s_val);
 
-                    //     if (sumValue < 0)
-                    //     {
-                    //         // prevCloseFail++;
-                    //         goto loopend;
-                    //     }
-                    // }
+                        if (sumValue < 0)
+                        {
+                            // prevCloseFail++;
+                            goto loopend;
+                        }
+                    }
                     // var volumeRate0 = 0f;
                     // var volumeRate1 = 0f;
                     // sumValue = volume_weight * MyTools.SimilarValue(itemI.volume, itemI.prevAveVolumeList[2], itemJ.volume, itemJ.prevAveVolumeList[2], s_range, s_val, 2f);
@@ -315,7 +316,6 @@ namespace Binance.Common.Tests
                     //     aveList.Add(args["price_weight"] * MyTools.SimilarValue(closeI, thisKlineArray[i - idx * 5].prevAvePriceList[i], closeJ, klineArray[j - idx * 5].prevAvePriceList[i], s_range, s_val));
                     // }
 
-                    // sumValue += (prev_weight) * MyTools.SimilarRate(itemI.incPercent, itemJ.incPercent, s_range, s_val);
                     // // 1 2 4 8 16 32 64 128 256
                     // // 1 2 3 4 5 6 7
                     // for (int idx = 0; idx < 7; idx++)
@@ -329,26 +329,28 @@ namespace Binance.Common.Tests
                     //     }
                     // }
                     // 8-36;9-45
-                    for (int idx = 0; idx < 8; idx++)
-                    {
-                        // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevAvePriceList[idx], closeJ, itemJ.prevAvePriceList[idx], s_range, s_val);
+                    // for (int idx = 0; idx < 9; idx++)
+                    // {
+                    //     // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevAvePriceList[idx], closeJ, itemJ.prevAvePriceList[idx], s_range, s_val);
 
-                        // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevAveCloseList[idx], closeJ, itemJ.prevAveCloseList[idx], s_range, s_val);
+                    //     // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevAveCloseList[idx], closeJ, itemJ.prevAveCloseList[idx], s_range, s_val);
 
-                        // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevVolumePriceList[idx], closeJ, itemJ.prevVolumePriceList[idx], s_range, s_val);
-                        // sumValue += price_weight * MyTools.SimilarRate(itemI.prevVolumePriceRate[idx], itemJ.prevVolumePriceRate[idx], s_range, s_val);
-                        // sumValue += price_weight * MyTools.SimilarValue(itemI.prevClosePriceList[idx - 1], itemI.prevClosePriceList[idx], itemJ.prevClosePriceList[idx - 1], itemJ.prevClosePriceList[idx], s_range, s_val);
-                        // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevClosePriceList[idx], closeJ, itemJ.prevClosePriceList[idx], s_range, s_val);
-                        // sumValue += price_weight * MyTools.SimilarRate(itemI.sumIncList[idx], itemJ.sumIncList[idx], s_range, s_val);
-                        // sumValue += price_weight * MyTools.SimilarValue(itemI.equalDiffList[idx], itemI.equalDiffList[idx + 1], itemJ.equalDiffList[idx], itemJ.equalDiffList[idx + 1], s_range, s_val, 1 + idx * 0.1f);
-                        sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.equalVolumeList[idx], closeJ, itemJ.equalVolumeList[idx], s_range, s_val, 1 + idx * 0.1f);
-                        // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.equalAveList[idx], closeJ, itemJ.equalAveList[idx], s_range, s_val);
-                        if (sumValue < 0)
-                        {
-                            // prevVolumeFail++;
-                            goto loopend;
-                        }
-                    }
+                    //     // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevVolumePriceList[idx], closeJ, itemJ.prevVolumePriceList[idx], s_range, s_val);
+                    //     // sumValue += price_weight * MyTools.SimilarRate(itemI.prevVolumePriceRate[idx], itemJ.prevVolumePriceRate[idx], s_range, s_val);
+                    //     // sumValue += price_weight * MyTools.SimilarValue(itemI.prevClosePriceList[idx - 1], itemI.prevClosePriceList[idx], itemJ.prevClosePriceList[idx - 1], itemJ.prevClosePriceList[idx], s_range, s_val);
+                    //     // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevClosePriceList[idx], closeJ, itemJ.prevClosePriceList[idx], s_range, s_val);
+                    //     // sumValue += price_weight * (1f - weightPow) * MyTools.SimilarRate(itemI.sumIncList[idx], itemJ.sumIncList[idx], s_range, s_val);
+                    //     // sumValue += price_weight * MyTools.SimilarValue(itemI.equalDiffList[idx], itemI.equalDiffList[idx + 1], itemJ.equalDiffList[idx], itemJ.equalDiffList[idx + 1], s_range, s_val, 1 + idx * 0.1f);
+                    //     sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.equalVolumeList[idx], closeJ, itemJ.equalVolumeList[idx], s_range, s_val, 1 + idx * 0.1f);
+                    //     // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.equalAveList[idx], closeJ, itemJ.equalAveList[idx], s_range, s_val);
+                    //     if (sumValue < 0)
+                    //     {
+                    //         // prevVolumeFail++;
+                    //         goto loopend;
+                    //     }
+                    // }
+                    // sumValue += (prev_weight) * MyTools.SimilarRate(itemI.incPercent, itemJ.incPercent, s_range, s_val);
+
                     // for (int idx = 0; idx < 30; idx++)
                     // {
 
@@ -409,10 +411,11 @@ loopend:;
 
             // var RATE_DELTA = 0.02f;
             // var E_DELTA = 0.06f * 0.01;
-            var NEXT_MAX = 1;
+            // var NEXT_MAX = 1;
             var diffSignFail = 0;
             var eFail = 0;
             var rateFail = 0;
+            var sumrightItemCount = 0f;
             var sumItemCount = 0f;
             foreach (var kvItem in cachePrev2)
             {
@@ -425,6 +428,7 @@ loopend:;
                     totalWeight += (float)targetList[i + 1];
                 }
                 var itemCount = targetList.Count / 2;
+                sumItemCount += itemCount;
                 var aveWeight = totalWeight / itemCount;
                 for (int i = 0; i < targetList.Count; i = i + 2)
                 {
@@ -469,6 +473,7 @@ loopend:;
                 // if ((eLast * eInc > 0 && rateLast * incRate > 0))
                 // {
                 // 和前一条相同
+                // if (MathF.Abs(eInc) > inc_delta)
                 if ((eInc > inc_delta && eRate > rate_delta) || (eInc < -inc_delta && eRate < -rate_delta))
                 {
                     output += $"{kvItem.Key} num:{itemCount} \t{1}-e涨幅:{MyTools.ToPercent(eInc)} e涨率:{MyTools.ToPercent(eRate + 0.5f)} \t{thisNextInc * eInc > 0}:{MyTools.ToPercent(thisNextInc)}\n";
@@ -476,8 +481,7 @@ loopend:;
                     if (thisNextInc * eInc > 0)
                     {
                         rightCount++;
-                        sumItemCount += itemCount;
-
+                        sumrightItemCount += itemCount;
                         realSum += Math.Abs(thisNextInc);
                     }
                     else
@@ -527,7 +531,7 @@ loopend:;
             MyTools.LogMsg(symbol, $"样本数:{countAll} 总匹配量:{cachePrev2.Count} eFail:{eFail} rateFail:{rateFail} diffSignFail:{diffSignFail}", argStr, title);
             // MyTools.LogMsg(symbol, $"样本数:{countAll} 总匹配量:{cachePrev2.Count} eFail/rateFail:{eFail}/{rateFail}", argStr, title, output);
 
-            var rtStr = $"{symbol} {start}:  \t{rightCount}:{usefulCount - rightCount}  {MyTools.ToPercent(rightCount / usefulCount)} \te:{MyTools.ToPercent(realSum / usefulCount)}  s_range:{s_range} aveMatchCount:{(int)(sumItemCount / rightCount)}\n";
+            var rtStr = $"{symbol} {start}:  \t{rightCount}:{usefulCount - rightCount}  {MyTools.ToPercent(rightCount / usefulCount)} \te:{MyTools.ToPercent(realSum / usefulCount)}  s_range:{s_range} s_val:{s_val} weightPow:{weightPow} aveMatchCount:{(int)(sumrightItemCount / rightCount)} aveCount:{(int)(sumItemCount / cachePrev2.Count)}\n";
             JObject rt = new JObject();
             rt.Add("log", rtStr);
             rt.Add("rightCount", rightCount);
@@ -536,205 +540,205 @@ loopend:;
             return rt;
         }
 
-        public void AnalyseTime(string symbol)
-        {
-            // 每个时刻的涨跌情况
-            Dictionary<string, List<float>> timeAdd = new Dictionary<string, List<float>>();
-            var kList = MyTools.LoadFileData(symbol);
-            foreach (var item in kList.myKlines)
-            {
-                // var key = UTC_START.AddMilliseconds(item.openTime + HOOUR8_MS).ToString("ddd");
-                // var key = UTC_START.AddMilliseconds(item.openTime + HOOUR8_MS).ToString("d");
-                var key = UTC_START.AddMilliseconds(item.openTime + HOOUR8_MS).ToString("ddd HH");
-                // var key = UTC_START.AddMilliseconds(item.openTime + HOOUR8_MS).ToString("dd");
-                if (!timeAdd.ContainsKey(key))
-                {
-                    timeAdd.Add(key, new List<float>());
-                }
-                var addValue = item.incPercent;
-                timeAdd[key].Add(addValue);
-            }
-            // var timeProb = new Dictionary<string, float>();
-            string output = "";
-            foreach (var item in timeAdd)
-            {
-                var incCount = 0;
-                var sumAddValue = 0f;
-                foreach (var addValue in item.Value)
-                {
-                    if (addValue > 0)
-                    {
-                        incCount++;
-                    }
-                    sumAddValue += addValue;
-                }
-                var aveValue = sumAddValue / item.Value.Count;
-                var probability = (float)incCount / item.Value.Count;
-                if (MathF.Abs(aveValue) > 0.03 * 0.01 && (probability > 0.53 || probability < 0.47))
-                // if (probability > 0.56 || probability < 0.44)
-                {
-                    // timeProb.Add(kv.Key, probability);
-                    output += ("时间点" + item.Key + "\t上涨概率" + MyTools.ToPercent(probability) + "\t涨幅" + MyTools.ToPercent(aveValue) + "\tcount:" + item.Value.Count + "\n");
-                }
-            }
-            MyTools.LogMsg(symbol, output);
-        }
+        // public void AnalyseTime(string symbol)
+        // {
+        //     // 每个时刻的涨跌情况
+        //     Dictionary<string, List<float>> timeAdd = new Dictionary<string, List<float>>();
+        //     var kList = MyTools.LoadFileData(symbol);
+        //     foreach (var item in kList.myKlines)
+        //     {
+        //         // var key = UTC_START.AddMilliseconds(item.openTime + HOOUR8_MS).ToString("ddd");
+        //         // var key = UTC_START.AddMilliseconds(item.openTime + HOOUR8_MS).ToString("d");
+        //         var key = UTC_START.AddMilliseconds(item.openTime + HOOUR8_MS).ToString("ddd HH");
+        //         // var key = UTC_START.AddMilliseconds(item.openTime + HOOUR8_MS).ToString("dd");
+        //         if (!timeAdd.ContainsKey(key))
+        //         {
+        //             timeAdd.Add(key, new List<float>());
+        //         }
+        //         var addValue = item.incPercent;
+        //         timeAdd[key].Add(addValue);
+        //     }
+        //     // var timeProb = new Dictionary<string, float>();
+        //     string output = "";
+        //     foreach (var item in timeAdd)
+        //     {
+        //         var incCount = 0;
+        //         var sumAddValue = 0f;
+        //         foreach (var addValue in item.Value)
+        //         {
+        //             if (addValue > 0)
+        //             {
+        //                 incCount++;
+        //             }
+        //             sumAddValue += addValue;
+        //         }
+        //         var aveValue = sumAddValue / item.Value.Count;
+        //         var probability = (float)incCount / item.Value.Count;
+        //         if (MathF.Abs(aveValue) > 0.03 * 0.01 && (probability > 0.53 || probability < 0.47))
+        //         // if (probability > 0.56 || probability < 0.44)
+        //         {
+        //             // timeProb.Add(kv.Key, probability);
+        //             output += ("时间点" + item.Key + "\t上涨概率" + MyTools.ToPercent(probability) + "\t涨幅" + MyTools.ToPercent(aveValue) + "\tcount:" + item.Value.Count + "\n");
+        //         }
+        //     }
+        //     MyTools.LogMsg(symbol, output);
+        // }
 
-        public void AnalysePrevKline(string symbol)
-        {
-            // 每个时刻的涨跌情况
-            Dictionary<string, List<float>> addDict = new Dictionary<string, List<float>>();
-            var slist = MyTools.LoadFileData(symbol);
-            for (int i = 3; i < slist.myKlines.Count; i++)
-            {
-                var item = slist.myKlines[i];
-                var prevItem1 = slist.myKlines[i - 1];
-                var prevItem2 = slist.myKlines[i - 2];
-                var prevItem3 = slist.myKlines[i - 3];
-                var sum1 = prevItem1.incPercent;
-                var sum2 = prevItem1.incPercent + prevItem2.incPercent;
-                var sum3 = prevItem1.incPercent + prevItem2.incPercent + prevItem3.incPercent;
-                var bigger = sum1 * sum1 > sum2 * sum2 ? sum1 : sum2;
-                bigger = bigger * bigger > sum2 * sum2 ? bigger : sum2;
-                // var maxSum = MathF.Max(Math.Abs(sum1), Math.Abs(sum2), Math.Abs(sum3));
-                if (Math.Abs(bigger) < 0.02)
-                {
-                    continue;
-                }
-                bigger = Math.Clamp(bigger, -0.06f, 0.06f);
-                var key = bigger.ToString("f2");
-                if (!addDict.ContainsKey(key))
-                {
-                    addDict.Add(key, new List<float>());
-                }
-                addDict[key].Add(item.incPercent);
-            }
+        // public void AnalysePrevKline(string symbol)
+        // {
+        //     // 每个时刻的涨跌情况
+        //     Dictionary<string, List<float>> addDict = new Dictionary<string, List<float>>();
+        //     var slist = MyTools.LoadFileData(symbol);
+        //     for (int i = 3; i < slist.myKlines.Count; i++)
+        //     {
+        //         var item = slist.myKlines[i];
+        //         var prevItem1 = slist.myKlines[i - 1];
+        //         var prevItem2 = slist.myKlines[i - 2];
+        //         var prevItem3 = slist.myKlines[i - 3];
+        //         var sum1 = prevItem1.incPercent;
+        //         var sum2 = prevItem1.incPercent + prevItem2.incPercent;
+        //         var sum3 = prevItem1.incPercent + prevItem2.incPercent + prevItem3.incPercent;
+        //         var bigger = sum1 * sum1 > sum2 * sum2 ? sum1 : sum2;
+        //         bigger = bigger * bigger > sum2 * sum2 ? bigger : sum2;
+        //         // var maxSum = MathF.Max(Math.Abs(sum1), Math.Abs(sum2), Math.Abs(sum3));
+        //         if (Math.Abs(bigger) < 0.02)
+        //         {
+        //             continue;
+        //         }
+        //         bigger = Math.Clamp(bigger, -0.06f, 0.06f);
+        //         var key = bigger.ToString("f2");
+        //         if (!addDict.ContainsKey(key))
+        //         {
+        //             addDict.Add(key, new List<float>());
+        //         }
+        //         addDict[key].Add(item.incPercent);
+        //     }
 
-            addDict = addDict.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
-            string output = "";
-            foreach (var item in addDict)
-            {
-                var incCount = 0;
-                var sumAddValue = 0f;
-                foreach (var addValue in item.Value)
-                {
-                    if (addValue > 0)
-                    {
-                        incCount++;
-                    }
-                    sumAddValue += (addValue);
-                }
-                var aveValue = sumAddValue / item.Value.Count;
-                var probability = (float)incCount / item.Value.Count;
-                // if (MathF.Abs(float.Parse(item.Key)) > 0.01f)
-                // {
-                output += ("前一条:" + MyTools.ToPercent(item.Key) + "\tnum:" + item.Value.Count + "\t上涨概率" + MyTools.ToPercent(probability) + "\t涨幅" + MyTools.ToPercent(aveValue) + "\n");
-                // }
-            }
-            MyTools.LogMsg(symbol, output);
-        }
+        //     addDict = addDict.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+        //     string output = "";
+        //     foreach (var item in addDict)
+        //     {
+        //         var incCount = 0;
+        //         var sumAddValue = 0f;
+        //         foreach (var addValue in item.Value)
+        //         {
+        //             if (addValue > 0)
+        //             {
+        //                 incCount++;
+        //             }
+        //             sumAddValue += (addValue);
+        //         }
+        //         var aveValue = sumAddValue / item.Value.Count;
+        //         var probability = (float)incCount / item.Value.Count;
+        //         // if (MathF.Abs(float.Parse(item.Key)) > 0.01f)
+        //         // {
+        //         output += ("前一条:" + MyTools.ToPercent(item.Key) + "\tnum:" + item.Value.Count + "\t上涨概率" + MyTools.ToPercent(probability) + "\t涨幅" + MyTools.ToPercent(aveValue) + "\n");
+        //         // }
+        //     }
+        //     MyTools.LogMsg(symbol, output);
+        // }
 
-        public void AnalyseBigVolume(string symbol)
-        {
-            Dictionary<string, List<float>> prevVolume = new Dictionary<string, List<float>>();
-            var slist = MyTools.LoadFileData(symbol);
-            for (int i = 20; i < slist.myKlines.Count; i++)
-            {
-                var item = slist.myKlines[i];
-                var prevItem1 = slist.myKlines[i - 1];
-                var prevItem2 = slist.myKlines[i - 2];
-                var prevItem3 = slist.myKlines[i - 3];
-                var multiFactor = prevItem1.volume * 2 / (prevItem2.volume + prevItem3.volume);
-                // 交易量为2倍，涨幅超过0.5%
-                if (multiFactor > 2 && Math.Abs(prevItem1.incPercent) > 0.005)
-                {
-                    var sig = prevItem1.isUp ? "+ x" : "- x";
-                    multiFactor = Math.Min(multiFactor, 4);
-                    var key = sig + MyTools.CutDecim(multiFactor, 1);
-                    if (!prevVolume.ContainsKey(key))
-                    {
-                        prevVolume.Add(key, new List<float>());
-                    }
-                    prevVolume[key].Add(item.incPercent);
-                }
-            }
-            prevVolume = prevVolume.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
-            string output = "";
-            foreach (var dictItem in prevVolume)
-            {
+        // public void AnalyseBigVolume(string symbol)
+        // {
+        //     Dictionary<string, List<float>> prevVolume = new Dictionary<string, List<float>>();
+        //     var slist = MyTools.LoadFileData(symbol);
+        //     for (int i = 20; i < slist.myKlines.Count; i++)
+        //     {
+        //         var item = slist.myKlines[i];
+        //         var prevItem1 = slist.myKlines[i - 1];
+        //         var prevItem2 = slist.myKlines[i - 2];
+        //         var prevItem3 = slist.myKlines[i - 3];
+        //         var multiFactor = prevItem1.volume * 2 / (prevItem2.volume + prevItem3.volume);
+        //         // 交易量为2倍，涨幅超过0.5%
+        //         if (multiFactor > 2 && Math.Abs(prevItem1.incPercent) > 0.005)
+        //         {
+        //             var sig = prevItem1.isUp ? "+ x" : "- x";
+        //             multiFactor = Math.Min(multiFactor, 4);
+        //             var key = sig + MyTools.CutDecim(multiFactor, 1);
+        //             if (!prevVolume.ContainsKey(key))
+        //             {
+        //                 prevVolume.Add(key, new List<float>());
+        //             }
+        //             prevVolume[key].Add(item.incPercent);
+        //         }
+        //     }
+        //     prevVolume = prevVolume.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+        //     string output = "";
+        //     foreach (var dictItem in prevVolume)
+        //     {
 
-                var sum = dictItem.Value.Sum() / dictItem.Value.Count;
-                if (Math.Abs(sum) > 0.0005)
-                {
-                    output += ($"{dictItem.Key} {MyTools.ToPercent(sum)} count:{dictItem.Value.Count}\n");
-                }
-            }
-            MyTools.LogMsg(symbol, output);
-        }
+        //         var sum = dictItem.Value.Sum() / dictItem.Value.Count;
+        //         if (Math.Abs(sum) > 0.0005)
+        //         {
+        //             output += ($"{dictItem.Key} {MyTools.ToPercent(sum)} count:{dictItem.Value.Count}\n");
+        //         }
+        //     }
+        //     MyTools.LogMsg(symbol, output);
+        // }
 
-        // 连续N连趋势后预测
-        public void AnalyseTend(string symbol)
-        {
-            Dictionary<string, List<float>> count2inc = new Dictionary<string, List<float>>();
-            var slist = MyTools.LoadFileData(symbol);
-            for (int i = 10; i < slist.myKlines.Count; i++)
-            {
-                var item = slist.myKlines[i];
-                for (int count = 3; count <= 6; count++)
-                {
-                    var isContinuous = false;
-                    var firstSign = slist.myKlines[i - 1].incPercent;
-                    for (int j = 1; j <= count; j++)
-                    {
-                        var prev = slist.myKlines[i - j];
-                        if (firstSign * prev.incPercent < 0)
-                        {
-                            isContinuous = false;
-                            break;
-                        }
-                        else
-                        {
-                            firstSign += prev.incPercent;
-                        }
-                        if (j == count)
-                        {
-                            isContinuous = true;
-                        }
-                    }
-                    if (!isContinuous)
-                    {
-                        break;
-                    }
-                    else
-                    {
+        // // 连续N连趋势后预测
+        // public void AnalyseTend(string symbol)
+        // {
+        //     Dictionary<string, List<float>> count2inc = new Dictionary<string, List<float>>();
+        //     var slist = MyTools.LoadFileData(symbol);
+        //     for (int i = 10; i < slist.myKlines.Count; i++)
+        //     {
+        //         var item = slist.myKlines[i];
+        //         for (int count = 3; count <= 6; count++)
+        //         {
+        //             var isContinuous = false;
+        //             var firstSign = slist.myKlines[i - 1].incPercent;
+        //             for (int j = 1; j <= count; j++)
+        //             {
+        //                 var prev = slist.myKlines[i - j];
+        //                 if (firstSign * prev.incPercent < 0)
+        //                 {
+        //                     isContinuous = false;
+        //                     break;
+        //                 }
+        //                 else
+        //                 {
+        //                     firstSign += prev.incPercent;
+        //                 }
+        //                 if (j == count)
+        //                 {
+        //                     isContinuous = true;
+        //                 }
+        //             }
+        //             if (!isContinuous)
+        //             {
+        //                 break;
+        //             }
+        //             else
+        //             {
 
-                        // if (Math.Abs(firstSign) > 0.008)
-                        // {
-                        var key = (firstSign < 0 ? "-" : "+") + count;
-                        if (!count2inc.ContainsKey(key))
-                        {
-                            count2inc.Add(key, new List<float>());
-                        }
-                        count2inc[key].Add(item.incPercent);
-                        // }
-                    }
+        //                 // if (Math.Abs(firstSign) > 0.008)
+        //                 // {
+        //                 var key = (firstSign < 0 ? "-" : "+") + count;
+        //                 if (!count2inc.ContainsKey(key))
+        //                 {
+        //                     count2inc.Add(key, new List<float>());
+        //                 }
+        //                 count2inc[key].Add(item.incPercent);
+        //                 // }
+        //             }
 
-                }
+        //         }
 
-            }
-            count2inc = count2inc.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
-            string output = "";
-            foreach (var dictItem in count2inc)
-            {
+        //     }
+        //     count2inc = count2inc.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+        //     string output = "";
+        //     foreach (var dictItem in count2inc)
+        //     {
 
-                var sum = dictItem.Value.Sum() / dictItem.Value.Count;
-                // if (Math.Abs(sum) > 0.0001)
-                // {
-                output += ($"{dictItem.Key} {MyTools.ToPercent(sum)} count:{dictItem.Value.Count}\n");
-                // }
-            }
-            MyTools.LogMsg(symbol, output);
-        }
+        //         var sum = dictItem.Value.Sum() / dictItem.Value.Count;
+        //         // if (Math.Abs(sum) > 0.0001)
+        //         // {
+        //         output += ($"{dictItem.Key} {MyTools.ToPercent(sum)} count:{dictItem.Value.Count}\n");
+        //         // }
+        //     }
+        //     MyTools.LogMsg(symbol, output);
+        // }
         public void CheckKlineOK(string symbol, int intervalMin)
         {
             var msPerMin = 60 * 1000;
