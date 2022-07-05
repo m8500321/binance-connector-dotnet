@@ -137,25 +137,26 @@ namespace Binance.Common.Tests
             // }
 
             var tasks2 = new List<Task<JObject>>();
-            var len = 2001;
-            for (int round = 0; round < 10; round++)
+            var len = 3001;
+            for (int round = 0; round < 2; round++)
             {
                 var start = 660000 + round * len;
-                // for (int range = 1; range < 10; range++)
+                // for (int range = 1; range < 6; range++)
                 // {
-                //     var s_range = range * 0.03f + 0.54f;
-                var s_range = 0.5f;
+                //     var s_range = range * 0.05f + 0.2f;
+                var s_range = 0.3f;
                 // for (int val = 1; val < 6; val++)
                 // {
-                //     var s_val = val * 0.0003f;
-                var s_val = 0.001f;
+                //     var s_val = val * 0.0002f + 0.0002f;
+                var s_val = 0.0006f;
 
-                // for (int down = 1; down < 6; down++)
+                // for (int down = 0; down < 5; down++)
                 // {
-                //     var weightDown = 0.02f * down;
+                //     var weightPow = 0.3f * down + 1;
+                var weightPow = 1f;
                 var t = Task<JObject>.Run(async () =>
                     {
-                        return thisobj.AnalyseCurveMatch3("BTCUSDT", start: start, s_range: s_range, s_val: s_val, rate_delta: 0.01f, e_delta: 0.000001f, len = len, weightDown: 0);
+                        return thisobj.AnalyseCurveMatch3("BTCUSDT", start: start, s_range: s_range, s_val: s_val, rate_delta: 0.00f, inc_delta: 0.000000f, len = len, weightPow: weightPow);
                     });
                 tasks2.Add(t);
                 // }
@@ -197,7 +198,7 @@ namespace Binance.Common.Tests
 
 
         // 精准匹配
-        public JObject AnalyseCurveMatch3(string symbol, int start = 700000, float s_range = 0.04f, float s_val = 0.0006f, float rate_delta = 0.1f, float e_delta = 0.00001f, int len = 2000, float weightPow = 1f, float weightDown = 0.05f)
+        public JObject AnalyseCurveMatch3(string symbol, int start = 700000, float s_range = 0.04f, float s_val = 0.0006f, float rate_delta = 0.1f, float inc_delta = 0.00001f, int len = 2000, float weightPow = 1f, float weightDown = 0.05f)
         {
             Dictionary<int, List<int>> cachePrev2 = new Dictionary<int, List<int>>();
             var floatPool = new ListPool<float>();
@@ -219,7 +220,7 @@ namespace Binance.Common.Tests
                 // {"similar_range",4*0.01f},
                 // {"similar_val",0.06f*0.01f},
 
-                {"need_count",100},
+                {"need_count",8000},
             };
             var filterArgs = new Dictionary<string, float>()
             {
@@ -340,7 +341,7 @@ namespace Binance.Common.Tests
                         // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.prevClosePriceList[idx], closeJ, itemJ.prevClosePriceList[idx], s_range, s_val);
                         // sumValue += price_weight * MyTools.SimilarRate(itemI.sumIncList[idx], itemJ.sumIncList[idx], s_range, s_val);
                         // sumValue += price_weight * MyTools.SimilarValue(itemI.equalDiffList[idx], itemI.equalDiffList[idx + 1], itemJ.equalDiffList[idx], itemJ.equalDiffList[idx + 1], s_range, s_val, 1 + idx * 0.1f);
-                        sumValue += price_weight * (1 - idx * weightDown) * MyTools.SimilarValue(closeI, itemI.equalVolumeList[idx], closeJ, itemJ.equalVolumeList[idx], s_range, s_val);
+                        sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.equalVolumeList[idx], closeJ, itemJ.equalVolumeList[idx], s_range, s_val, 1 + idx * 0.1f);
                         // sumValue += price_weight * MyTools.SimilarValue(closeI, itemI.equalAveList[idx], closeJ, itemJ.equalAveList[idx], s_range, s_val);
                         if (sumValue < 0)
                         {
@@ -409,6 +410,7 @@ loopend:;
             // var RATE_DELTA = 0.02f;
             // var E_DELTA = 0.06f * 0.01;
             var NEXT_MAX = 1;
+            var diffSignFail = 0;
             var eFail = 0;
             var rateFail = 0;
             var sumItemCount = 0f;
@@ -433,7 +435,7 @@ loopend:;
                     }
                     var weight = 1f;
                     weight = (float)targetList[i + 1] / aveWeight;
-                    // weight = MathF.Pow(weight, 2);
+                    // weight = MathF.Pow(weight, weightPow);
                     incList.Add(allKlineArray[itemIdx + 1].incPercent);
                     // incList.Add(allKlineArray[itemIdx + 1].incPercent + allKlineArray[itemIdx + 2].incPercent);
                     incList.Add(weight);
@@ -463,13 +465,13 @@ loopend:;
                     // sumDesc += incList[i] * incList[i + 1];
                 }
                 var eInc = (sumInc / itemCount);
-                var incRate = incCount / itemCount - 0.5f;
+                var eRate = incCount / itemCount - 0.5f;
                 // if ((eLast * eInc > 0 && rateLast * incRate > 0))
                 // {
                 // 和前一条相同
-                if ((eInc > e_delta && incRate > rate_delta) || (eInc < -e_delta && incRate < -rate_delta))
+                if ((eInc > inc_delta && eRate > rate_delta) || (eInc < -inc_delta && eRate < -rate_delta))
                 {
-                    output += $"{kvItem.Key} num:{itemCount} \t{1}-e涨幅:{MyTools.ToPercent(eInc)} e涨率:{MyTools.ToPercent(incRate + 0.5f)} \t{thisNextInc * eInc > 0}:{MyTools.ToPercent(thisNextInc)}\n";
+                    output += $"{kvItem.Key} num:{itemCount} \t{1}-e涨幅:{MyTools.ToPercent(eInc)} e涨率:{MyTools.ToPercent(eRate + 0.5f)} \t{thisNextInc * eInc > 0}:{MyTools.ToPercent(thisNextInc)}\n";
                     usefulCount++;
                     if (thisNextInc * eInc > 0)
                     {
@@ -485,11 +487,15 @@ loopend:;
                 }
                 else
                 {
-                    if (Math.Abs(eInc) < e_delta)
+                    if (eInc * eRate < 0)
+                    {
+                        diffSignFail++;
+                    }
+                    if (Math.Abs(eInc) < inc_delta)
                     {
                         eFail++;
                     }
-                    if (Math.Abs(incRate) < rate_delta)
+                    if (Math.Abs(eRate) < rate_delta)
                     {
                         rateFail++;
                     }
@@ -518,10 +524,10 @@ loopend:;
             }
             var title = "优质数:" + usefulCount + "\t正确率:" + MyTools.ToPercent(rightCount / usefulCount) + "\t交易期望:" + MyTools.ToPercent(realSum / usefulCount) + "\n";
 
-            MyTools.LogMsg(symbol, $"样本数:{countAll} 总匹配量:{cachePrev2.Count} eFail/rateFail:{eFail}/{rateFail}", argStr, title);
+            MyTools.LogMsg(symbol, $"样本数:{countAll} 总匹配量:{cachePrev2.Count} eFail:{eFail} rateFail:{rateFail} diffSignFail:{diffSignFail}", argStr, title);
             // MyTools.LogMsg(symbol, $"样本数:{countAll} 总匹配量:{cachePrev2.Count} eFail/rateFail:{eFail}/{rateFail}", argStr, title, output);
 
-            var rtStr = $"{symbol} {start}:  \t{rightCount}:{usefulCount - rightCount}  {MyTools.ToPercent(rightCount / usefulCount)} \te:{MyTools.ToPercent(realSum / usefulCount)}  s_range:{s_range} s_val:{s_val} aveMatchCount:{(int)(sumItemCount / rightCount)}\n";
+            var rtStr = $"{symbol} {start}:  \t{rightCount}:{usefulCount - rightCount}  {MyTools.ToPercent(rightCount / usefulCount)} \te:{MyTools.ToPercent(realSum / usefulCount)}  s_range:{s_range} aveMatchCount:{(int)(sumItemCount / rightCount)}\n";
             JObject rt = new JObject();
             rt.Add("log", rtStr);
             rt.Add("rightCount", rightCount);
